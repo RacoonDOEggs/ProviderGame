@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpgsdmoi1xbwx"]
+
+[ext_resource type="Script" path="res://scenes/ui/draggable_resistor.gd" id="1_2fkkt"]
+[ext_resource type="Texture2D" uid="uid://co3domh83ug07" path="res://graphics/objects/electrical/resistor.png" id="1_th2f8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1m3td"]
+size = Vector2(290, 151)
+
+[node name="DraggableResistor" type="Area2D"]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_2fkkt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_th2f8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_1m3td")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
