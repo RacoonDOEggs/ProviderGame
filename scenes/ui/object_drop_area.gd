@@ -1,9 +1,9 @@
 extends StaticBody2D
 
-
+@export var default_color:Color
 
 func _ready():
-	modulate = Color("404040", 0.7)
+	modulate = default_color
 
 
 func _process(_delta):

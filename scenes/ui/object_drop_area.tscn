@@ -1,14 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://c0ocygp6xqqpj"]
 
-[ext_resource type="Script" path="res://scenes/ui/res_drop_area.gd" id="1_ps4nv"]
+[ext_resource type="Script" path="res://scenes/ui/object_drop_area.gd" id="1_jln55"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b25ow"]
 size = Vector2(291, 152)
 
-[node name="ResDropArea" type="StaticBody2D" groups=["dropable"]]
+[node name="ObjectDropArea" type="StaticBody2D" groups=["dropable"]]
 collision_layer = 8
 collision_mask = 8
-script = ExtResource("1_ps4nv")
+script = ExtResource("1_jln55")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 8
