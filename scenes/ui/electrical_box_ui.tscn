@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://68btsn8i3yyd" path="res://graphics/objects/electrical/electrical_box.png" id="1_irsow"]
 [ext_resource type="Script" path="res://scenes/ui/electrical_box_ui.gd" id="1_kcxba"]
 [ext_resource type="Texture2D" uid="uid://be1bq76lfb6k0" path="res://graphics/ui/x_button.png" id="2_qrnio"]
-[ext_resource type="PackedScene" uid="uid://drcfkjapu0bui" path="res://scenes/ui/resistor_drop_area.tscn" id="4_bkylf"]
-[ext_resource type="PackedScene" uid="uid://bjfsg4bv7a6pm" path="res://scenes/ui/draggable_resistor.tscn" id="5_dgkmt"]
+[ext_resource type="PackedScene" uid="uid://c8ubeawbakhbr" path="res://scenes/ui/drag_and_drop.tscn" id="4_qajuo"]
+[ext_resource type="Texture2D" uid="uid://co3domh83ug07" path="res://graphics/objects/electrical/resistor.png" id="5_bu58k"]
 
 [node name="ElectricalBoxUI" type="CanvasLayer"]
 script = ExtResource("1_kcxba")
@@ -42,19 +42,40 @@ offset_bottom = 40.0
 grow_horizontal = 0
 texture_normal = ExtResource("2_qrnio")
 
-[node name="ResistorDropArea" parent="." instance=ExtResource("4_bkylf")]
-position = Vector2(421, 267)
+[node name="DragAndDrop" parent="." instance=ExtResource("4_qajuo")]
+offset_left = 688.0
+offset_top = 61.0
+offset_right = 728.0
+offset_bottom = 101.0
+texture = ExtResource("5_bu58k")
+custom_size = Vector2(200, 100)
 
-[node name="ResistorDropArea2" parent="." instance=ExtResource("4_bkylf")]
-position = Vector2(702, 253)
+[node name="DragAndDrop2" parent="." instance=ExtResource("4_qajuo")]
+offset_left = 404.0
+offset_top = 81.0
+offset_right = 444.0
+offset_bottom = 121.0
+custom_size = Vector2(200, 100)
 
-[node name="ResistorDropArea3" parent="." instance=ExtResource("4_bkylf")]
-position = Vector2(427, 433)
+[node name="DragAndDrop3" parent="." instance=ExtResource("4_qajuo")]
+offset_left = 588.0
+offset_top = 335.0
+offset_right = 628.0
+offset_bottom = 375.0
+custom_size = Vector2(200, 100)
 
-[node name="DraggableResistor" parent="." instance=ExtResource("5_dgkmt")]
-position = Vector2(1031, 280)
+[node name="DragAndDrop4" parent="." instance=ExtResource("4_qajuo")]
+offset_left = 375.0
+offset_top = 319.0
+offset_right = 415.0
+offset_bottom = 359.0
+custom_size = Vector2(200, 100)
 
-[node name="DraggableResistor2" parent="." instance=ExtResource("5_dgkmt")]
-position = Vector2(1008, 466)
+[node name="DragAndDrop5" parent="." instance=ExtResource("4_qajuo")]
+offset_left = 689.0
+offset_top = 276.0
+offset_right = 729.0
+offset_bottom = 316.0
+custom_size = Vector2(200, 100)
 
 [connection signal="pressed" from="PanelWindow/TextureRect/TextureButton" to="." method="_on_texture_button_pressed"]
