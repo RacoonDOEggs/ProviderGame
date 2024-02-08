@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5winj3uqwry4"]
+
+[ext_resource type="PackedScene" uid="uid://c8ubeawbakhbr" path="res://scenes/ui/drag_and_drop.tscn" id="1_16ka3"]
+[ext_resource type="Script" path="res://scenes/ui/resistor_receptable.gd" id="2_382q0"]
+
+[node name="ResistorReceptable" instance=ExtResource("1_16ka3")]
+script = ExtResource("2_382q0")
+custom_size = Vector2(100, 50)
+group_id = "resistor"
+
+[node name="Label" type="Label" parent="." index="1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1

@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://68btsn8i3yyd" path="res://graphics/objects/electrical/electrical_box.png" id="1_irsow"]
 [ext_resource type="Script" path="res://scenes/ui/electrical_box_ui.gd" id="1_kcxba"]
 [ext_resource type="Texture2D" uid="uid://be1bq76lfb6k0" path="res://graphics/ui/x_button.png" id="2_qrnio"]
-[ext_resource type="PackedScene" uid="uid://c8ubeawbakhbr" path="res://scenes/ui/drag_and_drop.tscn" id="4_qajuo"]
-[ext_resource type="Texture2D" uid="uid://co3domh83ug07" path="res://graphics/objects/electrical/resistor.png" id="5_bu58k"]
+[ext_resource type="PackedScene" uid="uid://cqkbcxecnnmkb" path="res://scenes/ui/resistor.tscn" id="5_2wh8e"]
+[ext_resource type="PackedScene" uid="uid://c5winj3uqwry4" path="res://scenes/ui/resistor_receptable.tscn" id="5_5clvd"]
 
 [node name="ElectricalBoxUI" type="CanvasLayer"]
 script = ExtResource("1_kcxba")
@@ -42,40 +42,35 @@ offset_bottom = 40.0
 grow_horizontal = 0
 texture_normal = ExtResource("2_qrnio")
 
-[node name="DragAndDrop" parent="." instance=ExtResource("4_qajuo")]
-offset_left = 688.0
-offset_top = 61.0
-offset_right = 728.0
-offset_bottom = 101.0
-texture = ExtResource("5_bu58k")
-custom_size = Vector2(200, 100)
+[node name="DragAndDropResistor" parent="." instance=ExtResource("5_2wh8e")]
+offset_left = 379.0
+offset_top = 36.0
+offset_right = 419.0
+offset_bottom = 76.0
+object_value = 100
 
-[node name="DragAndDrop2" parent="." instance=ExtResource("4_qajuo")]
-offset_left = 404.0
-offset_top = 81.0
-offset_right = 444.0
-offset_bottom = 121.0
-custom_size = Vector2(200, 100)
+[node name="ResistorReceptable" parent="." instance=ExtResource("5_5clvd")]
+offset_left = 671.0
+offset_top = 348.0
+offset_right = 711.0
+offset_bottom = 388.0
 
-[node name="DragAndDrop3" parent="." instance=ExtResource("4_qajuo")]
-offset_left = 588.0
-offset_top = 335.0
-offset_right = 628.0
-offset_bottom = 375.0
-custom_size = Vector2(200, 100)
+[node name="ResistorReceptable2" parent="." instance=ExtResource("5_5clvd")]
+offset_left = 505.0
+offset_top = 374.0
+offset_right = 545.0
+offset_bottom = 414.0
 
-[node name="DragAndDrop4" parent="." instance=ExtResource("4_qajuo")]
-offset_left = 375.0
-offset_top = 319.0
-offset_right = 415.0
-offset_bottom = 359.0
-custom_size = Vector2(200, 100)
+[node name="ResistorReceptable3" parent="." instance=ExtResource("5_5clvd")]
+offset_left = 674.0
+offset_top = 252.0
+offset_right = 714.0
+offset_bottom = 292.0
 
-[node name="DragAndDrop5" parent="." instance=ExtResource("4_qajuo")]
-offset_left = 689.0
-offset_top = 276.0
-offset_right = 729.0
-offset_bottom = 316.0
-custom_size = Vector2(200, 100)
+[node name="ResistorReceptable4" parent="." instance=ExtResource("5_5clvd")]
+offset_left = 428.0
+offset_top = 248.0
+offset_right = 468.0
+offset_bottom = 288.0
 
 [connection signal="pressed" from="PanelWindow/TextureRect/TextureButton" to="." method="_on_texture_button_pressed"]
