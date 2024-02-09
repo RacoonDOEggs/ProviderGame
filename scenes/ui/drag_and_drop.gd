@@ -6,7 +6,7 @@ class_name DragAndDrop
 #Permet de déterminer des groupes de zones de réception pour limiter les endroits où un objet peut être déposé
 @export var group_id:String = ""
 #Permet d'assigner une valeur à l'objet dans l'éditeur
-@export var object_value:int = 0
+@export var object_value:float = 0
 #Permet d'assigner un code d'objet à l'objet dans l'éditeur
 @export var object_id:int = 0
 
@@ -30,12 +30,14 @@ func _get_drag_data(_at_position):
 	data["origin_group_id"] = group_id
 	data["origin_object_value"] = object_value
 	data["origin_object_id"] = object_id
+	data = specific_drag_data(data)
 	
 	#Création d'une texture qui suivra la souris pour indiquer l'item qui se fair déplacer
 	var preview_texture = TextureRect.new()
 	preview_texture.texture = texture
 	preview_texture.expand_mode = 1 #Ignore size
 	preview_texture.size = custom_size
+	preview_texture = specific_preview(preview_texture)
 	var preview = Control.new() #Positionnement de preview_texture
 	preview.add_child(preview_texture)
 	preview_texture.position = -0.5 * preview_texture.size
@@ -44,6 +46,12 @@ func _get_drag_data(_at_position):
 	set_drag_preview(preview)
 	
 	return data
+
+func specific_drag_data(data):
+	return data
+
+func specific_preview(preview_texture: TextureRect) -> TextureRect:
+	return preview_texture
 
 #Vérification que la zone de réception fait parti du groupe de provenance de l'item
 func _can_drop_data(_at_position, data):

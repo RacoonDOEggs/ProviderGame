@@ -1,8 +1,8 @@
 shader_type canvas_item;
 
-uniform vec4 oldColor1 : source_color;
-uniform vec4 oldColor2 : source_color;
-uniform vec4 oldColor3 : source_color;
+uniform vec4 oldColor1 : source_color = vec4(0.0, 1.0, 0.0, 1.0);
+uniform vec4 oldColor2 : source_color = vec4(1.0, 0.0, 0.0, 1.0);
+uniform vec4 oldColor3 : source_color = vec4(0.0, 0.0, 0.0, 1.0);
 
 uniform vec4 newColor1 : source_color;
 uniform vec4 newColor2 : source_color;

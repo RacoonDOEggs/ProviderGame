@@ -21,7 +21,7 @@ texture = ExtResource("1_85cil")
 [node name="WhiteRectangle" type="Sprite2D" parent="."]
 visible = false
 modulate = Color(1, 1, 1, 0.196078)
-position = Vector2(-1.0252e-05, 9.99999)
+position = Vector2(316, 201)
 scale = Vector2(632, 402)
 texture = SubResource("CanvasTexture_p2dv6")
 

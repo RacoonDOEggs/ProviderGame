@@ -8,19 +8,20 @@
 [ext_resource type="Texture2D" uid="uid://xl5trk4tvidu" path="res://graphics/ui/Pixel UI pack 3/grey_arrow_down.png" id="6_qmpo7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_43u7x"]
+resource_local_to_scene = true
 shader = ExtResource("2_2ds4j")
 shader_parameter/oldColor1 = Color(0, 1, 0, 1)
 shader_parameter/oldColor2 = Color(1, 0, 0, 1)
-shader_parameter/oldColor3 = null
-shader_parameter/newColor1 = null
-shader_parameter/newColor2 = null
-shader_parameter/newColor3 = null
+shader_parameter/oldColor3 = Color(0, 0, 0, 1)
+shader_parameter/newColor1 = Color(0, 0, 0, 1)
+shader_parameter/newColor2 = Color(0, 0, 0, 1)
+shader_parameter/newColor3 = Color(0, 0, 0, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xongq"]
 shader = ExtResource("2_2ds4j")
-shader_parameter/oldColor1 = null
-shader_parameter/oldColor2 = null
-shader_parameter/oldColor3 = null
+shader_parameter/oldColor1 = Color(0, 1, 0, 1)
+shader_parameter/oldColor2 = Color(1, 0, 0, 1)
+shader_parameter/oldColor3 = Color(0, 0, 0, 1)
 shader_parameter/newColor1 = null
 shader_parameter/newColor2 = null
 shader_parameter/newColor3 = null
@@ -28,6 +29,9 @@ shader_parameter/newColor3 = null
 [node name="ResistorReceptacle" instance=ExtResource("1_6o0jw")]
 material = SubResource("ShaderMaterial_43u7x")
 script = ExtResource("2_b52a0")
+color1 = 0
+color2 = 0
+color3 = 0
 custom_size = Vector2(100, 50)
 group_id = "resistor"
 
@@ -69,90 +73,98 @@ visible = false
 layout_mode = 2
 text = "Edit"
 
-[node name="ResistorEditUI" type="CanvasLayer" parent="." index="3"]
+[node name="Window" type="Window" parent="." index="3"]
+handle_input_locally = false
+initial_position = 1
+size = Vector2i(303, 200)
+visible = false
+wrap_controls = true
+unresizable = true
+always_on_top = true
 
-[node name="ColorRect" type="ColorRect" parent="ResistorEditUI" index="0"]
-custom_minimum_size = Vector2(500, 300)
+[node name="VBoxContainer" type="VBoxContainer" parent="Window" index="0"]
+texture_filter = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -86.0
+offset_right = 100.0
+offset_bottom = 86.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="ResistorEditUI/ColorRect" index="0"]
+[node name="MarginContainer" type="MarginContainer" parent="Window/VBoxContainer" index="0"]
+texture_filter = 1
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Window/VBoxContainer/MarginContainer" index="0"]
+texture_filter = 1
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Up1" type="TextureButton" parent="Window/VBoxContainer/MarginContainer/HBoxContainer" index="0"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("5_fb2ph")
+stretch_mode = 0
+
+[node name="Up2" type="TextureButton" parent="Window/VBoxContainer/MarginContainer/HBoxContainer" index="1"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("5_fb2ph")
+stretch_mode = 0
+
+[node name="Up3" type="TextureButton" parent="Window/VBoxContainer/MarginContainer/HBoxContainer" index="2"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("5_fb2ph")
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="Window/VBoxContainer" index="1"]
 material = SubResource("ShaderMaterial_xongq")
 custom_minimum_size = Vector2(200, 100)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 texture = ExtResource("4_4ug5a")
 expand_mode = 1
+flip_v = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ResistorEditUI" index="1"]
-anchors_preset = -1
-anchor_left = 0.43
-anchor_top = 0.35
-anchor_right = 0.43
-anchor_bottom = 0.35
-offset_right = 104.0
-offset_bottom = -33.448
-theme_override_constants/separation = 10
-
-[node name="Up1" type="TextureButton" parent="ResistorEditUI/HBoxContainer" index="0"]
-custom_minimum_size = Vector2(32, 32)
+[node name="MarginContainer2" type="MarginContainer" parent="Window/VBoxContainer" index="2"]
+texture_filter = 1
 layout_mode = 2
-texture_normal = ExtResource("5_fb2ph")
-stretch_mode = 0
+theme_override_constants/margin_left = 20
 
-[node name="Up2" type="TextureButton" parent="ResistorEditUI/HBoxContainer" index="1"]
-custom_minimum_size = Vector2(32, 32)
+[node name="HBoxContainer2" type="HBoxContainer" parent="Window/VBoxContainer/MarginContainer2" index="0"]
+texture_filter = 1
 layout_mode = 2
-texture_normal = ExtResource("5_fb2ph")
-stretch_mode = 0
+theme_override_constants/separation = 8
 
-[node name="Up3" type="TextureButton" parent="ResistorEditUI/HBoxContainer" index="2"]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-texture_normal = ExtResource("5_fb2ph")
-stretch_mode = 0
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="ResistorEditUI" index="2"]
-anchors_preset = -1
-anchor_left = 0.43
-anchor_top = 0.6
-anchor_right = 0.43
-anchor_bottom = 0.6
-offset_right = 104.0
-offset_bottom = -33.448
-theme_override_constants/separation = 10
-
-[node name="Up1" type="TextureButton" parent="ResistorEditUI/HBoxContainer2" index="0"]
+[node name="Down1" type="TextureButton" parent="Window/VBoxContainer/MarginContainer2/HBoxContainer2" index="0"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture_normal = ExtResource("6_qmpo7")
 stretch_mode = 0
 
-[node name="Up2" type="TextureButton" parent="ResistorEditUI/HBoxContainer2" index="1"]
+[node name="Down2" type="TextureButton" parent="Window/VBoxContainer/MarginContainer2/HBoxContainer2" index="1"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture_normal = ExtResource("6_qmpo7")
 stretch_mode = 0
 
-[node name="Up3" type="TextureButton" parent="ResistorEditUI/HBoxContainer2" index="2"]
+[node name="Down3" type="TextureButton" parent="Window/VBoxContainer/MarginContainer2/HBoxContainer2" index="2"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture_normal = ExtResource("6_qmpo7")
 stretch_mode = 0
 
 [connection signal="pressed" from="MarginContainer/EditButton" to="." method="_on_edit_button_pressed"]
+[connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
+[connection signal="pressed" from="Window/VBoxContainer/MarginContainer/HBoxContainer/Up1" to="." method="_on_up_1_pressed"]
+[connection signal="pressed" from="Window/VBoxContainer/MarginContainer/HBoxContainer/Up2" to="." method="_on_up_2_pressed"]
+[connection signal="pressed" from="Window/VBoxContainer/MarginContainer/HBoxContainer/Up3" to="." method="_on_up_3_pressed"]
+[connection signal="pressed" from="Window/VBoxContainer/MarginContainer2/HBoxContainer2/Down1" to="." method="_on_down_1_pressed"]
+[connection signal="pressed" from="Window/VBoxContainer/MarginContainer2/HBoxContainer2/Down2" to="." method="_on_down_2_pressed"]
+[connection signal="pressed" from="Window/VBoxContainer/MarginContainer2/HBoxContainer2/Down3" to="." method="_on_down_3_pressed"]
