@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/ui/drag_and_drop.gd" id="1_4ysxr"]
 
-[node name="DragAndDrop" type="TextureRect" groups=["drag_and_drop"]]
+[node name="DragAndDrop" type="TextureRect"]
 offset_right = 40.0
 offset_bottom = 40.0
 expand_mode = 1
