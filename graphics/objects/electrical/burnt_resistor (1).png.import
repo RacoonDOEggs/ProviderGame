@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlblucueqx31p"
-path="res://.godot/imported/resistor1.png-c666d709579b025b63b75e5b7ccf8c31.ctex"
+uid="uid://c6brtnuu7av3a"
+path="res://.godot/imported/burnt_resistor (1).png-b926da0016798a94cfd07ff959894b6d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/objects/electrical/resistor1.png"
-dest_files=["res://.godot/imported/resistor1.png-c666d709579b025b63b75e5b7ccf8c31.ctex"]
+source_file="res://graphics/objects/electrical/burnt_resistor (1).png"
+dest_files=["res://.godot/imported/burnt_resistor (1).png-b926da0016798a94cfd07ff959894b6d.ctex"]
 
 [params]
 

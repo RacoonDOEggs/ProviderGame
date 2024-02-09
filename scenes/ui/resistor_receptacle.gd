@@ -30,7 +30,7 @@ func specific_drag_data(data):
 	return data
 
 func specific_ready():
-	if texture != null:
+	if object_id == 1:
 		$Label.text = str(object_value)
 		$MarginContainer/EditButton.visible = true
 
@@ -38,6 +38,9 @@ func specific_preview(preview_texture:TextureRect) -> TextureRect:
 	preview_texture.material = ShaderMaterial.new()
 	preview_texture.material.shader = resistor_shader
 	return preview_texture
+
+func _can_drop_data(_at_position, data):
+	return data["origin_group_id"] == group_id and data["origin_texture"] != texture 
 
 func update_specific_drop_data(_at_position, data):
 	$Label.text = str(data["origin_object_value"])
