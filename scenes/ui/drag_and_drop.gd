@@ -51,11 +51,14 @@ func _can_drop_data(_at_position, data):
 
 #Mise à jour des textures de la zone d'origine et de réception
 func _drop_data(at_position, data):
-	texture = data["origin_texture"]
-	data["origin_node"].texture = null
-	object_value = data["origin_object_value"]
-	object_id = data["origin_object_id"]
-	update_specific_drop_data(at_position, data)
+	if data["origin_node"] != self: #Évite un problème où l'objet disparait si il est déposé sur lui même
+		texture = data["origin_texture"]
+		data["origin_node"].texture = null
+		object_value = data["origin_object_value"]
+		object_id = data["origin_object_id"]
+		update_specific_drop_data(at_position, data)
+	
+	
 
 #Permet d'exécuter du code spécifique à une classe héritante lorsqu'un objet est déposé dans la zone de réception
 func update_specific_drop_data(_at_position, _data):

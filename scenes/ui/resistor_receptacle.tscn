@@ -1,0 +1,158 @@
+[gd_scene load_steps=9 format=3 uid="uid://c5winj3uqwry4"]
+
+[ext_resource type="PackedScene" uid="uid://c8ubeawbakhbr" path="res://scenes/ui/drag_and_drop.tscn" id="1_6o0jw"]
+[ext_resource type="Shader" path="res://scenes/ui/resistor_receptacle.gdshader" id="2_2ds4j"]
+[ext_resource type="Script" path="res://scenes/ui/resistor_receptacle.gd" id="2_b52a0"]
+[ext_resource type="Texture2D" uid="uid://cxmr5e18ovhv2" path="res://graphics/objects/electrical/resistor (1).png" id="4_4ug5a"]
+[ext_resource type="Texture2D" uid="uid://bbgp3he5shpei" path="res://graphics/ui/Pixel UI pack 3/grey_arrow_up.png" id="5_fb2ph"]
+[ext_resource type="Texture2D" uid="uid://xl5trk4tvidu" path="res://graphics/ui/Pixel UI pack 3/grey_arrow_down.png" id="6_qmpo7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_43u7x"]
+shader = ExtResource("2_2ds4j")
+shader_parameter/oldColor1 = Color(0, 1, 0, 1)
+shader_parameter/oldColor2 = Color(1, 0, 0, 1)
+shader_parameter/oldColor3 = null
+shader_parameter/newColor1 = null
+shader_parameter/newColor2 = null
+shader_parameter/newColor3 = null
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xongq"]
+shader = ExtResource("2_2ds4j")
+shader_parameter/oldColor1 = null
+shader_parameter/oldColor2 = null
+shader_parameter/oldColor3 = null
+shader_parameter/newColor1 = null
+shader_parameter/newColor2 = null
+shader_parameter/newColor3 = null
+
+[node name="ResistorReceptacle" instance=ExtResource("1_6o0jw")]
+material = SubResource("ShaderMaterial_43u7x")
+script = ExtResource("2_b52a0")
+custom_size = Vector2(100, 50)
+group_id = "resistor"
+
+[node name="Panel" parent="." index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="." index="1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="." index="2"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -40.0
+offset_right = -2.0
+offset_bottom = 31.0
+grow_horizontal = 0
+
+[node name="EditButton" type="Button" parent="MarginContainer" index="0"]
+visible = false
+layout_mode = 2
+text = "Edit"
+
+[node name="ResistorEditUI" type="CanvasLayer" parent="." index="3"]
+
+[node name="ColorRect" type="ColorRect" parent="ResistorEditUI" index="0"]
+custom_minimum_size = Vector2(500, 300)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="ResistorEditUI/ColorRect" index="0"]
+material = SubResource("ShaderMaterial_xongq")
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_4ug5a")
+expand_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ResistorEditUI" index="1"]
+anchors_preset = -1
+anchor_left = 0.43
+anchor_top = 0.35
+anchor_right = 0.43
+anchor_bottom = 0.35
+offset_right = 104.0
+offset_bottom = -33.448
+theme_override_constants/separation = 10
+
+[node name="Up1" type="TextureButton" parent="ResistorEditUI/HBoxContainer" index="0"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("5_fb2ph")
+stretch_mode = 0
+
+[node name="Up2" type="TextureButton" parent="ResistorEditUI/HBoxContainer" index="1"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("5_fb2ph")
+stretch_mode = 0
+
+[node name="Up3" type="TextureButton" parent="ResistorEditUI/HBoxContainer" index="2"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("5_fb2ph")
+stretch_mode = 0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ResistorEditUI" index="2"]
+anchors_preset = -1
+anchor_left = 0.43
+anchor_top = 0.6
+anchor_right = 0.43
+anchor_bottom = 0.6
+offset_right = 104.0
+offset_bottom = -33.448
+theme_override_constants/separation = 10
+
+[node name="Up1" type="TextureButton" parent="ResistorEditUI/HBoxContainer2" index="0"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("6_qmpo7")
+stretch_mode = 0
+
+[node name="Up2" type="TextureButton" parent="ResistorEditUI/HBoxContainer2" index="1"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("6_qmpo7")
+stretch_mode = 0
+
+[node name="Up3" type="TextureButton" parent="ResistorEditUI/HBoxContainer2" index="2"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("6_qmpo7")
+stretch_mode = 0
+
+[connection signal="pressed" from="MarginContainer/EditButton" to="." method="_on_edit_button_pressed"]
