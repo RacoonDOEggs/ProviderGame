@@ -37,6 +37,9 @@ func specific_ready():
 func specific_preview(preview_texture:TextureRect) -> TextureRect:
 	preview_texture.material = ShaderMaterial.new()
 	preview_texture.material.shader = resistor_shader
+	preview_texture.material.set_shader_parameter("newColor1", band_colors[color1])
+	preview_texture.material.set_shader_parameter("newColor2", band_colors[color2])
+	preview_texture.material.set_shader_parameter("newColor3", band_colors[color3])
 	return preview_texture
 
 func _can_drop_data(_at_position, data):
