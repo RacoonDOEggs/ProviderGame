@@ -149,6 +149,8 @@ layout_mode = 2
 [node name="ResistorReceptacle4" parent="PanelWindow/HBoxContainer/VBoxContainer3" instance=ExtResource("5_5clvd")]
 material = SubResource("ShaderMaterial_qhx31")
 layout_mode = 2
+texture = ExtResource("5_pq8tp")
+object_id = 1
 
 [node name="VBoxContainer4" type="VBoxContainer" parent="PanelWindow/HBoxContainer"]
 custom_minimum_size = Vector2(100, 50)
