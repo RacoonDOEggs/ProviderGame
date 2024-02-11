@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c5winj3uqwry4"]
+[gd_scene load_steps=11 format=3 uid="uid://c5winj3uqwry4"]
 
 [ext_resource type="PackedScene" uid="uid://c8ubeawbakhbr" path="res://scenes/ui/drag_and_drop.tscn" id="1_6o0jw"]
 [ext_resource type="Shader" path="res://scenes/ui/resistor_receptacle.gdshader" id="2_2ds4j"]
@@ -17,6 +17,10 @@ shader_parameter/oldColor3 = Color(0, 0, 0, 1)
 shader_parameter/newColor1 = Color(0, 0, 0, 1)
 shader_parameter/newColor2 = Color(0, 0, 0, 1)
 shader_parameter/newColor3 = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cwfgj"]
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xongq"]
 shader = ExtResource("2_2ds4j")
@@ -60,6 +64,7 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+label_settings = SubResource("LabelSettings_cwfgj")
 horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="." index="2"]

@@ -120,6 +120,24 @@ layout_mode = 2
 texture = ExtResource("5_pq8tp")
 object_id = 1
 
+[node name="ResistorReceptacle2" parent="PanelWindow/HBoxContainer/VBoxContainer" instance=ExtResource("5_5clvd")]
+material = SubResource("ShaderMaterial_uw6v7")
+layout_mode = 2
+texture = ExtResource("5_pq8tp")
+object_id = 1
+
+[node name="ResistorReceptacle3" parent="PanelWindow/HBoxContainer/VBoxContainer" instance=ExtResource("5_5clvd")]
+material = SubResource("ShaderMaterial_uw6v7")
+layout_mode = 2
+texture = ExtResource("5_pq8tp")
+object_id = 1
+
+[node name="ResistorReceptacle4" parent="PanelWindow/HBoxContainer/VBoxContainer" instance=ExtResource("5_5clvd")]
+material = SubResource("ShaderMaterial_uw6v7")
+layout_mode = 2
+texture = ExtResource("5_pq8tp")
+object_id = 1
+
 [node name="VBoxContainer2" type="VBoxContainer" parent="PanelWindow/HBoxContainer"]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
