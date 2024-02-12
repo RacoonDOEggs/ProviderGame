@@ -17,11 +17,9 @@ shader_parameter/newColor1 = Color(0, 0, 0, 1)
 shader_parameter/newColor2 = Color(0, 0, 0, 1)
 shader_parameter/newColor3 = Color(0, 0, 0, 1)
 
-<<<<<<< HEAD
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_prq5q"]
-=======
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mvlju"]
->>>>>>> 81a7611fdd34a8269ba6b99806b829f17e8cf0ed
+
 resource_local_to_scene = true
 shader = ExtResource("5_44u2a")
 shader_parameter/oldColor1 = Color(0, 1, 0, 1)
@@ -31,11 +29,9 @@ shader_parameter/newColor1 = Color(0, 0, 0, 1)
 shader_parameter/newColor2 = Color(0, 0, 0, 1)
 shader_parameter/newColor3 = Color(0, 0, 0, 1)
 
-<<<<<<< HEAD
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uyr5y"]
-=======
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_yh2h0"]
->>>>>>> 81a7611fdd34a8269ba6b99806b829f17e8cf0ed
+
 resource_local_to_scene = true
 shader = ExtResource("5_44u2a")
 shader_parameter/oldColor1 = Color(0, 1, 0, 1)
@@ -45,11 +41,9 @@ shader_parameter/newColor1 = Color(0, 0, 0, 1)
 shader_parameter/newColor2 = Color(0, 0, 0, 1)
 shader_parameter/newColor3 = Color(0, 0, 0, 1)
 
-<<<<<<< HEAD
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jyv0w"]
-=======
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_aks3n"]
->>>>>>> 81a7611fdd34a8269ba6b99806b829f17e8cf0ed
+
 resource_local_to_scene = true
 shader = ExtResource("5_44u2a")
 shader_parameter/oldColor1 = Color(0, 1, 0, 1)
@@ -163,31 +157,25 @@ texture = ExtResource("5_pq8tp")
 object_id = 1
 
 [node name="ResistorReceptacle2" parent="PanelWindow/HBoxContainer/VBoxContainer" instance=ExtResource("5_5clvd")]
-<<<<<<< HEAD
+
 material = SubResource("ShaderMaterial_prq5q")
-=======
-material = SubResource("ShaderMaterial_mvlju")
->>>>>>> 81a7611fdd34a8269ba6b99806b829f17e8cf0ed
+
 layout_mode = 2
 texture = ExtResource("5_pq8tp")
 object_id = 1
 
 [node name="ResistorReceptacle3" parent="PanelWindow/HBoxContainer/VBoxContainer" instance=ExtResource("5_5clvd")]
-<<<<<<< HEAD
+
 material = SubResource("ShaderMaterial_uyr5y")
-=======
-material = SubResource("ShaderMaterial_yh2h0")
->>>>>>> 81a7611fdd34a8269ba6b99806b829f17e8cf0ed
+
 layout_mode = 2
 texture = ExtResource("5_pq8tp")
 object_id = 1
 
 [node name="ResistorReceptacle4" parent="PanelWindow/HBoxContainer/VBoxContainer" instance=ExtResource("5_5clvd")]
-<<<<<<< HEAD
+
 material = SubResource("ShaderMaterial_jyv0w")
-=======
-material = SubResource("ShaderMaterial_aks3n")
->>>>>>> 81a7611fdd34a8269ba6b99806b829f17e8cf0ed
+
 layout_mode = 2
 texture = ExtResource("5_pq8tp")
 object_id = 1
