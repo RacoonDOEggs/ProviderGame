@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bmvgddbraddl6"]
+[gd_scene load_steps=17 format=3 uid="uid://bmvgddbraddl6"]
 
 [ext_resource type="Texture2D" uid="uid://68btsn8i3yyd" path="res://graphics/objects/electrical/electrical_box.png" id="1_irsow"]
 [ext_resource type="Script" path="res://scenes/ui/electrical_box_ui.gd" id="1_kcxba"]
@@ -17,9 +17,7 @@ shader_parameter/newColor1 = Color(0, 0, 0, 1)
 shader_parameter/newColor2 = Color(0, 0, 0, 1)
 shader_parameter/newColor3 = Color(0, 0, 0, 1)
 
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_prq5q"]
-
 resource_local_to_scene = true
 shader = ExtResource("5_44u2a")
 shader_parameter/oldColor1 = Color(0, 1, 0, 1)
@@ -28,10 +26,8 @@ shader_parameter/oldColor3 = Color(0, 0, 0, 1)
 shader_parameter/newColor1 = Color(0, 0, 0, 1)
 shader_parameter/newColor2 = Color(0, 0, 0, 1)
 shader_parameter/newColor3 = Color(0, 0, 0, 1)
-
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uyr5y"]
-
 resource_local_to_scene = true
 shader = ExtResource("5_44u2a")
 shader_parameter/oldColor1 = Color(0, 1, 0, 1)
@@ -41,9 +37,17 @@ shader_parameter/newColor1 = Color(0, 0, 0, 1)
 shader_parameter/newColor2 = Color(0, 0, 0, 1)
 shader_parameter/newColor3 = Color(0, 0, 0, 1)
 
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jyv0w"]
+resource_local_to_scene = true
+shader = ExtResource("5_44u2a")
+shader_parameter/oldColor1 = Color(0, 1, 0, 1)
+shader_parameter/oldColor2 = Color(1, 0, 0, 1)
+shader_parameter/oldColor3 = Color(0, 0, 0, 1)
+shader_parameter/newColor1 = Color(0, 0, 0, 1)
+shader_parameter/newColor2 = Color(0, 0, 0, 1)
+shader_parameter/newColor3 = Color(0, 0, 0, 1)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x4k15"]
 resource_local_to_scene = true
 shader = ExtResource("5_44u2a")
 shader_parameter/oldColor1 = Color(0, 1, 0, 1)
@@ -64,6 +68,16 @@ shader_parameter/newColor2 = Color(0, 0, 0, 1)
 shader_parameter/newColor3 = Color(0, 0, 0, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h7vom"]
+resource_local_to_scene = true
+shader = ExtResource("5_44u2a")
+shader_parameter/oldColor1 = Color(0, 1, 0, 1)
+shader_parameter/oldColor2 = Color(1, 0, 0, 1)
+shader_parameter/oldColor3 = Color(0, 0, 0, 1)
+shader_parameter/newColor1 = Color(0, 0, 0, 1)
+shader_parameter/newColor2 = Color(0, 0, 0, 1)
+shader_parameter/newColor3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7oi5w"]
 resource_local_to_scene = true
 shader = ExtResource("5_44u2a")
 shader_parameter/oldColor1 = Color(0, 1, 0, 1)
@@ -95,6 +109,7 @@ shader_parameter/newColor3 = Color(0, 0, 0, 1)
 
 [node name="ElectricalBoxUI" type="CanvasLayer"]
 script = ExtResource("1_kcxba")
+input_voltage = 66
 
 [node name="PanelWindow" type="Control" parent="."]
 layout_mode = 3
@@ -131,6 +146,52 @@ offset_bottom = 40.0
 grow_horizontal = 0
 texture_normal = ExtResource("2_qrnio")
 
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelWindow"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -306.0
+offset_top = -500.0
+offset_right = 306.0
+offset_bottom = -425.0
+grow_horizontal = 2
+theme_override_constants/separation = 180
+
+[node name="ResistorReceptacle" parent="PanelWindow/HBoxContainer2" instance=ExtResource("5_5clvd")]
+material = SubResource("ShaderMaterial_uw6v7")
+layout_mode = 2
+texture = ExtResource("5_pq8tp")
+object_id = 1
+
+[node name="ResistorReceptacle2" parent="PanelWindow/HBoxContainer2" instance=ExtResource("5_5clvd")]
+material = SubResource("ShaderMaterial_prq5q")
+layout_mode = 2
+texture = ExtResource("5_pq8tp")
+object_id = 1
+
+[node name="ResistorReceptacle3" parent="PanelWindow/HBoxContainer2" instance=ExtResource("5_5clvd")]
+material = SubResource("ShaderMaterial_uyr5y")
+layout_mode = 2
+texture = ExtResource("5_pq8tp")
+object_id = 1
+
+[node name="ResistorReceptacle4" parent="PanelWindow/HBoxContainer2" instance=ExtResource("5_5clvd")]
+material = SubResource("ShaderMaterial_jyv0w")
+layout_mode = 2
+texture = ExtResource("5_pq8tp")
+object_id = 1
+
+[node name="ResistorReceptacle5" parent="PanelWindow/HBoxContainer2" instance=ExtResource("5_5clvd")]
+material = SubResource("ShaderMaterial_x4k15")
+layout_mode = 2
+texture = ExtResource("5_pq8tp")
+object_id = 1
+
+[node name="Button" type="Button" parent="PanelWindow/HBoxContainer2"]
+layout_mode = 2
+text = "Validate"
+
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelWindow"]
 layout_mode = 1
 anchors_preset = 8
@@ -139,79 +200,99 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -370.0
-offset_top = -25.0
+offset_top = -187.5
 offset_right = 370.0
-offset_bottom = 25.0
+offset_bottom = 187.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 60
+theme_override_constants/separation = 145
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelWindow/HBoxContainer"]
+[node name="InVoltage" type="Label" parent="PanelWindow/HBoxContainer"]
+layout_mode = 2
+text = "InVoltage"
+
+[node name="VBoxContainer1" type="VBoxContainer" parent="PanelWindow/HBoxContainer"]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
+theme_override_constants/separation = 75
 
-[node name="ResistorReceptacle" parent="PanelWindow/HBoxContainer/VBoxContainer" instance=ExtResource("5_5clvd")]
-material = SubResource("ShaderMaterial_uw6v7")
+[node name="Filler" type="Control" parent="PanelWindow/HBoxContainer/VBoxContainer1"]
 layout_mode = 2
-texture = ExtResource("5_pq8tp")
-object_id = 1
 
-[node name="ResistorReceptacle2" parent="PanelWindow/HBoxContainer/VBoxContainer" instance=ExtResource("5_5clvd")]
-
-material = SubResource("ShaderMaterial_prq5q")
-
+[node name="Filler2" type="Control" parent="PanelWindow/HBoxContainer/VBoxContainer1"]
 layout_mode = 2
-texture = ExtResource("5_pq8tp")
-object_id = 1
 
-[node name="ResistorReceptacle3" parent="PanelWindow/HBoxContainer/VBoxContainer" instance=ExtResource("5_5clvd")]
-
-material = SubResource("ShaderMaterial_uyr5y")
-
+[node name="ResistorReceptacle4" parent="PanelWindow/HBoxContainer/VBoxContainer1" instance=ExtResource("5_5clvd")]
+material = SubResource("ShaderMaterial_qhx31")
 layout_mode = 2
-texture = ExtResource("5_pq8tp")
-object_id = 1
 
-[node name="ResistorReceptacle4" parent="PanelWindow/HBoxContainer/VBoxContainer" instance=ExtResource("5_5clvd")]
-
-material = SubResource("ShaderMaterial_jyv0w")
-
+[node name="MidVoltage" type="Label" parent="PanelWindow/HBoxContainer/VBoxContainer1"]
 layout_mode = 2
-texture = ExtResource("5_pq8tp")
-object_id = 1
+text = "MidVoltage"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="PanelWindow/HBoxContainer"]
 custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+theme_override_constants/separation = 75
+
+[node name="ResistorReceptacle5" parent="PanelWindow/HBoxContainer/VBoxContainer2" instance=ExtResource("5_5clvd")]
+material = SubResource("ShaderMaterial_h7vom")
+layout_mode = 2
+
+[node name="ResistorReceptacle6" parent="PanelWindow/HBoxContainer/VBoxContainer2" instance=ExtResource("5_5clvd")]
+material = SubResource("ShaderMaterial_7oi5w")
+layout_mode = 2
+
+[node name="ResistorReceptacle3" parent="PanelWindow/HBoxContainer/VBoxContainer2" instance=ExtResource("5_5clvd")]
+material = SubResource("ShaderMaterial_nj6j1")
 layout_mode = 2
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="PanelWindow/HBoxContainer"]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
+theme_override_constants/separation = 75
 
-[node name="ResistorReceptacle4" parent="PanelWindow/HBoxContainer/VBoxContainer3" instance=ExtResource("5_5clvd")]
-material = SubResource("ShaderMaterial_qhx31")
-layout_mode = 2
-texture = ExtResource("5_pq8tp")
-object_id = 1
-
-[node name="VBoxContainer4" type="VBoxContainer" parent="PanelWindow/HBoxContainer"]
-custom_minimum_size = Vector2(100, 50)
+[node name="Filler3" type="Control" parent="PanelWindow/HBoxContainer/VBoxContainer3"]
 layout_mode = 2
 
-[node name="ResistorReceptacle5" parent="PanelWindow/HBoxContainer/VBoxContainer4" instance=ExtResource("5_5clvd")]
-material = SubResource("ShaderMaterial_h7vom")
+[node name="Filler4" type="Control" parent="PanelWindow/HBoxContainer/VBoxContainer3"]
 layout_mode = 2
 
-[node name="ResistorReceptacle3" parent="PanelWindow/HBoxContainer/VBoxContainer4" instance=ExtResource("5_5clvd")]
-material = SubResource("ShaderMaterial_nj6j1")
-layout_mode = 2
-
-[node name="VBoxContainer5" type="VBoxContainer" parent="PanelWindow/HBoxContainer"]
-custom_minimum_size = Vector2(100, 50)
-layout_mode = 2
-
-[node name="ResistorReceptacle2" parent="PanelWindow/HBoxContainer/VBoxContainer5" instance=ExtResource("5_5clvd")]
+[node name="ResistorReceptacle2" parent="PanelWindow/HBoxContainer/VBoxContainer3" instance=ExtResource("5_5clvd")]
 material = SubResource("ShaderMaterial_c5vee")
 layout_mode = 2
 
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelWindow/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_constants/separation = 150
+
+[node name="AmpTop" type="Label" parent="PanelWindow/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "AmpTop"
+
+[node name="AmpMid" type="Label" parent="PanelWindow/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "AmpMid"
+
+[node name="AmpBot" type="Label" parent="PanelWindow/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "AmpBot"
+
+[node name="ColorRect" type="ColorRect" parent="PanelWindow"]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 700.0
+offset_top = 500.0
+offset_right = 740.0
+offset_bottom = 540.0
+grow_horizontal = 0
+grow_vertical = 0
+
 [connection signal="pressed" from="PanelWindow/TextureRect/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="PanelWindow/HBoxContainer2/Button" to="." method="_on_button_pressed"]

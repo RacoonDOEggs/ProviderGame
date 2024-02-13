@@ -48,7 +48,6 @@ func _can_drop_data(_at_position, data):
 	return data["origin_group_id"] == group_id and data["origin_texture"] != texture 
 
 func update_specific_drop_data(_at_position, data):
-	$Label.text = str(data["origin_object_value"])
 	data["origin_node"].get_child(1).text = ""
 	data["origin_node"].get_child(2).get_child(0).visible = false
 	$MarginContainer/EditButton.visible = true
@@ -56,6 +55,7 @@ func update_specific_drop_data(_at_position, data):
 	color2 = data["origin_color2"]
 	color3 = data["origin_color3"]
 	update_resistor_colors()
+	update_resistor_value()
 
 func _on_edit_button_pressed():
 	$Window.show()
