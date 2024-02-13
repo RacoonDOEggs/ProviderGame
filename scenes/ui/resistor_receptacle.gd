@@ -33,6 +33,8 @@ func specific_ready():
 	if object_id == 1:
 		$Label.text = str(object_value)
 		$MarginContainer/EditButton.visible = true
+		update_resistor_colors()
+		update_resistor_value()
 
 func specific_preview(preview_texture:TextureRect) -> TextureRect:
 	preview_texture.material = ShaderMaterial.new()
@@ -71,7 +73,16 @@ func update_resistor_value():
 		object_value = (color1 * 10 + color2) * pow(10,-2)
 	else:
 		object_value = (color1 * 10 + color2) * pow(10,color3)
-	$Label.text = str(object_value)
+	var abb_value:String
+	if object_value > 1000000000:
+		abb_value = str(object_value/1000000000) + "G"
+	elif object_value > 1000000:
+		abb_value = str(object_value/1000000) + "M"
+	elif object_value > 1000:
+		abb_value = str(object_value/1000) + "k"
+	else:
+		abb_value = str(object_value)
+	$Label.text = str(abb_value)
 
 func update_resistor_colors():
 	$Window/VBoxContainer/TextureRect.material.set_shader_parameter("newColor1", band_colors[color1])

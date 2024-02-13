@@ -33,12 +33,13 @@ shader_parameter/newColor3 = null
 
 [node name="ResistorReceptacle" instance=ExtResource("1_6o0jw")]
 material = SubResource("ShaderMaterial_43u7x")
+custom_minimum_size = Vector2(150, 75)
 texture = ExtResource("3_4og2l")
 script = ExtResource("2_b52a0")
 color1 = 0
 color2 = 0
 color3 = 0
-custom_size = Vector2(100, 50)
+custom_size = Vector2(150, 75)
 group_id = "resistor"
 
 [node name="Panel" parent="." index="0"]
