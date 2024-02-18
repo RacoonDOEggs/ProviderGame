@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnakc56i2kfyk"]
+
+[ext_resource type="Texture2D" uid="uid://cunqu3w7ulwl3" path="res://graphics/objects/crashed_plane.png" id="1_ogmia"]
+
+[node name="CrashedPlane" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ogmia")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(258, 307, 422, 386, 735, 538, 929, 569, 1127, 497, 1129, 380, 1047, 313, 970, 219, 904, 143, 827, 93, 719, 44, 585, -13, 508, -39, 395, -85, 304, -122, 202, -168, 73, -222, -164, -335, -469, -468, -405, -566, -464, -670, -567, -597, -663, -723, -772, -748, -732, -545, -701, -458, -1150, -207, -1116, -183, -1023, -182, -671, -292, -502, -139, -191, 90)
