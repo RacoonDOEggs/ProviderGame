@@ -1,22 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://dx0q3u4solkhf"]
+[gd_scene load_steps=6 format=3 uid="uid://dx0q3u4solkhf"]
 
 [ext_resource type="PackedScene" uid="uid://cjrrcxgx4ic1c" path="res://scenes/characters/red_hood_placeholder.tscn" id="1_doo7f"]
+[ext_resource type="PackedScene" uid="uid://cnakc56i2kfyk" path="res://scenes/objects/crashed_plane.tscn" id="1_ha8na"]
 [ext_resource type="PackedScene" uid="uid://dpe6vigd14fcl" path="res://scenes/objects/electrical_box_object.tscn" id="2_1eo17"]
 [ext_resource type="PackedScene" uid="uid://bmvgddbraddl6" path="res://scenes/ui/electrical_box_ui.tscn" id="3_6xymb"]
 [ext_resource type="PackedScene" path="res://scenes/characters/hotesse_de_lair.tscn" id="4_uu1gk"]
 
 [node name="TestLevel" type="Node2D"]
 
-[node name="RedHoodPlaceholder" parent="." instance=ExtResource("1_doo7f")]
+[node name="CrashedPlane" parent="." instance=ExtResource("1_ha8na")]
+position = Vector2(-139, -712)
 
 [node name="ElectricalBoxObject" parent="." instance=ExtResource("2_1eo17")]
-position = Vector2(334, 24)
-scale = Vector2(0.5, 0.5)
+position = Vector2(540, -384)
+scale = Vector2(0.2, 0.2)
+skew = 0.279253
 
 [node name="ElectricalBoxUI" parent="." instance=ExtResource("3_6xymb")]
 visible = false
 
 [node name="HotesseDeLair" parent="." instance=ExtResource("4_uu1gk")]
-position = Vector2(-169, -15)
+position = Vector2(121, -311)
+
+[node name="RedHoodPlaceholder" parent="." instance=ExtResource("1_doo7f")]
 
 [connection signal="electrical_box_clicked" from="ElectricalBoxObject" to="ElectricalBoxUI" method="_on_electrical_box_object_electrical_box_clicked"]

@@ -36,7 +36,7 @@ func _unhandled_input(event):
 
 func update_circuit_measurements():
 	in_voltage_label.text = str(input_voltage) + "V"
-	if R1.object_value != 0 && R2.object_value != 0 && R3.object_value != 0 && R4.object_value != 0 && R5.object_value != 0:
+	if R1.object_id != 0 && R2.object_id != 0 && R3.object_id != 0 && R4.object_id != 0 && R5.object_id != 0:
 		var r_eq = pow(((1/R2.object_value) + (1/(R3.object_value + R4.object_value)) + (1/R5.object_value)), -1)
 		var mid_voltage = (input_voltage * r_eq) / (R1.object_value + r_eq)
 		mid_voltge_label.text = str(mid_voltage) + "V"
@@ -49,19 +49,26 @@ func update_circuit_measurements():
 	else:
 		pass
 
-func validate_circuit():
+func validate_circuit() -> bool:
 	if R1.object_value == R1_solution && R2.object_value == R2_solution && R3.object_value == R3_solution && R4.object_value == R4_solution && R5.object_value == R5_solution:
 		$PanelWindow/ColorRect.modulate = Color(0.0,1.0,0.0)
+		return true
+	else:
+		$PanelWindow/ColorRect.modulate = Color(1.0,0.0,0.0)
+		return false
 
 func amp_to_str(value:float) -> String:
 	if value < 0.001:
-		return str(value / 0.000001) + "μA"
+		return  str(value / 0.000001) + "μA"
 	elif value < 0.01:
-		return str(value / 0.0001) + "mA"
+		return  str(value / 0.0001) + "mA"
 	else:
-		return str(value) + "A"
+		return  str(value) + "A"
 
 
-func _on_button_pressed():
+func _on_validate_button_pressed():
 	update_circuit_measurements()
-	validate_circuit()
+	if !validate_circuit():
+		$PanelWindow/HBoxContainer2/TextureButton.button_pressed = false
+	else:
+		$PanelWindow/HBoxContainer2/TextureButton.disabled = true
