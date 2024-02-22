@@ -1,20 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://dx0q3u4solkhf"]
+[gd_scene load_steps=8 format=3 uid="uid://dx0q3u4solkhf"]
 
 [ext_resource type="PackedScene" uid="uid://cjrrcxgx4ic1c" path="res://scenes/characters/red_hood_placeholder.tscn" id="1_doo7f"]
 [ext_resource type="PackedScene" uid="uid://cnakc56i2kfyk" path="res://scenes/objects/crashed_plane.tscn" id="1_ha8na"]
 [ext_resource type="PackedScene" uid="uid://dpe6vigd14fcl" path="res://scenes/objects/electrical_box_object.tscn" id="2_1eo17"]
 [ext_resource type="PackedScene" uid="uid://bmvgddbraddl6" path="res://scenes/ui/electrical_box_ui.tscn" id="3_6xymb"]
 [ext_resource type="PackedScene" path="res://scenes/characters/hotesse_de_lair.tscn" id="4_uu1gk"]
+[ext_resource type="PackedScene" uid="uid://dhyjb8k0fmmqm" path="res://scenes/objects/optical_box_object.tscn" id="6_wrwxf"]
+[ext_resource type="PackedScene" uid="uid://2kyccrcvmbdn" path="res://scenes/ui/optical_puzzle_ui.tscn" id="7_kfxr1"]
 
 [node name="TestLevel" type="Node2D"]
 
 [node name="CrashedPlane" parent="." instance=ExtResource("1_ha8na")]
 position = Vector2(-139, -712)
-
-[node name="ElectricalBoxObject" parent="." instance=ExtResource("2_1eo17")]
-position = Vector2(540, -384)
-scale = Vector2(0.2, 0.2)
-skew = 0.279253
 
 [node name="ElectricalBoxUI" parent="." instance=ExtResource("3_6xymb")]
 visible = false
@@ -24,4 +21,18 @@ position = Vector2(121, -311)
 
 [node name="RedHoodPlaceholder" parent="." instance=ExtResource("1_doo7f")]
 
+[node name="Optical_puzzle_ui" parent="." instance=ExtResource("7_kfxr1")]
+visible = false
+
+[node name="ElectricalBoxObject" parent="." instance=ExtResource("2_1eo17")]
+position = Vector2(552, -416)
+scale = Vector2(0.235, 0.235)
+skew = 0.464258
+
+[node name="Optical_box_object" parent="." instance=ExtResource("6_wrwxf")]
+position = Vector2(479, -266)
+scale = Vector2(0.25, 0.41)
+skew = 0.312414
+
 [connection signal="electrical_box_clicked" from="ElectricalBoxObject" to="ElectricalBoxUI" method="_on_electrical_box_object_electrical_box_clicked"]
+[connection signal="optical_box_clicked" from="Optical_box_object" to="Optical_puzzle_ui" method="_on_optical_box_object_optical_box_clicked"]
