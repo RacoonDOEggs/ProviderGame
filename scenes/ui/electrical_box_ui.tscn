@@ -235,7 +235,7 @@ layout_mode = 2
 
 [node name="MidVoltage" type="Label" parent="PanelWindow/HBoxContainer/VBoxContainer1"]
 layout_mode = 2
-text = "MidVoltage"
+text = "-"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="PanelWindow/HBoxContainer"]
 custom_minimum_size = Vector2(100, 50)
@@ -276,15 +276,15 @@ theme_override_constants/separation = 150
 
 [node name="AmpTop" type="Label" parent="PanelWindow/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "AmpTop"
+text = "-"
 
 [node name="AmpMid" type="Label" parent="PanelWindow/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "AmpMid"
+text = "-"
 
 [node name="AmpBot" type="Label" parent="PanelWindow/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "AmpBot"
+text = "-"
 
 [node name="ColorRect" type="ColorRect" parent="PanelWindow"]
 modulate = Color(1, 0, 0, 1)

@@ -79,7 +79,7 @@ grow_horizontal = 0
 [node name="EditButton" type="Button" parent="MarginContainer" index="0"]
 visible = false
 layout_mode = 2
-text = "Edit"
+text = "Modifier"
 
 [node name="Window" type="Window" parent="." index="3"]
 handle_input_locally = false
