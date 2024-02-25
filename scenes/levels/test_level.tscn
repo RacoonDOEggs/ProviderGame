@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cnakc56i2kfyk" path="res://scenes/objects/crashed_plane.tscn" id="1_ha8na"]
 [ext_resource type="PackedScene" uid="uid://dpe6vigd14fcl" path="res://scenes/objects/electrical_box_object.tscn" id="2_1eo17"]
 [ext_resource type="PackedScene" uid="uid://bmvgddbraddl6" path="res://scenes/ui/electrical_box_ui.tscn" id="3_6xymb"]
-[ext_resource type="PackedScene" path="res://scenes/characters/hotesse_de_lair.tscn" id="4_uu1gk"]
+[ext_resource type="PackedScene" uid="uid://daotijepul3mn" path="res://scenes/characters/hotesse_de_lair.tscn" id="4_uu1gk"]
 [ext_resource type="PackedScene" uid="uid://dhyjb8k0fmmqm" path="res://scenes/objects/optical_box_object.tscn" id="6_wrwxf"]
 [ext_resource type="PackedScene" uid="uid://2kyccrcvmbdn" path="res://scenes/ui/optical_puzzle_ui.tscn" id="7_kfxr1"]
 

@@ -13,6 +13,7 @@ extends DragAndDrop
 #  (x0.1)Gold = #c08327
 #  (x0.01)Silver = #bfbebf
 
+#Codes de couleur des bandes des résistances
 const band_colors = [Color("#000000"), Color("#512627"), Color("#cc0000"), Color("#d87347"), 
 Color("#e6c951"), Color("#528f65"), Color("#0f5190"), Color("#6967ce"), Color("#7d7d7d"),
  Color("#ffffff"), Color("#c08327"), Color("#bfbebf")]
@@ -23,12 +24,14 @@ Color("#e6c951"), Color("#528f65"), Color("#0f5190"), Color("#6967ce"), Color("#
 @export var color2:int = 0
 @export var color3:int = 0
 
+#Récupère les couleurs de résistances de l'origine lorsque l'objet est ramassé
 func specific_drag_data(data):
 	data["origin_color1"] = color1
 	data["origin_color2"] = color2
 	data["origin_color3"] = color3
 	return data
 
+#Initialisation spécifique à cette variation d'un objet drag and drop
 func specific_ready():
 	if object_id == 1:
 		$Label.text = str(object_value)
@@ -36,6 +39,7 @@ func specific_ready():
 		update_resistor_colors()
 		update_resistor_value()
 
+#Application du shader des bandes de couleurs à la miniature de glisse
 func specific_preview(preview_texture:TextureRect) -> TextureRect:
 	preview_texture.material = ShaderMaterial.new()
 	preview_texture.material.shader = resistor_shader
@@ -44,9 +48,11 @@ func specific_preview(preview_texture:TextureRect) -> TextureRect:
 	preview_texture.material.set_shader_parameter("newColor3", band_colors[color3])
 	return preview_texture
 
+#Validation spécifique à cette version de l'objet drag and drop
 func _can_drop_data(_at_position, data):
 	return data["origin_group_id"] == group_id and data["origin_texture"] != texture 
 
+#Transfert des données spécifiques à cette version de l'objet drag and drop
 func update_specific_drop_data(_at_position, data):
 	data["origin_node"].get_child(1).text = ""
 	data["origin_node"].get_child(2).get_child(0).visible = false
@@ -57,15 +63,17 @@ func update_specific_drop_data(_at_position, data):
 	update_resistor_colors()
 	update_resistor_value()
 
+#Affichage de la fenêtre de modification de résistance
 func _on_edit_button_pressed():
 	$Window.show()
 	update_resistor_colors()
 
-
+#Fermeture de la fenêtre de modification de résistance
 func _on_window_close_requested():
 	$Window.hide()
 	update_resistor_value()
 
+#Met à jour la valeur écrite sur la résistance
 func update_resistor_value():
 	if color3 == 10:
 		object_value = (color1 * 10 + color2) * pow(10,-1)
@@ -84,6 +92,7 @@ func update_resistor_value():
 		abb_value = str(object_value)
 	$Label.text = str(abb_value)
 
+#Met à jour les couleurs des bandes de la résistance
 func update_resistor_colors():
 	$Window/VBoxContainer/TextureRect.material.set_shader_parameter("newColor1", band_colors[color1])
 	$Window/VBoxContainer/TextureRect.material.set_shader_parameter("newColor2", band_colors[color2])
@@ -92,6 +101,7 @@ func update_resistor_colors():
 	material.set_shader_parameter("newColor2", band_colors[color2])
 	material.set_shader_parameter("newColor3", band_colors[color3])
 
+#Boutons haut/bas des bandes (mise à jour des compteurs)
 func _on_up_1_pressed():
 	color1 += 1
 	if color1 > 9:

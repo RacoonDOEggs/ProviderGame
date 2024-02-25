@@ -33,7 +33,7 @@ func _unhandled_input(event):
 		if event.pressed and event.keycode == KEY_ESCAPE:
 			visible = false
 
-
+#Calcul les mesures du circuit et les affiche dans les étiquettes
 func update_circuit_measurements():
 	in_voltage_label.text = str(input_voltage) + "V"
 	if R1.object_id != 0 && R2.object_id != 0 && R3.object_id != 0 && R4.object_id != 0 && R5.object_id != 0:
@@ -49,6 +49,7 @@ func update_circuit_measurements():
 	else:
 		pass
 
+#Vérifie la réponse entrée
 func validate_circuit() -> bool:
 	if R1.object_value == R1_solution && R2.object_value == R2_solution && R3.object_value == R3_solution && R4.object_value == R4_solution && R5.object_value == R5_solution:
 		$PanelWindow/ColorRect.modulate = Color(0.0,1.0,0.0)
@@ -57,6 +58,7 @@ func validate_circuit() -> bool:
 		$PanelWindow/ColorRect.modulate = Color(1.0,0.0,0.0)
 		return false
 
+#Convertis une valeur en Ampères et retourne une String avec les bonnes unités
 func amp_to_str(value:float) -> String:
 	if value < 0.001:
 		return  str(value / 0.000001) + "μA"
@@ -65,7 +67,7 @@ func amp_to_str(value:float) -> String:
 	else:
 		return  str(value) + "A"
 
-
+#FOnction appelée quand le disjoncteur est appuyé
 func _on_validate_button_pressed():
 	update_circuit_measurements()
 	if !validate_circuit():
