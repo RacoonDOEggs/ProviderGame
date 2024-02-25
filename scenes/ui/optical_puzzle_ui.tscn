@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://2kyccrcvmbdn"]
+[gd_scene load_steps=8 format=3 uid="uid://2kyccrcvmbdn"]
 
 [ext_resource type="Script" path="res://scenes/ui/optical_puzzle_ui.gd" id="1_i26lm"]
 [ext_resource type="Texture2D" uid="uid://svfhecx463xd" path="res://graphics/objects/Optical/Optical_box.png" id="2_c00kh"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://bqdyka11h8noo" path="res://graphics/objects/Optical/mirror.png" id="5_2g2pc"]
 [ext_resource type="Script" path="res://scenes/objects/Laser.gd" id="5_i0cpf"]
 [ext_resource type="Texture2D" uid="uid://k1fsp2j606hq" path="res://graphics/objects/Optical/laser_canon.png" id="6_jwepj"]
-[ext_resource type="Texture2D" uid="uid://dhk5lftbwdptw" path="res://graphics/objects/Optical/left_broken_wire.png" id="8_xuqdq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aey48"]
 size = Vector2(40, 182)
@@ -14,158 +13,66 @@ size = Vector2(40, 182)
 [node name="Optical_puzzle_ui" type="CanvasLayer"]
 script = ExtResource("1_i26lm")
 
-[node name="Background" type="Control" parent="."]
+[node name="PanelWindow" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 0
-offset_left = 283.0
-offset_top = -9.0
-offset_right = 1840.0
-offset_bottom = 628.0
-metadata/_edit_group_ = true
-metadata/_edit_lock_ = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="Background"]
-texture_filter = 1
+[node name="MarginContainer" type="MarginContainer" parent="PanelWindow"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -283.0
-offset_top = 12.0
-offset_right = 79.0
-offset_bottom = 367.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="PanelWindow/MarginContainer"]
+texture_filter = 1
+layout_mode = 2
 texture = ExtResource("2_c00kh")
 metadata/_edit_lock_ = true
 
-[node name="TextureButton" type="TextureButton" parent="Background/TextureRect"]
+[node name="TextureButton" type="TextureButton" parent="PanelWindow/MarginContainer/Background"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -70.0
-offset_top = -1.0
-offset_right = -6.0
-offset_bottom = 63.0
+offset_left = -64.0
+offset_bottom = 64.0
 grow_horizontal = 0
 texture_normal = ExtResource("3_61idh")
 metadata/_edit_lock_ = true
 
-[node name="Mirrors" type="Node2D" parent="."]
-
-[node name="Mir" type="StaticBody2D" parent="Mirrors" groups=["Mirrors"]]
-position = Vector2(1047, 79)
-rotation = 1.51844
+[node name="Zone_gagnante" type="Area2D" parent="PanelWindow/MarginContainer"]
+position = Vector2(858, 225)
+scale = Vector2(0.6, 1)
 collision_layer = 3
 collision_mask = 3
-metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Mirrors/Mir"]
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("5_2g2pc")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PanelWindow/MarginContainer/Zone_gagnante"]
+position = Vector2(0, -1)
+polygon = PackedVector2Array(85, -76, 84, -24, 85, 44, 127, 44, 127, 24, 119, 24, 119, 15, 113, 13, 113, 4, 105, 4, 106, -6, 100, -8, 100, -27, 126, -27, 128, -36, 134, -36, 134, -56, 127, -58, 126, -67, 108, -68, 104, -78)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mirrors/Mir"]
-shape = SubResource("RectangleShape2D_aey48")
-
-[node name="Mir2" type="StaticBody2D" parent="Mirrors" groups=["Mirrors"]]
-position = Vector2(785, 211)
-rotation = 1.77151
-collision_layer = 3
-collision_mask = 3
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Mirrors/Mir2"]
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("5_2g2pc")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mirrors/Mir2"]
-shape = SubResource("RectangleShape2D_aey48")
-
-[node name="Mir3" type="StaticBody2D" parent="Mirrors" groups=["Mirrors"]]
-position = Vector2(607, 489)
-rotation = -1.22173
-collision_layer = 3
-collision_mask = 3
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Mirrors/Mir3"]
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("5_2g2pc")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mirrors/Mir3"]
-shape = SubResource("RectangleShape2D_aey48")
-
-[node name="Mir4" type="StaticBody2D" parent="Mirrors" groups=["Mirrors"]]
-position = Vector2(1296, 379)
-rotation = -0.933751
-collision_layer = 3
-collision_mask = 3
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Mirrors/Mir4"]
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("5_2g2pc")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mirrors/Mir4"]
-shape = SubResource("RectangleShape2D_aey48")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Mirrors/Mir4"]
-position = Vector2(-266.017, -277.123)
-rotation = 2.69653
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("5_2g2pc")
-
-[node name="Mir5" type="StaticBody2D" parent="Mirrors" groups=["Mirrors"]]
-position = Vector2(1146, 494)
-rotation = 1.76278
-collision_layer = 3
-collision_mask = 3
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Mirrors/Mir5"]
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("5_2g2pc")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mirrors/Mir5"]
-shape = SubResource("RectangleShape2D_aey48")
-
-[node name="Mir6" type="StaticBody2D" parent="Mirrors" groups=["Mirrors"]]
-position = Vector2(915, 428)
-rotation = 1.76278
-collision_layer = 3
-collision_mask = 3
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mirrors/Mir6"]
-shape = SubResource("RectangleShape2D_aey48")
-
-[node name="Sprite2D" type="Sprite2D" parent="Mirrors/Mir6"]
-position = Vector2(-8.02718, 613.809)
-rotation = -1.76278
-scale = Vector2(10, 10)
-texture = ExtResource("8_xuqdq")
-region_enabled = true
-region_rect = Rect2(51.6518, 0, 29.3482, 21)
-metadata/_edit_lock_ = true
-
-[node name="Laser" type="StaticBody2D" parent="."]
-position = Vector2(333, 226)
+[node name="Laser" type="StaticBody2D" parent="PanelWindow/MarginContainer"]
+position = Vector2(400, 256)
 rotation = -0.584685
 script = ExtResource("5_i0cpf")
 metadata/_edit_group_ = true
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Laser"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PanelWindow/MarginContainer/Laser"]
 polygon = PackedVector2Array(-25, -16, 23, -17, 25, 4, 16, 4, 17, 16, -17, 16, -17, 4, -25, 4)
 
-[node name="body" type="Node2D" parent="Laser"]
+[node name="body" type="Node2D" parent="PanelWindow/MarginContainer/Laser"]
 
-[node name="Sprite2D" type="Sprite2D" parent="Laser/body"]
+[node name="Sprite2D" type="Sprite2D" parent="PanelWindow/MarginContainer/Laser/body"]
 texture_filter = 1
 scale = Vector2(4, 4)
 texture = ExtResource("6_jwepj")
 
-[node name="Line2D" type="Line2D" parent="Laser/body"]
+[node name="Line2D" type="Line2D" parent="PanelWindow/MarginContainer/Laser/body"]
 position = Vector2(-0.516045, 11.6505)
 width = 5.0
 default_color = Color(0.968627, 0, 0, 1)
@@ -173,5 +80,97 @@ joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="Ray" type="RayCast2D" parent="Laser"]
+[node name="Ray" type="RayCast2D" parent="PanelWindow/MarginContainer/Laser"]
 collision_mask = 2
+
+[node name="Mirrors" type="Node2D" parent="PanelWindow/MarginContainer"]
+position = Vector2(715, 406)
+scale = Vector2(0.7, 0.7)
+
+[node name="Mir" type="StaticBody2D" parent="PanelWindow/MarginContainer/Mirrors" groups=["Mirrors"]]
+position = Vector2(-270, -322.857)
+rotation = 1.51844
+collision_layer = 3
+collision_mask = 3
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="PanelWindow/MarginContainer/Mirrors/Mir"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_2g2pc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PanelWindow/MarginContainer/Mirrors/Mir"]
+shape = SubResource("RectangleShape2D_aey48")
+
+[node name="Mir2" type="StaticBody2D" parent="PanelWindow/MarginContainer/Mirrors" groups=["Mirrors"]]
+position = Vector2(44.2859, -305.714)
+rotation = 1.77151
+collision_layer = 3
+collision_mask = 3
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="PanelWindow/MarginContainer/Mirrors/Mir2"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_2g2pc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PanelWindow/MarginContainer/Mirrors/Mir2"]
+shape = SubResource("RectangleShape2D_aey48")
+
+[node name="Mir3" type="StaticBody2D" parent="PanelWindow/MarginContainer/Mirrors" groups=["Mirrors"]]
+position = Vector2(607, 489)
+rotation = -1.22173
+collision_layer = 3
+collision_mask = 3
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="PanelWindow/MarginContainer/Mirrors/Mir3"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_2g2pc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PanelWindow/MarginContainer/Mirrors/Mir3"]
+shape = SubResource("RectangleShape2D_aey48")
+
+[node name="Mir4" type="StaticBody2D" parent="PanelWindow/MarginContainer/Mirrors" groups=["Mirrors"]]
+position = Vector2(1296, 379)
+rotation = -0.933751
+collision_layer = 3
+collision_mask = 3
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="PanelWindow/MarginContainer/Mirrors/Mir4"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_2g2pc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PanelWindow/MarginContainer/Mirrors/Mir4"]
+shape = SubResource("RectangleShape2D_aey48")
+
+[node name="Mir5" type="StaticBody2D" parent="PanelWindow/MarginContainer/Mirrors" groups=["Mirrors"]]
+position = Vector2(1146, 494)
+rotation = 1.76278
+collision_layer = 3
+collision_mask = 3
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="PanelWindow/MarginContainer/Mirrors/Mir5"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_2g2pc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PanelWindow/MarginContainer/Mirrors/Mir5"]
+shape = SubResource("RectangleShape2D_aey48")
+
+[node name="Mir6" type="StaticBody2D" parent="PanelWindow/MarginContainer/Mirrors" groups=["Mirrors"]]
+position = Vector2(915, 428)
+rotation = 1.76278
+collision_layer = 3
+collision_mask = 3
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PanelWindow/MarginContainer/Mirrors/Mir6"]
+shape = SubResource("RectangleShape2D_aey48")
+
+[node name="Sprite2D2" type="Sprite2D" parent="PanelWindow/MarginContainer/Mirrors/Mir6"]
+position = Vector2(0.000488281, 0.000244141)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_2g2pc")
+
+[connection signal="pressed" from="PanelWindow/MarginContainer/Background/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="body_entered" from="PanelWindow/MarginContainer/Zone_gagnante" to="." method="_on_zone_gagnante_body_entered"]

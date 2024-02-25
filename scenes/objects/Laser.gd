@@ -20,7 +20,7 @@ func _process(_delta):
 		# Je défini le début du rayon initial en le plaçant au début de la ligne.
 		ray.global_position = line.global_position
 		# La direction du rayon s'oriente en fonction de la position de la souris.
-		ray.target_position = (get_global_mouse_position() - line.global_position).normalized()*1000
+		ray.target_position = (get_global_mouse_position() - line.global_position).normalized()*10000
 		# Applique les changements
 		ray.force_raycast_update()
 		
