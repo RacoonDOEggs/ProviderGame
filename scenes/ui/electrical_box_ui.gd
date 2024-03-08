@@ -18,12 +18,12 @@ extends CanvasLayer
 @onready var in_voltage_label:Label = $PanelWindow/HBoxContainer/InVoltage
 @onready var mid_voltge_label:Label = $PanelWindow/HBoxContainer/VBoxContainer1/MidVoltage
 
-#On affiche l'interface lorsque le signal est reçu
+#On affiche l'interface lorsque le signal est reçu.
 func _on_electrical_box_object_electrical_box_clicked():
 	visible = true
 	update_circuit_measurements()
 
-#On cache l'interface lorsque le bouton quitter est appuyé
+#On cache l'interface lorsque le bouton quitter est appuyé.
 func _on_texture_button_pressed():
 	visible = false
 
@@ -33,7 +33,7 @@ func _unhandled_input(event):
 		if event.pressed and event.keycode == KEY_ESCAPE:
 			visible = false
 
-#Calcul les mesures du circuit et les affiche dans les étiquettes
+#Calcul les mesures du circuit et les affiche dans les étiquettes.
 func update_circuit_measurements():
 	in_voltage_label.text = str(input_voltage) + "V"
 	if R1.object_id != 0 && R2.object_id != 0 && R3.object_id != 0 && R4.object_id != 0 && R5.object_id != 0:

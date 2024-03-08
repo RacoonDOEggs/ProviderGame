@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://7kir1ep68gob"]
+[gd_scene load_steps=20 format=3 uid="uid://bt3cmx1rs64cl"]
 
 [ext_resource type="Script" path="res://scenes/ui/puzzle.gd" id="1_jmtvp"]
 [ext_resource type="Texture2D" uid="uid://ddqvmmqoggsju" path="res://graphics/objects/logic/xButton.png" id="1_wbctl"]

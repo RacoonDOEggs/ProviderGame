@@ -51,17 +51,56 @@ metadata/_edit_lock_ = true
 [node name="Laser" parent="PanelWindow/MarginContainer" instance=ExtResource("6_oj6t1")]
 position = Vector2(229, 171)
 rotation = -0.584685
+collision_layer = 0
+collision_mask = 0
 metadata/_edit_lock_ = true
+
+[node name="Fibre_collider" type="Node2D" parent="PanelWindow/MarginContainer"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PanelWindow/MarginContainer/Fibre_collider" groups=["NoPass"]]
+collision_layer = 2
+
+[node name="left_broken_wire" type="Sprite2D" parent="PanelWindow/MarginContainer/Fibre_collider/StaticBody2D"]
+position = Vector2(234, 193)
+scale = Vector2(7, 7)
+texture = ExtResource("7_8qxyy")
+region_enabled = true
+region_rect = Rect2(48.4011, -0.203077, 32.5781, 21.2016)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PanelWindow/MarginContainer/Fibre_collider/StaticBody2D"]
+polygon = PackedVector2Array(329, 119, 145, 121, 99, 158, 93, 240, 204, 259, 334, 257, 321, 247, 207, 246, 123, 212, 124, 167, 151, 138, 311, 132)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="PanelWindow/MarginContainer/Fibre_collider" groups=["NoPass"]]
+collision_layer = 2
+
+[node name="left_broken_wire2" type="Sprite2D" parent="PanelWindow/MarginContainer/Fibre_collider/StaticBody2D2"]
+position = Vector2(968, 188)
+rotation = 3.14159
+scale = Vector2(7, 7)
+texture = ExtResource("7_8qxyy")
+region_enabled = true
+region_rect = Rect2(51.6132, -0.203077, 29.366, 21.2016)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="PanelWindow/MarginContainer/Fibre_collider/StaticBody2D2"]
+polygon = PackedVector2Array(878, 123, 1010, 120, 1068, 127, 1075, 260, 873, 261, 1044, 239, 1046, 155)
+
+[node name="AreaWin" type="Area2D" parent="PanelWindow/MarginContainer/Fibre_collider"]
+unique_name_in_owner = true
+position = Vector2(948, 180)
+collision_layer = 4
+metadata/_edit_group_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PanelWindow/MarginContainer/Fibre_collider/AreaWin"]
+polygon = PackedVector2Array(-28, -47, -15, -32, -4, -26, -3, -7, -2, 27, -3, 53, -28, 62, -46, 70, 44, 60, 42, -29)
 
 [node name="Mirrors" type="Node2D" parent="PanelWindow/MarginContainer"]
 position = Vector2(715, 406)
 scale = Vector2(0.7, 0.7)
 
 [node name="Mir" type="StaticBody2D" parent="PanelWindow/MarginContainer/Mirrors" groups=["Mirrors"]]
-position = Vector2(-340, -395.714)
-rotation = 1.51844
-collision_layer = 3
-collision_mask = 3
+position = Vector2(-381.429, -490)
+rotation = 0.898845
+collision_layer = 2
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="PanelWindow/MarginContainer/Mirrors/Mir"]
@@ -72,10 +111,9 @@ texture = ExtResource("5_2g2pc")
 shape = SubResource("RectangleShape2D_vtcmo")
 
 [node name="Mir2" type="StaticBody2D" parent="PanelWindow/MarginContainer/Mirrors" groups=["Mirrors"]]
-position = Vector2(75.7143, -507.143)
-rotation = 1.54811
-collision_layer = 3
-collision_mask = 3
+position = Vector2(-295.714, -307.143)
+rotation = 2.70002
+collision_layer = 2
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="PanelWindow/MarginContainer/Mirrors/Mir2"]
@@ -88,8 +126,7 @@ shape = SubResource("RectangleShape2D_vtcmo")
 [node name="Mir3" type="StaticBody2D" parent="PanelWindow/MarginContainer/Mirrors" groups=["Mirrors"]]
 position = Vector2(-450, -91.4285)
 rotation = -1.22173
-collision_layer = 3
-collision_mask = 3
+collision_layer = 2
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="PanelWindow/MarginContainer/Mirrors/Mir3"]
@@ -100,10 +137,9 @@ texture = ExtResource("5_2g2pc")
 shape = SubResource("RectangleShape2D_vtcmo")
 
 [node name="Mir4" type="StaticBody2D" parent="PanelWindow/MarginContainer/Mirrors" groups=["Mirrors"]]
-position = Vector2(214.286, -278.571)
-rotation = -0.933751
-collision_layer = 3
-collision_mask = 3
+position = Vector2(-67.1429, -488.571)
+rotation = 1.82212
+collision_layer = 2
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="PanelWindow/MarginContainer/Mirrors/Mir4"]
@@ -114,10 +150,9 @@ texture = ExtResource("5_2g2pc")
 shape = SubResource("RectangleShape2D_vtcmo")
 
 [node name="Mir5" type="StaticBody2D" parent="PanelWindow/MarginContainer/Mirrors" groups=["Mirrors"]]
-position = Vector2(175.714, -72.8571)
-rotation = 1.76278
-collision_layer = 3
-collision_mask = 3
+position = Vector2(81.4286, -57.1429)
+rotation = 1.90241
+collision_layer = 2
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="PanelWindow/MarginContainer/Mirrors/Mir5"]
@@ -128,10 +163,9 @@ texture = ExtResource("5_2g2pc")
 shape = SubResource("RectangleShape2D_vtcmo")
 
 [node name="Mir6" type="StaticBody2D" parent="PanelWindow/MarginContainer/Mirrors" groups=["Mirrors"]]
-position = Vector2(-118.571, -65.7142)
-rotation = 1.76278
-collision_layer = 3
-collision_mask = 3
+position = Vector2(-127.143, -127.143)
+rotation = -1.4591
+collision_layer = 2
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PanelWindow/MarginContainer/Mirrors/Mir6"]
@@ -141,19 +175,5 @@ shape = SubResource("RectangleShape2D_vtcmo")
 position = Vector2(0.000488281, 0.000244141)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("5_2g2pc")
-
-[node name="left_broken_wire" type="Sprite2D" parent="PanelWindow/MarginContainer"]
-position = Vector2(234, 193)
-scale = Vector2(7, 7)
-texture = ExtResource("7_8qxyy")
-region_enabled = true
-region_rect = Rect2(48.4011, -0.203077, 32.5781, 21.2016)
-
-[node name="MarginContainer2" type="MarginContainer" parent="PanelWindow"]
-layout_mode = 0
-offset_left = 1023.0
-offset_top = 154.0
-offset_right = 1091.0
-offset_bottom = 274.0
 
 [connection signal="pressed" from="PanelWindow/MarginContainer/Background/TextureButton" to="." method="_on_texture_button_pressed"]
