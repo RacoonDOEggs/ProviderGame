@@ -1,13 +1,19 @@
 #Source pour l'implémentation du laser et des mirroirs : https://www.youtube.com/watch?v=Mgk5eAvzo8k&t=629s
 extends StaticBody2D
 
-var max_bounces = 20 # Valeur maximale de rebond du laser sur les mirroirs.
+signal win()
+
+var max_bounces = 5 # Valeur maximale de rebond du laser sur les mirroirs.
 @onready var ray = $Ray # Variable du rayon.
 @onready var line = $body/Line2D # Variable de la ligne.
 var has_timeout = false # Variable qui indique si le temps est écoulé.
 var has_won = false # Variable qui indique si le joueur a gagné.
 
 func _process(_delta):
+	
+	if has_won:
+		win.emit()
+
 	
 	line.clear_points() # On supprime tous les points de la scène pouvant exister pour ne pas avoir de bug.
 	
@@ -49,12 +55,12 @@ func _process(_delta):
 					line.add_point(line.to_local(pts))
 					
 					# Si l'angle se trouve plus bas que la portion acceptée, on l'arrête.
-				else: if angle > 60:
+				else: if angle > 70:
 					var pts = Vector2(5313.137, 8790.025)
 					line.add_point(line.to_local(pts))
 					
 					# Si l'angle se trouve plus haut que la portion acceptée, on l'arrête.					
-				else: if angle < 5:
+				else: if angle < 0:
 					var pts = Vector2(10199.31, 1063.07)
 					line.add_point(line.to_local(pts))
 				break

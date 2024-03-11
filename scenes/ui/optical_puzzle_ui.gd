@@ -1,5 +1,9 @@
 extends CanvasLayer
 
+func _on_laser_win():
+	print("win from UI")
+
+
 #On affiche l'interface lorsque le signal est reçu.
 func _on_optical_box_object_optical_box_clicked():
 	visible = true
@@ -14,3 +18,5 @@ func _unhandled_input(event):
 	if event is InputEventKey:
 		if event.pressed and event.keycode == KEY_ESCAPE:
 			visible = false
+
+

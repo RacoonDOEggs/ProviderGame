@@ -7,9 +7,6 @@
 collision_mask = 2
 script = ExtResource("1_3b17t")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-25, -16, 23, -17, 25, 4, 16, 4, 17, 16, -17, 16, -17, 4, -25, 4)
-
 [node name="body" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="body"]
