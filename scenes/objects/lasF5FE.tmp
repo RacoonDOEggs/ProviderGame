@@ -1,12 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://drcixiu880oht"]
+[gd_scene load_steps=3 format=3 uid="uid://drcixiu880oht"]
 
 [ext_resource type="Script" path="res://scenes/objects/laser.gd" id="1_3b17t"]
+[ext_resource type="Texture2D" uid="uid://k1fsp2j606hq" path="res://graphics/objects/Optical/laser_canon.png" id="2_ak28b"]
 
 [node name="Laser" type="StaticBody2D"]
 collision_mask = 2
 script = ExtResource("1_3b17t")
 
 [node name="body" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="body"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("2_ak28b")
 
 [node name="Line2D" type="Line2D" parent="body"]
 position = Vector2(-0.516045, 11.6505)

@@ -1,7 +1,8 @@
 extends CanvasLayer
 
 func _on_laser_win():
-	print("win from UI")
+	#print("win from UI")
+	pass
 
 
 #On affiche l'interface lorsque le signal est reçu.
