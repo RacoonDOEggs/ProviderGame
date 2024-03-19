@@ -43,23 +43,7 @@ func _process(_delta):
 			if not ray.is_colliding():
 				var pts = ray.global_position + ray.target_position # On place un point étant à l'endroit où le rayon se trouve additioné à l'endroit où il pointe pour avoir la bonne direction de la ligne en fonction de la position de la souris.
 				line.add_point(line.to_local(pts))
-				
-				##Ici, je m'occupe de la portion de la scène où le joueur est en mesure d'orienter le laser, il y a donc des restrictions.
-				#var angle = rad_to_deg(ray.target_position.angle())# L'angle de rotation du laser
-				## Si l'angle se trouve plus bas que la portion acceptée, on l'arrête.
-				#if angle > 55:
-					#pts = Vector2(1340, 1500) # On place un point étant à une position précise sur la scène.
-					#line.add_point(line.to_local(pts)) # On ajoute ce point à la ligne pour que celle-ci se trace en passant par le point.
-				#
-				## Si l'angle se trouve plus haut que la portion acceptée, on l'arrête.
-				#else: if angle < 15:
-					#pts = Vector2(2000, 640) # On place un point étant à une position précise sur la scène.
-					#line.add_point(line.to_local(pts)) # On ajoute ce point à la ligne pour que celle-ci se trace en passant par le point.
-					#
-				## Si l'angle se trouve dans la portion acceptée du casse-tête, on le laisse.
-				#else: if angle < 55 and angle > 15 :
-					#pts = ray.global_position + ray.target_position # On place un point étant à l'endroit où le rayon se trouve additioné à l'endroit où il pointe pour avoir la bonne direction de la ligne en fonction de la position de la souris.
-					#line.add_point(line.to_local(pts)) # On ajoute ce point à la ligne pour que celle-ci se trace en passant par le point.
+			
 				break # on sort de la boucle, car pas de collisions.
 			
 			# Ici, on est certain qu'il y a une collision.
