@@ -1,5 +1,4 @@
 [gd_scene load_steps=11 format=3 uid="uid://dx0q3u4solkhf"]
-[gd_scene load_steps=11 format=3 uid="uid://dx0q3u4solkhf"]
 
 [ext_resource type="Script" path="res://scenes/levels/test_level.gd" id="1_4iduf"]
 [ext_resource type="PackedScene" uid="uid://cjrrcxgx4ic1c" path="res://scenes/characters/red_hood_placeholder.tscn" id="1_doo7f"]
