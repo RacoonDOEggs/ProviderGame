@@ -44,6 +44,8 @@ _data = {
 }
 
 [node name="HotesseDeLair" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)

@@ -54,10 +54,8 @@ multithreaded_runner_settings = SubResource("Resource_w4iow")
 main_thread_runner_settings = SubResource("Resource_1pli0")
 
 [node name="target" type="TileMap" parent="."]
-visible = false
 y_sort_enabled = true
 tile_set = ExtResource("2_wrwbl")
-collision_visibility_mode = 1
 format = 2
 layer_0/name = "ground"
 layer_0/z_index = -1
@@ -86,3 +84,5 @@ layer_1/tile_data = PackedInt32Array()
 
 [node name="progressIndicator" parent="." node_paths=PackedStringArray("generator") instance=ExtResource("9_05mkd")]
 generator = NodePath("../WFC2DGenerator")
+
+[connection signal="done" from="WFC2DGenerator" to="." method="_on_wfc_2d_generator_done"]

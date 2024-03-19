@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://cunqu3w7ulwl3" path="res://graphics/objects/crashed_plane.png" id="1_ogmia"]
 
 [node name="CrashedPlane" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_ogmia")

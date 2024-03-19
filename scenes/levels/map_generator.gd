@@ -33,3 +33,8 @@ func generate_plane_crashes():
 			i+=1
 		else:
 			i -= 1
+
+
+func _on_wfc_2d_generator_done():
+	$sample.queue_free()
+	$negative_sample.queue_free()
