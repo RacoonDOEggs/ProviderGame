@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dx0q3u4solkhf"]
+[gd_scene load_steps=10 format=3 uid="uid://dx0q3u4solkhf"]
 
 [ext_resource type="PackedScene" uid="uid://cjrrcxgx4ic1c" path="res://scenes/characters/red_hood_placeholder.tscn" id="1_doo7f"]
 [ext_resource type="PackedScene" uid="uid://cnakc56i2kfyk" path="res://scenes/objects/crashed_plane.tscn" id="1_ha8na"]
@@ -8,30 +8,41 @@
 [ext_resource type="PackedScene" uid="uid://dhyjb8k0fmmqm" path="res://scenes/objects/optical_box_object.tscn" id="6_wrwxf"]
 [ext_resource type="PackedScene" uid="uid://2kyccrcvmbdn" path="res://scenes/ui/optical_puzzle_ui.tscn" id="7_kfxr1"]
 [ext_resource type="PackedScene" uid="uid://bt3cmx1rs64cl" path="res://scenes/ui/puzzle.tscn" id="8_oivmw"]
+[ext_resource type="PackedScene" uid="uid://cneooxi28pgcx" path="res://scenes/levels/map_generator.tscn" id="9_wg8x4"]
 
 [node name="TestLevel" type="Node2D"]
+y_sort_enabled = true
+
+[node name="MapGenerator" parent="." instance=ExtResource("9_wg8x4")]
+y_sort_enabled = true
+crash_amount = 1
 
 [node name="CrashedPlane" parent="." instance=ExtResource("1_ha8na")]
-position = Vector2(-139, -712)
+z_index = 1
+position = Vector2(-9, -229)
 
 [node name="ElectricalBoxUI" parent="." instance=ExtResource("3_6xymb")]
 visible = false
 
 [node name="HotesseDeLair" parent="." instance=ExtResource("4_uu1gk")]
-position = Vector2(121, -311)
+z_index = 1
+position = Vector2(224, 192)
 
 [node name="RedHoodPlaceholder" parent="." instance=ExtResource("1_doo7f")]
+position = Vector2(-99, 704)
 
 [node name="Optical_puzzle_ui" parent="." instance=ExtResource("7_kfxr1")]
 visible = false
 
 [node name="ElectricalBoxObject" parent="." instance=ExtResource("2_1eo17")]
-position = Vector2(552, -416)
+z_index = 1
+position = Vector2(670, 14.0001)
 scale = Vector2(0.235, 0.235)
 skew = 0.464258
 
 [node name="Optical_box_object" parent="." instance=ExtResource("6_wrwxf")]
-position = Vector2(479, -266)
+z_index = 1
+position = Vector2(631, 218)
 scale = Vector2(0.25, 0.41)
 skew = 0.312414
 
