@@ -4,10 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://dyd52uk73ycqi" path="res://graphics/characters/red_hood_placeholder/red hood itch free Copy-Sheet.png" id="1_r3mws"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a6467"]
-radius = 44.0
-height = 106.0
+radius = 39.0
+height = 78.0
 
 [node name="RedHoodPlaceholder" type="CharacterBody2D"]
+collision_mask = 7
 script = ExtResource("1_bfawi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -19,7 +20,8 @@ vframes = 11
 frame = 19
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 31)
+position = Vector2(-1, 47)
 shape = SubResource("CapsuleShape2D_a6467")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.8, 0.8)

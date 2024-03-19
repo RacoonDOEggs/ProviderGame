@@ -27,6 +27,10 @@ window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/wfc/plugin.cfg")
+
 [input]
 
 up={
@@ -77,6 +81,7 @@ clicked={
 2d_physics/layer_3="Items&Zones"
 2d_physics/layer_4="UI"
 2d_physics/layer_5="Laser"
+2d_physics/layer_6="Mirrors"
 
 [rendering]
 
