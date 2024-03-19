@@ -48,7 +48,7 @@ metadata/_edit_lock_ = true
 [node name="StaticBody2D" type="StaticBody2D" parent="PanelWindow/MGForPuzzle/Fibre_collider" groups=["NoCollision"]]
 position = Vector2(-38, -35.5)
 collision_layer = 32
-collision_mask = 0
+collision_mask = 16
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -65,7 +65,7 @@ polygon = PackedVector2Array(330.5, 115, 141.5, 113, 105.5, 139, 105.5, 251, 189
 [node name="StaticBody2D2" type="StaticBody2D" parent="PanelWindow/MGForPuzzle/Fibre_collider"]
 position = Vector2(-325.5, -19)
 collision_layer = 32
-collision_mask = 0
+collision_mask = 16
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -85,7 +85,7 @@ polygon = PackedVector2Array(880, 117.5, 1010, 120, 1068, 127, 1075, 260, 861.5,
 unique_name_in_owner = true
 position = Vector2(775, 141)
 collision_layer = 32
-collision_mask = 0
+collision_mask = 16
 metadata/_edit_group_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PanelWindow/MGForPuzzle/Fibre_collider/AreaWin"]
@@ -99,7 +99,7 @@ scale = Vector2(0.53, 0.53)
 position = Vector2(-325.472, -271.698)
 rotation = 1.5708
 collision_layer = 32
-collision_mask = 0
+collision_mask = 16
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="PanelWindow/MGForPuzzle/Mirrors/Mir"]
@@ -113,7 +113,7 @@ shape = SubResource("RectangleShape2D_vtcmo")
 position = Vector2(-214.151, -408.491)
 rotation = 3.14159
 collision_layer = 32
-collision_mask = 0
+collision_mask = 16
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="PanelWindow/MGForPuzzle/Mirrors/Mir2"]
@@ -127,7 +127,7 @@ shape = SubResource("RectangleShape2D_vtcmo")
 position = Vector2(-71.6981, -499.057)
 rotation = -0.785398
 collision_layer = 32
-collision_mask = 0
+collision_mask = 16
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="PanelWindow/MGForPuzzle/Mirrors/Mir3"]
@@ -141,7 +141,7 @@ shape = SubResource("RectangleShape2D_vtcmo")
 position = Vector2(-530.189, -278.302)
 rotation = 2.35619
 collision_layer = 32
-collision_mask = 0
+collision_mask = 16
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="PanelWindow/MGForPuzzle/Mirrors/Mir4"]
@@ -155,7 +155,7 @@ shape = SubResource("RectangleShape2D_vtcmo")
 position = Vector2(-123.585, -307.547)
 rotation = 0.785398
 collision_layer = 32
-collision_mask = 0
+collision_mask = 16
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="PanelWindow/MGForPuzzle/Mirrors/Mir5"]
@@ -169,7 +169,7 @@ shape = SubResource("RectangleShape2D_vtcmo")
 position = Vector2(-417.925, -605.66)
 rotation = 1.5708
 collision_layer = 32
-collision_mask = 0
+collision_mask = 16
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PanelWindow/MGForPuzzle/Mirrors/Mir6"]

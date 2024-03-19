@@ -1,8 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://clpyl1j76ymrq"]
+[gd_scene load_steps=4 format=3 uid="uid://clpyl1j76ymrq"]
 
-[ext_resource type="Script" path="res://scenes/ui/puzzleMenu.gd" id="1_qs4qj"]
+[ext_resource type="Script" path="res://scenes/ui/puzzleMenuUI.gd" id="1_sdife"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_dhs1j"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_e3g3j"]
+font_size = 60
+font_color = Color(0.101961, 0.101961, 0.101961, 1)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -11,7 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_qs4qj")
+script = ExtResource("1_sdife")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
@@ -26,12 +30,19 @@ layout_mode = 2
 texture = SubResource("CanvasTexture_dhs1j")
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 0
 offset_left = 600.0
 offset_top = 4.0
 offset_right = 1300.0
-offset_bottom = 1080.0
+offset_bottom = 328.0
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer2"]
-modulate = Color(0.779291, 0.779291, 0.779291, 1)
+modulate = Color(0.780392, 0.184314, 0.780392, 1)
 layout_mode = 2
 texture = SubResource("CanvasTexture_dhs1j")
+
+[node name="Label" type="Label" parent="MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Menu des casse-têtes"
+label_settings = SubResource("LabelSettings_e3g3j")
