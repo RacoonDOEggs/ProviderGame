@@ -24,6 +24,8 @@ Color("#e6c951"), Color("#528f65"), Color("#0f5190"), Color("#6967ce"), Color("#
 @export var color2:int = 0
 @export var color3:int = 0
 
+var is_dragable: bool = true # variable qui détermine si les résistances peuvent être déposés si le joueur a gagné ou non.
+
 #Récupère les couleurs de résistances de l'origine lorsque l'objet est ramassé
 func specific_drag_data(data):
 	data["origin_color1"] = color1
@@ -50,7 +52,8 @@ func specific_preview(preview_texture:TextureRect) -> TextureRect:
 
 #Validation spécifique à cette version de l'objet drag and drop
 func _can_drop_data(_at_position, data):
-	return data["origin_group_id"] == group_id and data["origin_texture"] != texture 
+	
+	return data["origin_group_id"] == group_id and data["origin_texture"] != texture and is_dragable
 
 #Transfert des données spécifiques à cette version de l'objet drag and drop
 func update_specific_drop_data(_at_position, data):

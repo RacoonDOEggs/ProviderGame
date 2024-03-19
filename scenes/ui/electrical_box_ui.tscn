@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bmvgddbraddl6"]
+[gd_scene load_steps=22 format=3 uid="uid://b6yyl83ohmqyo"]
 
 [ext_resource type="Script" path="res://scenes/ui/electrical_box_ui.gd" id="1_kcxba"]
 [ext_resource type="Texture2D" uid="uid://be1bq76lfb6k0" path="res://graphics/ui/x_button.png" id="2_qrnio"]
@@ -109,6 +109,14 @@ shader_parameter/newColor1 = Color(0, 0, 0, 1)
 shader_parameter/newColor2 = Color(0, 0, 0, 1)
 shader_parameter/newColor3 = Color(0, 0, 0, 1)
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_plbx7"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_nbk15"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_asfmm"]
+font_size = 100
+font_color = Color(0.109804, 0.537255, 0.192157, 1)
+
 [node name="ElectricalBoxUI" type="CanvasLayer"]
 script = ExtResource("1_kcxba")
 input_voltage = 66
@@ -131,8 +139,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -960.0
-offset_top = -640.0
-offset_right = -320.0
+offset_top = -536.0
+offset_right = -318.0
+offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3, 2)
@@ -206,10 +215,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -370.0
-offset_top = -187.5
-offset_right = 370.0
-offset_bottom = 187.5
+offset_left = -587.0
+offset_top = -189.0
+offset_right = 502.0
+offset_bottom = 186.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 140
@@ -300,6 +309,45 @@ offset_right = 740.0
 offset_bottom = 540.0
 grow_horizontal = 0
 grow_vertical = 0
+
+[node name="Win_message" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MG1_greenBack" type="MarginContainer" parent="Win_message"]
+modulate = Color(0.108406, 0.536531, 0.193795, 1)
+layout_mode = 0
+offset_left = 541.0
+offset_top = 319.0
+offset_right = 1432.0
+offset_bottom = 473.0
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Win_message/MG1_greenBack"]
+layout_mode = 2
+texture = SubResource("CanvasTexture_plbx7")
+
+[node name="MG2_Titre" type="MarginContainer" parent="Win_message"]
+layout_mode = 2
+offset_left = 550.0
+offset_top = 328.0
+offset_right = 1422.0
+offset_bottom = 465.0
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Win_message/MG2_Titre"]
+modulate = Color(0.788235, 0.788235, 0.788235, 1)
+layout_mode = 2
+texture = SubResource("CanvasTexture_nbk15")
+
+[node name="Label" type="Label" parent="Win_message/MG2_Titre"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Connexion établie"
+label_settings = SubResource("LabelSettings_asfmm")
 
 [connection signal="pressed" from="PanelWindow/TextureRect/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="PanelWindow/HBoxContainer2/TextureButton" to="." method="_on_validate_button_pressed"]

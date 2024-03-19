@@ -1,15 +1,17 @@
-[gd_scene load_steps=9 format=3 uid="uid://dx0q3u4solkhf"]
+[gd_scene load_steps=10 format=3 uid="uid://dx0q3u4solkhf"]
 
+[ext_resource type="Script" path="res://scenes/levels/test_level.gd" id="1_4iduf"]
 [ext_resource type="PackedScene" uid="uid://cjrrcxgx4ic1c" path="res://scenes/characters/red_hood_placeholder.tscn" id="1_doo7f"]
 [ext_resource type="PackedScene" uid="uid://cnakc56i2kfyk" path="res://scenes/objects/crashed_plane.tscn" id="1_ha8na"]
 [ext_resource type="PackedScene" uid="uid://dpe6vigd14fcl" path="res://scenes/objects/electrical_box_object.tscn" id="2_1eo17"]
-[ext_resource type="PackedScene" uid="uid://bmvgddbraddl6" path="res://scenes/ui/electrical_box_ui.tscn" id="3_6xymb"]
+[ext_resource type="PackedScene" uid="uid://b6yyl83ohmqyo" path="res://scenes/ui/electrical_box_ui.tscn" id="3_6xymb"]
 [ext_resource type="PackedScene" uid="uid://daotijepul3mn" path="res://scenes/characters/hotesse_de_lair.tscn" id="4_uu1gk"]
 [ext_resource type="PackedScene" uid="uid://dhyjb8k0fmmqm" path="res://scenes/objects/optical_box_object.tscn" id="6_wrwxf"]
 [ext_resource type="PackedScene" uid="uid://2kyccrcvmbdn" path="res://scenes/ui/optical_puzzle_ui.tscn" id="7_kfxr1"]
 [ext_resource type="PackedScene" uid="uid://bt3cmx1rs64cl" path="res://scenes/ui/puzzle.tscn" id="8_oivmw"]
 
 [node name="TestLevel" type="Node2D"]
+script = ExtResource("1_4iduf")
 
 [node name="CrashedPlane" parent="." instance=ExtResource("1_ha8na")]
 position = Vector2(-139, -712)
@@ -38,5 +40,7 @@ skew = 0.312414
 [node name="logic_circuit_ui" parent="." instance=ExtResource("8_oivmw")]
 visible = false
 
+[connection signal="electrical_win" from="ElectricalBoxUI" to="." method="_on_electrical_box_ui_electrical_win"]
+[connection signal="optical_win" from="Optical_puzzle_ui" to="." method="_on_optical_puzzle_ui_optical_win"]
 [connection signal="electrical_box_clicked" from="ElectricalBoxObject" to="ElectricalBoxUI" method="_on_electrical_box_object_electrical_box_clicked"]
 [connection signal="optical_box_clicked" from="Optical_box_object" to="Optical_puzzle_ui" method="_on_optical_box_object_optical_box_clicked"]

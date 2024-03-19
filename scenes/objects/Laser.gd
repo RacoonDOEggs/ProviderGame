@@ -9,17 +9,12 @@ var max_bounces = 10 # Valeur maximale de rebond du laser sur les mirroirs.
 var has_timeout = false # Variable qui indique si le temps est écoulé.
 var has_won = false # Variable qui indique si le joueur a gagné.
 
+# Méthode appelée à chaque image par seconde.
 func _process(_delta):
-	# Methods to use.
-	#ray.add_exception()
-	#ray.clear_exceptions()
-	
 	line.clear_points() # On supprime tous les points de la scène pouvant exister pour ne pas avoir de bug.
 	
-	if has_won: # Si la variable has_won est vraie, on en envoie un signal pour dire que le casse-tête est complété.
+	if has_won: # Si la variable has_won est vraie, on envoie un signal pour dire que le casse-tête est complété.
 		win.emit()
-		$"../Mirrors".queue_free() # On supprime les mirroirs de la scène.
-		$".".queue_free() # On supprime le laser de la scène.
 	
 	# Si le joueur relâche la touche du laser, cela veut dire qu'il n'a pas tenu la touche pendant 3 secondes sur la zone gagnante donc on attend que le temps s'écoule pour indiquer que le temps ne s'est pas écoulé.
 	if Input.is_action_just_released("interact"):
@@ -82,12 +77,10 @@ func _process(_delta):
 				if !has_won and coll.name == "AreaWin" and $Timer.is_stopped():
 					# Condition 1: Vérifie si le temps ne s'est pas écoulé.
 					if !has_timeout:
-						print("entering area")
 						$Timer.start(3) # On démarre le compteur de 3 secondes.
 						
 					# Condition 2: Si le compteur de 3 secondes s'est écoulé.
 					else: if has_timeout:
-						print("win")
 						has_won = true # La variable indiquant que le joueur a gagné est vrai.
 				
 				if coll.is_in_group("NoCollision") and prev == null:
@@ -135,5 +128,4 @@ func _process(_delta):
 
 # Signal à la fin du sablier.
 func _on_timer_timeout():
-	print("timeout")
 	has_timeout = true # Le temps s'est bien écoulé.

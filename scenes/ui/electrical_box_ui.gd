@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+signal electrical_win # Signal indiquant que le casse-tête électrique est complété.
+
 @export var input_voltage:int = 50
 @export var R1_solution:int = 44000
 @export var R2_solution:int = 400000
@@ -12,6 +14,7 @@ extends CanvasLayer
 @onready var R3:DragAndDrop = $PanelWindow/HBoxContainer/VBoxContainer2/ResistorReceptacle6
 @onready var R4:DragAndDrop = $PanelWindow/HBoxContainer/VBoxContainer3/ResistorReceptacle2
 @onready var R5:DragAndDrop = $PanelWindow/HBoxContainer/VBoxContainer2/ResistorReceptacle3
+
 @onready var amp_top_label:Label = $PanelWindow/HBoxContainer/VBoxContainer/AmpTop
 @onready var amp_mid_label:Label = $PanelWindow/HBoxContainer/VBoxContainer/AmpMid
 @onready var amp_bot_label:Label = $PanelWindow/HBoxContainer/VBoxContainer/AmpBot
@@ -23,7 +26,7 @@ func _on_electrical_box_object_electrical_box_clicked():
 	visible = true
 	update_circuit_measurements()
 
-#On cache l'interface lorsque le bouton quitter est appuyé.
+#On cache l'interface lorsque le X est appuyé.
 func _on_texture_button_pressed():
 	visible = false
 
@@ -58,7 +61,7 @@ func validate_circuit() -> bool:
 		$PanelWindow/ColorRect.modulate = Color(1.0,0.0,0.0)
 		return false
 
-#Convertis une valeur en Ampères et retourne une String avec les bonnes unités
+#Convertis une valeur en Ampères et retourne une String avec les bonnes unités.
 func amp_to_str(value:float) -> String:
 	if value < 0.001:
 		return  str(value / 0.000001) + "μA"
@@ -67,10 +70,18 @@ func amp_to_str(value:float) -> String:
 	else:
 		return  str(value) + "A"
 
-#FOnction appelée quand le disjoncteur est appuyé
+#Fonction appelée quand le disjoncteur est appuyé.
 func _on_validate_button_pressed():
 	update_circuit_measurements()
 	if !validate_circuit():
 		$PanelWindow/HBoxContainer2/TextureButton.button_pressed = false
 	else:
-		$PanelWindow/HBoxContainer2/TextureButton.disabled = true
+		$PanelWindow/HBoxContainer2/TextureButton.disabled = true #
+		$Win_message.visible = true # On affiche le message disant que le joueur a gagné le casse-tête.
+		electrical_win.emit()
+		# Les receptacles de résistance du milieu de la scène ne peuvent plus recevoir de résistance.
+		R1.is_dragable = false
+		R2.is_dragable = false
+		R3.is_dragable = false
+		R4.is_dragable = false
+		R5.is_dragable = false

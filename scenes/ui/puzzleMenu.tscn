@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://clpyl1j76ymrq"]
+
+[ext_resource type="Script" path="res://scenes/ui/puzzleMenu.gd" id="1_qs4qj"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_dhs1j"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qs4qj")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 600.0
+offset_top = 4.0
+offset_right = 1300.0
+offset_bottom = 1080.0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+modulate = Color(0.779291, 0.779291, 0.779291, 1)
+layout_mode = 2
+texture = SubResource("CanvasTexture_dhs1j")
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+offset_left = 600.0
+offset_top = 4.0
+offset_right = 1300.0
+offset_bottom = 1080.0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer2"]
+modulate = Color(0.779291, 0.779291, 0.779291, 1)
+layout_mode = 2
+texture = SubResource("CanvasTexture_dhs1j")
