@@ -12,3 +12,6 @@ polygon = PackedVector2Array(234, 41, 296, 63, 250, 163, 237.586, 202.854, 218, 
 visible = false
 color = Color(1, 1, 1, 0.494118)
 polygon = PackedVector2Array(235, 41, 295, 62, 255, 156, 239, 204, 217, 287, 155, 256, 163, 205, 187, 148)
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

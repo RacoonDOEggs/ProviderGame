@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dx0q3u4solkhf"]
+[gd_scene load_steps=7 format=3 uid="uid://dx0q3u4solkhf"]
 
 [ext_resource type="Script" path="res://scenes/levels/test_level.gd" id="1_4iduf"]
 [ext_resource type="PackedScene" uid="uid://cjrrcxgx4ic1c" path="res://scenes/characters/red_hood_placeholder.tscn" id="1_doo7f"]
 [ext_resource type="PackedScene" uid="uid://cnakc56i2kfyk" path="res://scenes/objects/crashed_plane.tscn" id="1_ha8na"]
 [ext_resource type="PackedScene" uid="uid://daotijepul3mn" path="res://scenes/characters/hotesse_de_lair.tscn" id="4_uu1gk"]
-[ext_resource type="PackedScene" uid="uid://bt3cmx1rs64cl" path="res://scenes/ui/Menu_puzzle_Ui.tscn" id="8_oivmw"]
 [ext_resource type="PackedScene" uid="uid://cneooxi28pgcx" path="res://scenes/levels/map_generator.tscn" id="9_wg8x4"]
 [ext_resource type="PackedScene" uid="uid://drhqjq8hl0aay" path="res://scenes/objects/plane_door.tscn" id="11_rq5kg"]
 
@@ -23,9 +22,6 @@ position = Vector2(-9, -229)
 z_index = 1
 position = Vector2(224, 192)
 
-[node name="logic_circuit_ui" parent="." instance=ExtResource("8_oivmw")]
-visible = false
-
 [node name="Plane_door" parent="." instance=ExtResource("11_rq5kg")]
 position = Vector2(364, -114)
 
@@ -33,6 +29,4 @@ position = Vector2(364, -114)
 position = Vector2(-99, 704)
 collision_mask = 3
 
-[connection signal="mouse_entered" from="Plane_door" to="Plane_door" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Plane_door" to="Plane_door" method="_on_mouse_exited"]
 [connection signal="plane_door_clicked" from="Plane_door" to="RedHoodPlaceholder" method="_on_plane_door_plane_door_clicked"]

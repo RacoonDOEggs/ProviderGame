@@ -1,11 +1,11 @@
 extends Area2D
 
-signal plane_door_clicked
-var mouse_inside:bool = false
+signal plane_door_clicked # Signal indiquant que la porte a été cliqué.
+var mouse_inside:bool = false # Variable indiquant que la souris survole la porte.
 
 #Mise en évidence de la porte lorsqu'elle est survolée.
 func _on_mouse_entered():
-	$WhitePolygon.visible = true
+	$WhitePolygon.visible
 	mouse_inside = true
 
 #Retrait de la mise en évidence lorsque la souris est enlevée.
