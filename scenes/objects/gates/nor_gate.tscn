@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://de78v6my3130r"]
+
+[ext_resource type="PackedScene" uid="uid://c8ubeawbakhbr" path="res://scenes/ui/drag_and_drop.tscn" id="1_f6idc"]
+[ext_resource type="Texture2D" uid="uid://b3lba38gn2yg3" path="res://graphics/objects/logic/nor.png" id="2_agbmp"]
+[ext_resource type="Script" path="res://scenes/objects/gates/andGate.gd" id="3_fow18"]
+
+[node name="NorGate" instance=ExtResource("1_f6idc")]
+custom_minimum_size = Vector2(80, 80)
+texture = ExtResource("2_agbmp")
+script = ExtResource("3_fow18")
+custom_size = Vector2(80, 80)
+group_id = "gates"
+object_id = 3
