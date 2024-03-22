@@ -1,9 +1,24 @@
-[gd_scene load_steps=8 format=3 uid="uid://bt3cmx1rs64cl"]
+[gd_scene load_steps=6 format=3 uid="uid://bt3cmx1rs64cl"]
 
-[ext_resource type="Script" path="res://scenes/ui/Menu_puzzle_Ui.gd" id="1_hvln5"]
 [ext_resource type="Texture2D" uid="uid://b4a8cyiuovkyh" path="res://graphics/objects/menuPuzzle/elecricity_symbol.png" id="1_vfbmy"]
-[ext_resource type="PackedScene" uid="uid://b6yyl83ohmqyo" path="res://scenes/ui/electrical_box_ui.tscn" id="2_wupgm"]
-[ext_resource type="PackedScene" uid="uid://2kyccrcvmbdn" path="res://scenes/ui/optical_puzzle_ui.tscn" id="3_14tdk"]
+
+[sub_resource type="GDScript" id="GDScript_1f308"]
+script/source = "extends CanvasLayer
+
+signal open_electrical_puzzle
+signal open_logical_puzzle
+signal open_optical_puzzle
+
+
+func _on_electrical_button_pressed():
+	open_electrical_puzzle.emit()
+
+func _on_optical_button_pressed():
+	open_logical_puzzle.emit()
+
+func _on_logical_button_pressed():
+	open_optical_puzzle.emit()
+"
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_t61ti"]
 
@@ -14,7 +29,7 @@ font_color = Color(0.101961, 0.101961, 0.101961, 1)
 [sub_resource type="CanvasTexture" id="CanvasTexture_ugsre"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
-script = ExtResource("1_hvln5")
+script = SubResource("GDScript_1f308")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 offset_left = 600.0
@@ -98,12 +113,6 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 texture = ExtResource("1_vfbmy")
 
-[node name="ElectricalBoxUI" parent="." instance=ExtResource("2_wupgm")]
-visible = false
-
-[node name="Optical_puzzle_ui" parent="." instance=ExtResource("3_14tdk")]
-visible = false
-
 [node name="Electrical_button" type="Button" parent="."]
 offset_left = 992.0
 offset_top = 362.0
@@ -123,4 +132,5 @@ offset_right = 993.0
 offset_bottom = 965.0
 
 [connection signal="pressed" from="Electrical_button" to="." method="_on_electrical_button_pressed"]
+[connection signal="pressed" from="Logical button" to="." method="_on_logical_button_pressed"]
 [connection signal="pressed" from="Optical Button" to="." method="_on_optical_button_pressed"]

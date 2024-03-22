@@ -34,8 +34,9 @@ texture = ExtResource("2_c00kh")
 
 [node name="MGForPuzzle" type="MarginContainer" parent="PanelWindow"]
 layout_mode = 1
+offset_top = -10.0
 offset_right = 974.0
-offset_bottom = 541.0
+offset_bottom = 531.0
 scale = Vector2(2, 2)
 
 [node name="Laser" parent="PanelWindow/MGForPuzzle" instance=ExtResource("6_oj6t1")]

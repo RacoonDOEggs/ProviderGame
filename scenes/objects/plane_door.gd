@@ -17,3 +17,19 @@ func _on_mouse_exited():
 func _input(event):
 	if event.is_action_pressed("clicked") and mouse_inside:
 		plane_door_clicked.emit()
+
+
+func _on_plane_door_clicked():
+	$Menu_puzzle_Ui.visible = true
+
+
+func _on_menu_puzzle_ui_open_electrical_puzzle():
+	$ElectricalBoxUI.visible = true
+
+
+func _on_menu_puzzle_ui_open_logical_puzzle():
+	$logic_circuit_ui.visible = true
+
+
+func _on_menu_puzzle_ui_open_optical_puzzle():
+	$Optical_puzzle_ui.visible = true
