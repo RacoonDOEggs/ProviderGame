@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bt3cmx1rs64cl"]
 
 [ext_resource type="Script" path="res://scenes/ui/Menu_puzzle_Ui.gd" id="1_hvln5"]
-[ext_resource type="Texture2D" uid="uid://b4a8cyiuovkyh" path="res://scenes/graphics/objects/menuPuzzle/elecricity_symbol.png" id="1_vfbmy"]
+[ext_resource type="Texture2D" uid="uid://b4a8cyiuovkyh" path="res://graphics/objects/menuPuzzle/elecricity_symbol.png" id="1_vfbmy"]
 [ext_resource type="PackedScene" uid="uid://b6yyl83ohmqyo" path="res://scenes/ui/electrical_box_ui.tscn" id="2_wupgm"]
 [ext_resource type="PackedScene" uid="uid://2kyccrcvmbdn" path="res://scenes/ui/optical_puzzle_ui.tscn" id="3_14tdk"]
 

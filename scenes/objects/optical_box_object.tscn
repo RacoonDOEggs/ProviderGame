@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dhyjb8k0fmmqm"]
 
-[ext_resource type="Texture2D" uid="uid://svfhecx463xd" path="res://scenes/graphics/objects/Optical/Optical_box.png" id="1_85fjm"]
+[ext_resource type="Texture2D" uid="uid://svfhecx463xd" path="res://graphics/objects/Optical/Optical_box.png" id="1_85fjm"]
 [ext_resource type="Script" path="res://scenes/objects/optical_box_object.gd" id="1_kjx0x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iho2f"]
