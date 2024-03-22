@@ -9,3 +9,8 @@ func _process(_delta):
 	move_and_slide()
 
 
+
+# Si on clique sur la porte, on arrête le joueur et on affiche le menu des casse-têtes.
+func _on_plane_door_plane_door_clicked():
+	speed = 0
+	$PuzzleMenuUi.visible = true

@@ -8,7 +8,6 @@ var game_won = false
 # On reçoit le signal de la scène du casse-tête optique. (Le joueur l'a complété)
 func _on_optical_puzzle_ui_optical_win():
 	optical_puzzle_win_check = true
-
 # On reçoit le signal de la scène du casse-tête électrique. (Le joueur l'a complété)
 func _on_electrical_box_ui_electrical_win():
 	electrical_puzzle_win_check = true
