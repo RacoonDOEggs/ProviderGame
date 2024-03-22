@@ -1,0 +1,137 @@
+[gd_scene load_steps=10 format=3 uid="uid://clpyl1j76ymrq"]
+
+[ext_resource type="Script" path="res://scenes/ui/puzzleMenuUI.gd" id="1_sdife"]
+[ext_resource type="Texture2D" uid="uid://b4a8cyiuovkyh" path="res://graphics/objects/menuPuzzle/elecricity_symbol.png" id="2_8hvn7"]
+[ext_resource type="PackedScene" uid="uid://dpe6vigd14fcl" path="res://scenes/objects/electrical_box_object.tscn" id="3_eg4kp"]
+[ext_resource type="PackedScene" uid="uid://dhyjb8k0fmmqm" path="res://scenes/objects/optical_box_object.tscn" id="4_rjang"]
+[ext_resource type="PackedScene" uid="uid://b6yyl83ohmqyo" path="res://scenes/ui/electrical_box_ui.tscn" id="5_8o6h5"]
+[ext_resource type="PackedScene" uid="uid://2kyccrcvmbdn" path="res://scenes/ui/optical_puzzle_ui.tscn" id="6_yq1p7"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_dhs1j"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_e3g3j"]
+font_size = 65
+font_color = Color(0.101961, 0.101961, 0.101961, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ll00d"]
+
+[node name="Control" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sdife")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 600.0
+offset_top = 4.0
+offset_right = 1300.0
+offset_bottom = 1080.0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+modulate = Color(0.779291, 0.779291, 0.779291, 1)
+layout_mode = 2
+texture = SubResource("CanvasTexture_dhs1j")
+
+[node name="TItle" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 600.0
+offset_top = 46.0
+offset_right = 1300.0
+offset_bottom = 186.0
+
+[node name="Label" type="Label" parent="TItle"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Menu des casse-têtes"
+label_settings = SubResource("LabelSettings_e3g3j")
+horizontal_alignment = 1
+
+[node name="Electrical_puzzle" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 600.0
+offset_top = 203.0
+offset_right = 1300.0
+offset_bottom = 495.0
+metadata/_edit_lock_ = true
+
+[node name="electrical_symbol" type="TextureRect" parent="Electrical_puzzle"]
+modulate = Color(0.74902, 0.74902, 0.72549, 1)
+layout_mode = 2
+texture = SubResource("CanvasTexture_ll00d")
+
+[node name="electrical_symbol2" type="TextureRect" parent="Electrical_puzzle"]
+modulate = Color(0.74902, 0.74902, 0.72549, 1)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("2_8hvn7")
+
+[node name="logical_puzzle" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 601.0
+offset_top = 496.0
+offset_right = 1299.0
+offset_bottom = 788.0
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="logical_puzzle"]
+modulate = Color(0.747953, 0.747633, 0.724368, 1)
+layout_mode = 2
+texture = SubResource("CanvasTexture_ll00d")
+
+[node name="electrical_symbol" type="TextureRect" parent="logical_puzzle"]
+modulate = Color(0.74902, 0.74902, 0.72549, 1)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("2_8hvn7")
+
+[node name="Optical_puzzle" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 600.0
+offset_top = 788.0
+offset_right = 1300.0
+offset_bottom = 1080.0
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Optical_puzzle"]
+modulate = Color(0.747953, 0.747633, 0.724368, 1)
+layout_mode = 2
+texture = SubResource("CanvasTexture_ll00d")
+
+[node name="electrical_symbol" type="TextureRect" parent="Optical_puzzle"]
+modulate = Color(0.74902, 0.74902, 0.72549, 1)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("2_8hvn7")
+
+[node name="ElectricalBoxObject" parent="." instance=ExtResource("3_eg4kp")]
+z_index = 1
+position = Vector2(998, 363)
+scale = Vector2(0.235, 0.235)
+skew = 0.464258
+collision_layer = 8
+collision_mask = 0
+
+[node name="Optical_box_object" parent="." instance=ExtResource("4_rjang")]
+z_index = 1
+position = Vector2(989, 943)
+scale = Vector2(0.25, 0.41)
+skew = 0.312414
+collision_layer = 8
+collision_mask = 0
+
+[node name="ElectricalBoxUI" parent="." instance=ExtResource("5_8o6h5")]
+visible = false
+
+[node name="Optical_puzzle_ui" parent="." instance=ExtResource("6_yq1p7")]
+visible = false
+
+[connection signal="electrical_box_clicked" from="ElectricalBoxObject" to="." method="_on_electrical_box_object_electrical_box_clicked"]
