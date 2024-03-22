@@ -89,7 +89,7 @@ collision_mask = 16
 metadata/_edit_group_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PanelWindow/MGForPuzzle/Fibre_collider/AreaWin"]
-polygon = PackedVector2Array(-28, -47, -15, -32, -4, -26, -3, -7, -2, 27, -3, 53, -28, 62, -46, 70, 44, 60, 42, -29)
+polygon = PackedVector2Array(-28, -47, -7, -35, 2.5, -28.5, 5.5, -7.5, 5, 23.5, 12.5, 37.5, 10.5, 49.5, 1.5, 57, -28, 62, -46, 70, 44, 60, 42, -29)
 
 [node name="Mirrors" type="Node2D" parent="PanelWindow/MGForPuzzle"]
 position = Vector2(667.5, 381)
