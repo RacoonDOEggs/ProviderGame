@@ -186,13 +186,14 @@ size_flags_horizontal = 8
 size_flags_vertical = 0
 texture_normal = ExtResource("3_61idh")
 
-[node name="Win_message" type="Control" parent="PanelWindow"]
+[node name="Win_message" type="Control" parent="."]
 visible = false
+layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="MG1_greenBack" type="MarginContainer" parent="PanelWindow/Win_message"]
+[node name="MG1_greenBack" type="MarginContainer" parent="Win_message"]
 modulate = Color(0.108406, 0.536531, 0.193795, 1)
 layout_mode = 0
 offset_left = 541.0
@@ -201,11 +202,11 @@ offset_right = 1432.0
 offset_bottom = 473.0
 metadata/_edit_lock_ = true
 
-[node name="TextureRect" type="TextureRect" parent="PanelWindow/Win_message/MG1_greenBack"]
+[node name="TextureRect" type="TextureRect" parent="Win_message/MG1_greenBack"]
 layout_mode = 2
 texture = SubResource("CanvasTexture_a00mq")
 
-[node name="MG2_Titre" type="MarginContainer" parent="PanelWindow/Win_message"]
+[node name="MG2_Titre" type="MarginContainer" parent="Win_message"]
 layout_mode = 2
 offset_left = 550.0
 offset_top = 328.0
@@ -213,12 +214,12 @@ offset_right = 1422.0
 offset_bottom = 465.0
 metadata/_edit_lock_ = true
 
-[node name="TextureRect" type="TextureRect" parent="PanelWindow/Win_message/MG2_Titre"]
+[node name="TextureRect" type="TextureRect" parent="Win_message/MG2_Titre"]
 modulate = Color(0.780392, 0.780392, 0.780392, 1)
 layout_mode = 2
 texture = SubResource("CanvasTexture_ip018")
 
-[node name="Label" type="Label" parent="PanelWindow/Win_message/MG2_Titre"]
+[node name="Label" type="Label" parent="Win_message/MG2_Titre"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Connexion établie"

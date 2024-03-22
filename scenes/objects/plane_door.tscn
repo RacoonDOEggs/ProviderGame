@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://drhqjq8hl0aay"]
+
+[ext_resource type="Script" path="res://scenes/objects/plane_door.gd" id="1_xaiwi"]
+
+[node name="Plane_door" type="Area2D"]
+script = ExtResource("1_xaiwi")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(234, 41, 296, 63, 250, 163, 237.586, 202.854, 218, 285, 156, 261, 164, 205, 185.797, 148.951)
+
+[node name="WhitePolygon" type="Polygon2D" parent="."]
+visible = false
+color = Color(1, 1, 1, 0.494118)
+polygon = PackedVector2Array(235, 41, 295, 62, 255, 156, 239, 204, 217, 287, 155, 256, 163, 205, 187, 148)
