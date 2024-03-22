@@ -12,10 +12,7 @@ func _on_optical_puzzle_ui_optical_win():
 func _on_electrical_box_ui_electrical_win():
 	electrical_puzzle_win_check = true
 
-
-
 func _process(_delta):
-	
 	# On vérifie si le joueur a complété tous les casse-têtes
 	if optical_puzzle_win_check and electrical_puzzle_win_check and logical_puzzle_win_check:
 		game_won = true # Le joueur a gagné le jeu.

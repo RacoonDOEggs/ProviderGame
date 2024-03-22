@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dpe6vigd14fcl"]
 
 [ext_resource type="Script" path="res://scenes/objects/electrical_box_object.gd" id="1_6e18y"]
-[ext_resource type="Texture2D" uid="uid://68btsn8i3yyd" path="res://graphics/objects/electrical/electrical_box.png" id="1_85cil"]
+[ext_resource type="Texture2D" uid="uid://68btsn8i3yyd" path="res://scenes/graphics/objects/electrical/electrical_box.png" id="1_85cil"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y3w3y"]
 size = Vector2(641, 640)

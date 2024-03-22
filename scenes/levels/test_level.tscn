@@ -1,12 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dx0q3u4solkhf"]
+[gd_scene load_steps=8 format=3 uid="uid://dx0q3u4solkhf"]
 
 [ext_resource type="Script" path="res://scenes/levels/test_level.gd" id="1_4iduf"]
 [ext_resource type="PackedScene" uid="uid://cjrrcxgx4ic1c" path="res://scenes/characters/red_hood_placeholder.tscn" id="1_doo7f"]
 [ext_resource type="PackedScene" uid="uid://cnakc56i2kfyk" path="res://scenes/objects/crashed_plane.tscn" id="1_ha8na"]
-[ext_resource type="PackedScene" uid="uid://dpe6vigd14fcl" path="res://scenes/objects/electrical_box_object.tscn" id="2_1eo17"]
 [ext_resource type="PackedScene" uid="uid://daotijepul3mn" path="res://scenes/characters/hotesse_de_lair.tscn" id="4_uu1gk"]
-[ext_resource type="PackedScene" uid="uid://dhyjb8k0fmmqm" path="res://scenes/objects/optical_box_object.tscn" id="6_wrwxf"]
-[ext_resource type="PackedScene" uid="uid://bt3cmx1rs64cl" path="res://scenes/ui/puzzle.tscn" id="8_oivmw"]
+[ext_resource type="PackedScene" uid="uid://bt3cmx1rs64cl" path="res://scenes/ui/Menu_puzzle_Ui.tscn" id="8_oivmw"]
 [ext_resource type="PackedScene" uid="uid://cneooxi28pgcx" path="res://scenes/levels/map_generator.tscn" id="9_wg8x4"]
 [ext_resource type="PackedScene" uid="uid://drhqjq8hl0aay" path="res://scenes/objects/plane_door.tscn" id="11_rq5kg"]
 
@@ -24,22 +22,6 @@ position = Vector2(-9, -229)
 [node name="HotesseDeLair" parent="." instance=ExtResource("4_uu1gk")]
 z_index = 1
 position = Vector2(224, 192)
-
-[node name="ElectricalBoxObject" parent="." instance=ExtResource("2_1eo17")]
-z_index = 1
-position = Vector2(625, 410)
-scale = Vector2(0.235, 0.235)
-skew = 0.464258
-collision_layer = 8
-collision_mask = 0
-
-[node name="Optical_box_object" parent="." instance=ExtResource("6_wrwxf")]
-z_index = 1
-position = Vector2(814, 420)
-scale = Vector2(0.25, 0.41)
-skew = 0.312414
-collision_layer = 8
-collision_mask = 0
 
 [node name="logic_circuit_ui" parent="." instance=ExtResource("8_oivmw")]
 visible = false

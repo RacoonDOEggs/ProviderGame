@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://addons/wfc/nodes/generator_2d.gd" id="1_lrl57"]
 [ext_resource type="Script" path="res://scenes/levels/map_generator.gd" id="1_qa5on"]
 [ext_resource type="Script" path="res://addons/wfc/problems/2d/mappers/mapper_2d_layered_tilemap.gd" id="2_d06rk"]
-[ext_resource type="TileSet" uid="uid://dgguqrpfjyaxa" path="res://graphics/Terrain/gentle_forest(96x96).tres" id="2_wrwbl"]
+[ext_resource type="TileSet" uid="uid://dgguqrpfjyaxa" path="res://scenes/graphics/Terrain/gentle_forest(96x96).tres" id="2_wrwbl"]
 [ext_resource type="Script" path="res://addons/wfc/problems/2d/rules_2d.gd" id="3_lpahf"]
 [ext_resource type="Script" path="res://addons/wfc/solver/solver_settings.gd" id="4_g0f0o"]
 [ext_resource type="Script" path="res://addons/wfc/runners/runner_multithreaded_settings.gd" id="5_v2qsv"]

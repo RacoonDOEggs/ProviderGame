@@ -1,0 +1,75 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://dgguqrpfjyaxa"]
+
+[ext_resource type="Texture2D" uid="uid://dr0603jcsy3n7" path="res://scenes/graphics/Terrain/gentle forest (96x96 resize) v01.png" id="1_iurtl"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6rvin"]
+texture = ExtResource("1_iurtl")
+texture_region_size = Vector2i(96, 96)
+0:0/0 = 0
+0:0/0/y_sort_origin = 20
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/y_sort_origin = 20
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/y_sort_origin = 20
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-48, -2.82843, 48, 0, 48, 48, -48, 48)
+1:1/0 = 0
+1:1/0/y_sort_origin = 20
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+0:2/0 = 0
+0:2/0/y_sort_origin = 20
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-48, -2.82843, 48, 0, 48, 48, -48, 48)
+1:2/0 = 0
+1:2/0/y_sort_origin = 20
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-48, -2.82843, 48, 0, 48, 48, -48, 48)
+0:3/0 = 0
+0:3/0/y_sort_origin = 144
+0:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:3/0/physics_layer_0/angular_velocity = 0.0
+1:3/0 = 0
+1:3/0/y_sort_origin = 144
+1:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:3/0/physics_layer_0/angular_velocity = 0.0
+2:3/0 = 0
+2:3/0/y_sort_origin = 144
+2:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:3/0/physics_layer_0/angular_velocity = 0.0
+0:4/0 = 0
+0:4/0/y_sort_origin = 48
+0:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:4/0/physics_layer_0/angular_velocity = 0.0
+1:4/0 = 0
+1:4/0/y_sort_origin = 48
+1:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:4/0/physics_layer_0/angular_velocity = 0.0
+2:4/0 = 0
+2:4/0/y_sort_origin = 48
+2:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:4/0/physics_layer_0/angular_velocity = 0.0
+0:5/0 = 0
+0:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:5/0/physics_layer_0/angular_velocity = 0.0
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(16.2635, -0.707108, 48, 0, 48, 48, 16.9706, 48)
+1:5/0 = 0
+1:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:5/0/physics_layer_0/angular_velocity = 0.0
+1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-48, -22.5, 0.5, -22, 0.5, -0.5, 27, 0, 26, 48, -48, 48)
+2:5/0 = 0
+2:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:5/0/physics_layer_0/angular_velocity = 0.0
+
+[resource]
+tile_size = Vector2i(96, 96)
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 7
+sources/0 = SubResource("TileSetAtlasSource_6rvin")

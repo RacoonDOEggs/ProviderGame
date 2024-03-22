@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://daotijepul3mn"]
 
-[ext_resource type="Texture2D" uid="uid://sf7pwsuqeilw" path="res://graphics/characters/hotesse.png" id="1_yf4ii"]
+[ext_resource type="Texture2D" uid="uid://sf7pwsuqeilw" path="res://scenes/graphics/characters/hotesse.png" id="1_yf4ii"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_agc4b"]
 radius = 28.0

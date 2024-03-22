@@ -2,16 +2,15 @@ extends CanvasLayer
 
 signal optical_win # Signal indiquant que le casse-tête optique est complété.
 
-# On reçoit le signal de la scène du laser. (Le joueur a complété le casse-tête)
+# Le signal reçu que le joueur a complété le casse-tête optique.
 func _on_laser_win():
-	$PanelWindow/Win_message.visible = true # On affiche le message disant que le joueur a gagné le casse-tête.
+	$Win_message.visible = true # On affiche le message disant que le joueur a gagné le casse-tête.
 	$PanelWindow/MGForPuzzle/Laser.queue_free() # On supprime le laser pour que le joueur ne puisse plus l'allumer.
 	optical_win.emit() # On envoie un signal à la scène principale pour indiquer que le joueur a complété le casse-tête.
 
 #On affiche la scène lorsque le signal est reçu.
 func _on_optical_box_object_optical_box_clicked():
 	visible = true
-
 
 #On cache l'interface lorsque le bouton quitter est appuyé.
 func _on_texture_button_pressed():

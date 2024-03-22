@@ -1,13 +1,13 @@
 [gd_scene load_steps=22 format=3 uid="uid://b6yyl83ohmqyo"]
 
 [ext_resource type="Script" path="res://scenes/ui/electrical_box_ui.gd" id="1_kcxba"]
-[ext_resource type="Texture2D" uid="uid://be1bq76lfb6k0" path="res://graphics/ui/x_button.png" id="2_qrnio"]
-[ext_resource type="Texture2D" uid="uid://bl07cunlr8ovj" path="res://graphics/objects/electrical/Screenshpcb_plane_hatch.png" id="2_xuimt"]
+[ext_resource type="Texture2D" uid="uid://be1bq76lfb6k0" path="res://scenes/graphics/ui/x_button.png" id="2_qrnio"]
+[ext_resource type="Texture2D" uid="uid://bl07cunlr8ovj" path="res://scenes/graphics/objects/electrical/Screenshpcb_plane_hatch.png" id="2_xuimt"]
 [ext_resource type="PackedScene" uid="uid://c5winj3uqwry4" path="res://scenes/ui/resistor_receptacle.tscn" id="5_5clvd"]
 [ext_resource type="Shader" path="res://scenes/ui/resistor_receptacle.gdshader" id="5_44u2a"]
-[ext_resource type="Texture2D" uid="uid://cxmr5e18ovhv2" path="res://graphics/objects/electrical/resistor (1).png" id="5_pq8tp"]
-[ext_resource type="Texture2D" uid="uid://b73knxgr2k1i1" path="res://graphics/objects/electrical/circuit_breaker_off.png" id="7_jugpa"]
-[ext_resource type="Texture2D" uid="uid://b2bj5gganuenp" path="res://graphics/objects/electrical/circuit_breaker_on.png" id="8_a6prv"]
+[ext_resource type="Texture2D" uid="uid://cxmr5e18ovhv2" path="res://scenes/graphics/objects/electrical/resistor (1).png" id="5_pq8tp"]
+[ext_resource type="Texture2D" uid="uid://b73knxgr2k1i1" path="res://scenes/graphics/objects/electrical/circuit_breaker_off.png" id="7_jugpa"]
+[ext_resource type="Texture2D" uid="uid://b2bj5gganuenp" path="res://scenes/graphics/objects/electrical/circuit_breaker_on.png" id="8_a6prv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uw6v7"]
 resource_local_to_scene = true
