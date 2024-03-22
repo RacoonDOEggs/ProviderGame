@@ -5,7 +5,7 @@ var mouse_inside:bool = false # Variable indiquant que la souris survole la port
 
 #Mise en évidence de la porte lorsqu'elle est survolée.
 func _on_mouse_entered():
-	$WhitePolygon.visible
+	$WhitePolygon.visible = true
 	mouse_inside = true
 
 #Retrait de la mise en évidence lorsque la souris est enlevée.
