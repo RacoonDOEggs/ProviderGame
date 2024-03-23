@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://brv84hypgmntx"]
 
-[ext_resource type="PackedScene" uid="uid://c8ubeawbakhbr" path="res://scenes/ui/drag_and_drop.tscn" id="1_8lg4e"]
+[ext_resource type="PackedScene" uid="uid://c8ubeawbakhbr" path="res://scenes/ui/drag_and_drop/drag_and_drop.tscn" id="1_8lg4e"]
 [ext_resource type="Texture2D" uid="uid://bmu411fgvajon" path="res://graphics/objects/logic/nand.png" id="2_qescn"]
 [ext_resource type="Script" path="res://scenes/objects/gates/andGate.gd" id="3_wbol1"]
 

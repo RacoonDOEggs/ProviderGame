@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://2kyccrcvmbdn"]
 
-[ext_resource type="Script" path="res://scenes/ui/optical_puzzle_ui.gd" id="1_i26lm"]
+[ext_resource type="Script" path="res://scenes/ui/optical_puzzle/optical_puzzle_ui.gd" id="1_i26lm"]
 [ext_resource type="Texture2D" uid="uid://svfhecx463xd" path="res://graphics/objects/Optical/Optical_box.png" id="2_c00kh"]
 [ext_resource type="Texture2D" uid="uid://be1bq76lfb6k0" path="res://graphics/ui/x_button.png" id="3_61idh"]
 [ext_resource type="Texture2D" uid="uid://bqdyka11h8noo" path="res://graphics/objects/Optical/mirror.png" id="5_2g2pc"]

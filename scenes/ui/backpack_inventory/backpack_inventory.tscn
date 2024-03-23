@@ -1,0 +1,241 @@
+[gd_scene load_steps=95 format=3 uid="uid://bfrb5to87sfao"]
+
+[ext_resource type="Texture2D" uid="uid://bfjjpdtkkc5ei" path="res://graphics/Backpack/Green/BackPack/1 - idle/0.png" id="1_8u48x"]
+[ext_resource type="Texture2D" uid="uid://bmsi3nphe2hyk" path="res://graphics/Backpack/Green/Categories/3 - Equipment/Appear/0.png" id="2_1p7eg"]
+[ext_resource type="Texture2D" uid="uid://cyeyp1a4gmcga" path="res://graphics/Backpack/Green/BackPack/2 - Middle Zip Pouch/Close/0.png" id="3_mbtlo"]
+[ext_resource type="Texture2D" uid="uid://d4bh330jblxs2" path="res://graphics/Backpack/Green/BackPack/2 - Middle Zip Pouch/Close/1.png" id="4_jou6h"]
+[ext_resource type="Texture2D" uid="uid://d3snkpi73w0q2" path="res://graphics/Backpack/Green/BackPack/2 - Middle Zip Pouch/Close/2.png" id="5_smqwf"]
+[ext_resource type="Texture2D" uid="uid://cprns0miu4vjp" path="res://graphics/Backpack/Green/BackPack/2 - Middle Zip Pouch/Close/3.png" id="6_h8no1"]
+[ext_resource type="Texture2D" uid="uid://b11o2equxpgkl" path="res://graphics/Backpack/Green/BackPack/2 - Middle Zip Pouch/Close/4.png" id="7_ynof7"]
+[ext_resource type="Texture2D" uid="uid://c17k8ksd7vgdu" path="res://graphics/Backpack/Green/BackPack/2 - Middle Zip Pouch/Close/5.png" id="8_hekgv"]
+[ext_resource type="Texture2D" uid="uid://xu8tmiggf2om" path="res://graphics/Backpack/Green/BackPack/2 - Middle Zip Pouch/Close/6.png" id="9_w0d58"]
+[ext_resource type="Texture2D" uid="uid://bogljgvisw5vo" path="res://graphics/Backpack/Green/BackPack/2 - Middle Zip Pouch/Close/7.png" id="10_q2ogi"]
+[ext_resource type="Texture2D" uid="uid://duy46fbhig0mc" path="res://graphics/Backpack/Green/BackPack/2 - Middle Zip Pouch/Close/8.png" id="11_yrx7c"]
+[ext_resource type="Texture2D" uid="uid://b4q3owojanmmu" path="res://graphics/Backpack/Green/BackPack/2 - Middle Zip Pouch/Close/9.png" id="12_7oxsx"]
+[ext_resource type="Texture2D" uid="uid://cw87v5x7c8evr" path="res://graphics/Backpack/Green/BackPack/2 - Middle Zip Pouch/Close/10.png" id="13_5vy3w"]
+[ext_resource type="Texture2D" uid="uid://b5rsk0h31kw14" path="res://graphics/Backpack/Green/BackPack/2 - Middle Zip Pouch/Close/11.png" id="14_62qtx"]
+[ext_resource type="Texture2D" uid="uid://cd7pevnuum10q" path="res://graphics/Backpack/Green/BackPack/2 - Middle Zip Pouch/Close/12.png" id="15_a783p"]
+[ext_resource type="Texture2D" uid="uid://dpxagmelasg7m" path="res://graphics/Backpack/Green/BackPack/2 - Middle Zip Pouch/Close/13.png" id="16_3hqic"]
+[ext_resource type="Texture2D" uid="uid://dva1mes1g55pa" path="res://graphics/Backpack/Green/BackPack/2 - Middle Zip Pouch/Close/14.png" id="17_owq82"]
+[ext_resource type="Texture2D" uid="uid://qtfejcofhswx" path="res://graphics/Backpack/Green/BackPack/2 - Middle Zip Pouch/Close/15.png" id="18_ed1rv"]
+[ext_resource type="Texture2D" uid="uid://dx1lphyengyxl" path="res://graphics/Backpack/Green/BackPack/2 - Middle Zip Pouch/Close/16.png" id="19_dv4bp"]
+[ext_resource type="Texture2D" uid="uid://b2euiknguecjk" path="res://graphics/Backpack/Green/BackPack/2 - Middle Zip Pouch/Close/17.png" id="20_ji3jp"]
+[ext_resource type="Texture2D" uid="uid://bi2igr534fyam" path="res://graphics/Backpack/Green/BackPack/2 - Middle Zip Pouch/Close/18.png" id="21_y3yuu"]
+[ext_resource type="Texture2D" uid="uid://cpunsacxmebwg" path="res://graphics/Backpack/Green/BackPack/2 - Middle Zip Pouch/Close/19.png" id="22_kr4mh"]
+[ext_resource type="Texture2D" uid="uid://cm420u4cr2e7d" path="res://graphics/Backpack/Green/BackPack/2 - Middle Zip Pouch/Close/20.png" id="23_46ae4"]
+[ext_resource type="Texture2D" uid="uid://bdbjafn0m0sa1" path="res://graphics/Backpack/Green/BackPack/2 - Middle Zip Pouch/Close/21.png" id="24_xcosw"]
+[ext_resource type="Texture2D" uid="uid://b2ahdj7wr71mb" path="res://graphics/Backpack/Green/BackPack/2 - Middle Zip Pouch/Close/22.png" id="25_6nrl5"]
+[ext_resource type="Texture2D" uid="uid://csvuqhymb3ih2" path="res://graphics/Backpack/Green/BackPack/2 - Middle Zip Pouch/Close/23.png" id="26_2y3de"]
+[ext_resource type="Texture2D" uid="uid://dcxr6ws2sk628" path="res://graphics/Backpack/Green/BackPack/2 - Middle Zip Pouch/Close/24.png" id="27_ttv31"]
+[ext_resource type="Texture2D" uid="uid://qamj0f74w8n8" path="res://graphics/Backpack/Green/BackPack/2 - Middle Zip Pouch/Close/25.png" id="28_sadj3"]
+[ext_resource type="Texture2D" uid="uid://b4t0k4j2i1r4h" path="res://graphics/Backpack/Green/BackPack/2 - Middle Zip Pouch/Close/26.png" id="29_pb2af"]
+[ext_resource type="Texture2D" uid="uid://cw4e1cmpyeppb" path="res://graphics/Backpack/Green/BackPack/2 - Middle Zip Pouch/Close/27.png" id="30_bra7j"]
+[ext_resource type="Texture2D" uid="uid://hymwbjrguyxd" path="res://graphics/Backpack/Green/BackPack/3 - Top Pouch/Close/0.png" id="31_gy748"]
+[ext_resource type="Texture2D" uid="uid://d0vtc8qg5qs5m" path="res://graphics/Backpack/Green/BackPack/3 - Top Pouch/Close/1.png" id="32_ic2so"]
+[ext_resource type="Texture2D" uid="uid://h3t22s282noy" path="res://graphics/Backpack/Green/BackPack/3 - Top Pouch/Close/2.png" id="33_76y35"]
+[ext_resource type="Texture2D" uid="uid://onjs0nwpg0qe" path="res://graphics/Backpack/Green/BackPack/3 - Top Pouch/Close/3.png" id="34_o6ne0"]
+[ext_resource type="Texture2D" uid="uid://cbsd1y2mro3so" path="res://graphics/Backpack/Green/BackPack/3 - Top Pouch/Close/4.png" id="35_klmnh"]
+[ext_resource type="Texture2D" uid="uid://dey561aynfrwp" path="res://graphics/Backpack/Green/BackPack/3 - Top Pouch/Close/5.png" id="36_65nix"]
+[ext_resource type="Texture2D" uid="uid://dt3qk0q0uihs" path="res://graphics/Backpack/Green/BackPack/4 - Side Pouches/Close/0.png" id="37_l024s"]
+[ext_resource type="Texture2D" uid="uid://bntj0y06l3jqv" path="res://graphics/Backpack/Green/BackPack/4 - Side Pouches/Close/1.png" id="38_ap0vh"]
+[ext_resource type="Texture2D" uid="uid://cije33aak6gbw" path="res://graphics/Backpack/Green/BackPack/4 - Side Pouches/Close/2.png" id="39_bn1mm"]
+[ext_resource type="Texture2D" uid="uid://bmdeahx701gw4" path="res://graphics/Backpack/Green/BackPack/5 - Bottom Pouch/Close/0.png" id="40_dc1t8"]
+[ext_resource type="Texture2D" uid="uid://cwe5xmdassd0r" path="res://graphics/Backpack/Green/BackPack/5 - Bottom Pouch/Close/1.png" id="41_qjccy"]
+[ext_resource type="Texture2D" uid="uid://b5js1p0erw2k6" path="res://graphics/Backpack/Green/BackPack/5 - Bottom Pouch/Close/2.png" id="42_ia3b5"]
+[ext_resource type="Texture2D" uid="uid://cg41bs21kb3g2" path="res://graphics/Backpack/Green/BackPack/5 - Bottom Pouch/Close/3.png" id="43_7icra"]
+[ext_resource type="Texture2D" uid="uid://dnoscmdac731k" path="res://graphics/Backpack/Green/BackPack/5 - Bottom Pouch/Close/4.png" id="44_qi17v"]
+[ext_resource type="Texture2D" uid="uid://c3rqk1tg28opw" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Appear/0.png" id="45_lrg4g"]
+[ext_resource type="Texture2D" uid="uid://dhlgpnl86wkjm" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Appear/1.png" id="46_pxwyt"]
+[ext_resource type="Texture2D" uid="uid://cgojmku4onbs" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Appear/2.png" id="47_u4rwj"]
+[ext_resource type="Texture2D" uid="uid://khgbkyuwnlde" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Appear/3.png" id="48_thdo6"]
+[ext_resource type="Texture2D" uid="uid://c7mt67jgby8n7" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Appear/4.png" id="49_jhoi5"]
+[ext_resource type="Texture2D" uid="uid://qti7htvayayu" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Appear/5.png" id="50_8pl4o"]
+[ext_resource type="Texture2D" uid="uid://bk63iucb1pd2q" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Appear/6.png" id="51_qy6i2"]
+[ext_resource type="Texture2D" uid="uid://dvav43dv4ajbs" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Appear/7.png" id="52_vc15x"]
+[ext_resource type="Texture2D" uid="uid://ct4yvo5bac0m0" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Appear/8.png" id="53_sw71k"]
+[ext_resource type="Texture2D" uid="uid://df42q4h544guw" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Appear/9.png" id="54_whfji"]
+[ext_resource type="Texture2D" uid="uid://j1aclg4oukvl" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Appear/10.png" id="55_io6y5"]
+[ext_resource type="Texture2D" uid="uid://cm0nvyr3l3ukm" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Appear/11.png" id="56_0tfx5"]
+[ext_resource type="Texture2D" uid="uid://drgojfd7ne42c" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Appear/12.png" id="57_5o58r"]
+[ext_resource type="Texture2D" uid="uid://d3onc8wjfb30x" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Appear/13.png" id="58_nhu3d"]
+[ext_resource type="Texture2D" uid="uid://dpcoaxqrd6xo" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Appear/14.png" id="59_ncbs4"]
+[ext_resource type="Texture2D" uid="uid://pkb6drtjfeqw" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Appear/15.png" id="60_8ocih"]
+[ext_resource type="Texture2D" uid="uid://bc0a2yctibk5t" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Appear/16.png" id="61_yfkdr"]
+[ext_resource type="Texture2D" uid="uid://doxybrpk6uj1o" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Appear/17.png" id="62_iv671"]
+[ext_resource type="Texture2D" uid="uid://bst0lmmavhxf6" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Appear/18.png" id="63_t8cae"]
+[ext_resource type="Texture2D" uid="uid://ritnxh3opwvi" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Appear/19.png" id="64_uxr1g"]
+[ext_resource type="Texture2D" uid="uid://bn0lkihhm62wy" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Appear/20.png" id="65_4xddg"]
+[ext_resource type="Texture2D" uid="uid://0snuvi61mam5" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Appear/21.png" id="66_vutup"]
+[ext_resource type="Texture2D" uid="uid://dm1csnc5rrfbv" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Appear/22.png" id="67_3s0ye"]
+[ext_resource type="Texture2D" uid="uid://bfyx5no2nhkev" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Appear/23.png" id="68_xsjis"]
+[ext_resource type="Texture2D" uid="uid://xr4og7j350vu" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Appear/24.png" id="69_ov5tr"]
+[ext_resource type="Texture2D" uid="uid://ywwrhcga7fnj" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Appear/25.png" id="70_xyxgp"]
+[ext_resource type="Texture2D" uid="uid://wwskp8paq6dm" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Appear/26.png" id="71_n36bt"]
+[ext_resource type="Texture2D" uid="uid://bfsljtc1vn6v4" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Appear/27.png" id="72_yl7sd"]
+[ext_resource type="Texture2D" uid="uid://c6du0ftf00m25" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Appear/28.png" id="73_ock3l"]
+[ext_resource type="Texture2D" uid="uid://c25sth5gvbyq6" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Appear/29.png" id="74_74b32"]
+[ext_resource type="Texture2D" uid="uid://dthgpnolw22wf" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Appear/30.png" id="75_nse0b"]
+[ext_resource type="Texture2D" uid="uid://c5t2g28xt8rio" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Appear/31.png" id="76_x7yun"]
+[ext_resource type="Texture2D" uid="uid://dyhf1po38afcb" path="res://graphics/Backpack/Green/Categories/3 - Equipment/Appear/1.png" id="77_m33y1"]
+[ext_resource type="Texture2D" uid="uid://cjsp8kr5s0yho" path="res://graphics/Backpack/Green/Categories/3 - Equipment/Appear/2.png" id="78_bfmfp"]
+[ext_resource type="Texture2D" uid="uid://by4pag7k0bjiw" path="res://graphics/Backpack/Green/Categories/3 - Equipment/Appear/3.png" id="79_wjsel"]
+[ext_resource type="Texture2D" uid="uid://ma1xd7o83ik6" path="res://graphics/Backpack/Green/Categories/3 - Equipment/Appear/4.png" id="80_4dtde"]
+[ext_resource type="Texture2D" uid="uid://b4606dcw21qfg" path="res://graphics/Backpack/Green/Categories/3 - Equipment/Appear/5.png" id="81_gw36b"]
+[ext_resource type="Texture2D" uid="uid://b28i5ehkoj1hb" path="res://graphics/Backpack/Green/Categories/3 - Equipment/Appear/6.png" id="82_wqxds"]
+[ext_resource type="Texture2D" uid="uid://djvl087m52fi7" path="res://graphics/Backpack/Green/Categories/3 - Equipment/Appear/7.png" id="83_uw5lp"]
+[ext_resource type="Texture2D" uid="uid://t02d8km4lyyp" path="res://graphics/Backpack/Green/Categories/3 - Equipment/Appear/8.png" id="84_jukc4"]
+[ext_resource type="Texture2D" uid="uid://btjhqpedvrdur" path="res://graphics/Backpack/Green/Categories/3 - Equipment/Appear/9.png" id="85_8oxpe"]
+[ext_resource type="Texture2D" uid="uid://0rxgr2ufnfdv" path="res://graphics/Backpack/Green/Categories/3 - Equipment/Appear/10.png" id="86_ksi68"]
+
+[sub_resource type="Animation" id="Animation_1n7wy"]
+resource_name = "middle_zip_close"
+length = 0.56
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Backpack:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.02, 0.04, 0.06, 0.08, 0.1, 0.12, 0.14, 0.16, 0.18, 0.2, 0.22, 0.24, 0.26, 0.28, 0.3, 0.32, 0.34, 0.36, 0.38, 0.4, 0.42, 0.44, 0.46, 0.48, 0.5, 0.52, 0.54, 0.56),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_mbtlo"), ExtResource("4_jou6h"), ExtResource("5_smqwf"), ExtResource("6_h8no1"), ExtResource("7_ynof7"), ExtResource("8_hekgv"), ExtResource("9_w0d58"), ExtResource("10_q2ogi"), ExtResource("11_yrx7c"), ExtResource("12_7oxsx"), ExtResource("13_5vy3w"), ExtResource("14_62qtx"), ExtResource("15_a783p"), ExtResource("16_3hqic"), ExtResource("17_owq82"), ExtResource("18_ed1rv"), ExtResource("19_dv4bp"), ExtResource("20_ji3jp"), ExtResource("21_y3yuu"), ExtResource("22_kr4mh"), ExtResource("23_46ae4"), ExtResource("24_xcosw"), ExtResource("25_6nrl5"), ExtResource("26_2y3de"), ExtResource("27_ttv31"), ExtResource("28_sadj3"), ExtResource("29_pb2af"), ExtResource("30_bra7j"), ExtResource("1_8u48x")]
+}
+
+[sub_resource type="Animation" id="Animation_ie2lw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Backpack:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_8u48x")]
+}
+
+[sub_resource type="Animation" id="Animation_wb7eh"]
+resource_name = "top_pouch_close"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Backpack:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("31_gy748"), ExtResource("32_ic2so"), ExtResource("33_76y35"), ExtResource("34_o6ne0"), ExtResource("35_klmnh"), ExtResource("36_65nix")]
+}
+
+[sub_resource type="Animation" id="Animation_h3guw"]
+resource_name = "side_pouches_close"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Backpack:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("37_l024s"), ExtResource("38_ap0vh"), ExtResource("39_bn1mm")]
+}
+
+[sub_resource type="Animation" id="Animation_sr3ve"]
+resource_name = "bottom_pouch_close"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Backpack:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("40_dc1t8"), ExtResource("41_qjccy"), ExtResource("42_ia3b5"), ExtResource("43_7icra"), ExtResource("44_qi17v")]
+}
+
+[sub_resource type="Animation" id="Animation_oopr7"]
+resource_name = "inventory_appear"
+length = 0.62
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Backpack:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.02, 0.04, 0.06, 0.08, 0.1, 0.12, 0.14, 0.16, 0.18, 0.2, 0.22, 0.24, 0.26, 0.28, 0.3, 0.32, 0.34, 0.36, 0.38, 0.4, 0.42, 0.44, 0.46, 0.48, 0.5, 0.52, 0.54, 0.56, 0.58, 0.6, 0.62),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("45_lrg4g"), ExtResource("46_pxwyt"), ExtResource("47_u4rwj"), ExtResource("48_thdo6"), ExtResource("49_jhoi5"), ExtResource("50_8pl4o"), ExtResource("51_qy6i2"), ExtResource("52_vc15x"), ExtResource("53_sw71k"), ExtResource("54_whfji"), ExtResource("55_io6y5"), ExtResource("56_0tfx5"), ExtResource("57_5o58r"), ExtResource("58_nhu3d"), ExtResource("59_ncbs4"), ExtResource("60_8ocih"), ExtResource("61_yfkdr"), ExtResource("62_iv671"), ExtResource("63_t8cae"), ExtResource("64_uxr1g"), ExtResource("65_4xddg"), ExtResource("66_vutup"), ExtResource("67_3s0ye"), ExtResource("68_xsjis"), ExtResource("69_ov5tr"), ExtResource("70_xyxgp"), ExtResource("71_n36bt"), ExtResource("72_yl7sd"), ExtResource("73_ock3l"), ExtResource("74_74b32"), ExtResource("75_nse0b"), ExtResource("76_x7yun")]
+}
+
+[sub_resource type="Animation" id="Animation_cn6x2"]
+resource_name = "manual_appear"
+length = 0.42
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Manual:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.02, 0.06, 0.1, 0.14, 0.18, 0.22, 0.26, 0.3, 0.34, 0.38, 0.42),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_1p7eg"), ExtResource("77_m33y1"), ExtResource("78_bfmfp"), ExtResource("79_wjsel"), ExtResource("80_4dtde"), ExtResource("81_gw36b"), ExtResource("82_wqxds"), ExtResource("83_uw5lp"), ExtResource("84_jukc4"), ExtResource("85_8oxpe"), ExtResource("86_ksi68")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Manual:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.02),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_diy27"]
+_data = {
+"RESET": SubResource("Animation_ie2lw"),
+"bottom_pouch_close": SubResource("Animation_sr3ve"),
+"inventory_appear": SubResource("Animation_oopr7"),
+"manual_appear": SubResource("Animation_cn6x2"),
+"middle_zip_close": SubResource("Animation_1n7wy"),
+"side_pouches_close": SubResource("Animation_h3guw"),
+"top_pouch_close": SubResource("Animation_wb7eh")
+}
+
+[node name="BackpackInventory" type="CanvasLayer"]
+
+[node name="Backpack" type="TextureRect" parent="."]
+offset_left = 2.0
+offset_right = 786.0
+offset_bottom = 704.0
+texture = ExtResource("1_8u48x")
+
+[node name="Manual" type="TextureRect" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_1p7eg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_diy27")
+}

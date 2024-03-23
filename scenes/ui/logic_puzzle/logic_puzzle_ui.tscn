@@ -1,6 +1,6 @@
 [gd_scene load_steps=30 format=3 uid="uid://7kir1ep68gob"]
 
-[ext_resource type="Script" path="res://scenes/ui/logic_puzzle_ui.gd" id="1_jmtvp"]
+[ext_resource type="Script" path="res://scenes/ui/logic_puzzle/logic_puzzle_ui.gd" id="1_jmtvp"]
 [ext_resource type="Texture2D" uid="uid://ddqvmmqoggsju" path="res://graphics/objects/logic/xButton.png" id="1_wbctl"]
 [ext_resource type="Texture2D" uid="uid://dwgvuf4yicddg" path="res://graphics/objects/logic/yButton.png" id="2_lm0rg"]
 [ext_resource type="Texture2D" uid="uid://cmms0h7o4c8fr" path="res://graphics/objects/logic/zButton.png" id="3_2n3td"]
