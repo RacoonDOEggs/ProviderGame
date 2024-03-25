@@ -1,59 +1,13 @@
 [gd_scene load_steps=11 format=3 uid="uid://bt3cmx1rs64cl"]
 
 [ext_resource type="Texture2D" uid="uid://onvrpn0e8anf" path="res://graphics/Backpack/Green/Categories/6 - Settings/ClipBoard/Appear/3.png" id="1_kh83w"]
+[ext_resource type="Script" path="res://scenes/ui/Menu_puzzle_Ui.gd" id="1_slj37"]
 [ext_resource type="Texture2D" uid="uid://b4a8cyiuovkyh" path="res://graphics/objects/menuPuzzle/elecricity_symbol.png" id="1_vfbmy"]
 [ext_resource type="Texture2D" uid="uid://degsrnnx4nuig" path="res://graphics/objects/menuPuzzle/Logical_gate_for_menu(vrai).png" id="2_ydlic"]
 [ext_resource type="Texture2D" uid="uid://cjbqc2e4jo4n6" path="res://graphics/objects/menuPuzzle/Reflexion_for_menu(vrai).png" id="4_51noi"]
 [ext_resource type="Texture2D" uid="uid://cxjuu5qommono" path="res://graphics/Backpack/Green/Categories/6 - Settings/Sprites/Buttons & Pointers/4.png" id="5_7qxhs"]
 [ext_resource type="Texture2D" uid="uid://ce15llt83gko1" path="res://graphics/Backpack/Green/Categories/6 - Settings/Sprites/Buttons & Pointers/7.png" id="6_5vhgt"]
 [ext_resource type="Texture2D" uid="uid://h83vcvkf1bd3" path="res://graphics/objects/menuPuzzle/red-button.png" id="7_77eqs"]
-
-[sub_resource type="GDScript" id="GDScript_1f308"]
-script/source = "extends CanvasLayer
-
-
-signal menu_puzzle_exited # Signal émit lorsqu'on ferme le menu des casse-têtes.
-signal open_electrical_puzzle # Signal émit lorsque le bouton du menu du casse-tête électrique est pesé.
-signal open_logical_puzzle
-signal open_optical_puzzle
-var can_open_electrical_puzzle = false # Variable indiquant qu'on peut accéder au casse-tête électrique. (Condition: Les résistances(objet dans la carte) ont été rammassé).
-var can_open_logical_puzzle = false # Variable indiquant qu'on peut accéder au casse-tête logique. (Condition: Le casse-tête électrique est complété).
-var can_open_optical_puzzle = false # Variable indiquant qu'on peut accéder au casse-tête optique. (Condition: Les 2 casse-têtes précédents sont complétés).
-var electrical_puzzle_win_check = false # Variable indiquant que le joueur a complété le casse-tête électrique.
-var logical_puzzle_win_check = false # Variable indiquant que le joueur a complété le casse-tête logique.
-var optical_puzzle_win_check = false # Variable indiquant que le joueur a complété le casse-tête optique.
-
-# Signal reçu lorsque le bouton et émis lorsque le bouton option est pesé.
-func _on_texture_button_pressed():
-	$\".\".visible = false
-	menu_puzzle_exited.emit()
-
-
-
-# Signal reçu et émis lorsque le bouton du menu du casse-tête électrique est pesé.
-func _on_electrical_but_pressed():
-	open_electrical_puzzle.emit()
-
-# Signal reçu et émis lorsque le bouton du menu du casse-tête logique est pesé.
-func _on_logical_but_pressed():
-	open_logical_puzzle.emit()
-
-# Signal reçu et émis lorsque le bouton du menu du casse-tête optique est pesé.
-func _on_optical_but_pressed():
-	open_optical_puzzle.emit()
-
-# Signal reçu lorsqu'on a complété le casse-tête électrique.
-func _on_electrical_box_ui_electrical_win():
-	electrical_puzzle_win_check = true
-
-# Signal reçu lorsqu'on a complété le casse-tête logique.
-func _on_logic_circuit_ui_logical_win():
-	logical_puzzle_win_check = true
-
-# Signal reçu lorsqu'on a complété le casse-tête optique.
-func _on_optical_puzzle_ui_optical_win():
-	optical_puzzle_win_check = true
-"
 
 [sub_resource type="LabelSettings" id="LabelSettings_d2wy4"]
 font_size = 55
@@ -67,7 +21,7 @@ normal_texture = ExtResource("5_7qxhs")
 specular_texture = ExtResource("5_7qxhs")
 
 [node name="Menu_puzzle_Ui" type="CanvasLayer"]
-script = SubResource("GDScript_1f308")
+script = ExtResource("1_slj37")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 offset_left = 219.0

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c878nyeo2d6eq"]
 
-[ext_resource type="PackedScene" uid="uid://c8ubeawbakhbr" path="res://scenes/ui/drag_and_drop.tscn" id="1_xoaes"]
+[ext_resource type="PackedScene" uid="uid://c8ubeawbakhbr" path="res://scenes/ui/drag_and_drop/drag_and_drop.tscn" id="1_xoaes"]
 [ext_resource type="Script" path="res://scenes/objects/gates/empty_gate.gd" id="2_x24xv"]
 
 [node name="EmptyGate" instance=ExtResource("1_xoaes")]
