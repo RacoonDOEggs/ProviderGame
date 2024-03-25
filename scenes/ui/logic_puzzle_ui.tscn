@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://7kir1ep68gob"]
+[gd_scene load_steps=30 format=3 uid="uid://cqu5woxnudbp2"]
 
 [ext_resource type="Script" path="res://scenes/ui/logic_puzzle_ui.gd" id="1_jmtvp"]
 [ext_resource type="Texture2D" uid="uid://ddqvmmqoggsju" path="res://graphics/objects/logic/xButton.png" id="1_wbctl"]
@@ -322,6 +322,7 @@ offset_left = 374.0
 offset_top = 401.0
 offset_right = 454.0
 offset_bottom = 481.0
+object_id = null
 
 [node name="andGate" type="TextureRect" parent="PanelWindow"]
 visible = false
@@ -472,6 +473,7 @@ offset_left = 477.0
 offset_top = 97.0
 offset_right = 561.0
 offset_bottom = 177.0
+object_id = null
 
 [node name="EmptyGateNor" parent="PanelWindow" instance=ExtResource("11_k4e6k")]
 layout_mode = 0
@@ -479,6 +481,7 @@ offset_left = 459.0
 offset_top = 252.0
 offset_right = 543.0
 offset_bottom = 332.0
+object_id = null
 
 [node name="EmptyGateNot" parent="PanelWindow" instance=ExtResource("11_k4e6k")]
 layout_mode = 0
@@ -486,6 +489,7 @@ offset_left = 295.0
 offset_top = 90.0
 offset_right = 379.0
 offset_bottom = 170.0
+object_id = null
 
 [node name="XOrGate" parent="PanelWindow" instance=ExtResource("20_1y0ce")]
 layout_mode = 0
@@ -538,6 +542,7 @@ offset_left = 617.0
 offset_top = 249.0
 offset_right = 697.0
 offset_bottom = 329.0
+object_id = null
 
 [node name="EmptyGateOr" parent="PanelWindow" instance=ExtResource("11_k4e6k")]
 layout_mode = 0
@@ -545,6 +550,7 @@ offset_left = 797.0
 offset_top = 313.0
 offset_right = 877.0
 offset_bottom = 393.0
+object_id = null
 
 [node name="EmptyGateXOr" parent="PanelWindow" instance=ExtResource("11_k4e6k")]
 layout_mode = 0
@@ -552,6 +558,7 @@ offset_left = 617.0
 offset_top = 386.0
 offset_right = 697.0
 offset_bottom = 466.0
+object_id = null
 
 [node name="equation" type="Sprite2D" parent="."]
 position = Vector2(590, 44)

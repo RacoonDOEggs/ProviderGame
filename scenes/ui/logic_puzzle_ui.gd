@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+signal logical_win
 @onready var andGate = $PanelWindow/andGate
 @onready var notGate = $PanelWindow/notGate
 @onready var norGate = $PanelWindow/norGate
@@ -51,6 +52,7 @@ func _on_button_pressed(button_index):
 
 func check_gates_placement() -> bool:
 	if andGate.object_id == andShadow && notGate.object_id == notShadow && notGate.object_id == notShadow2 && norGate.object_id == norShadow && xnorGate.object_id == xnorShadow && orGate.object_id == orShadow && xorGate.objetc_id == xorShadow :
+		logical_win.emit()
 		return true
 	else:
 		return false

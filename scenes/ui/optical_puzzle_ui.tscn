@@ -181,7 +181,7 @@ position = Vector2(0.000488281, 0.000244141)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("5_2g2pc")
 
-[node name="TextureButton" type="TextureButton" parent="PanelWindow/MGForPuzzle"]
+[node name="XButton" type="TextureButton" parent="PanelWindow/MGForPuzzle"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
@@ -227,4 +227,4 @@ text = "Connexion établie"
 label_settings = SubResource("LabelSettings_sumua")
 
 [connection signal="win" from="PanelWindow/MGForPuzzle/Laser" to="." method="_on_laser_win"]
-[connection signal="pressed" from="PanelWindow/MGForPuzzle/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="PanelWindow/MGForPuzzle/XButton" to="." method="_on_texture_button_pressed"]
