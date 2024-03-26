@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://c5winj3uqwry4"]
 
 [ext_resource type="PackedScene" uid="uid://c8ubeawbakhbr" path="res://scenes/ui/drag_and_drop/drag_and_drop.tscn" id="1_6o0jw"]
-[ext_resource type="Shader" path="res://scenes/ui/resistor/resistor_receptacle.gdshader" id="2_2ds4j"]
-[ext_resource type="Script" path="res://scenes/ui/resistor/resistor_receptacle.gd" id="2_b52a0"]
+[ext_resource type="Shader" path="res://scenes/ui/drag_and_drop/resistor/resistor_receptacle.gdshader" id="2_2ds4j"]
+[ext_resource type="Script" path="res://scenes/ui/drag_and_drop/resistor/resistor_receptacle.gd" id="2_b52a0"]
 [ext_resource type="Texture2D" uid="uid://c6brtnuu7av3a" path="res://graphics/objects/electrical/burnt_resistor (1).png" id="3_4og2l"]
 [ext_resource type="Texture2D" uid="uid://cxmr5e18ovhv2" path="res://graphics/objects/electrical/resistor (1).png" id="4_4ug5a"]
 [ext_resource type="Texture2D" uid="uid://bbgp3he5shpei" path="res://graphics/ui/Pixel UI pack 3/grey_arrow_up.png" id="5_fb2ph"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cqu5woxnudbp2"]
+[gd_scene load_steps=23 format=3 uid="uid://cqu5woxnudbp2"]
 
 [ext_resource type="Script" path="res://scenes/ui/logic_puzzle/logic_puzzle_ui.gd" id="1_jmtvp"]
 [ext_resource type="Texture2D" uid="uid://ddqvmmqoggsju" path="res://graphics/objects/logic/xButton.png" id="1_wbctl"]
@@ -8,15 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://1jwl73xo2c64" path="res://graphics/objects/logic/off.png" id="7_ort03"]
 [ext_resource type="Texture2D" uid="uid://5euypo3onwoo" path="res://graphics/objects/logic/shadow.png" id="8_dm6s1"]
 [ext_resource type="Texture2D" uid="uid://drh183dlp3jpi" path="res://graphics/objects/logic/closedLight.png" id="8_lox5t"]
-[ext_resource type="Texture2D" uid="uid://dvr5myjsi7sm6" path="res://graphics/objects/logic/and-.png" id="8_vp31o"]
 [ext_resource type="Texture2D" uid="uid://c2h4iv6hhn80b" path="res://graphics/objects/logic/x_button.png" id="9_5ackg"]
 [ext_resource type="PackedScene" uid="uid://c878nyeo2d6eq" path="res://scenes/objects/gates/empty_gate.tscn" id="11_k4e6k"]
-[ext_resource type="Texture2D" uid="uid://bmu411fgvajon" path="res://graphics/objects/logic/nand.png" id="12_expep"]
-[ext_resource type="Texture2D" uid="uid://b3lba38gn2yg3" path="res://graphics/objects/logic/nor.png" id="13_fwyrj"]
-[ext_resource type="Texture2D" uid="uid://beceotcvoi37p" path="res://graphics/objects/logic/not.png" id="14_i6pha"]
-[ext_resource type="Texture2D" uid="uid://cny3dnm6jxqte" path="res://graphics/objects/logic/or.png" id="15_x3nh0"]
-[ext_resource type="Texture2D" uid="uid://bwfspw34evgy3" path="res://graphics/objects/logic/xnor.png" id="16_b6bcc"]
-[ext_resource type="Texture2D" uid="uid://hrscntk5drnx" path="res://graphics/objects/logic/xor.png" id="17_517pr"]
 [ext_resource type="Texture2D" uid="uid://dhxo3kx42i2tu" path="res://graphics/objects/logic/and2-.png" id="19_vyvhh"]
 [ext_resource type="PackedScene" uid="uid://dj0jlav68i85r" path="res://scenes/objects/gates/x_or_gate.tscn" id="20_1y0ce"]
 [ext_resource type="PackedScene" uid="uid://cbtlimh2jioec" path="res://scenes/objects/gates/not_gate.tscn" id="20_a13bc"]
@@ -36,10 +29,15 @@ script = ExtResource("1_jmtvp")
 [node name="PanelWindow" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -9.0
-offset_top = 7.0
-offset_right = 1144.0
-offset_bottom = 657.0
+offset_right = 1153.0
+offset_bottom = 650.0
+scale = Vector2(1.6, 1.6)
+
+[node name="ColorRect" type="ColorRect" parent="PanelWindow"]
+modulate = Color(0.254902, 0.254902, 0.254902, 1)
+layout_mode = 0
+offset_right = 1197.0
+offset_bottom = 674.0
 
 [node name="x" type="Sprite2D" parent="PanelWindow"]
 texture_filter = 1
@@ -316,91 +314,6 @@ offset_bottom = 65.0
 texture_normal = ExtResource("9_5ackg")
 stretch_mode = 0
 
-[node name="EmptyGateAnd" parent="PanelWindow" instance=ExtResource("11_k4e6k")]
-layout_mode = 0
-offset_left = 374.0
-offset_top = 401.0
-offset_right = 454.0
-offset_bottom = 481.0
-object_id = null
-
-[node name="andGate" type="TextureRect" parent="PanelWindow"]
-visible = false
-texture_filter = 1
-layout_mode = 0
-offset_left = 84.0
-offset_top = 30.0
-offset_right = 111.0
-offset_bottom = 47.0
-scale = Vector2(2.95833, 2.72794)
-texture = ExtResource("8_vp31o")
-
-[node name="nandGate" type="TextureRect" parent="PanelWindow"]
-visible = false
-texture_filter = 1
-layout_mode = 0
-offset_left = 89.0
-offset_top = 192.0
-offset_right = 116.0
-offset_bottom = 209.0
-scale = Vector2(3.21296, 2.95588)
-texture = ExtResource("12_expep")
-
-[node name="norGate" type="TextureRect" parent="PanelWindow"]
-visible = false
-texture_filter = 1
-layout_mode = 0
-offset_left = 97.0
-offset_top = 274.0
-offset_right = 124.0
-offset_bottom = 291.0
-scale = Vector2(2.75463, 2.97794)
-texture = ExtResource("13_fwyrj")
-
-[node name="notGate" type="TextureRect" parent="PanelWindow"]
-visible = false
-texture_filter = 1
-layout_mode = 0
-offset_left = 85.0
-offset_top = 102.0
-offset_right = 112.0
-offset_bottom = 119.0
-scale = Vector2(3.00926, 3.13235)
-texture = ExtResource("14_i6pha")
-
-[node name="orGate" type="TextureRect" parent="PanelWindow"]
-visible = false
-texture_filter = 1
-layout_mode = 0
-offset_left = 100.0
-offset_top = 373.0
-offset_right = 127.0
-offset_bottom = 390.0
-scale = Vector2(2.9213, 2.90441)
-texture = ExtResource("15_x3nh0")
-
-[node name="xnorGate" type="TextureRect" parent="PanelWindow"]
-visible = false
-texture_filter = 1
-layout_mode = 0
-offset_left = 101.0
-offset_top = 472.0
-offset_right = 128.0
-offset_bottom = 489.0
-scale = Vector2(2.50926, 2.98529)
-texture = ExtResource("16_b6bcc")
-
-[node name="xorGate" type="TextureRect" parent="PanelWindow"]
-visible = false
-texture_filter = 1
-layout_mode = 0
-offset_left = 389.0
-offset_top = 543.0
-offset_right = 416.0
-offset_bottom = 560.0
-scale = Vector2(2.76389, 2.91911)
-texture = ExtResource("17_517pr")
-
 [node name="etText" type="Label" parent="PanelWindow"]
 layout_mode = 0
 offset_left = 46.0
@@ -467,30 +380,6 @@ offset_right = 162.0
 offset_bottom = 92.0
 texture = ExtResource("19_vyvhh")
 
-[node name="EmptyGateNot2" parent="PanelWindow" instance=ExtResource("11_k4e6k")]
-layout_mode = 0
-offset_left = 477.0
-offset_top = 97.0
-offset_right = 561.0
-offset_bottom = 177.0
-object_id = null
-
-[node name="EmptyGateNor" parent="PanelWindow" instance=ExtResource("11_k4e6k")]
-layout_mode = 0
-offset_left = 459.0
-offset_top = 252.0
-offset_right = 543.0
-offset_bottom = 332.0
-object_id = null
-
-[node name="EmptyGateNot" parent="PanelWindow" instance=ExtResource("11_k4e6k")]
-layout_mode = 0
-offset_left = 295.0
-offset_top = 90.0
-offset_right = 379.0
-offset_bottom = 170.0
-object_id = null
-
 [node name="XOrGate" parent="PanelWindow" instance=ExtResource("20_1y0ce")]
 layout_mode = 0
 offset_left = 91.0
@@ -536,13 +425,40 @@ offset_top = 95.0
 offset_right = 162.0
 offset_bottom = 175.0
 
+[node name="EmptyGateNot2" parent="PanelWindow" instance=ExtResource("11_k4e6k")]
+layout_mode = 0
+offset_left = 477.0
+offset_top = 97.0
+offset_right = 561.0
+offset_bottom = 177.0
+
+[node name="EmptyGateNor" parent="PanelWindow" instance=ExtResource("11_k4e6k")]
+layout_mode = 0
+offset_left = 459.0
+offset_top = 252.0
+offset_right = 543.0
+offset_bottom = 332.0
+
+[node name="EmptyGateNot" parent="PanelWindow" instance=ExtResource("11_k4e6k")]
+layout_mode = 0
+offset_left = 295.0
+offset_top = 90.0
+offset_right = 379.0
+offset_bottom = 170.0
+
+[node name="EmptyGateAnd" parent="PanelWindow" instance=ExtResource("11_k4e6k")]
+layout_mode = 0
+offset_left = 374.0
+offset_top = 401.0
+offset_right = 454.0
+offset_bottom = 481.0
+
 [node name="EmptyGateXNor" parent="PanelWindow" instance=ExtResource("11_k4e6k")]
 layout_mode = 0
 offset_left = 617.0
 offset_top = 249.0
 offset_right = 697.0
 offset_bottom = 329.0
-object_id = null
 
 [node name="EmptyGateOr" parent="PanelWindow" instance=ExtResource("11_k4e6k")]
 layout_mode = 0
@@ -550,7 +466,6 @@ offset_left = 797.0
 offset_top = 313.0
 offset_right = 877.0
 offset_bottom = 393.0
-object_id = null
 
 [node name="EmptyGateXOr" parent="PanelWindow" instance=ExtResource("11_k4e6k")]
 layout_mode = 0
@@ -558,10 +473,9 @@ offset_left = 617.0
 offset_top = 386.0
 offset_right = 697.0
 offset_bottom = 466.0
-object_id = null
 
-[node name="equation" type="Sprite2D" parent="."]
-position = Vector2(590, 44)
+[node name="equation" type="Sprite2D" parent="PanelWindow"]
+position = Vector2(599, 37)
 scale = Vector2(1.904, 2.06071)
 texture = ExtResource("29_1utlf")
 

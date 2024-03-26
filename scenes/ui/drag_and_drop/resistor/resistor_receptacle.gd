@@ -59,12 +59,14 @@ func _can_drop_data(_at_position, data):
 func update_specific_drop_data(_at_position, data):
 	data["origin_node"].get_child(1).text = ""
 	data["origin_node"].get_child(2).get_child(0).visible = false
-	$MarginContainer/EditButton.visible = true
-	color1 = data["origin_color1"]
-	color2 = data["origin_color2"]
-	color3 = data["origin_color3"]
-	update_resistor_colors()
-	update_resistor_value()
+	if object_id == 1:
+		$MarginContainer/EditButton.visible = true
+		color1 = data["origin_color1"]
+		color2 = data["origin_color2"]
+		color3 = data["origin_color3"]
+		update_resistor_colors()
+		update_resistor_value()
+	
 
 #Affichage de la fenêtre de modification de résistance
 func _on_edit_button_pressed():

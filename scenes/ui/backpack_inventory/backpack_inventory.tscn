@@ -1,6 +1,7 @@
-[gd_scene load_steps=95 format=3 uid="uid://bfrb5to87sfao"]
+[gd_scene load_steps=97 format=3 uid="uid://bfrb5to87sfao"]
 
 [ext_resource type="Texture2D" uid="uid://bfjjpdtkkc5ei" path="res://graphics/Backpack/Green/BackPack/1 - idle/0.png" id="1_8u48x"]
+[ext_resource type="Script" path="res://scenes/ui/backpack_inventory/backpack_inventory.gd" id="1_ufdiv"]
 [ext_resource type="Texture2D" uid="uid://bmsi3nphe2hyk" path="res://graphics/Backpack/Green/Categories/3 - Equipment/Appear/0.png" id="2_1p7eg"]
 [ext_resource type="Texture2D" uid="uid://cyeyp1a4gmcga" path="res://graphics/Backpack/Green/BackPack/2 - Middle Zip Pouch/Close/0.png" id="3_mbtlo"]
 [ext_resource type="Texture2D" uid="uid://d4bh330jblxs2" path="res://graphics/Backpack/Green/BackPack/2 - Middle Zip Pouch/Close/1.png" id="4_jou6h"]
@@ -86,22 +87,7 @@
 [ext_resource type="Texture2D" uid="uid://t02d8km4lyyp" path="res://graphics/Backpack/Green/Categories/3 - Equipment/Appear/8.png" id="84_jukc4"]
 [ext_resource type="Texture2D" uid="uid://btjhqpedvrdur" path="res://graphics/Backpack/Green/Categories/3 - Equipment/Appear/9.png" id="85_8oxpe"]
 [ext_resource type="Texture2D" uid="uid://0rxgr2ufnfdv" path="res://graphics/Backpack/Green/Categories/3 - Equipment/Appear/10.png" id="86_ksi68"]
-
-[sub_resource type="Animation" id="Animation_1n7wy"]
-resource_name = "middle_zip_close"
-length = 0.56
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Backpack:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.02, 0.04, 0.06, 0.08, 0.1, 0.12, 0.14, 0.16, 0.18, 0.2, 0.22, 0.24, 0.26, 0.28, 0.3, 0.32, 0.34, 0.36, 0.38, 0.4, 0.42, 0.44, 0.46, 0.48, 0.5, 0.52, 0.54, 0.56),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("3_mbtlo"), ExtResource("4_jou6h"), ExtResource("5_smqwf"), ExtResource("6_h8no1"), ExtResource("7_ynof7"), ExtResource("8_hekgv"), ExtResource("9_w0d58"), ExtResource("10_q2ogi"), ExtResource("11_yrx7c"), ExtResource("12_7oxsx"), ExtResource("13_5vy3w"), ExtResource("14_62qtx"), ExtResource("15_a783p"), ExtResource("16_3hqic"), ExtResource("17_owq82"), ExtResource("18_ed1rv"), ExtResource("19_dv4bp"), ExtResource("20_ji3jp"), ExtResource("21_y3yuu"), ExtResource("22_kr4mh"), ExtResource("23_46ae4"), ExtResource("24_xcosw"), ExtResource("25_6nrl5"), ExtResource("26_2y3de"), ExtResource("27_ttv31"), ExtResource("28_sadj3"), ExtResource("29_pb2af"), ExtResource("30_bra7j"), ExtResource("1_8u48x")]
-}
+[ext_resource type="PackedScene" uid="uid://ddcqksmajukn1" path="res://scenes/ui/backpack_inventory/inventory_slot.tscn" id="87_hot7s"]
 
 [sub_resource type="Animation" id="Animation_ie2lw"]
 length = 0.001
@@ -116,38 +102,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("1_8u48x")]
-}
-
-[sub_resource type="Animation" id="Animation_wb7eh"]
-resource_name = "top_pouch_close"
-length = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Backpack:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("31_gy748"), ExtResource("32_ic2so"), ExtResource("33_76y35"), ExtResource("34_o6ne0"), ExtResource("35_klmnh"), ExtResource("36_65nix")]
-}
-
-[sub_resource type="Animation" id="Animation_h3guw"]
-resource_name = "side_pouches_close"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Backpack:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [ExtResource("37_l024s"), ExtResource("38_ap0vh"), ExtResource("39_bn1mm")]
 }
 
 [sub_resource type="Animation" id="Animation_sr3ve"]
@@ -210,6 +164,54 @@ tracks/1/keys = {
 "values": [false, true]
 }
 
+[sub_resource type="Animation" id="Animation_1n7wy"]
+resource_name = "middle_zip_close"
+length = 0.56
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Backpack:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.02, 0.04, 0.06, 0.08, 0.1, 0.12, 0.14, 0.16, 0.18, 0.2, 0.22, 0.24, 0.26, 0.28, 0.3, 0.32, 0.34, 0.36, 0.38, 0.4, 0.42, 0.44, 0.46, 0.48, 0.5, 0.52, 0.54, 0.56),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_mbtlo"), ExtResource("4_jou6h"), ExtResource("5_smqwf"), ExtResource("6_h8no1"), ExtResource("7_ynof7"), ExtResource("8_hekgv"), ExtResource("9_w0d58"), ExtResource("10_q2ogi"), ExtResource("11_yrx7c"), ExtResource("12_7oxsx"), ExtResource("13_5vy3w"), ExtResource("14_62qtx"), ExtResource("15_a783p"), ExtResource("16_3hqic"), ExtResource("17_owq82"), ExtResource("18_ed1rv"), ExtResource("19_dv4bp"), ExtResource("20_ji3jp"), ExtResource("21_y3yuu"), ExtResource("22_kr4mh"), ExtResource("23_46ae4"), ExtResource("24_xcosw"), ExtResource("25_6nrl5"), ExtResource("26_2y3de"), ExtResource("27_ttv31"), ExtResource("28_sadj3"), ExtResource("29_pb2af"), ExtResource("30_bra7j"), ExtResource("1_8u48x")]
+}
+
+[sub_resource type="Animation" id="Animation_h3guw"]
+resource_name = "side_pouches_close"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Backpack:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("37_l024s"), ExtResource("38_ap0vh"), ExtResource("39_bn1mm")]
+}
+
+[sub_resource type="Animation" id="Animation_wb7eh"]
+resource_name = "top_pouch_close"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Backpack:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("31_gy748"), ExtResource("32_ic2so"), ExtResource("33_76y35"), ExtResource("34_o6ne0"), ExtResource("35_klmnh"), ExtResource("36_65nix")]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_diy27"]
 _data = {
 "RESET": SubResource("Animation_ie2lw"),
@@ -222,20 +224,99 @@ _data = {
 }
 
 [node name="BackpackInventory" type="CanvasLayer"]
+script = ExtResource("1_ufdiv")
 
 [node name="Backpack" type="TextureRect" parent="."]
-offset_left = 2.0
-offset_right = 786.0
-offset_bottom = 704.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -392.0
+offset_top = -352.0
+offset_right = 392.0
+offset_bottom = 352.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_8u48x")
 
 [node name="Manual" type="TextureRect" parent="."]
-visible = false
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -392.0
+offset_top = -344.0
+offset_right = 392.0
+offset_bottom = 344.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_1p7eg")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_diy27")
 }
+
+[node name="Slots" type="GridContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.6
+offset_top = -41.88
+offset_right = 86.4
+offset_bottom = 72.12
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 48
+theme_override_constants/v_separation = 57
+columns = 5
+
+[node name="InventorySlot" parent="Slots" instance=ExtResource("87_hot7s")]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="InventorySlot2" parent="Slots" instance=ExtResource("87_hot7s")]
+layout_mode = 2
+
+[node name="InventorySlot3" parent="Slots" instance=ExtResource("87_hot7s")]
+layout_mode = 2
+
+[node name="InventorySlot4" parent="Slots" instance=ExtResource("87_hot7s")]
+layout_mode = 2
+
+[node name="InventorySlot5" parent="Slots" instance=ExtResource("87_hot7s")]
+layout_mode = 2
+
+[node name="InventorySlot6" parent="Slots" instance=ExtResource("87_hot7s")]
+layout_mode = 2
+
+[node name="InventorySlot7" parent="Slots" instance=ExtResource("87_hot7s")]
+layout_mode = 2
+
+[node name="InventorySlot8" parent="Slots" instance=ExtResource("87_hot7s")]
+layout_mode = 2
+
+[node name="InventorySlot9" parent="Slots" instance=ExtResource("87_hot7s")]
+layout_mode = 2
+
+[node name="InventorySlot10" parent="Slots" instance=ExtResource("87_hot7s")]
+layout_mode = 2
+
+[node name="InventorySlot11" parent="Slots" instance=ExtResource("87_hot7s")]
+layout_mode = 2
+
+[node name="InventorySlot12" parent="Slots" instance=ExtResource("87_hot7s")]
+layout_mode = 2
+
+[node name="InventorySlot13" parent="Slots" instance=ExtResource("87_hot7s")]
+layout_mode = 2
+
+[node name="InventorySlot14" parent="Slots" instance=ExtResource("87_hot7s")]
+layout_mode = 2
+
+[node name="InventorySlot15" parent="Slots" instance=ExtResource("87_hot7s")]
+layout_mode = 2

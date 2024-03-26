@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddcqksmajukn1"]
+
+[ext_resource type="PackedScene" uid="uid://c8ubeawbakhbr" path="res://scenes/ui/drag_and_drop/drag_and_drop.tscn" id="1_aval7"]
+
+[node name="InventorySlot" instance=ExtResource("1_aval7")]
+group_id = "Inventory"
+
+[node name="Panel" parent="." index="0"]
+custom_minimum_size = Vector2(20, 20)
+offset_right = 20.0
+offset_bottom = 20.0

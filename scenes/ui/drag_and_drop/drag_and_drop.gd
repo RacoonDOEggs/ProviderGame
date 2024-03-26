@@ -66,8 +66,8 @@ func _drop_data(at_position, data):
 		#var temp_id = object_id
 		object_id = data["origin_object_id"]
 		#data["origin_node"].object_id = temp_id
-		data["origin_node"].object_id = 0
-		data["origin_node"].object_value = 0
+		data["origin_node"].object_id = -1
+		data["origin_node"].object_value = -1
 		update_specific_drop_data(at_position, data)
 	
 	
