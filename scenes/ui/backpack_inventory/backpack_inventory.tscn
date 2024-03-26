@@ -247,9 +247,9 @@ libraries = {
 [node name="Slots" type="GridContainer" parent="."]
 anchors_preset = -1
 anchor_left = 0.353
-anchor_top = 0.58
+anchor_top = 0.6
 anchor_right = 0.353
-anchor_bottom = 0.58
+anchor_bottom = 0.61
 offset_left = -105.6
 offset_top = -41.88
 offset_right = 86.4
@@ -306,3 +306,8 @@ layout_mode = 2
 
 [node name="InventorySlot15" parent="Slots" instance=ExtResource("87_hot7s")]
 layout_mode = 2
+
+[node name="PlaceHolder" type="Control" parent="Slots"]
+layout_mode = 2
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

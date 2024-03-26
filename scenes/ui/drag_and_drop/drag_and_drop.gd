@@ -38,7 +38,7 @@ func _get_drag_data(_at_position):
 	preview_texture.expand_mode = 1 #Ignore size
 	preview_texture.size = custom_size
 	preview_texture = specific_preview(preview_texture)
-	var preview = Control.new() #Positionnement de preview_texture
+	var preview = Control.new()  #Positionnement de preview_texture
 	preview.add_child(preview_texture)
 	preview_texture.position = -0.5 * preview_texture.size
 	

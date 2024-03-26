@@ -14,7 +14,7 @@ shadow_size = 7
 
 [sub_resource type="LabelSettings" id="LabelSettings_j1u0i"]
 line_spacing = -9.0
-font_size = 67
+font_size = 58
 font_color = Color(0, 0, 0, 1)
 outline_color = Color(0.964706, 0.952941, 0.972549, 1)
 shadow_size = 7
@@ -97,7 +97,7 @@ scale = Vector2(1.28, 1.28)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-text = "Pesez pour réparer
+text = "Appuyez pour allumer 
 la radio de l'avion"
 label_settings = SubResource("LabelSettings_j1u0i")
 metadata/_edit_lock_ = true

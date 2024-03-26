@@ -29,6 +29,17 @@ func _ready():
 	for i in inventory.size():
 		print(place_in_inventory(inventory[i]))
 
+func _unhandled_key_input(event):
+	if event.is_action_pressed("inventory"):
+		if self.visible == true:
+			$AnimationPlayer.play("inventory_appear",1.0,true)
+		else:
+			visible = true
+			$AnimationPlayer.play("inventory_appear",1.0,false)
+
+func _on_animation_player_animation_finished(anim_name:StringName):
+	if anim_name == "inventory_appear":
+		self.visible = false if self.visible == true else true
 
 func place_in_inventory(item_id:int):
 	var placed = false
@@ -41,3 +52,5 @@ func place_in_inventory(item_id:int):
 		elif placed:
 			return placed
 	return placed
+
+
