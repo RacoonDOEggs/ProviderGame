@@ -309,3 +309,5 @@ layout_mode = 2
 
 [node name="PlaceHolder" type="Control" parent="Slots"]
 layout_mode = 2
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
