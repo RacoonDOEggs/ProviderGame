@@ -36,7 +36,7 @@ scale = Vector2(1.6, 1.6)
 [node name="ColorRect" type="ColorRect" parent="PanelWindow"]
 modulate = Color(0.254902, 0.254902, 0.254902, 1)
 layout_mode = 0
-offset_right = 1197.0
+offset_right = 1216.0
 offset_bottom = 674.0
 
 [node name="x" type="Sprite2D" parent="PanelWindow"]
@@ -307,10 +307,9 @@ texture = ExtResource("6_exfbq")
 
 [node name="closeButton" type="TextureButton" parent="PanelWindow"]
 layout_mode = 0
-offset_left = 1089.0
-offset_top = 1.0
-offset_right = 1153.0
-offset_bottom = 65.0
+offset_left = 1151.88
+offset_right = 1215.88
+offset_bottom = 64.0
 texture_normal = ExtResource("9_5ackg")
 stretch_mode = 0
 

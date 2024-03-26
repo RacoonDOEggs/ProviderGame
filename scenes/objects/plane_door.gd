@@ -2,7 +2,7 @@ extends Area2D
 
 signal player_can_move # Signal indiquant que le joueur peut être en mouvement encore.
 signal plane_door_clicked # Signal indiquant que la porte de l'avion est pesée.
-signal all_puzzle_win2 # Signal indiquant que tous les casse-têtes on été complété.
+signal end_game_3 # Signal indiquant que le jeu est terminé(le gros bouton rouge a été appuyé).
 
 var mouse_inside:bool = false # Variable indiquant que la souris survole la porte.
 
@@ -41,6 +41,6 @@ func _on_menu_puzzle_ui_open_optical_puzzle():
 func _on_menu_puzzle_ui_menu_puzzle_exited():
 	player_can_move.emit() # On envoie un autre signal vers test_scene.
 
-# Signal reçcu lorsque tous les casse-têtes on été complété
-func _on_menu_puzzle_ui_all_puzzle_win():
-	all_puzzle_win2.emit() # On envoie un autre signal vers test_scene.
+# Signal reçu et émis pour indiquer que le jeu est fini.
+func _on_menu_puzzle_ui_end_game_2():
+	end_game_3.emit()

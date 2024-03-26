@@ -33,6 +33,7 @@ visible = false
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="plane_door_clicked" from="." to="." method="_on_plane_door_clicked"]
 [connection signal="all_puzzle_win" from="Menu_puzzle_Ui" to="." method="_on_menu_puzzle_ui_all_puzzle_win"]
+[connection signal="end_game_2" from="Menu_puzzle_Ui" to="." method="_on_menu_puzzle_ui_end_game_2"]
 [connection signal="menu_puzzle_exited" from="Menu_puzzle_Ui" to="." method="_on_menu_puzzle_ui_menu_puzzle_exited"]
 [connection signal="open_electrical_puzzle" from="Menu_puzzle_Ui" to="." method="_on_menu_puzzle_ui_open_electrical_puzzle"]
 [connection signal="open_logical_puzzle" from="Menu_puzzle_Ui" to="." method="_on_menu_puzzle_ui_open_logical_puzzle"]

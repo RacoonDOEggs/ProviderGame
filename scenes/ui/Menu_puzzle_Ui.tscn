@@ -154,9 +154,6 @@ offset_top = 802.0
 offset_right = 1254.0
 offset_bottom = 929.0
 
-[node name="Option_panel_for_menu_puzzle" parent="." instance=ExtResource("9_bq5pc")]
-visible = false
-
 [node name="Text" type="MarginContainer" parent="."]
 offset_left = 662.0
 offset_top = 807.0
@@ -174,7 +171,12 @@ de l'avion."
 label_settings = SubResource("LabelSettings_mtuh6")
 metadata/_edit_lock_ = true
 
+[node name="Option_panel_for_menu_puzzle" parent="." instance=ExtResource("9_bq5pc")]
+visible = false
+
+[connection signal="all_puzzle_win" from="." to="Option_panel_for_menu_puzzle" method="_on_menu_puzzle_ui_all_puzzle_win"]
 [connection signal="pressed" from="Electrical_button/Electrical_but" to="." method="_on_electrical_but_pressed"]
 [connection signal="pressed" from="Logical_button/Logical_but" to="." method="_on_logical_but_pressed"]
 [connection signal="pressed" from="Optical_button/Optical_but" to="." method="_on_optical_but_pressed"]
 [connection signal="pressed" from="Options_but" to="." method="_on_texture_button_pressed"]
+[connection signal="end_game" from="Option_panel_for_menu_puzzle" to="." method="_on_option_panel_for_menu_puzzle_end_game"]

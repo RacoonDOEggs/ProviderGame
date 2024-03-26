@@ -1,8 +1,5 @@
 extends Node2D
 
-var game_won = false # Variable indiquant que le joueur a complété le jeu.
-
-# Signal reçcu lorsque tous les casse-têtes on été complété.
-func _on_plane_door_all_puzzle_win_2():
-	game_won = true
-	print("Yay you've won!")
+# Signal reçu lorsque le jeu est terminé(le gros bouton rouge a été cliqué).
+func _on_plane_door_end_game_3():
+	print("Bravo tu as gagné la partie")

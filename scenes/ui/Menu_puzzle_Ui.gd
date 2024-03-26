@@ -1,10 +1,12 @@
 extends CanvasLayer
 
-signal menu_puzzle_exited # Signal émit lorsqu'on ferme le menu des casse-têtes.
-signal open_electrical_puzzle # Signal émit lorsque le bouton du menu du casse-tête électrique est pesé.
-signal open_logical_puzzle
-signal open_optical_puzzle
+signal menu_puzzle_exited # Signal indiquant qu'on ferme le menu des casse-têtes.
+signal open_electrical_puzzle # Signal indiquant que le bouton du menu du casse-tête électrique est pesé.
+signal open_logical_puzzle # Signal indiquant que le bouton du menu du casse-tête électrique est pesé.
+signal open_optical_puzzle # Signal indiquant que le bouton du menu du casse-tête électrique est pesé.
 signal all_puzzle_win # Signal indiquant que tous les casse-têtes on été complété.
+signal end_game_2 # Signal indiquant la fin du jeu (le gros bouton rouge a été appuyé).
+
 
 var can_open_electrical_puzzle = false # Variable indiquant qu'on peut accéder au casse-tête électrique. (Condition: Les résistances(objet dans la carte) ont été rammassé).
 var can_open_logical_puzzle = false # Variable indiquant qu'on peut accéder au casse-tête logique. (Condition: Le casse-tête électrique est complété).
@@ -48,3 +50,7 @@ func _on_logic_circuit_ui_logical_win():
 # Signal reçu lorsqu'on a complété le casse-tête optique.
 func _on_optical_puzzle_ui_optical_win():
 	optical_puzzle_win_check = true
+
+# Signal reçu et émis lorsque le gros bouton rouge est appuyé.
+func _on_option_panel_for_menu_puzzle_end_game():
+	end_game_2.emit()
