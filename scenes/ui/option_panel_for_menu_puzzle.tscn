@@ -1,0 +1,163 @@
+[gd_scene load_steps=9 format=3 uid="uid://vnhd31bl71pg"]
+
+[ext_resource type="Texture2D" uid="uid://dmeag1orbdwq5" path="res://graphics/Backpack/Green/Categories/5 - Save & Load/Appear/3.png" id="1_ecrj2"]
+[ext_resource type="Texture2D" uid="uid://h83vcvkf1bd3" path="res://graphics/objects/menuPuzzle/red-button.png" id="2_0lm0d"]
+[ext_resource type="Texture2D" uid="uid://cofqyhdg8grg0" path="res://graphics/objects/menuPuzzle/red_button_up.png" id="2_nxvjm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0x0fl"]
+line_spacing = -9.0
+font_size = 71
+font_color = Color(0, 0, 0, 1)
+outline_color = Color(0.964706, 0.952941, 0.972549, 1)
+shadow_size = 7
+
+[sub_resource type="LabelSettings" id="LabelSettings_j1u0i"]
+line_spacing = -9.0
+font_size = 67
+font_color = Color(0, 0, 0, 1)
+outline_color = Color(0.964706, 0.952941, 0.972549, 1)
+shadow_size = 7
+
+[sub_resource type="LabelSettings" id="LabelSettings_vm1ma"]
+line_spacing = -9.0
+font_size = 45
+outline_color = Color(0.964706, 0.952941, 0.972549, 1)
+shadow_size = 7
+
+[sub_resource type="LabelSettings" id="LabelSettings_bt18s"]
+line_spacing = -9.0
+font_size = 41
+outline_color = Color(0.964706, 0.952941, 0.972549, 1)
+shadow_size = 7
+
+[sub_resource type="LabelSettings" id="LabelSettings_envsh"]
+line_spacing = -9.0
+font_color = Color(0, 0, 0, 1)
+outline_color = Color(0.964706, 0.952941, 0.972549, 1)
+shadow_size = 7
+
+[node name="Option_panel_for_menu_puzzle" type="CanvasLayer"]
+
+[node name="Outline" type="MarginContainer" parent="."]
+offset_left = 100.0
+offset_top = -325.0
+offset_right = 884.0
+offset_bottom = 363.0
+scale = Vector2(2.26, 2.26)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="Outline"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("1_ecrj2")
+metadata/_edit_lock_ = true
+
+[node name="Big_red_button" type="MarginContainer" parent="."]
+offset_left = 928.0
+offset_top = 548.0
+offset_right = 944.0
+offset_bottom = 567.0
+scale = Vector2(8.315, 8.315)
+
+[node name="Electrical_but" type="TextureButton" parent="Big_red_button"]
+layout_mode = 2
+texture_normal = ExtResource("2_nxvjm")
+texture_pressed = ExtResource("2_0lm0d")
+texture_disabled = ExtResource("2_0lm0d")
+metadata/_edit_lock_ = true
+
+[node name="Title" type="MarginContainer" parent="."]
+offset_left = 642.0
+offset_top = 26.0
+offset_right = 1418.0
+offset_bottom = 123.0
+scale = Vector2(0.89, 0.89)
+
+[node name="Label" type="Label" parent="Title"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Système de réparation"
+label_settings = SubResource("LabelSettings_0x0fl")
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Text" type="MarginContainer" parent="."]
+offset_left = 569.0
+offset_top = 227.0
+offset_right = 1226.0
+offset_bottom = 402.0
+scale = Vector2(1.28, 1.28)
+
+[node name="Label" type="Label" parent="Text"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Pesez pour réparer
+la radio de l'avion"
+label_settings = SubResource("LabelSettings_j1u0i")
+metadata/_edit_lock_ = true
+
+[node name="Exit_menu_puzzle" type="MarginContainer" parent="."]
+offset_left = 602.0
+offset_top = 811.0
+offset_right = 618.0
+offset_bottom = 830.0
+scale = Vector2(6.275, 6.275)
+
+[node name="Exit_but" type="TextureButton" parent="Exit_menu_puzzle"]
+layout_mode = 2
+texture_normal = ExtResource("2_nxvjm")
+texture_pressed = ExtResource("2_0lm0d")
+texture_disabled = ExtResource("2_0lm0d")
+metadata/_edit_lock_ = true
+
+[node name="Text_quitter" type="MarginContainer" parent="."]
+offset_left = 729.0
+offset_top = 804.0
+offset_right = 887.0
+offset_bottom = 867.0
+scale = Vector2(0.845, 0.845)
+
+[node name="Label" type="Label" parent="Text_quitter"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Quitter
+"
+label_settings = SubResource("LabelSettings_vm1ma")
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Text_avertissement" type="MarginContainer" parent="."]
+offset_left = 719.0
+offset_top = 853.0
+offset_right = 1470.0
+offset_bottom = 970.0
+scale = Vector2(0.775, 0.775)
+
+[node name="Label" type="Label" parent="Text_avertissement"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "En quittant, vous retournerez au menu
+des casse-têtes."
+label_settings = SubResource("LabelSettings_bt18s")
+metadata/_edit_lock_ = true
+
+[node name="Text2" type="MarginContainer" parent="."]
+offset_left = 608.0
+offset_top = 434.0
+offset_right = 855.0
+offset_bottom = 485.0
+scale = Vector2(1.28, 1.28)
+
+[node name="Label" type="Label" parent="Text2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "ou pour détruire le monde en créant un 
+trou noir supermassif."
+label_settings = SubResource("LabelSettings_envsh")
+metadata/_edit_lock_ = true

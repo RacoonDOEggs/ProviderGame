@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://drhqjq8hl0aay"]
 
 [ext_resource type="Script" path="res://scenes/objects/plane_door.gd" id="1_xaiwi"]
-[ext_resource type="PackedScene" uid="uid://2kyccrcvmbdn" path="res://scenes/ui/optical_puzzle/optical_puzzle_ui.tscn" id="2_n8kfe"]
+[ext_resource type="PackedScene" uid="uid://dx6wvrlhjdisk" path="res://scenes/ui/optical_puzzle/optical_puzzle_ui.tscn" id="2_n8kfe"]
 [ext_resource type="PackedScene" uid="uid://b6yyl83ohmqyo" path="res://scenes/ui/electricity_puzzle/electrical_box_ui.tscn" id="3_4pncs"]
 [ext_resource type="PackedScene" uid="uid://cqu5woxnudbp2" path="res://scenes/ui/logic_puzzle/logic_puzzle_ui.tscn" id="4_enwnu"]
 [ext_resource type="PackedScene" uid="uid://bt3cmx1rs64cl" path="res://scenes/ui/Menu_puzzle_Ui.tscn" id="5_dntpl"]
@@ -32,6 +32,7 @@ visible = false
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="plane_door_clicked" from="." to="." method="_on_plane_door_clicked"]
+[connection signal="all_puzzle_win" from="Menu_puzzle_Ui" to="." method="_on_menu_puzzle_ui_all_puzzle_win"]
 [connection signal="menu_puzzle_exited" from="Menu_puzzle_Ui" to="." method="_on_menu_puzzle_ui_menu_puzzle_exited"]
 [connection signal="open_electrical_puzzle" from="Menu_puzzle_Ui" to="." method="_on_menu_puzzle_ui_open_electrical_puzzle"]
 [connection signal="open_logical_puzzle" from="Menu_puzzle_Ui" to="." method="_on_menu_puzzle_ui_open_logical_puzzle"]
