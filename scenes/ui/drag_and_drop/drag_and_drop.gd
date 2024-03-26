@@ -8,7 +8,7 @@ class_name DragAndDrop
 #Permet d'assigner une valeur à l'objet dans l'éditeur
 @export var object_value:float = 0
 #Permet d'assigner un code d'objet à l'objet dans l'éditeur
-@export var object_id:int = 0
+@export var object_id:int = -1
 
 #S'exécute à la création de l'objet
 func _ready():
