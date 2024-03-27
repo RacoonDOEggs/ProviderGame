@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+#Dictionnaire des noms des items avec leur ID
 var items = {"fish":0,
 			"egg":1,
 			"blue_book":2,
@@ -11,6 +12,7 @@ var items = {"fish":0,
 			"gold":8,
 			"wood":9}
 
+#Liste des textures d'items en ordre d'ID
 var textures:Array = [load("res://graphics/Backpack/Green/Categories/1 - Inventory/Sprites/items/0.png"),
 					load("res://graphics/Backpack/Green/Categories/1 - Inventory/Sprites/items/1.png"),
 					load("res://graphics/Backpack/Green/Categories/1 - Inventory/Sprites/items/2.png"),
@@ -22,12 +24,28 @@ var textures:Array = [load("res://graphics/Backpack/Green/Categories/1 - Invento
 					load("res://graphics/Backpack/Green/Categories/1 - Inventory/Sprites/items/8.png"),
 					load("res://graphics/Backpack/Green/Categories/1 - Inventory/Sprites/items/9.png"),]
 
-var inventory = [2,5,8,4,3]
+#Liste des items présents dans l'inventaire du joueur
+var inventory = [2,5,5,8,8,4,4,4,4,3,8]
 
+#Initialisation
 func _ready():
-	for i in inventory.size():
-		print(place_in_inventory(inventory[i]))
+	update_inventory()
 
+#Enlève tous les tiems du sac à dos et les remet selon ce qui est présent dans inventory
+func update_inventory():
+	for i in $Slots.get_child_count(false) - 1:
+		var inventory_slot = $Slots.get_child(i, false)
+		if inventory_slot.object_id != -1:
+			inventory_slot.texture = null
+			inventory_slot.object_id = -1
+			inventory_slot.object_value = -1
+			update_stack_label(inventory_slot)
+		
+	inventory.sort()
+	for i in inventory.size():
+		place_in_inventory(inventory[i])
+
+#Apparition de l'inventaire et du manuel en fonction des actions du joueur
 func _unhandled_key_input(event):
 	if event.is_action_pressed("inventory"):
 		if self.visible == true:
@@ -40,20 +58,46 @@ func _unhandled_key_input(event):
 		else:
 			$AnimationPlayer.play("manual_appear")
 
-func _on_animation_player_animation_finished(anim_name:StringName):
+func _on_animation_player_animation_finished(_anim_name:StringName):
 	pass
 
-
+#Place un item dans le premier endroit valide dans l'inventaire
 func place_in_inventory(item_id:int):
 	var placed = false
-	for i in $Slots.get_child_count(false):
+	for i in $Slots.get_child_count(false) - 1:
 		var inventory_slot = $Slots.get_child(i, false)
-		if inventory_slot.texture == null and !placed:
+		if inventory_slot.object_id == item_id and !placed:
+			inventory_slot.object_value += 1
+			update_stack_label(inventory_slot)
+			placed = true
+		elif inventory_slot.texture == null and !placed:
 			inventory_slot.texture = textures[item_id]
 			inventory_slot.object_id = item_id
+			inventory_slot.object_value += 1
+			update_stack_label(inventory_slot)
 			placed = true
 		elif placed:
 			return placed
 	return placed
 
+#Enlève un item de l'inventaire
+func remove_from_inventory(item:String):
+	var item_id = items[item]
+	var removed = false
+	for i in $Slots.get_child_count(false) - 1:
+		var inventory_slot = $Slots.get_child(i, false)
+		if inventory_slot.object_id == item_id and !removed:
+			inventory_slot.texture = inventory_slot.texture if inventory_slot.object_value > 0 else null
+			inventory_slot.object_id = -1
+			inventory_slot.object_value = inventory_slot.object_value - 1 if inventory_slot.object_value > 0 else inventory_slot.object_value
+			update_stack_label(inventory_slot)
+			inventory.erase(item_id)
+			removed = true
+		elif removed:
+			return removed
+	return removed
 
+#Met à jour le texte qui indique le nombre d'items dans l'emplacement
+func update_stack_label(inventory_slot:Node):
+	var label = inventory_slot.get_child(1,false)
+	label.text = str(inventory_slot.object_value) if inventory_slot.object_value > 0 else "" 

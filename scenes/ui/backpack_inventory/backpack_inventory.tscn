@@ -200,6 +200,46 @@ tracks/2/keys = {
 "values": [false, true, true]
 }
 
+[sub_resource type="Animation" id="Animation_ep76v"]
+resource_name = "inventory_disappear"
+length = 0.58
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Backpack:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.02, 0.04, 0.06, 0.08, 0.1, 0.12, 0.14, 0.16, 0.18, 0.2, 0.22, 0.24, 0.26, 0.28, 0.3, 0.32, 0.34, 0.36, 0.38, 0.4, 0.42, 0.44, 0.46, 0.48, 0.5, 0.52, 0.54, 0.56, 0.58),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("88_6y4b1"), ExtResource("89_xbv6v"), ExtResource("90_er614"), ExtResource("91_c0uoj"), ExtResource("92_kj58q"), ExtResource("93_ie5cd"), ExtResource("94_rahqq"), ExtResource("95_266r7"), ExtResource("96_qwwma"), ExtResource("97_b430b"), ExtResource("98_g7xtf"), ExtResource("99_irsw4"), ExtResource("100_f520d"), ExtResource("101_rgv51"), ExtResource("102_7eynj"), ExtResource("103_abowm"), ExtResource("104_iva2g"), ExtResource("105_4rgx2"), ExtResource("106_m5lta"), ExtResource("107_q5dqf"), ExtResource("108_rb1xc"), ExtResource("109_71cui"), ExtResource("110_cqp6n"), ExtResource("111_5p2oc"), ExtResource("112_p7ibl"), ExtResource("113_w7tiu"), ExtResource("114_0dc86"), ExtResource("115_l8k68"), ExtResource("116_b6m0c"), ExtResource("117_53h34")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.55, 0.58),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Slots:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.06, 0.08),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+
 [sub_resource type="Animation" id="Animation_cn6x2"]
 resource_name = "manual_appear"
 length = 0.42
@@ -238,6 +278,46 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_1u05b"]
+resource_name = "manual_disappear"
+length = 0.36
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Manual:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.04, 0.08, 0.12, 0.16, 0.2, 0.24, 0.28, 0.32, 0.36),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("119_q75su"), ExtResource("120_6typ7"), ExtResource("121_jx655"), ExtResource("122_fuvqe"), ExtResource("123_mmb34"), ExtResource("124_3f2l1"), ExtResource("125_ofwr7"), ExtResource("126_sg2ak"), ExtResource("127_v6vss"), ExtResource("3_pnr7w")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Manual:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.36),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Slots:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.36),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
 }
 
 [sub_resource type="Animation" id="Animation_1n7wy"]
@@ -286,86 +366,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("31_gy748"), ExtResource("32_ic2so"), ExtResource("33_76y35"), ExtResource("34_o6ne0"), ExtResource("35_klmnh"), ExtResource("36_65nix")]
-}
-
-[sub_resource type="Animation" id="Animation_ep76v"]
-resource_name = "inventory_disappear"
-length = 0.58
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Backpack:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.02, 0.04, 0.06, 0.08, 0.1, 0.12, 0.14, 0.16, 0.18, 0.2, 0.22, 0.24, 0.26, 0.28, 0.3, 0.32, 0.34, 0.36, 0.38, 0.4, 0.42, 0.44, 0.46, 0.48, 0.5, 0.52, 0.54, 0.56, 0.58),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("88_6y4b1"), ExtResource("89_xbv6v"), ExtResource("90_er614"), ExtResource("91_c0uoj"), ExtResource("92_kj58q"), ExtResource("93_ie5cd"), ExtResource("94_rahqq"), ExtResource("95_266r7"), ExtResource("96_qwwma"), ExtResource("97_b430b"), ExtResource("98_g7xtf"), ExtResource("99_irsw4"), ExtResource("100_f520d"), ExtResource("101_rgv51"), ExtResource("102_7eynj"), ExtResource("103_abowm"), ExtResource("104_iva2g"), ExtResource("105_4rgx2"), ExtResource("106_m5lta"), ExtResource("107_q5dqf"), ExtResource("108_rb1xc"), ExtResource("109_71cui"), ExtResource("110_cqp6n"), ExtResource("111_5p2oc"), ExtResource("112_p7ibl"), ExtResource("113_w7tiu"), ExtResource("114_0dc86"), ExtResource("115_l8k68"), ExtResource("116_b6m0c"), ExtResource("117_53h34")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.55, 0.58),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [true, true, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Slots:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.06, 0.08),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [true, true, false]
-}
-
-[sub_resource type="Animation" id="Animation_1u05b"]
-resource_name = "manual_disappear"
-length = 0.36
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Manual:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.04, 0.08, 0.12, 0.16, 0.2, 0.24, 0.28, 0.32, 0.36),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("119_q75su"), ExtResource("120_6typ7"), ExtResource("121_jx655"), ExtResource("122_fuvqe"), ExtResource("123_mmb34"), ExtResource("124_3f2l1"), ExtResource("125_ofwr7"), ExtResource("126_sg2ak"), ExtResource("127_v6vss"), ExtResource("3_pnr7w")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Manual:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.36),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [true, true, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Slots:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.36),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_diy27"]
