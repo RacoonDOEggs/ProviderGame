@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cneooxi28pgcx"]
+[gd_scene load_steps=14 format=3 uid="uid://cneooxi28pgcx"]
 
 [ext_resource type="Script" path="res://addons/wfc/nodes/generator_2d.gd" id="1_lrl57"]
 [ext_resource type="Script" path="res://scenes/levels/map_generator.gd" id="1_qa5on"]
@@ -8,7 +8,6 @@
 [ext_resource type="Script" path="res://addons/wfc/solver/solver_settings.gd" id="4_g0f0o"]
 [ext_resource type="Script" path="res://addons/wfc/runners/runner_multithreaded_settings.gd" id="5_v2qsv"]
 [ext_resource type="Script" path="res://addons/wfc/runners/runner_main_thread_settings.gd" id="6_itvxf"]
-[ext_resource type="PackedScene" uid="uid://dt2nffs32s7o1" path="res://addons/wfc/examples/helpers/progress_indicator.tscn" id="9_05mkd"]
 
 [sub_resource type="Resource" id="Resource_oijm5"]
 script = ExtResource("2_d06rk")
@@ -81,8 +80,5 @@ layer_0/name = "ground"
 layer_0/tile_data = PackedInt32Array(131073, 65536, 2, 131072, 0, 1, 65537, 0, 1, 131074, 0, 1, 196609, 0, 1)
 layer_1/name = "objects"
 layer_1/tile_data = PackedInt32Array()
-
-[node name="progressIndicator" parent="." node_paths=PackedStringArray("generator") instance=ExtResource("9_05mkd")]
-generator = NodePath("../WFC2DGenerator")
 
 [connection signal="done" from="WFC2DGenerator" to="." method="_on_wfc_2d_generator_done"]

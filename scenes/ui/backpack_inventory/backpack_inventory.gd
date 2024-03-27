@@ -25,21 +25,24 @@ var textures:Array = [load("res://graphics/Backpack/Green/Categories/1 - Invento
 var inventory = [2,5,8,4,3]
 
 func _ready():
-	$AnimationPlayer.play("inventory_appear")
 	for i in inventory.size():
 		print(place_in_inventory(inventory[i]))
 
 func _unhandled_key_input(event):
 	if event.is_action_pressed("inventory"):
 		if self.visible == true:
-			$AnimationPlayer.play("inventory_appear",1.0,true)
+			$AnimationPlayer.play("inventory_disappear")
 		else:
-			visible = true
-			$AnimationPlayer.play("inventory_appear",1.0,false)
+			$AnimationPlayer.play("inventory_appear")
+	elif event.is_action_pressed("journal") and self.visible == true:
+		if $Manual.visible == true:
+			$AnimationPlayer.play("manual_disappear")
+		else:
+			$AnimationPlayer.play("manual_appear")
 
 func _on_animation_player_animation_finished(anim_name:StringName):
-	if anim_name == "inventory_appear":
-		self.visible = false if self.visible == true else true
+	pass
+
 
 func place_in_inventory(item_id:int):
 	var placed = false
