@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://vnhd31bl71pg"]
 
-[ext_resource type="Script" path="res://scenes/ui/option_panel_for_menu_puzzle.gd" id="1_1v3dc"]
+[ext_resource type="Script" path="res://scenes/ui/menu_puzzle/option_panel_for_menu_puzzle.gd" id="1_1v3dc"]
 [ext_resource type="Texture2D" uid="uid://dmeag1orbdwq5" path="res://graphics/Backpack/Green/Categories/5 - Save & Load/Appear/3.png" id="1_ecrj2"]
 [ext_resource type="Texture2D" uid="uid://h83vcvkf1bd3" path="res://graphics/objects/menuPuzzle/red-button.png" id="2_0lm0d"]
 [ext_resource type="Texture2D" uid="uid://cofqyhdg8grg0" path="res://graphics/objects/menuPuzzle/red_button_up.png" id="2_nxvjm"]
@@ -14,7 +14,7 @@ shadow_size = 7
 
 [sub_resource type="LabelSettings" id="LabelSettings_j1u0i"]
 line_spacing = -9.0
-font_size = 58
+font_size = 67
 font_color = Color(0, 0, 0, 1)
 outline_color = Color(0.964706, 0.952941, 0.972549, 1)
 shadow_size = 7
@@ -97,7 +97,7 @@ scale = Vector2(1.28, 1.28)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-text = "Appuyez pour allumer 
+text = "Pesez pour réparer
 la radio de l'avion"
 label_settings = SubResource("LabelSettings_j1u0i")
 metadata/_edit_lock_ = true
