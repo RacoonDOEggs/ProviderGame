@@ -1,14 +1,15 @@
-[gd_scene load_steps=13 format=3 uid="uid://bt3cmx1rs64cl"]
+[gd_scene load_steps=14 format=3 uid="uid://bt3cmx1rs64cl"]
 
-[ext_resource type="Texture2D" uid="uid://onvrpn0e8anf" path="res://graphics/Backpack/Green/Categories/6 - Settings/ClipBoard/Appear/3.png" id="1_kh83w"]
-[ext_resource type="Script" path="res://scenes/ui/menu_puzzle/Menu_puzzle_Ui.gd" id="1_slj37"]
-[ext_resource type="Texture2D" uid="uid://b4a8cyiuovkyh" path="res://graphics/objects/menuPuzzle/elecricity_symbol.png" id="1_vfbmy"]
-[ext_resource type="Texture2D" uid="uid://degsrnnx4nuig" path="res://graphics/objects/menuPuzzle/Logical_gate_for_menu(vrai).png" id="2_ydlic"]
-[ext_resource type="Texture2D" uid="uid://cjbqc2e4jo4n6" path="res://graphics/objects/menuPuzzle/Reflexion_for_menu(vrai).png" id="4_51noi"]
-[ext_resource type="Texture2D" uid="uid://cxjuu5qommono" path="res://graphics/Backpack/Green/Categories/6 - Settings/Sprites/Buttons & Pointers/4.png" id="5_7qxhs"]
-[ext_resource type="Texture2D" uid="uid://ce15llt83gko1" path="res://graphics/Backpack/Green/Categories/6 - Settings/Sprites/Buttons & Pointers/7.png" id="6_5vhgt"]
-[ext_resource type="Texture2D" uid="uid://h83vcvkf1bd3" path="res://graphics/objects/menuPuzzle/red-button.png" id="7_77eqs"]
-[ext_resource type="PackedScene" uid="uid://vnhd31bl71pg" path="res://scenes/ui/menu_puzzle/option_panel_for_menu_puzzle.tscn" id="9_bq5pc"]
+[ext_resource type="Script" path="res://scenes/ui/menu_puzzle/Menu_puzzle_Ui.gd" id="1_28faj"]
+[ext_resource type="Texture2D" uid="uid://onvrpn0e8anf" path="res://graphics/Backpack/Green/Categories/6 - Settings/ClipBoard/Appear/3.png" id="2_xflsv"]
+[ext_resource type="Texture2D" uid="uid://b4a8cyiuovkyh" path="res://graphics/objects/menuPuzzle/elecricity_symbol.png" id="3_ex1xc"]
+[ext_resource type="Texture2D" uid="uid://degsrnnx4nuig" path="res://graphics/objects/menuPuzzle/Logical_gate_for_menu(vrai).png" id="4_moqwp"]
+[ext_resource type="Texture2D" uid="uid://cjbqc2e4jo4n6" path="res://graphics/objects/menuPuzzle/Reflexion_for_menu(vrai).png" id="5_y86lq"]
+[ext_resource type="Texture2D" uid="uid://cxjuu5qommono" path="res://graphics/Backpack/Green/Categories/6 - Settings/Sprites/Buttons & Pointers/4.png" id="6_g5p4v"]
+[ext_resource type="Texture2D" uid="uid://ce15llt83gko1" path="res://graphics/Backpack/Green/Categories/6 - Settings/Sprites/Buttons & Pointers/7.png" id="7_14b7i"]
+[ext_resource type="Texture2D" uid="uid://h83vcvkf1bd3" path="res://graphics/objects/menuPuzzle/red-button.png" id="8_mwa11"]
+[ext_resource type="Texture2D" uid="uid://be1bq76lfb6k0" path="res://graphics/ui/x_button.png" id="9_mlvk5"]
+[ext_resource type="PackedScene" uid="uid://vnhd31bl71pg" path="res://scenes/ui/menu_puzzle/option_panel_for_menu_puzzle.tscn" id="10_hy4u5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_d2wy4"]
 font_size = 47
@@ -17,7 +18,7 @@ outline_color = Color(0.964706, 0.952941, 0.972549, 1)
 shadow_size = 7
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_wp8ke"]
-specular_texture = ExtResource("5_7qxhs")
+specular_texture = ExtResource("6_g5p4v")
 
 [sub_resource type="LabelSettings" id="LabelSettings_mtuh6"]
 line_spacing = -5.0
@@ -27,7 +28,7 @@ outline_color = Color(0.964706, 0.952941, 0.972549, 1)
 shadow_size = 7
 
 [node name="Menu_puzzle_Ui" type="CanvasLayer"]
-script = ExtResource("1_slj37")
+script = ExtResource("1_28faj")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 offset_left = 219.0
@@ -40,7 +41,7 @@ metadata/_edit_lock_ = true
 [node name="TextureRect" type="TextureRect" parent="MarginContainer"]
 texture_filter = 1
 layout_mode = 2
-texture = ExtResource("1_kh83w")
+texture = ExtResource("2_xflsv")
 
 [node name="TItle" type="MarginContainer" parent="."]
 offset_left = 659.0
@@ -70,7 +71,7 @@ modulate = Color(0.74902, 0.74902, 0.72549, 1)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
-texture = ExtResource("1_vfbmy")
+texture = ExtResource("3_ex1xc")
 metadata/_edit_lock_ = true
 
 [node name="logical_symb" type="MarginContainer" parent="."]
@@ -85,7 +86,7 @@ modulate = Color(0.74902, 0.74902, 0.72549, 1)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
-texture = ExtResource("2_ydlic")
+texture = ExtResource("4_moqwp")
 metadata/_edit_lock_ = true
 
 [node name="Optical_symb" type="MarginContainer" parent="."]
@@ -100,7 +101,7 @@ modulate = Color(0.74902, 0.74902, 0.72549, 1)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
-texture = ExtResource("4_51noi")
+texture = ExtResource("5_y86lq")
 metadata/_edit_lock_ = true
 
 [node name="Electrical_button" type="MarginContainer" parent="."]
@@ -112,9 +113,9 @@ scale = Vector2(4, 4)
 
 [node name="Electrical_but" type="TextureButton" parent="Electrical_button"]
 layout_mode = 2
-texture_normal = ExtResource("5_7qxhs")
-texture_pressed = ExtResource("6_5vhgt")
-texture_disabled = ExtResource("7_77eqs")
+texture_normal = ExtResource("6_g5p4v")
+texture_pressed = ExtResource("7_14b7i")
+texture_disabled = ExtResource("8_mwa11")
 metadata/_edit_lock_ = true
 
 [node name="Logical_button" type="MarginContainer" parent="."]
@@ -127,9 +128,9 @@ scale = Vector2(4, 4)
 [node name="Logical_but" type="TextureButton" parent="Logical_button"]
 layout_mode = 2
 disabled = true
-texture_normal = ExtResource("5_7qxhs")
-texture_pressed = ExtResource("6_5vhgt")
-texture_disabled = ExtResource("7_77eqs")
+texture_normal = ExtResource("6_g5p4v")
+texture_pressed = ExtResource("7_14b7i")
+texture_disabled = ExtResource("8_mwa11")
 metadata/_edit_lock_ = true
 
 [node name="Optical_button" type="MarginContainer" parent="."]
@@ -142,10 +143,10 @@ scale = Vector2(4.015, 4.015)
 [node name="Optical_but" type="TextureButton" parent="Optical_button"]
 layout_mode = 2
 disabled = true
-texture_normal = ExtResource("5_7qxhs")
-texture_pressed = ExtResource("6_5vhgt")
+texture_normal = ExtResource("6_g5p4v")
+texture_pressed = ExtResource("7_14b7i")
 texture_hover = SubResource("CanvasTexture_wp8ke")
-texture_disabled = ExtResource("7_77eqs")
+texture_disabled = ExtResource("8_mwa11")
 metadata/_edit_lock_ = true
 
 [node name="Options_but" type="TextureButton" parent="."]
@@ -171,7 +172,16 @@ de l'avion."
 label_settings = SubResource("LabelSettings_mtuh6")
 metadata/_edit_lock_ = true
 
-[node name="Option_panel_for_menu_puzzle" parent="." instance=ExtResource("9_bq5pc")]
+[node name="XButton" type="TextureButton" parent="."]
+offset_left = 1214.0
+offset_top = 142.0
+offset_right = 1278.0
+offset_bottom = 206.0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture_normal = ExtResource("9_mlvk5")
+
+[node name="Option_panel_for_menu_puzzle" parent="." instance=ExtResource("10_hy4u5")]
 visible = false
 
 [connection signal="all_puzzle_win" from="." to="Option_panel_for_menu_puzzle" method="_on_menu_puzzle_ui_all_puzzle_win"]
@@ -179,4 +189,5 @@ visible = false
 [connection signal="pressed" from="Logical_button/Logical_but" to="." method="_on_logical_but_pressed"]
 [connection signal="pressed" from="Optical_button/Optical_but" to="." method="_on_optical_but_pressed"]
 [connection signal="pressed" from="Options_but" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="XButton" to="." method="_on_x_button_pressed"]
 [connection signal="end_game" from="Option_panel_for_menu_puzzle" to="." method="_on_option_panel_for_menu_puzzle_end_game"]

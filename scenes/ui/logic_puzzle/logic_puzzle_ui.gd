@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 signal logical_win
+
 @onready var andGate = $PanelWindow/AndGate
 @onready var notGate = $PanelWindow/NotGate
 @onready var norGate = $PanelWindow/NorGate

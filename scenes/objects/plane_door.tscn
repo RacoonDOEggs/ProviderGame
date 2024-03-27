@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://drhqjq8hl0aay"]
 
 [ext_resource type="Script" path="res://scenes/objects/plane_door.gd" id="1_xaiwi"]
+[ext_resource type="PackedScene" uid="uid://bt3cmx1rs64cl" path="res://scenes/ui/menu_puzzle/Menu_puzzle_Ui.tscn" id="2_6116f"]
 [ext_resource type="PackedScene" uid="uid://dx6wvrlhjdisk" path="res://scenes/ui/optical_puzzle/optical_puzzle_ui.tscn" id="2_n8kfe"]
 [ext_resource type="PackedScene" uid="uid://b6yyl83ohmqyo" path="res://scenes/ui/electricity_puzzle/electrical_box_ui.tscn" id="3_4pncs"]
 [ext_resource type="PackedScene" uid="uid://cqu5woxnudbp2" path="res://scenes/ui/logic_puzzle/logic_puzzle_ui.tscn" id="4_enwnu"]
-[ext_resource type="PackedScene" uid="uid://bt3cmx1rs64cl" path="res://scenes/ui/menu_puzzle/Menu_puzzle_Ui.tscn" id="5_dntpl"]
 
 [node name="Plane_door" type="Area2D"]
 script = ExtResource("1_xaiwi")
@@ -17,7 +17,7 @@ visible = false
 color = Color(1, 1, 1, 0.494118)
 polygon = PackedVector2Array(235, 41, 295, 62, 255, 156, 239, 204, 217, 287, 155, 256, 163, 205, 187, 148)
 
-[node name="Menu_puzzle_Ui" parent="." instance=ExtResource("5_dntpl")]
+[node name="Menu_puzzle_Ui" parent="." instance=ExtResource("2_6116f")]
 visible = false
 
 [node name="ElectricalBoxUI" parent="." instance=ExtResource("3_4pncs")]

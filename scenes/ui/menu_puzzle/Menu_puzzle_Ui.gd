@@ -22,7 +22,6 @@ func _process(_delta):
 # Signal reçu lorsque le bouton option est pesé.
 func _on_texture_button_pressed():
 	$Option_panel_for_menu_puzzle.visible = true
-	
 
 # Signal reçu et émis lorsque le bouton du menu du casse-tête électrique est pesé.
 func _on_electrical_but_pressed():
@@ -51,6 +50,11 @@ func _on_logic_circuit_ui_logical_win():
 func _on_optical_puzzle_ui_optical_win():
 	optical_puzzle_win_check = true
 
-# Signal reçu et émis lorsque le gros bouton rouge est appuyé.
+# Signal reçu et émis lorsque le gros bouton rouge du menu option est appuyé.
 func _on_option_panel_for_menu_puzzle_end_game():
 	end_game_2.emit()
+
+# Signal reçu et émis lorsqu'on appuie sur le bouton X du menu des casse-têtes.
+func _on_x_button_pressed():
+	visible = false
+	menu_puzzle_exited.emit()
