@@ -4,8 +4,6 @@ extends Node2D
 @export var crash_area:Vector2i = Vector2i(20,20)
 @export var crash_amount:int = 4
 
-
-
 func _ready():
 	$WFC2DGenerator.rect = Rect2i(Vector2i(-(generation_size.x/2), -(generation_size.y/2)), generation_size)
 	$sample.hide()
@@ -13,7 +11,6 @@ func _ready():
 	$target.show()
 	generate_plane_crashes()
 	$WFC2DGenerator.start()
-	
 
 func generate_plane_crashes():
 	var generaton_rect = $WFC2DGenerator.rect

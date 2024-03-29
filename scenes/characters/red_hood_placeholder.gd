@@ -9,7 +9,6 @@ func _process(_delta):
 	velocity = direction * speed
 	move_and_slide()
 
-
 # Lorsqu'on clique sur la porte (qu'on ouvre le menu des casse-têtes), le joueur ne peut plus bouger.
 func _on_plane_door_plane_door_clicked():
 	speed = 0 # On arrête le joueur

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dfufixc3dgogb"]
+[gd_scene load_steps=3 format=3 uid="uid://dfufixc3dgogb"]
 
 [ext_resource type="Script" path="res://scenes/ui/waiting_screen/waiting_screen.gd" id="1_blbd5"]
+[ext_resource type="Texture2D" uid="uid://bcohceg35pp3a" path="res://graphics/waiting_screen.png" id="2_ojcj5"]
 
 [node name="Waiting_screen" type="CanvasLayer"]
 script = ExtResource("1_blbd5")
@@ -22,4 +23,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="Control/Background"]
+modulate = Color(0.643137, 0.643137, 0.643137, 1)
+texture_filter = 1
 layout_mode = 2
+texture = ExtResource("2_ojcj5")
