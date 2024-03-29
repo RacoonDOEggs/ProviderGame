@@ -8,6 +8,7 @@ func _process(_delta):
 	var direction:Vector2 = Input.get_vector("left", "right", "up", "down")
 	velocity = direction * speed
 	move_and_slide()
+	
 
 # Lorsqu'on clique sur la porte (qu'on ouvre le menu des casse-têtes), le joueur ne peut plus bouger.
 func _on_plane_door_plane_door_clicked():

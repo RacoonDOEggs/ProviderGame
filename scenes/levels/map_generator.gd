@@ -4,6 +4,8 @@ extends Node2D
 @export var crash_area:Vector2i = Vector2i(20,20)
 @export var crash_amount:int = 4
 
+signal player_pos_signal2(player_pos)
+
 func _ready():
 	$WFC2DGenerator.rect = Rect2i(Vector2i(-(generation_size.x/2), -(generation_size.y/2)), generation_size)
 	$sample.hide()
@@ -35,3 +37,6 @@ func generate_plane_crashes():
 func _on_wfc_2d_generator_done():
 	$sample.queue_free()
 	$negative_sample.queue_free()
+
+func _on_test_level_player_pos_signal(player_pos):
+	player_pos_signal2.emit(player_pos)

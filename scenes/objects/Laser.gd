@@ -17,12 +17,12 @@ func _process(_delta):
 		win.emit()
 	
 	# Si le joueur relâche la touche du laser, cela veut dire qu'il n'a pas tenu la touche pendant 3 secondes sur la zone gagnante donc on attend que le temps s'écoule pour indiquer que le temps ne s'est pas écoulé.
-	if Input.is_action_just_released("interact"):
+	if Input.is_action_just_released("laser"):
 		await $Timer.timeout # On attends que le temps s'écoule.
 		has_timeout = false # On indique que le temps ne s'est pas écoulé, car le joueur n'a pas tenu la touche pendant 3 secondes sur la zone gagnante.
 	
 	# Si on pèse sur ESPACE ou F, le rayon s'actionne.
-	if Input.is_action_pressed("interact"):
+	if Input.is_action_pressed("laser"):
 		
 		line.add_point(Vector2.ZERO) #Le premier point est créé au début de la ligne, donc au début du laser.
 		

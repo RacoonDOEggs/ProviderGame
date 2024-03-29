@@ -32,12 +32,8 @@ texture_region_size = Vector2i(96, 96)
 1:2/0/y_sort_origin = 20
 1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:2/0/physics_layer_0/angular_velocity = 0.0
-<<<<<<< HEAD
-1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-48, -2.82843, 48, 0, 48, 48, -48, 48)
-1:2/0/custom_data_0 = true
-=======
 1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-48, -8.4904, 48, -8.47571, 48, 48, -48, 48)
->>>>>>> e7b34146ba1a2eaae80d1e1ec540cad418ae109a
+1:2/0/custom_data_1 = true
 0:3/0 = 0
 0:3/0/y_sort_origin = 144
 0:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -89,6 +85,7 @@ texture_region_size = Vector2i(96, 96)
 0:6/0/y_sort_origin = -95
 0:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:6/0/physics_layer_0/angular_velocity = 0.0
+0:6/0/custom_data_2 = true
 1:6/0 = 0
 1:6/0/y_sort_origin = -95
 1:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -98,6 +95,10 @@ texture_region_size = Vector2i(96, 96)
 tile_size = Vector2i(96, 96)
 physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 7
-custom_data_layer_0/name = "Harvestable"
+custom_data_layer_0/name = "can_farm_herbs"
 custom_data_layer_0/type = 1
+custom_data_layer_1/name = "can_farm_berries"
+custom_data_layer_1/type = 1
+custom_data_layer_2/name = "can_farm_wood"
+custom_data_layer_2/type = 1
 sources/0 = SubResource("TileSetAtlasSource_6rvin")
