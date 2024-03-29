@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cneooxi28pgcx"]
+[gd_scene load_steps=15 format=3 uid="uid://cneooxi28pgcx"]
 
 [ext_resource type="Script" path="res://addons/wfc/nodes/generator_2d.gd" id="1_lrl57"]
 [ext_resource type="Script" path="res://scenes/levels/map_generator.gd" id="1_qa5on"]
@@ -78,7 +78,6 @@ layer_1/tile_data = PackedInt32Array(196613, 0, 1, 196617, 65536, 2, 327687, 655
 
 [node name="negative_sample" type="TileMap" parent="."]
 visible = false
-tile_set = ExtResource("2_wrwbl")
 format = 2
 layer_0/name = "ground"
 layer_0/tile_data = PackedInt32Array(131073, 65536, 2, 131072, 0, 1, 65537, 0, 1, 131074, 0, 1, 196609, 0, 1)
