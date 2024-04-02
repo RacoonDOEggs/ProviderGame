@@ -1,7 +1,5 @@
 extends Node
 
-
-
 signal berry_picked(amount:int)
 signal herbs_picked(amount:int)
 signal wood_picked(amount:int)
@@ -28,3 +26,20 @@ var player_pos: Vector2 = Vector2.ZERO:
 	set(value):
 		player_pos = value
 
+var player_can_move: bool = true:
+	get:
+		return player_can_move
+	set(value):
+		player_can_move = value
+
+var game_won: bool = false:
+	get:
+		return game_won
+	set(value):
+		game_won = value
+
+var end_game: bool = false:
+	get:
+		return end_game
+	set(value):
+		end_game = value

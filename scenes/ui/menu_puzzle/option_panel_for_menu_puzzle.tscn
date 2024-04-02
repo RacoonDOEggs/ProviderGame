@@ -62,7 +62,7 @@ offset_right = 944.0
 offset_bottom = 567.0
 scale = Vector2(8.315, 8.315)
 
-[node name="Electrical_but" type="TextureButton" parent="Big_red_button"]
+[node name="Red_but" type="TextureButton" parent="Big_red_button"]
 layout_mode = 2
 disabled = true
 texture_normal = ExtResource("2_nxvjm")
@@ -165,5 +165,5 @@ trou noir supermassif."
 label_settings = SubResource("LabelSettings_envsh")
 metadata/_edit_lock_ = true
 
-[connection signal="pressed" from="Big_red_button/Electrical_but" to="." method="_on_electrical_but_pressed"]
+[connection signal="pressed" from="Big_red_button/Red_but" to="." method="_on_red_but_pressed"]
 [connection signal="pressed" from="Exit_menu_puzzle/Exit_but" to="." method="_on_exit_but_pressed"]

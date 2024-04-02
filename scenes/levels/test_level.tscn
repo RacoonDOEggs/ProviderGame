@@ -31,6 +31,4 @@ position = Vector2(-99, 704)
 collision_mask = 3
 
 [connection signal="player_pos_signal" from="." to="MapGenerator" method="_on_test_level_player_pos_signal"]
-[connection signal="end_game_3" from="Plane_door" to="." method="_on_plane_door_end_game_3"]
 [connection signal="plane_door_clicked" from="Plane_door" to="RedHoodPlaceholder" method="_on_plane_door_plane_door_clicked"]
-[connection signal="player_can_move" from="Plane_door" to="RedHoodPlaceholder" method="_on_plane_door_player_can_move"]

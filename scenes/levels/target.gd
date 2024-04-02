@@ -106,11 +106,15 @@ func _process(delta):
 	
 	# S'il y a une tuile sélectionnée brillante.
 	if selected_tile != Vector2i.ZERO:
-		var distance_tuile_joueur = abs(tile_player_position - selected_tile) # Distance entre la tuile brillante et le joueur.
-		print(distance_tuile_joueur)
+		
+		# La distance entre le joueur et la tuile sélectionnée sous forme de vecteur de Integer.
+		var distance_tuile_joueur_vector: Vector2i = abs(tile_player_position - selected_tile) # Distance entre la tuile brillante et le joueur.
+		# La distance entre le joueur et la tuile sous forme de distance Integer.
+		var distance_tuile_joueur_squarred = distance_tuile_joueur_vector.length_squared()
+		
 		
 		#Si le joueur sort d'un rayon de 1 bloc, on arrête le brillement.	
-		if distance_tuile_joueur > Vector2i(1,1):
+		if distance_tuile_joueur_squarred > 1:
 			# Prend les données de la tuile brillante.
 			var tile_data: TileData = tile_map.get_cell_tile_data(objects_layer, selected_tile)
 			
@@ -132,7 +136,7 @@ func _process(delta):
 
 
 func _input(_event):
-	##Les 4 directions du joueur
+	#Les 4 directions du joueur. On détermine la direction du joueur.
 	if Input.is_action_just_released("left"):
 		Globals.player_direction = "left"
 	else: if Input.is_action_just_released("right"):
@@ -142,61 +146,28 @@ func _input(_event):
 	else: if Input.is_action_just_released("down"):
 		Globals.player_direction = "down"
 	
-	## On crée des variables booléennes indiquant si la tuile possède des données personnalisées voulues..
-	#var can_highlight_herbs: bool = false
-	#var can_highlight_berries: bool = false
-	#var can_highlight_wood: bool = false
-	#
-	## On vérifie (ans l'ordre de tilesArray) si les tuiles ont des données ou non.
-	#for i in tilesArray.size():
-		## Prend les données de la tuile cliquée.
-		#var tile_data: TileData = tile_map.get_cell_tile_data(objects_layer, tilesArray[i])
-		#
-		## Si la tuile possède des données
-		#if tile_data:
-			## On crée une variable booléenne indiquant si la tuile possède des données personnalisées.
-			#var has_custom_data: bool = tile_data.get_custom_data(can_have_custom_data)
-			#
-			##Si la tuile possède des données personalisées.
-			#if has_custom_data:
-				## On la garde en mémoire
-				#selected_tile = tilesArray[i]
-				#
-				## On crée des variables booléennes indiquant si la tuile possède des données personnalisées voulues..
-				#can_highlight_herbs = tile_data.get_custom_data(can_farm_herbs_custom_data)
-				#can_highlight_berries = tile_data.get_custom_data(can_farm_berries_custom_data)
-				#can_highlight_wood = tile_data.get_custom_data(can_farm_wood_custom_data)
-				#
-				## Dépendamment des données personalisées de la tuile sélectionnée, on la fait briller.
-				#if can_highlight_herbs:
-					#tile_map.set_cell(objects_layer, selected_tile, source_id, atlas_coord_for_herbs_highlight)
-				#else: if can_highlight_berries:
-					#tile_map.set_cell(objects_layer, selected_tile, source_id, atlas_coord_for_berries_highlight)
-				#else: if can_highlight_wood:
-					#tile_map.set_cell(objects_layer, selected_tile, source_id, atlas_coord_for_wood_highlight)
-				#
-				## 2. Si le joueur pèse sur F pendant que la tuile est brillante.
-				#if Input.is_action_pressed("interact"):
-					#
-					#var tile_data2: TileData = tile_map.get_cell_tile_data(objects_layer, selected_tile)
-					#
-					## On crée des variables booléennes indiquant si la tuile possède des données personnalisées voulues..
-					#var can_farm_herbs: bool = tile_data2.get_custom_data(can_farm_herbs_custom_data)
-					#var can_farm_berries: bool = tile_data2.get_custom_data(can_farm_berries_custom_data)
-					#var can_farm_wood: bool = tile_data2.get_custom_data(can_farm_wood_custom_data)
-					#
-					## Dépendamment des données personalisées de la tuile sélectionnée, on la fait briller.
-					#if can_farm_herbs:
-						#tile_map.set_cell(objects_layer, selected_tile, source_id, atlas_coord_for_herbs_farmed)
-					#else: if can_farm_berries:
-						#tile_map.set_cell(objects_layer, selected_tile, source_id, atlas_coord_for_berries_farmed)
-					#else: if can_farm_wood:
-						#tile_map.erase_cell(objects_layer, selected_tile)
-					#
-				#else: # Si le joueur n'a pas appuyé sur F.
-								#print("F not pressed")
-				#
-			#else:
-				#print( "no custom data")
-		#else:
-			#print("no data")
+	
+	# Si le joueur appuie sur F et qu'il y a une tuile de sélectionnée.
+	if Input.is_action_pressed("interact") and selected_tile != Vector2i.ZERO:
+		
+		# Prend les données de la tuile brillante.
+		var tile_data: TileData = tile_map.get_cell_tile_data(objects_layer, selected_tile)
+		
+		# On crée des variables booléennes indiquant si la tuile possède des données personnalisées voulues..
+		var can_farm_herbs: bool = tile_data.get_custom_data(can_farm_herbs_custom_data)
+		var can_farm_berries: bool = tile_data.get_custom_data(can_farm_berries_custom_data)
+		var can_farm_wood: bool = tile_data.get_custom_data(can_farm_wood_custom_data)
+		
+		# Dépendamment des données personalisées de la tuile sélectionnée, on change les tuiles pour indiquer que l'item a été ramassé.
+		if can_farm_herbs:
+			tile_map.set_cell(objects_layer, selected_tile, source_id, atlas_coord_for_herbs_farmed) 
+			Globals.herbs_picked.emit(1) # On ajoute l'item d'herbe dans l'inventaire.
+		else: if can_farm_berries:
+			tile_map.set_cell(objects_layer, selected_tile, source_id, atlas_coord_for_berries_farmed)
+			Globals.berry_picked.emit(1) # On ajoute l'item d'herbe dans l'inventaire.
+		else: if can_farm_wood:
+			tile_map.erase_cell(objects_layer, selected_tile)
+			Globals.wood_picked.emit(1) # On ajoute l'item de bois dans l'inventaire.
+		
+		# Il n'y a plus de tuile sélectionnée.
+		selected_tile = Vector2i.ZERO

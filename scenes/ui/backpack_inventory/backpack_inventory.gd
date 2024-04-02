@@ -10,7 +10,7 @@ class Item:
 		self.name = _name
 		self.max_stack = _max_stack
 
-#Dictionnaire des noms des items avec leur ID
+#Dictionnaire des noms des items avec leur ID.
 var items = [
 	Item.new(0, "berry", 8),
 	Item.new(1,"herb", 8),
@@ -26,9 +26,12 @@ var textures:Array = [
 					]
 
 #Liste des items présents dans l'inventaire du joueur
-var inventory = [2,2,1,1,1,1,0,2,2,2,2,3,3,3]
+var inventory = [0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 
-#Initialisatio0
+##Liste des items présents dans l'inventaire du joueur
+#var inventory = [2,2,1,1,1,1,0,2,2,2,2,3,3,3]
+
+#Initialisation.
 func _ready():
 	Globals.berry_picked.connect(on_berry_picked)
 	Globals.herbs_picked.connect(on_herbs_picked)
@@ -49,7 +52,7 @@ func on_wood_picked(amount:int):
 func on_resistor_picked(amount:int):
 	add_to_inventory(3, amount)
 
-#Enlève tous les tiems du sac à dos et les remet selon ce qui est présent dans inventory
+#Enlève tous les tiems du sac à dos et les remet selon ce qui est présent dans inventory.
 func update_inventory():
 	for i in $Slots.get_child_count(false) - 1:
 		var inventory_slot = $Slots.get_child(i, false)
@@ -66,8 +69,10 @@ func update_inventory():
 #Apparition de l'inventaire et du manuel en fonction des actions du joueur
 func _unhandled_key_input(event):
 	if event.is_action_pressed("inventory"):
+		Globals.player_can_move = false # On arrête le mouvement du joueur.
 		if self.visible == true:
 			$AnimationPlayer.play("inventory_disappear")
+			Globals.player_can_move = true # On remet le mouvement du joueur.			
 		else:
 			$AnimationPlayer.play("inventory_appear")
 	elif event.is_action_pressed("journal") and self.visible == true:

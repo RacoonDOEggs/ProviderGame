@@ -1,10 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://drhqjq8hl0aay"]
+[gd_scene load_steps=3 format=3 uid="uid://drhqjq8hl0aay"]
 
 [ext_resource type="Script" path="res://scenes/objects/plane_door.gd" id="1_xaiwi"]
 [ext_resource type="PackedScene" uid="uid://bt3cmx1rs64cl" path="res://scenes/ui/menu_puzzle/Menu_puzzle_Ui.tscn" id="2_6116f"]
-[ext_resource type="PackedScene" uid="uid://dx6wvrlhjdisk" path="res://scenes/ui/optical_puzzle/optical_puzzle_ui.tscn" id="2_n8kfe"]
-[ext_resource type="PackedScene" uid="uid://b6yyl83ohmqyo" path="res://scenes/ui/electricity_puzzle/electrical_box_ui.tscn" id="3_4pncs"]
-[ext_resource type="PackedScene" uid="uid://cqu5woxnudbp2" path="res://scenes/ui/logic_puzzle/logic_puzzle_ui.tscn" id="4_enwnu"]
 
 [node name="Plane_door" type="Area2D"]
 script = ExtResource("1_xaiwi")
@@ -20,24 +17,9 @@ polygon = PackedVector2Array(235, 41, 295, 62, 255, 156, 239, 204, 217, 287, 155
 [node name="Menu_puzzle_Ui" parent="." instance=ExtResource("2_6116f")]
 visible = false
 
-[node name="ElectricalBoxUI" parent="." instance=ExtResource("3_4pncs")]
-visible = false
-
-[node name="logic_circuit_ui" parent="." instance=ExtResource("4_enwnu")]
-visible = false
-
-[node name="Optical_puzzle_ui" parent="." instance=ExtResource("2_n8kfe")]
-visible = false
-
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="plane_door_clicked" from="." to="." method="_on_plane_door_clicked"]
-[connection signal="all_puzzle_win" from="Menu_puzzle_Ui" to="." method="_on_menu_puzzle_ui_all_puzzle_win"]
-[connection signal="end_game_2" from="Menu_puzzle_Ui" to="." method="_on_menu_puzzle_ui_end_game_2"]
-[connection signal="menu_puzzle_exited" from="Menu_puzzle_Ui" to="." method="_on_menu_puzzle_ui_menu_puzzle_exited"]
 [connection signal="open_electrical_puzzle" from="Menu_puzzle_Ui" to="." method="_on_menu_puzzle_ui_open_electrical_puzzle"]
 [connection signal="open_logical_puzzle" from="Menu_puzzle_Ui" to="." method="_on_menu_puzzle_ui_open_logical_puzzle"]
 [connection signal="open_optical_puzzle" from="Menu_puzzle_Ui" to="." method="_on_menu_puzzle_ui_open_optical_puzzle"]
-[connection signal="electrical_win" from="ElectricalBoxUI" to="Menu_puzzle_Ui" method="_on_electrical_box_ui_electrical_win"]
-[connection signal="logical_win" from="logic_circuit_ui" to="Menu_puzzle_Ui" method="_on_logic_circuit_ui_logical_win"]
-[connection signal="optical_win" from="Optical_puzzle_ui" to="Menu_puzzle_Ui" method="_on_optical_puzzle_ui_optical_win"]

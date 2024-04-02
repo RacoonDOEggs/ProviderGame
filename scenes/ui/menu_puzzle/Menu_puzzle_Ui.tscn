@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bt3cmx1rs64cl"]
+[gd_scene load_steps=17 format=3 uid="uid://bt3cmx1rs64cl"]
 
 [ext_resource type="Script" path="res://scenes/ui/menu_puzzle/Menu_puzzle_Ui.gd" id="1_28faj"]
 [ext_resource type="Texture2D" uid="uid://onvrpn0e8anf" path="res://graphics/Backpack/Green/Categories/6 - Settings/ClipBoard/Appear/3.png" id="2_xflsv"]
@@ -10,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://h83vcvkf1bd3" path="res://graphics/objects/menuPuzzle/red-button.png" id="8_mwa11"]
 [ext_resource type="Texture2D" uid="uid://be1bq76lfb6k0" path="res://graphics/ui/x_button.png" id="9_mlvk5"]
 [ext_resource type="PackedScene" uid="uid://vnhd31bl71pg" path="res://scenes/ui/menu_puzzle/option_panel_for_menu_puzzle.tscn" id="10_hy4u5"]
+[ext_resource type="PackedScene" uid="uid://cqu5woxnudbp2" path="res://scenes/ui/logic_puzzle/logic_puzzle_ui.tscn" id="11_k5ypk"]
+[ext_resource type="PackedScene" uid="uid://dx6wvrlhjdisk" path="res://scenes/ui/optical_puzzle/optical_puzzle_ui.tscn" id="12_ia5xb"]
+[ext_resource type="PackedScene" uid="uid://b6yyl83ohmqyo" path="res://scenes/ui/electricity_puzzle/electrical_box_ui.tscn" id="13_suser"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_d2wy4"]
 font_size = 47
@@ -184,10 +187,17 @@ texture_normal = ExtResource("9_mlvk5")
 [node name="Option_panel_for_menu_puzzle" parent="." instance=ExtResource("10_hy4u5")]
 visible = false
 
-[connection signal="all_puzzle_win" from="." to="Option_panel_for_menu_puzzle" method="_on_menu_puzzle_ui_all_puzzle_win"]
+[node name="ElectricalBoxUI" parent="." instance=ExtResource("13_suser")]
+visible = false
+
+[node name="logic_circuit_ui" parent="." instance=ExtResource("11_k5ypk")]
+visible = false
+
+[node name="Optical_puzzle_ui" parent="." instance=ExtResource("12_ia5xb")]
+visible = false
+
 [connection signal="pressed" from="Electrical_button/Electrical_but" to="." method="_on_electrical_but_pressed"]
 [connection signal="pressed" from="Logical_button/Logical_but" to="." method="_on_logical_but_pressed"]
 [connection signal="pressed" from="Optical_button/Optical_but" to="." method="_on_optical_but_pressed"]
 [connection signal="pressed" from="Options_but" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="XButton" to="." method="_on_x_button_pressed"]
-[connection signal="end_game" from="Option_panel_for_menu_puzzle" to="." method="_on_option_panel_for_menu_puzzle_end_game"]
