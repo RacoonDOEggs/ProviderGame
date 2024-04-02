@@ -1,33 +1,34 @@
 extends CanvasLayer
 
+class Item:
+	var id:int
+	var name:String
+	var max_stack:int
+
+	func _init(_id:int, _name:String, _max_stack:int):
+		self.id = _id
+		self.name = _name
+		self.max_stack = _max_stack
+
 #Dictionnaire des noms des items avec leur ID
-var items = {"fish":0,
-			"egg":1,
-			"blue_book":2,
-			"candy":3,
-			"red_book":4,
-			"stone":5,
-			"cloth":6,
-			"leaves":7,
-			"gold":8,
-			"wood":9}
+var items = [
+	Item.new(0, "berry", 8),
+	Item.new(1,"leaf", 8),
+	Item.new(2,"wood", 4),
+	Item.new(3, "resistor", 1)]
 
 #Liste des textures d'items en ordre d'ID
-var textures:Array = [load("res://graphics/Backpack/Green/Categories/1 - Inventory/Sprites/items/0.png"),
-					load("res://graphics/Backpack/Green/Categories/1 - Inventory/Sprites/items/1.png"),
-					load("res://graphics/Backpack/Green/Categories/1 - Inventory/Sprites/items/2.png"),
-					load("res://graphics/Backpack/Green/Categories/1 - Inventory/Sprites/items/3.png"),
-					load("res://graphics/Backpack/Green/Categories/1 - Inventory/Sprites/items/4.png"),
-					load("res://graphics/Backpack/Green/Categories/1 - Inventory/Sprites/items/5.png"),
-					load("res://graphics/Backpack/Green/Categories/1 - Inventory/Sprites/items/6.png"),
+var textures:Array = [
+					load("res://graphics/Backpack/Green/Categories/1 - Inventory/Sprites/items/10.png"),
 					load("res://graphics/Backpack/Green/Categories/1 - Inventory/Sprites/items/7.png"),
-					load("res://graphics/Backpack/Green/Categories/1 - Inventory/Sprites/items/8.png"),
-					load("res://graphics/Backpack/Green/Categories/1 - Inventory/Sprites/items/9.png"),]
+					load("res://graphics/Backpack/Green/Categories/1 - Inventory/Sprites/items/9.png"),
+					load("res://graphics/objects/electrical/resistor_item.png")
+					]
 
 #Liste des items présents dans l'inventaire du joueur
-var inventory = [2,5,5,8,8,4,4,4,4,3,8]
+var inventory = [2,2,1,1,1,1,0,2,2,2,2,3,3,3]
 
-#Initialisation
+#Initialisatio0
 func _ready():
 	update_inventory()
 
@@ -61,12 +62,18 @@ func _unhandled_key_input(event):
 func _on_animation_player_animation_finished(_anim_name:StringName):
 	pass
 
+#Ajoute un item dans l'inventaire
+func add_to_inventory(item_id:int, amount:int):
+	for i in amount:
+		inventory.append(item_id)
+		place_in_inventory(item_id)
+
 #Place un item dans le premier endroit valide dans l'inventaire
 func place_in_inventory(item_id:int):
 	var placed = false
 	for i in $Slots.get_child_count(false) - 1:
 		var inventory_slot = $Slots.get_child(i, false)
-		if inventory_slot.object_id == item_id and !placed:
+		if inventory_slot.object_id == item_id and !placed and inventory_slot.object_value < items[item_id].max_stack:
 			inventory_slot.object_value += 1
 			update_stack_label(inventory_slot)
 			placed = true
@@ -81,8 +88,7 @@ func place_in_inventory(item_id:int):
 	return placed
 
 #Enlève un item de l'inventaire
-func remove_from_inventory(item:String):
-	var item_id = items[item]
+func remove_from_inventory(item_id:int):	
 	var removed = false
 	for i in $Slots.get_child_count(false) - 1:
 		var inventory_slot = $Slots.get_child(i, false)
@@ -100,4 +106,4 @@ func remove_from_inventory(item:String):
 #Met à jour le texte qui indique le nombre d'items dans l'emplacement
 func update_stack_label(inventory_slot:Node):
 	var label = inventory_slot.get_child(1,false)
-	label.text = str(inventory_slot.object_value) if inventory_slot.object_value > 0 else "" 
+	label.text = str(inventory_slot.object_value) if inventory_slot.object_value > 1 else "" 
