@@ -1,5 +1,10 @@
 extends Node
 
+signal berry_picked(amount:int)
+signal herbs_picked(amount:int)
+signal wood_picked(amount:int)
+signal resistor_picked(amount:int)
+signal remove_item(item_id:int)
 
 var laser_timer_check: bool = false:
 	get:
@@ -13,3 +18,4 @@ var player_pos: Vector2i = Vector2i.ZERO:
 		return player_pos
 	set(value):
 		player_pos = value
+

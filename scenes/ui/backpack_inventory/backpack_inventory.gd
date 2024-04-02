@@ -13,7 +13,7 @@ class Item:
 #Dictionnaire des noms des items avec leur ID
 var items = [
 	Item.new(0, "berry", 8),
-	Item.new(1,"leaf", 8),
+	Item.new(1,"herb", 8),
 	Item.new(2,"wood", 4),
 	Item.new(3, "resistor", 1)]
 
@@ -30,7 +30,24 @@ var inventory = [2,2,1,1,1,1,0,2,2,2,2,3,3,3]
 
 #Initialisatio0
 func _ready():
+	Globals.berry_picked.connect(on_berry_picked)
+	Globals.herbs_picked.connect(on_herbs_picked)
+	Globals.wood_picked.connect(on_wood_picked)
+	Globals.resistor_picked.connect(on_resistor_picked)
+	Globals.remove_item.connect(remove_from_inventory)
 	update_inventory()
+
+func on_berry_picked(amount:int):
+	add_to_inventory(0,amount)
+
+func on_herbs_picked(amount:int):
+	add_to_inventory(1,amount)
+
+func on_wood_picked(amount:int):
+	add_to_inventory(2, amount)
+
+func on_resistor_picked(amount:int):
+	add_to_inventory(3, amount)
 
 #Enlève tous les tiems du sac à dos et les remet selon ce qui est présent dans inventory
 func update_inventory():
