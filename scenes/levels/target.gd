@@ -19,8 +19,6 @@ var can_highlight_herbs: bool = false
 var can_highlight_berries: bool = false
 var can_highlight_wood: bool = false
 
-var player_position:Vector2i = Vector2i.ZERO
-
 # La tuile sélectionnée par le joueur en fonction la direction et de la position du joueur. Elle apparaît brillante.
 var selected_tile: Vector2i = Vector2i.ZERO
 # Les 3 tuiles positionnées par rapport à la direction du joueur.
@@ -39,15 +37,15 @@ var atlas_coord_for_berries_farmed: Vector2i = Vector2i(0,2) # On place le buiss
 # L'identification de la "tilemap" étant 0.
 var source_id = 0
 
+# La position locale du joueur par rapport au "tilemap" (Vecteur de Integer)
+var tile_player_position: Vector2i = Vector2i.ZERO
+
 func _process(delta):
-	# La position globale du joueur par rapport à la scène (Vecteur de Floats).
-	player_position = Globals.player_pos
-	
-	# La position locale du joueur par rapport au "tilemap" (Vecteur de Integer).
-	var tile_player_position: Vector2i = tile_map.local_to_map(player_position)
+	# On fait la conversion de la position globale du joueur par rapport à celle locale.
+	tile_player_position = tile_map.local_to_map(Globals.player_pos)
 	
 	# 1. On vérifie si, dans les 3 tuiles dans la direction du joueur, si l'une d'elles contient des données personalisées.
-	# Selon la direction, on établit un tableau de tuiles.
+	# Selon la direction, on établit un tableau de tuiles qui sont les 3 devant le joueur.
 	if Globals.player_direction == "left":
 		var tile1 = tile_player_position + Vector2i(-1,0) # Tuile à gauche.
 		var tile2 = tile_player_position + Vector2i(-1,1) # Tuile en bas à gauche.
@@ -72,20 +70,14 @@ func _process(delta):
 	
 	# Variable compteur pour la boucle.
 	var i: int = 0
-	# Sélectionnons la première tuile dans la direction du joueur ayant des données personalisées
-	while selected_tile == Vector2i.ZERO:
-		
-		# On quitte la boucle si aucune des tuiles n'a de données personalisées.
-		if i <= 3:
-			break
-		
-		# Prend les données de la tuile cliquée.
+	# Tant qu'il n'y a pas de tuile avec des données personalisées.
+	while selected_tile == Vector2i.ZERO and i < 3:
+		# Prend les données d'une des 3 tuiles devant le joueur.
 		var tile_data: TileData = tile_map.get_cell_tile_data(objects_layer, tilesArray[i])
 		
 		# Si la tuile a des données.
 		if tile_data:
-			
-			# On crée une variable booléenne indiquant si la tuile possède des données personnalisées.			
+			# On crée une variable booléenne indiquant si la tuile possède des données personnalisées.
 			var has_custom_data: bool = tile_data.get_custom_data(can_have_custom_data)
 			
 			# Si la tuile a des données personalisées.
@@ -106,13 +98,16 @@ func _process(delta):
 					tile_map.set_cell(objects_layer, selected_tile, source_id, atlas_coord_for_berries_highlight)
 				else: if can_highlight_wood:
 					tile_map.set_cell(objects_layer, selected_tile, source_id, atlas_coord_for_wood_highlight)
-		
+		# Sinon, la tuile n'a pas de données.
+		else:
+			print("no data")
 		# On augmente le compteur de 1.
 		i += 1
 	
 	# S'il y a une tuile sélectionnée brillante.
 	if selected_tile != Vector2i.ZERO:
-		var distance_tuile_joueur = abs(player_position - selected_tile) # Distance entre la tuile brillante et le joueur.
+		var distance_tuile_joueur = abs(tile_player_position - selected_tile) # Distance entre la tuile brillante et le joueur.
+		print(distance_tuile_joueur)
 		
 		#Si le joueur sort d'un rayon de 1 bloc, on arrête le brillement.	
 		if distance_tuile_joueur > Vector2i(1,1):
@@ -131,6 +126,9 @@ func _process(delta):
 				tile_map.set_cell(objects_layer, selected_tile, source_id, atlas_coord_for_berries)
 			else: if can_highlight_wood:
 				tile_map.set_cell(objects_layer, selected_tile, source_id, atlas_coord_for_wood)
+			
+			# Il n'y a plus de tuile sélectionnée.
+			selected_tile = Vector2i.ZERO
 
 
 func _input(_event):
