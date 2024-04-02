@@ -1,14 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://cnakc56i2kfyk"]
+[gd_scene load_steps=4 format=3 uid="uid://cnakc56i2kfyk"]
 
-[ext_resource type="Texture2D" uid="uid://cunqu3w7ulwl3" path="res://graphics/objects/crashed_plane.png" id="1_ogmia"]
+[ext_resource type="Texture2D" uid="uid://cunqu3w7ulwl3" path="res://graphics/objects/main_scene/crashed_plane.png" id="1_ogmia"]
+[ext_resource type="Texture2D" uid="uid://cuqvkbneehbg8" path="res://graphics/objects/main_scene/wing_of_plane.png" id="2_hw83l"]
+[ext_resource type="Texture2D" uid="uid://c5khtjwfftw5o" path="res://graphics/objects/main_scene/tail_of_plane.png" id="3_j1hyh"]
 
 [node name="CrashedPlane" type="StaticBody2D"]
 collision_layer = 2
 collision_mask = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Plane" type="Sprite2D" parent="."]
+y_sort_enabled = true
 texture = ExtResource("1_ogmia")
 
+[node name="Wing" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(411, -164)
+texture = ExtResource("2_hw83l")
+
+[node name="Tail" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(-719, -462)
+texture = ExtResource("3_j1hyh")
+
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(30, 13)
-polygon = PackedVector2Array(258, 307, 422, 386, 735, 538, 929, 569, 1127, 497, 1129, 380, 1047, 313, 970, 219, 904, 143, 827, 93, 719, 44, 585, -13, 508, -39, 395, -85, 304, -122, 202, -168, 73, -222, -164, -335, -469, -468, -405, -566, -464, -670, -567, -597, -663, -723, -772, -748, -732, -545, -701, -458, -1150, -207, -1116, -183, -1023, -182, -671, -292, -502, -139, -191, 90)
+position = Vector2(8, 2)
+polygon = PackedVector2Array(258, 307, 422, 386, 735, 538, 929, 569, 1127, 497, 1129, 380, 1047, 313, 970, 219, 904, 143, 827, 93, 719, 44, 585, -13, 508, -39, 395, -85, 304, -122, 202, -168, 73, -222, -218, -378, -320, -421, -464, -341, -636, -217, -574, -109, -191, 90)
