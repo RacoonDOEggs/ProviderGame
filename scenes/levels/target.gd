@@ -72,7 +72,7 @@ func _input(_event):
 		#var tile3 = tile_player_position + Vector2i(1,-1) # Tuile en haut à droite.
 		#tilesArray = [tile1, tile2, tile3]
 		
-	else: if Input.is_action_presed("down"):
+	else: if Input.is_action_pressed("down"):
 		player_direction = Vector2i(0,1)
 		#var tile1 = tile_player_position + Vector2i(0,1) # Tuile en bas.
 		#var tile2 = tile_player_position + Vector2i(-1,1) # Tuile en bas à gauche.
