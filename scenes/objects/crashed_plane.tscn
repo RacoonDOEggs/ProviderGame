@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cnakc56i2kfyk"]
 
-[ext_resource type="Texture2D" uid="uid://cunqu3w7ulwl3" path="res://graphics/objects/crashed_plane.png" id="1_ogmia"]
+[ext_resource type="Texture2D" uid="uid://cunqu3w7ulwl3" path="res://graphics/objects/main_scene/crashed_plane.png" id="1_ogmia"]
 
 [node name="CrashedPlane" type="StaticBody2D"]
 collision_layer = 2

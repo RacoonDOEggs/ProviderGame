@@ -17,28 +17,28 @@ signal logical_win
 @onready var orShadow = $PanelWindow/EmptyGateOr
 @onready var xorShadow = $PanelWindow/EmptyGateXOr
 
-#var placed_gates = {}
 var buttons = [] 
 var is_button_pressed = {
-	#all the buttons are off
+	#tous les boutons sont à off
 	"buttonX": false, 
 	"buttonY": false,
 	"buttonZ": false
 }
 func _input(event):
-	if event is InputEventMouseButton and event.pressed:
+	if event is InputEventMouseButton and event.is_pressed():
 		for button_index in range(buttons.size()):
 			var button = buttons[button_index]
-			if button.get_rect().has_point(event.position):
+			if button.get_global_rect().has_point(event.position):
 				_on_button_pressed(button_index)
 
 func _toggle(button):
 	if button != null:
-		if button.texture_normal == load("res://graphics/objects/logic/off.png"):
-			button.texture_normal = load("res://graphics/objects/logic/on.png")
+		if button.texture_normal != null and button.texture_normal.get_path() == preload("res://graphics/objects/logic/off.png").get_path():
+			button.texture_normal = preload("res://graphics/objects/logic/on.png")
 			is_button_pressed[button.name] = true
 		else:
-			button.texture_normal = load("res://graphics/objects/logic/off.png")
+			button.texture_normal = preload("res://graphics/objects/logic/off.png")
+			is_button_pressed[button.name] = false
 
 func _ready():
 	buttons = [
