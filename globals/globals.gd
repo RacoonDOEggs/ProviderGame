@@ -1,5 +1,10 @@
 extends Node
 
+var player_direction: String = "":
+	get:
+		return player_direction
+	set(value):
+		player_direction = value
 
 var laser_timer_check: bool = false:
 	get:
