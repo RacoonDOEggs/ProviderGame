@@ -2,10 +2,10 @@ extends Node2D
 
 signal player_pos_signal(player_pos)
 
-func _process(delta):
+func _process(_delta):
 	
 	var player_pos = $RedHoodPlaceholder.position
-	player_pos_signal.emit(player_pos)
+	Globals.player_pos = player_pos
 
 
 
