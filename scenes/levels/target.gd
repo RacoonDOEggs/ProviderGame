@@ -40,6 +40,9 @@ var source_id = 0
 # La position locale du joueur par rapport au "tilemap" (Vecteur de Integer)
 var tile_player_position: Vector2i = Vector2i.ZERO
 
+func _ready():
+	Globals.item_placed.connect(change_cell_to_harvested)
+
 func _process(delta):
 	# On fait la conversion de la position globale du joueur par rapport à celle locale.
 	tile_player_position = tile_map.local_to_map(Globals.player_pos)
@@ -98,9 +101,6 @@ func _process(delta):
 					tile_map.set_cell(objects_layer, selected_tile, source_id, atlas_coord_for_berries_highlight)
 				else: if can_highlight_wood:
 					tile_map.set_cell(objects_layer, selected_tile, source_id, atlas_coord_for_wood_highlight)
-		# Sinon, la tuile n'a pas de données.
-		else:
-			print("no data")
 		# On augmente le compteur de 1.
 		i += 1
 	
@@ -160,14 +160,27 @@ func _input(_event):
 		
 		# Dépendamment des données personalisées de la tuile sélectionnée, on change les tuiles pour indiquer que l'item a été ramassé.
 		if can_farm_herbs:
-			tile_map.set_cell(objects_layer, selected_tile, source_id, atlas_coord_for_herbs_farmed) 
 			Globals.herbs_picked.emit(1) # On ajoute l'item d'herbe dans l'inventaire.
 		else: if can_farm_berries:
-			tile_map.set_cell(objects_layer, selected_tile, source_id, atlas_coord_for_berries_farmed)
 			Globals.berry_picked.emit(1) # On ajoute l'item d'herbe dans l'inventaire.
 		else: if can_farm_wood:
-			tile_map.erase_cell(objects_layer, selected_tile)
 			Globals.wood_picked.emit(1) # On ajoute l'item de bois dans l'inventaire.
 		
+		
+
+
+func change_cell_to_harvested(item_id:int, status:bool):
+	# Dépendamment des données personalisées de la tuile sélectionnée, on change les tuiles pour indiquer que l'item a été ramassé.
+	if item_id == 1 and status:
+		tile_map.set_cell(objects_layer, selected_tile, source_id, atlas_coord_for_herbs_farmed) 
 		# Il n'y a plus de tuile sélectionnée.
 		selected_tile = Vector2i.ZERO
+	elif item_id == 0 and status:
+		tile_map.set_cell(objects_layer, selected_tile, source_id, atlas_coord_for_berries_farmed)
+		# Il n'y a plus de tuile sélectionnée.
+		selected_tile = Vector2i.ZERO
+	elif item_id == 2 and status:
+		tile_map.erase_cell(objects_layer, selected_tile)
+		# Il n'y a plus de tuile sélectionnée.
+		selected_tile = Vector2i.ZERO
+	
