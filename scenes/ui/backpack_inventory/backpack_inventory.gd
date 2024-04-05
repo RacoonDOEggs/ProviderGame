@@ -69,10 +69,10 @@ func update_inventory():
 #Apparition de l'inventaire et du manuel en fonction des actions du joueur
 func _unhandled_key_input(event):
 	if event.is_action_pressed("inventory"):
-		Globals.player_can_move = false # On arrête le mouvement du joueur.
+		Globals.player_speed = 0 # On arrête le mouvement du joueur.
 		if self.visible == true:
 			$AnimationPlayer.play("inventory_disappear")
-			Globals.player_can_move = true # On remet le mouvement du joueur.			
+			Globals.player_speed = 500 #On remet le mouvement du joueur.
 		else:
 			$AnimationPlayer.play("inventory_appear")
 	elif event.is_action_pressed("journal") and self.visible == true:
