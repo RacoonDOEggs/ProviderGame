@@ -22,7 +22,7 @@ func _on_electrical_but_pressed():
 
 # On affiche le casse-tête logique lorsque le bouton est appuyé.
 func _on_logical_but_pressed():
-	$logic_circuit_ui.visble = true
+	$logic_circuit_ui.visible = true
 
 # On affiche le casse-tête optique lorsque le bouton est appuyé.
 func _on_optical_but_pressed():
@@ -47,4 +47,4 @@ func _on_optical_puzzle_ui_optical_win():
 # Lorsqu'on ferme le menu des casse-têtes, le joueur peut bouger.
 func _on_x_button_pressed():
 	visible = false
-	Globals.player_can_move = true
+	Globals.player_speed = 500

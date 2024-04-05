@@ -201,3 +201,6 @@ visible = false
 [connection signal="pressed" from="Optical_button/Optical_but" to="." method="_on_optical_but_pressed"]
 [connection signal="pressed" from="Options_but" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="XButton" to="." method="_on_x_button_pressed"]
+[connection signal="electrical_win" from="ElectricalBoxUI" to="." method="_on_electrical_box_ui_electrical_win"]
+[connection signal="logical_win" from="logic_circuit_ui" to="." method="_on_logic_circuit_ui_logical_win"]
+[connection signal="optical_win" from="Optical_puzzle_ui" to="." method="_on_optical_puzzle_ui_optical_win"]

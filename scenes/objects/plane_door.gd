@@ -22,3 +22,4 @@ func _input(event):
 # Message reçu lorsque la porte est cliquée. On affiche le menu des casse-têtes.
 func _on_plane_door_clicked():
 	$Menu_puzzle_Ui.visible = true 
+	Globals.player_speed = 0

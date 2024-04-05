@@ -27,11 +27,11 @@ var player_pos: Vector2 = Vector2.ZERO:
 	set(value):
 		player_pos = value
 
-var player_can_move: bool = true:
+var player_speed: int = 500:
 	get:
-		return player_can_move
+		return player_speed
 	set(value):
-		player_can_move = value
+		player_speed = value
 
 var game_won: bool = false:
 	get:
