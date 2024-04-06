@@ -5,6 +5,7 @@ signal herbs_picked(amount:int)
 signal wood_picked(amount:int)
 signal resistor_picked(amount:int)
 signal remove_item(item_id:int)
+signal item_placed(item_is:int, status:bool)
 
 var player_direction: String = "":
 	get:

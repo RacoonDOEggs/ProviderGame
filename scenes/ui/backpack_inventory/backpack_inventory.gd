@@ -26,7 +26,7 @@ var textures:Array = [
 					]
 
 #Liste des items présents dans l'inventaire du joueur
-var inventory = [0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+var inventory = []
 
 ##Liste des items présents dans l'inventaire du joueur
 #var inventory = [2,2,1,1,1,1,0,2,2,2,2,3,3,3]
@@ -41,16 +41,16 @@ func _ready():
 	update_inventory()
 
 func on_berry_picked(amount:int):
-	add_to_inventory(0,amount)
+	Globals.item_placed.emit(0, add_to_inventory(0,amount))
 
 func on_herbs_picked(amount:int):
-	add_to_inventory(1,amount)
+	Globals.item_placed.emit(1, add_to_inventory(1,amount))
 
 func on_wood_picked(amount:int):
-	add_to_inventory(2, amount)
+	Globals.item_placed.emit(2, add_to_inventory(2,amount))
 
 func on_resistor_picked(amount:int):
-	add_to_inventory(3, amount)
+	Globals.item_placed.emit(3, add_to_inventory(3,amount))
 
 #Enlève tous les tiems du sac à dos et les remet selon ce qui est présent dans inventory.
 func update_inventory():
@@ -86,9 +86,10 @@ func _on_animation_player_animation_finished(_anim_name:StringName):
 
 #Ajoute un item dans l'inventaire
 func add_to_inventory(item_id:int, amount:int):
+	var status:bool = false
 	for i in amount:
-		inventory.append(item_id)
-		place_in_inventory(item_id)
+		status = place_in_inventory(item_id)
+	return status
 
 #Place un item dans le premier endroit valide dans l'inventaire
 func place_in_inventory(item_id:int):
@@ -98,12 +99,14 @@ func place_in_inventory(item_id:int):
 		if inventory_slot.object_id == item_id and !placed and inventory_slot.object_value < items[item_id].max_stack:
 			inventory_slot.object_value += 1
 			update_stack_label(inventory_slot)
+			inventory.append(item_id)
 			placed = true
 		elif inventory_slot.texture == null and !placed:
 			inventory_slot.texture = textures[item_id]
 			inventory_slot.object_id = item_id
 			inventory_slot.object_value += 1
 			update_stack_label(inventory_slot)
+			inventory.append(item_id)
 			placed = true
 		elif placed:
 			return placed
