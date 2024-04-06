@@ -3,6 +3,15 @@ extends TileMap
 
 @onready var tile_map = $"."
 
+# La tuile sélectionnée par le joueur en fonction la direction et de la position du joueur. Elle apparaît brillante.
+var selected_tile: Vector2i = Vector2i.ZERO
+
+# La position locale du joueur par rapport au "tilemap" (Vecteur de Integer)
+var tile_player_position: Vector2i = Vector2i.ZERO
+
+# Les 3 tuiles positionnées par rapport à la direction du joueur.
+var tilesArray = [Vector2i.ZERO, Vector2i.ZERO, Vector2i.ZERO, Vector2i.ZERO, Vector2i.ZERO, Vector2i.ZERO, Vector2i.ZERO, Vector2i.ZERO]
+
 # Variables indiquant les couches du "tilemap".
 var ground_layer = 0
 var objects_layer = 1
@@ -19,11 +28,6 @@ var can_highlight_herbs: bool = false
 var can_highlight_berries: bool = false
 var can_highlight_wood: bool = false
 
-# La tuile sélectionnée par le joueur en fonction la direction et de la position du joueur. Elle apparaît brillante.
-var selected_tile: Vector2i = Vector2i.ZERO
-# Les 3 tuiles positionnées par rapport à la direction du joueur.
-var tilesArray: Array = [Vector2i.ZERO, Vector2i.ZERO, Vector2i.ZERO, Vector2i.ZERO]
-
 # Coordonnées ATLAS pour indiquer quelle tuile utiliser dans notre "tilemap".
 var atlas_coord_for_herbs_highlight: Vector2i = Vector2i(2,0) # Herbes brillantes.
 var atlas_coord_for_berries_highlight: Vector2i = Vector2i(2,2) # Baies brillantes.
@@ -37,49 +41,40 @@ var atlas_coord_for_berries_farmed: Vector2i = Vector2i(0,2) # On place le buiss
 # L'identification de la "tilemap" étant 0.
 var source_id = 0
 
-# La position locale du joueur par rapport au "tilemap" (Vecteur de Integer)
-var tile_player_position: Vector2i = Vector2i.ZERO
-
 func _ready():
 	Globals.item_placed.connect(change_cell_to_harvested)
 
 func _process(delta):
-	
 	# On fait la conversion de la position globale du joueur par rapport à celle locale.
 	tile_player_position = tile_map.local_to_map(Globals.player_pos)
 	
-	# 1. On vérifie si, dans les 3 tuiles dans la direction du joueur, si l'une d'elles contient des données personalisées.
-	# Selon la direction, on établit un tableau de tuiles qui sont les 3 devant le joueur et celle dont il est placé dessus.
+	var left_tile = tile_player_position + Vector2i(-1,0)
+	var right_tile = tile_player_position + Vector2i(1,0)
+	var up_tile = tile_player_position + Vector2i(0,-1)
+	var down_tile = tile_player_position + Vector2i(0,1)
+	var up_left_tile = tile_player_position  + Vector2i(-1,-1)
+	var down_left_tile = tile_player_position + Vector2i(-1,1)
+	var up_right_tile = tile_player_position + Vector2i(1,-1)
+	var down_right_tile = tile_player_position + Vector2i(1,1)
+	
+	# Selon la direction, on établit un tableau des tuiles autour du joueur.
 	if Globals.player_direction == "left":
-		var tile1 = tile_player_position
-		var tile2 = tile_player_position + Vector2i(-1,0) # Tuile à gauche.
-		var tile3 = tile_player_position + Vector2i(-1,1) # Tuile en bas à gauche.
-		var tile4 = tile_player_position + Vector2i(-1,-1) # Tuile en haut à gauche .
-		tilesArray = [tile1, tile2, tile3, tile4]
-		
+		# On associe, en ordre par rapport à la direction, les tuiles à vérifier.
+		tilesArray = [tile_player_position, left_tile, down_left_tile, up_left_tile, up_tile, down_tile, up_right_tile, down_left_tile]
 	elif Globals.player_direction == "right":
-		var tile1 = tile_player_position
-		var tile2 = tile_player_position + Vector2i(1,0) # Tuile à droite.
-		var tile3 = tile_player_position + Vector2i(1,-1) # Tuile en haut à droite.
-		var tile4 = tile_player_position + Vector2i(1,1) # Tuile en bas à droite.
-		tilesArray = [tile1, tile2, tile3, tile4]
+		# On associe, en ordre par rapport à la direction, les tuiles à vérifier.
+		tilesArray = [tile_player_position, right_tile, up_right_tile, down_right_tile, up_tile, down_tile, up_left_tile, down_left_tile]
 	elif Globals.player_direction == "up":
-		var tile1 = tile_player_position
-		var tile2 = tile_player_position + Vector2i(0,-1) # Tuile en haut.
-		var tile3 = tile_player_position + Vector2i(-1,-1) # Tuile en haut à gauche.
-		var tile4 = tile_player_position + Vector2i(1,-1) # Tuile en haut à droite.
-		tilesArray = [tile1, tile2, tile3, tile4]
+		# On associe, en ordre par rapport à la direction, les tuiles à vérifier.
+		tilesArray = [tile_player_position, up_tile, up_left_tile, up_right_tile, left_tile, right_tile, down_left_tile, down_right_tile]
 	elif Globals.player_direction == "down":
-		var tile1 = tile_player_position
-		var tile2 = tile_player_position + Vector2i(0,1) # Tuile en bas.
-		var tile3 = tile_player_position + Vector2i(-1,1) # Tuile en bas à gauche.
-		var tile4 = tile_player_position + Vector2i(1,1) # Tuile en bas à droite.
-		tilesArray = [tile1, tile2, tile3, tile4]
+		# On associe, en ordre par rapport à la direction, les tuiles à vérifier.
+		tilesArray = [tile_player_position, down_tile, down_left_tile, down_right_tile, left_tile, right_tile, up_right_tile, up_left_tile]
 	
 	# Variable compteur pour la boucle.
 	var i: int = 0
 	# Tant qu'il n'y a pas de tuile avec des données personalisées.
-	while selected_tile == Vector2i.ZERO and i < 4:
+	while selected_tile == Vector2i.ZERO and i < 8:
 		# Prend les données d'une des 3 tuiles devant le joueur.
 		var tile_data: TileData = tile_map.get_cell_tile_data(objects_layer, tilesArray[i])
 		
@@ -115,11 +110,11 @@ func _process(delta):
 		# La distance entre le joueur et la tuile sélectionnée sous forme de vecteur de Integer.
 		var distance_tuile_joueur_vector: Vector2i = abs(tile_player_position - selected_tile) # Distance entre la tuile brillante et le joueur.
 		# La distance entre le joueur et la tuile sous forme de distance Integer.
-		var distance_tuile_joueur_squarred = distance_tuile_joueur_vector.length_squared()
+		var distance_tuile_joueur_squarred = distance_tuile_joueur_vector.length()
 		
 		
 		#Si le joueur sort d'un rayon de 1 bloc, on arrête le brillement.	
-		if distance_tuile_joueur_squarred > 1:
+		if distance_tuile_joueur_squarred > 1.5:
 			# Prend les données de la tuile brillante.
 			var tile_data: TileData = tile_map.get_cell_tile_data(objects_layer, selected_tile)
 			
@@ -142,13 +137,13 @@ func _process(delta):
 
 func _input(_event):
 	#Les 4 directions du joueur. On détermine la direction du joueur.
-	if Input.is_action_pressed("left"):
+	if Input.is_action_just_pressed("left"):
 		Globals.player_direction = "left"
-	else: if Input.is_action_pressed("right"):
+	else: if Input.is_action_just_pressed("right"):
 		Globals.player_direction = "right"
-	else: if Input.is_action_pressed("up"):
+	else: if Input.is_action_just_pressed("up"):
 		Globals.player_direction = "up"
-	else: if Input.is_action_pressed("down"):
+	else: if Input.is_action_just_pressed("down"):
 		Globals.player_direction = "down"
 	
 	
