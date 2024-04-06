@@ -26,7 +26,8 @@ var textures:Array = [
 					]
 
 #Liste des items présents dans l'inventaire du joueur
-var inventory = []
+# Inventaire pleine.
+var inventory = [2,2,2,2 ,2,2,2,2, 2,2,2,2, 2,2,2,2 ,2,2,2,2 ,2,2,2,2 ,2,2,2,2 ,2,2,2,2, 2,2,2,2, 2,2,2,2 ,2,2,2,2 ,2,2,2,2 ,2,2,2,2 ,2,2,2,2, 2,2,2,2, 2,2,2,2 ,2,2,2,2]
 
 ##Liste des items présents dans l'inventaire du joueur
 #var inventory = [2,2,1,1,1,1,0,2,2,2,2,3,3,3]

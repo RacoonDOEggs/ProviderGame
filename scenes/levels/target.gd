@@ -170,13 +170,15 @@ func _input(_event):
 			Globals.berry_picked.emit(1) # On ajoute l'item d'herbe dans l'inventaire.
 		else: if can_farm_wood:
 			Globals.wood_picked.emit(1) # On ajoute l'item de bois dans l'inventaire.
-		
-		
 
 
 func change_cell_to_harvested(item_id:int, status:bool):
 	# Dépendamment des données personalisées de la tuile sélectionnée, on change les tuiles pour indiquer que l'item a été ramassé.
-	if item_id == 1 and status:
+	
+	# S'il n'y a plus de place dans l'inventaire, on indique que l'inventaire est pleine.
+	if status == false:
+		Globals.inventory_full.emit()
+	elif item_id == 1 and status:
 		tile_map.set_cell(objects_layer, selected_tile, source_id, atlas_coord_for_herbs_farmed) 
 		# Il n'y a plus de tuile sélectionnée.
 		selected_tile = Vector2i.ZERO
@@ -188,4 +190,3 @@ func change_cell_to_harvested(item_id:int, status:bool):
 		tile_map.erase_cell(objects_layer, selected_tile)
 		# Il n'y a plus de tuile sélectionnée.
 		selected_tile = Vector2i.ZERO
-	

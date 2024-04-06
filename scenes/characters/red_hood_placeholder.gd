@@ -9,6 +9,5 @@ func _ready():
 func _process(_delta):
 	var direction:Vector2 = Input.get_vector("left", "right", "up", "down")
 	
-	
 	velocity = direction * Globals.player_speed
 	move_and_slide()

@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://bh3fykrjxrtb2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_r8fsc"]
+font_size = 30
+font_color = Color(1, 0.0431373, 0, 1)
+
+[node name="Player_in_game_UI" type="CanvasLayer"]
+
+[node name="Inventory_full_mess" type="Label" parent="."]
+top_level = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.0
+offset_top = 37.0
+offset_right = 117.0
+offset_bottom = 79.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Inventaire plein!"
+label_settings = SubResource("LabelSettings_r8fsc")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dx0q3u4solkhf"]
+[gd_scene load_steps=8 format=3 uid="uid://dx0q3u4solkhf"]
 
 [ext_resource type="Script" path="res://scenes/levels/test_level.gd" id="1_4iduf"]
 [ext_resource type="PackedScene" uid="uid://cjrrcxgx4ic1c" path="res://scenes/characters/red_hood_placeholder.tscn" id="1_doo7f"]
 [ext_resource type="PackedScene" uid="uid://cnakc56i2kfyk" path="res://scenes/objects/crashed_plane.tscn" id="1_ha8na"]
 [ext_resource type="PackedScene" uid="uid://daotijepul3mn" path="res://scenes/characters/hotesse_de_lair.tscn" id="4_uu1gk"]
+[ext_resource type="PackedScene" uid="uid://bh3fykrjxrtb2" path="res://scenes/ui/In_game/player_in_game_ui.tscn" id="7_4yw1u"]
 [ext_resource type="PackedScene" uid="uid://cneooxi28pgcx" path="res://scenes/levels/map_generator.tscn" id="9_wg8x4"]
 [ext_resource type="PackedScene" uid="uid://drhqjq8hl0aay" path="res://scenes/objects/plane_door.tscn" id="11_rq5kg"]
 
@@ -25,9 +26,12 @@ position = Vector2(224, 192)
 [node name="Plane_door" parent="." instance=ExtResource("11_rq5kg")]
 position = Vector2(364, -114)
 
+[node name="Player_in_game_UI" parent="." instance=ExtResource("7_4yw1u")]
+visible = false
+
 [node name="RedHoodPlaceholder" parent="." instance=ExtResource("1_doo7f")]
 z_index = 1
-position = Vector2(-99, 704)
+position = Vector2(15, 654)
 collision_mask = 3
 
 [connection signal="player_pos_signal" from="." to="MapGenerator" method="_on_test_level_player_pos_signal"]
