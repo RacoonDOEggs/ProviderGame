@@ -167,8 +167,6 @@ func _input(_event):
 		if can_farm_herbs:
 			tile_map.set_cell(objects_layer, selected_tile, source_id, atlas_coord_for_herbs_farmed) 
 			Globals.herbs_picked.emit(1) # On ajoute l'item d'herbe dans l'inventaire.
-			
-			
 		else: if can_farm_berries:
 			tile_map.set_cell(objects_layer, selected_tile, source_id, atlas_coord_for_berries_farmed)
 			Globals.berry_picked.emit(1) # On ajoute l'item d'herbe dans l'inventaire.
