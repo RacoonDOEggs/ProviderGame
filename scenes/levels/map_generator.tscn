@@ -8,8 +8,8 @@
 [ext_resource type="Script" path="res://addons/wfc/solver/solver_settings.gd" id="4_g0f0o"]
 [ext_resource type="Script" path="res://addons/wfc/runners/runner_multithreaded_settings.gd" id="5_v2qsv"]
 [ext_resource type="Script" path="res://addons/wfc/runners/runner_main_thread_settings.gd" id="6_itvxf"]
-[ext_resource type="PackedScene" uid="uid://dt2nffs32s7o1" path="res://addons/wfc/examples/helpers/progress_indicator.tscn" id="9_05mkd"]
 [ext_resource type="Script" path="res://scenes/levels/target.gd" id="9_oe6a4"]
+[ext_resource type="PackedScene" uid="uid://cm10a2s5l2m1o" path="res://scenes/ui/waiting_screen/waiting_screen.tscn" id="10_jkjge"]
 
 [sub_resource type="Resource" id="Resource_oijm5"]
 script = ExtResource("2_d06rk")
@@ -84,7 +84,8 @@ layer_0/tile_data = PackedInt32Array(131073, 65536, 2, 131072, 0, 1, 65537, 0, 1
 layer_1/name = "objects"
 layer_1/tile_data = PackedInt32Array()
 
-[node name="progressIndicator" parent="." node_paths=PackedStringArray("generator") instance=ExtResource("9_05mkd")]
+[node name="Waiting_screen" parent="." node_paths=PackedStringArray("generator") instance=ExtResource("10_jkjge")]
+visible = false
 generator = NodePath("../WFC2DGenerator")
 
 [connection signal="player_pos_signal2" from="." to="target" method="_on_map_generator_player_pos_signal_2"]
