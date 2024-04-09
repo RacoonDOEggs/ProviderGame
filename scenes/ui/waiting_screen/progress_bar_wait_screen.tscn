@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://o5aaupuff342"]
+
+[ext_resource type="Script" path="res://scenes/ui/waiting_screen/progress_bar_wait_screen.gd" id="1_1s5xl"]
+[ext_resource type="Texture2D" path="res://graphics/waiting_screen/smoke.png" id="2_t7tqt"]
+
+[node name="Progress_bar_wait_screen" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_1s5xl")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(0, 100)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -50.0
+offset_right = 250.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture_under = ExtResource("2_t7tqt")
