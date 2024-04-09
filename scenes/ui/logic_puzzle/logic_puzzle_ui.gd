@@ -30,6 +30,7 @@ func _input(event):
 			var button = buttons[button_index]
 			if button.get_global_rect().has_point(event.position):
 				_on_button_pressed(button_index)
+				light_up_end_light()
 
 func _toggle(button):
 	if button != null:
@@ -39,6 +40,7 @@ func _toggle(button):
 		else:
 			button.texture_normal = preload("res://graphics/objects/logic/off.png")
 			is_button_pressed[button.name] = false
+			
 
 func _ready():
 	buttons = [
@@ -52,14 +54,33 @@ func _on_button_pressed(button_index):
 	_toggle(button)
 
 func check_gates_placement() -> bool:
-	if andGate.object_id == andShadow && notGate.object_id == notShadow && notGate.object_id == notShadow2 && norGate.object_id == norShadow && xnorGate.object_id == xnorShadow && orGate.object_id == orShadow && xorGate.objetc_id == xorShadow :
+	var andGatePos = andGate.global_position
+	var notGatePos = notGate.global_position
+	var norGatePos = norGate.global_position
+	var xnorGatePos = xnorGate.global_position
+	var orGatePos = orGate.global_position
+	var xorGatePos = xorGate.global_position
+
+	var andShadowPos = andShadow.global_position
+	var notShadowPos = notShadow.global_position
+	var notShadow2Pos = notShadow2.global_position
+	var norShadowPos = norShadow.global_position
+	var xnorShadowPos = xnorShadow.global_position
+	var orShadowPos = orShadow.global_position
+	var xorShadowPos = xorShadow.global_position
+
+	if andGatePos == andShadowPos && notGatePos == notShadowPos && notGatePos == notShadow2Pos && norGatePos == norShadowPos && xnorGatePos == xnorShadowPos && orGatePos == orShadowPos && xorGatePos == xorShadowPos:
 		logical_win.emit()
 		return true
 	else:
 		return false
+	#if andGate.object_id == andShadow && notGate.object_id == notShadow && notGate.object_id == notShadow2 && norGate.object_id == norShadow && xnorGate.object_id == xnorShadow && orGate.object_id == orShadow && xorGate.object_id == xorShadow :
+		#logical_win.emit()
+		#return true
+	#else:
+		#return false
 
 func light_up_end_light():
-
 	if !check_gates_placement() && is_button_pressed == false :
 			$PanelWindow/closedLight.texture = load("res://graphics/objects/logic/closedLight.png")
 			
