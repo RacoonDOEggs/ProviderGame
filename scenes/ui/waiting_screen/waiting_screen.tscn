@@ -1,29 +1,34 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfufixc3dgogb"]
+[gd_scene load_steps=5 format=3 uid="uid://cm10a2s5l2m1o"]
 
-[ext_resource type="Script" path="res://scenes/ui/waiting_screen/waiting_screen.gd" id="1_blbd5"]
-[ext_resource type="Texture2D" uid="uid://bcohceg35pp3a" path="res://graphics/waiting_screen.png" id="2_ojcj5"]
+[ext_resource type="Texture2D" uid="uid://xnojcqiwk1vn" path="res://graphics/waiting_screen/ciel-bleu.jpg" id="1_2hytb"]
+[ext_resource type="Script" path="res://scenes/ui/waiting_screen/waiting_screen.gd" id="2_r55n5"]
+[ext_resource type="Texture2D" uid="uid://bhxhckpay8rkq" path="res://graphics/waiting_screen/plane_pixel.png" id="2_rk0fd"]
+[ext_resource type="PackedScene" uid="uid://o5aaupuff342" path="res://scenes/ui/waiting_screen/progress_bar_wait_screen.tscn" id="4_8m2mo"]
 
 [node name="Waiting_screen" type="CanvasLayer"]
-script = ExtResource("1_blbd5")
+script = ExtResource("2_r55n5")
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = 21.0
+offset_top = -30.0
+offset_right = 4821.0
+offset_bottom = 3170.0
+scale = Vector2(0.355, 0.355)
 
-[node name="Background" type="MarginContainer" parent="Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TextureRect" type="TextureRect" parent="Control/Background"]
-modulate = Color(0.643137, 0.643137, 0.643137, 1)
-texture_filter = 1
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
 layout_mode = 2
-texture = ExtResource("2_ojcj5")
+texture = ExtResource("1_2hytb")
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+offset_left = 538.0
+offset_top = 476.0
+offset_right = 5338.0
+offset_bottom = 3676.0
+scale = Vector2(0.03, 0.03)
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer2"]
+layout_mode = 2
+texture = ExtResource("2_rk0fd")
+
+[node name="Progress_bar_wait_screen" parent="." instance=ExtResource("4_8m2mo")]
