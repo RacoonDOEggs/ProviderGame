@@ -13,7 +13,7 @@ var tile_player_position: Vector2i = Vector2i.ZERO
 var tilesArray = [Vector2i.ZERO, Vector2i.ZERO, Vector2i.ZERO, Vector2i.ZERO, Vector2i.ZERO, Vector2i.ZERO, Vector2i.ZERO, Vector2i.ZERO]
 
 # Variables indiquant les couches du "tilemap".
-var ground_layer = 0
+const ground_layer = 0
 var objects_layer = 1
 var farmed_objects_layer = 2
 

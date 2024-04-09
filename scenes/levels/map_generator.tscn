@@ -30,7 +30,7 @@ probabilities_enabled = true
 [sub_resource type="Resource" id="Resource_cvt1k"]
 script = ExtResource("4_g0f0o")
 allow_backtracking = true
-require_backtracking = false
+require_backtracking = true
 backtracking_limit = -1
 
 [sub_resource type="Resource" id="Resource_w4iow"]
