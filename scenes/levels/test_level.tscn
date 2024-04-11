@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dx0q3u4solkhf"]
+[gd_scene load_steps=9 format=3 uid="uid://dx0q3u4solkhf"]
 
 [ext_resource type="Script" path="res://scenes/levels/test_level.gd" id="1_4iduf"]
 [ext_resource type="PackedScene" uid="uid://cjrrcxgx4ic1c" path="res://scenes/characters/red_hood_placeholder.tscn" id="1_doo7f"]
 [ext_resource type="PackedScene" uid="uid://cnakc56i2kfyk" path="res://scenes/objects/crashed_plane.tscn" id="1_ha8na"]
 [ext_resource type="PackedScene" uid="uid://daotijepul3mn" path="res://scenes/characters/hotesse_de_lair.tscn" id="4_uu1gk"]
-[ext_resource type="Script" path="res://scenes/characters/hotesse_de_lair.gd" id="5_imurr"]
 [ext_resource type="PackedScene" uid="uid://bh3fykrjxrtb2" path="res://scenes/ui/In_game/player_in_game_ui.tscn" id="7_4yw1u"]
 [ext_resource type="PackedScene" uid="uid://cm5dhq0q57ifu" path="res://scenes/objects/popup_flight_attendant.tscn" id="8_1lfho"]
 [ext_resource type="PackedScene" uid="uid://cneooxi28pgcx" path="res://scenes/levels/map_generator.tscn" id="9_wg8x4"]
@@ -24,7 +23,6 @@ position = Vector2(-9, -229)
 
 [node name="HotesseDeLair" parent="." instance=ExtResource("4_uu1gk")]
 position = Vector2(224, 192)
-script = ExtResource("5_imurr")
 
 [node name="Plane_door" parent="." instance=ExtResource("11_rq5kg")]
 position = Vector2(364, -114)
