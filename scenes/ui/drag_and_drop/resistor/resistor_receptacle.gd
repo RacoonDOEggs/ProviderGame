@@ -18,7 +18,7 @@ const band_colors = [Color("#000000"), Color("#512627"), Color("#cc0000"), Color
 Color("#e6c951"), Color("#528f65"), Color("#0f5190"), Color("#6967ce"), Color("#7d7d7d"),
  Color("#ffffff"), Color("#c08327"), Color("#bfbebf")]
 
-@onready var resistor_shader = preload("res://scenes/ui/resistor_receptacle.gdshader")
+@onready var resistor_shader = preload("res://scenes/ui/electricity_puzzle/resistor_receptacle.gdshader")
 
 @export var color1:int = 0
 @export var color2:int = 0

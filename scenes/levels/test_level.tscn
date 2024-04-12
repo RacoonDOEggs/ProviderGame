@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cnakc56i2kfyk" path="res://scenes/objects/crashed_plane.tscn" id="1_ha8na"]
 [ext_resource type="PackedScene" uid="uid://daotijepul3mn" path="res://scenes/characters/hotesse_de_lair.tscn" id="4_uu1gk"]
 [ext_resource type="PackedScene" uid="uid://bh3fykrjxrtb2" path="res://scenes/ui/In_game/player_in_game_ui.tscn" id="7_4yw1u"]
-[ext_resource type="PackedScene" uid="uid://cm5dhq0q57ifu" path="res://scenes/objects/popup_flight_attendant.tscn" id="8_1lfho"]
+[ext_resource type="PackedScene" uid="uid://bgnlf12brbot6" path="res://scenes/objects/popup_flight_attendant.tscn" id="8_1lfho"]
 [ext_resource type="PackedScene" uid="uid://cneooxi28pgcx" path="res://scenes/levels/map_generator.tscn" id="9_wg8x4"]
 [ext_resource type="PackedScene" uid="uid://drhqjq8hl0aay" path="res://scenes/objects/plane_door.tscn" id="11_rq5kg"]
 
