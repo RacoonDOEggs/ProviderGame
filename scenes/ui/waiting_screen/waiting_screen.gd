@@ -2,8 +2,7 @@ extends CanvasLayer
 
 func _ready():
 	var i = -1
-	# Appel de la fonction récursive
-	enable_visible_characters(i)
+	enable_visible_characters(i) # Appel fonction récursive.
 
 # Fonction récursive qui fait apparaître successivement les 3 points après le mot chargement.
 func enable_visible_characters( i : int):
@@ -16,7 +15,11 @@ func enable_visible_characters( i : int):
 		i = -1
 		enable_visible_characters(i)
 
+# Lorsque la progression est terminée, on commence l'animation de l'écran d'attente..
+func _on_progress_bar_wait_screen_end_progress():
+	$AnimationPlayer.play("Waiting_screen_disapear")
 
-# En reçevant se signal, on supprime l'écran d'attente.
-func _on_progress_bar_wait_screen_destroy_wait_screen():
+# Lorsque l'animation est terminée, on supprime l'écran d'attente.
+func _on_animation_player_animation_finished(anim_name):
 	$".".queue_free()
+	$AnimationPlayer.stop()
