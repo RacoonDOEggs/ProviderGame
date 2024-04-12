@@ -52,6 +52,7 @@ func on_wood_picked(amount:int):
 	Globals.item_placed.emit(2, add_to_inventory(2,amount))
 
 func on_resistor_picked(amount:int):
+	Globals.resistors_acquired = true
 	Globals.item_placed.emit(3, add_to_inventory(3,amount))
 
 #Enlève tous les tiems du sac à dos et les remet selon ce qui est présent dans inventory.
@@ -115,16 +116,17 @@ func place_in_inventory(item_id:int):
 	return placed
 
 #Enlève un item de l'inventaire
-func remove_from_inventory(item_id:int):	
+func remove_from_inventory(item_id:int, status:Array):	
 	var removed = false
 	for i in $Slots.get_child_count(false) - 1:
 		var inventory_slot = $Slots.get_child(i, false)
 		if inventory_slot.object_id == item_id and !removed:
-			inventory_slot.texture = inventory_slot.texture if inventory_slot.object_value > 0 else null
+			inventory_slot.texture = inventory_slot.texture if inventory_slot.object_value > 1 else null
 			inventory_slot.object_id = -1
 			inventory_slot.object_value = inventory_slot.object_value - 1 if inventory_slot.object_value > 0 else inventory_slot.object_value
 			update_stack_label(inventory_slot)
 			inventory.erase(item_id)
+			status[0] = true
 			removed = true
 		elif removed:
 			return removed

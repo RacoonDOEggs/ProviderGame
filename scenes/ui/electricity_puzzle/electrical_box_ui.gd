@@ -9,21 +9,44 @@ signal electrical_win # Signal indiquant que le casse-tête électrique est comp
 @export var R4_solution:int = 54000
 @export var R5_solution:int = 99000
 
-@onready var R1:DragAndDrop = $PanelWindow/HBoxContainer/VBoxContainer1/ResistorReceptacle4
+@onready var R1:DragAndDrop = $PanelWindow/HBoxContainer/VBoxContainer1/MarginContainer/ResistorReceptacle4
 @onready var R2:DragAndDrop = $PanelWindow/HBoxContainer/VBoxContainer2/ResistorReceptacle5
 @onready var R3:DragAndDrop = $PanelWindow/HBoxContainer/VBoxContainer2/ResistorReceptacle6
-@onready var R4:DragAndDrop = $PanelWindow/HBoxContainer/VBoxContainer3/ResistorReceptacle2
+@onready var R4:DragAndDrop = $PanelWindow/HBoxContainer/VBoxContainer3/MarginContainer/ResistorReceptacle2
 @onready var R5:DragAndDrop = $PanelWindow/HBoxContainer/VBoxContainer2/ResistorReceptacle3
 
-@onready var amp_top_label:Label = $PanelWindow/HBoxContainer/VBoxContainer/AmpTop
-@onready var amp_mid_label:Label = $PanelWindow/HBoxContainer/VBoxContainer/AmpMid
-@onready var amp_bot_label:Label = $PanelWindow/HBoxContainer/VBoxContainer/AmpBot
-@onready var in_voltage_label:Label = $PanelWindow/HBoxContainer/InVoltage
+@onready var ResistorReceptacle2:DragAndDrop = $PanelWindow/HBoxContainer2/MarginContainer/ResistorReceptacle2
+@onready var ResistorReceptacle4:DragAndDrop = $PanelWindow/HBoxContainer2/MarginContainer2/ResistorReceptacle4
+@onready var ResistorReceptacle5:DragAndDrop = $PanelWindow/HBoxContainer2/MarginContainer3/ResistorReceptacle5
+
+@onready var amp_top_label:Label = $PanelWindow/HBoxContainer/VBoxContainer/MarginContainer/AmpTop
+@onready var amp_mid_label:Label = $PanelWindow/HBoxContainer/VBoxContainer/MarginContainer2/AmpMid
+@onready var amp_bot_label:Label = $PanelWindow/HBoxContainer/VBoxContainer/MarginContainer3/AmpBot
+@onready var in_voltage_label:Label = $PanelWindow/HBoxContainer/MarginContainer/InVoltage
 @onready var mid_voltge_label:Label = $PanelWindow/HBoxContainer/VBoxContainer1/MidVoltage
 
 #On affiche l'interface lorsque le signal est reçu.
 func _on_electrical_box_object_electrical_box_clicked():
 	visible = true
+	var item_is_removed = [false]
+	if Globals.resistors_acquired == true:
+		if ResistorReceptacle2.visible == false:
+			Globals.remove_item.emit(3, item_is_removed)
+			if item_is_removed[0]:
+				ResistorReceptacle2.visible = true
+		item_is_removed[0] = false
+		if ResistorReceptacle4.visible == false:
+			Globals.remove_item.emit(3, item_is_removed)
+			if item_is_removed[0]:
+				ResistorReceptacle4.visible = true
+		item_is_removed[0] = false
+		if ResistorReceptacle5.visible == false:
+			Globals.remove_item.emit(3, item_is_removed)
+			if item_is_removed[0]:
+				ResistorReceptacle5.visible = true
+		item_is_removed[0] = false
+		
+		
 	update_circuit_measurements()
 
 #On cache l'interface lorsque le X est appuyé.

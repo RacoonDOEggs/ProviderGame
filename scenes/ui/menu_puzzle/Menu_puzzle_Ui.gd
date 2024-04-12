@@ -18,7 +18,7 @@ func _on_texture_button_pressed():
 
 # On affiche le casse-tête électrique lorsque le bouton est appuyé.
 func _on_electrical_but_pressed():
-	$ElectricalBoxUI.visible = true
+	$ElectricalBoxUI._on_electrical_box_object_electrical_box_clicked()
 
 # On affiche le casse-tête logique lorsque le bouton est appuyé.
 func _on_logical_but_pressed():
