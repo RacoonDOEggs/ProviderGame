@@ -85,12 +85,11 @@ layer_0/tile_data = PackedInt32Array(131073, 65536, 2, 131072, 0, 1, 65537, 0, 1
 layer_1/name = "objects"
 layer_1/tile_data = PackedInt32Array()
 
-[node name="Progress_bar_wait_screen" parent="." node_paths=PackedStringArray("generator_progress_bar") instance=ExtResource("10_bfiqt")]
-layer = 2
-generator_progress_bar = NodePath("../WFC2DGenerator")
-
 [node name="Waiting_screen" parent="." instance=ExtResource("10_jkjge")]
 visible = false
 
+[node name="Progress_bar_wait_screen" parent="." node_paths=PackedStringArray("generator_progress_bar") instance=ExtResource("10_bfiqt")]
+generator_progress_bar = NodePath("../WFC2DGenerator")
+
 [connection signal="done" from="WFC2DGenerator" to="." method="_on_wfc_2d_generator_done"]
-[connection signal="destroy_wait_screen" from="Progress_bar_wait_screen" to="Waiting_screen" method="_on_progress_bar_wait_screen_destroy_wait_screen"]
+[connection signal="end_progress" from="Progress_bar_wait_screen" to="Waiting_screen" method="_on_progress_bar_wait_screen_end_progress"]

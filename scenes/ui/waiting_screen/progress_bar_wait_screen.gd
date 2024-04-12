@@ -3,10 +3,7 @@ extends CanvasLayer
 @export var generator_progress_bar: WFC2DGenerator
 var last_value: float = 0
 
-signal destroy_wait_screen
-
-func _ready():
-	pass
+signal end_progress
 
 func _process(delta):
 	# La valeur de progression du chargement.
@@ -19,7 +16,13 @@ func _process(delta):
 		%Plane2d.position.x -= (%TextureProgressBar.value - last_value) * 1000
 		last_value = %TextureProgressBar.value # On enregistre l'ancienne valeur de progression.
 		
-		#Si le chargement est terminé, on retire l'écran d'attente.
+		#Si le chargement est terminé, on commence l'animation de l'avion.
 	elif %TextureProgressBar.value == 1: 
-		destroy_wait_screen.emit()
-		$".".queue_free() # On retire l'avion.
+		end_progress.emit()
+		$AnimationPlayer.play("Plane_destroy") 
+		Globals.player_speed = 500 # Le joueur peut se déplacer à nouveau.
+
+# Lorsque l'animation est terminée, on supprime l'avion.
+func _on_animation_player_animation_finished(anim_name):
+	$".".queue_free()
+	$AnimationPlayer.stop()
