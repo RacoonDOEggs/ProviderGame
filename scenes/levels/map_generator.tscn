@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cneooxi28pgcx"]
+[gd_scene load_steps=17 format=3 uid="uid://cneooxi28pgcx"]
 
 [ext_resource type="Script" path="res://addons/wfc/nodes/generator_2d.gd" id="1_lrl57"]
 [ext_resource type="Script" path="res://scenes/levels/map_generator.gd" id="1_qa5on"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://addons/wfc/runners/runner_multithreaded_settings.gd" id="5_v2qsv"]
 [ext_resource type="Script" path="res://addons/wfc/runners/runner_main_thread_settings.gd" id="6_itvxf"]
 [ext_resource type="Script" path="res://scenes/levels/target.gd" id="9_oe6a4"]
+[ext_resource type="PackedScene" uid="uid://o5aaupuff342" path="res://scenes/ui/waiting_screen/progress_bar_wait_screen.tscn" id="10_bfiqt"]
 [ext_resource type="PackedScene" uid="uid://cm10a2s5l2m1o" path="res://scenes/ui/waiting_screen/waiting_screen.tscn" id="10_jkjge"]
 
 [sub_resource type="Resource" id="Resource_oijm5"]
@@ -41,7 +42,7 @@ max_threads = -1
 script = ExtResource("6_itvxf")
 max_ms_per_frame = 10
 
-[node name="MapGenerator" type="Node2D"]
+[node name="map_generator" type="Node2D"]
 script = ExtResource("1_qa5on")
 
 [node name="WFC2DGenerator" type="Node" parent="."]
@@ -84,9 +85,12 @@ layer_0/tile_data = PackedInt32Array(131073, 65536, 2, 131072, 0, 1, 65537, 0, 1
 layer_1/name = "objects"
 layer_1/tile_data = PackedInt32Array()
 
-[node name="Waiting_screen" parent="." node_paths=PackedStringArray("generator") instance=ExtResource("10_jkjge")]
-visible = false
-generator = NodePath("../WFC2DGenerator")
+[node name="Progress_bar_wait_screen" parent="." node_paths=PackedStringArray("generator_progress_bar") instance=ExtResource("10_bfiqt")]
+layer = 2
+generator_progress_bar = NodePath("../WFC2DGenerator")
 
-[connection signal="player_pos_signal2" from="." to="target" method="_on_map_generator_player_pos_signal_2"]
+[node name="Waiting_screen" parent="." instance=ExtResource("10_jkjge")]
+visible = false
+
 [connection signal="done" from="WFC2DGenerator" to="." method="_on_wfc_2d_generator_done"]
+[connection signal="destroy_wait_screen" from="Progress_bar_wait_screen" to="Waiting_screen" method="_on_progress_bar_wait_screen_destroy_wait_screen"]

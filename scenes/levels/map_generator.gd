@@ -8,11 +8,10 @@ var rng = RandomNumberGenerator.new()
 
 var old_plane = preload("res://scenes/objects/old_plane.tscn").instantiate()
 
-signal player_pos_signal2(player_pos)
-
 var crash_pos:Vector2i
 
 func _ready():
+	$Waiting_screen.show()
 	self.add_child(old_plane)
 	crash_pos = generate_plane_crashes()
 	$WFC2DGenerator.rect = Rect2i(Vector2i(-(generation_size.x/2), -(generation_size.y/2)), generation_size)
@@ -21,6 +20,7 @@ func _ready():
 	$target.show()
 	
 	$WFC2DGenerator.start()
+	
 func generate_plane_crashes():
 	rng.randomize()
 	var crash_coords:Vector2i
@@ -42,6 +42,3 @@ func _on_wfc_2d_generator_done():
 		for y in range(crash_pos.y, crash_pos.y+crash_area.y):
 			$target.erase_cell(1,Vector2i(x,y))
 	
-
-func _on_test_level_player_pos_signal(player_pos):
-	player_pos_signal2.emit(player_pos)
