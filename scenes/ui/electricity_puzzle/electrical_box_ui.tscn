@@ -210,19 +210,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -576.385
+offset_left = -574.415
 offset_top = -162.37
-offset_right = 591.615
+offset_right = 869.585
 offset_bottom = 212.63
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 120
+theme_override_constants/separation = 45
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelWindow/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_bottom = 31
 
 [node name="InVoltage" type="Label" parent="PanelWindow/HBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "InVoltage"
 
@@ -239,7 +240,8 @@ layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelWindow/HBoxContainer/VBoxContainer1"]
 layout_mode = 2
-theme_override_constants/margin_right = 25
+theme_override_constants/margin_left = -60
+theme_override_constants/margin_right = 110
 
 [node name="ResistorReceptacle4" parent="PanelWindow/HBoxContainer/VBoxContainer1/MarginContainer" instance=ExtResource("4_hc58u")]
 material = SubResource("ShaderMaterial_qhx31")
@@ -250,7 +252,12 @@ color2 = 4
 color3 = 3
 object_id = 1
 
-[node name="MidVoltage" type="Label" parent="PanelWindow/HBoxContainer/VBoxContainer1"]
+[node name="MarginContainer2" type="MarginContainer" parent="PanelWindow/HBoxContainer/VBoxContainer1"]
+layout_mode = 2
+theme_override_constants/margin_left = -60
+
+[node name="MidVoltage" type="Label" parent="PanelWindow/HBoxContainer/VBoxContainer1/MarginContainer2"]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "-"
 
@@ -284,7 +291,7 @@ layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelWindow/HBoxContainer/VBoxContainer3"]
 layout_mode = 2
-theme_override_constants/margin_left = 28
+theme_override_constants/margin_left = 95
 
 [node name="ResistorReceptacle2" parent="PanelWindow/HBoxContainer/VBoxContainer3/MarginContainer" instance=ExtResource("4_hc58u")]
 material = SubResource("ShaderMaterial_c5vee")
@@ -302,31 +309,31 @@ theme_override_constants/separation = 127
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelWindow/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 36
-theme_override_constants/margin_top = 6
+theme_override_constants/margin_left = 110
+theme_override_constants/margin_top = 8
 
 [node name="AmpTop" type="Label" parent="PanelWindow/HBoxContainer/VBoxContainer/MarginContainer"]
-custom_minimum_size = Vector2(100, 0)
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "-"
 
 [node name="MarginContainer2" type="MarginContainer" parent="PanelWindow/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 34
+theme_override_constants/margin_left = 110
 theme_override_constants/margin_top = 0
 
 [node name="AmpMid" type="Label" parent="PanelWindow/HBoxContainer/VBoxContainer/MarginContainer2"]
-custom_minimum_size = Vector2(100, 0)
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "-"
 
 [node name="MarginContainer3" type="MarginContainer" parent="PanelWindow/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 36
-theme_override_constants/margin_top = -3
+theme_override_constants/margin_left = 110
+theme_override_constants/margin_top = -5
 
 [node name="AmpBot" type="Label" parent="PanelWindow/HBoxContainer/VBoxContainer/MarginContainer3"]
-custom_minimum_size = Vector2(100, 0)
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "-"
 

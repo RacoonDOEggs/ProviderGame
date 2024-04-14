@@ -23,7 +23,7 @@ signal electrical_win # Signal indiquant que le casse-tête électrique est comp
 @onready var amp_mid_label:Label = $PanelWindow/HBoxContainer/VBoxContainer/MarginContainer2/AmpMid
 @onready var amp_bot_label:Label = $PanelWindow/HBoxContainer/VBoxContainer/MarginContainer3/AmpBot
 @onready var in_voltage_label:Label = $PanelWindow/HBoxContainer/MarginContainer/InVoltage
-@onready var mid_voltge_label:Label = $PanelWindow/HBoxContainer/VBoxContainer1/MidVoltage
+@onready var mid_voltge_label:Label = $PanelWindow/HBoxContainer/VBoxContainer1/MarginContainer2/MidVoltage
 
 #On affiche l'interface lorsque le signal est reçu.
 func _on_electrical_box_object_electrical_box_clicked():

@@ -77,7 +77,7 @@
 [ext_resource type="Texture2D" uid="uid://c6du0ftf00m25" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Appear/28.png" id="73_ock3l"]
 [ext_resource type="Texture2D" uid="uid://c25sth5gvbyq6" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Appear/29.png" id="74_74b32"]
 [ext_resource type="Texture2D" uid="uid://dthgpnolw22wf" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Appear/30.png" id="75_nse0b"]
-[ext_resource type="Texture2D" uid="uid://c5t2g28xt8rio" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Appear/31.png" id="76_x7yun"]
+[ext_resource type="Texture2D" uid="uid://bje2hrp71jcyg" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Appear/31.png" id="76_x7yun"]
 [ext_resource type="Texture2D" uid="uid://dyhf1po38afcb" path="res://graphics/Backpack/Green/Categories/3 - Equipment/Appear/1.png" id="77_m33y1"]
 [ext_resource type="Texture2D" uid="uid://cjsp8kr5s0yho" path="res://graphics/Backpack/Green/Categories/3 - Equipment/Appear/2.png" id="78_bfmfp"]
 [ext_resource type="Texture2D" uid="uid://by4pag7k0bjiw" path="res://graphics/Backpack/Green/Categories/3 - Equipment/Appear/3.png" id="79_wjsel"]
@@ -87,7 +87,7 @@
 [ext_resource type="Texture2D" uid="uid://djvl087m52fi7" path="res://graphics/Backpack/Green/Categories/3 - Equipment/Appear/7.png" id="83_uw5lp"]
 [ext_resource type="Texture2D" uid="uid://t02d8km4lyyp" path="res://graphics/Backpack/Green/Categories/3 - Equipment/Appear/8.png" id="84_jukc4"]
 [ext_resource type="Texture2D" uid="uid://btjhqpedvrdur" path="res://graphics/Backpack/Green/Categories/3 - Equipment/Appear/9.png" id="85_8oxpe"]
-[ext_resource type="Texture2D" uid="uid://0rxgr2ufnfdv" path="res://graphics/Backpack/Green/Categories/3 - Equipment/Appear/10.png" id="86_ksi68"]
+[ext_resource type="Texture2D" uid="uid://bjn0cy4bysxtb" path="res://graphics/Backpack/Green/Categories/3 - Equipment/Appear/10.png" id="86_ksi68"]
 [ext_resource type="PackedScene" uid="uid://ddcqksmajukn1" path="res://scenes/ui/backpack_inventory/inventory_slot.tscn" id="87_hot7s"]
 [ext_resource type="Texture2D" uid="uid://dbsd222ab4ahw" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Disappear/0.png" id="88_6y4b1"]
 [ext_resource type="Texture2D" uid="uid://cqr7sqg6aled3" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Disappear/1.png" id="89_xbv6v"]
@@ -392,6 +392,7 @@ texture = ExtResource("1_8u48x")
 
 [node name="Manual" type="TextureRect" parent="."]
 visible = false
+texture_filter = 1
 offset_right = 784.0
 offset_bottom = 688.0
 scale = Vector2(1.7, 1.7)
@@ -403,6 +404,7 @@ libraries = {
 }
 
 [node name="Slots" type="GridContainer" parent="."]
+visible = false
 anchors_preset = -1
 anchor_left = 0.353
 anchor_top = 0.6
