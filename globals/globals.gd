@@ -10,6 +10,8 @@ signal item_placed(item_id:int, status:bool)
 
 signal inventory_full()
 
+signal set_map_dimensions(dimensions:Rect2i)
+
 var resistors_acquired:bool = false:
 	get:
 		return resistors_acquired

@@ -35,9 +35,16 @@ func generate_plane_crashes():
 	return crash_coords
 
 func _on_wfc_2d_generator_done():
+	Globals.set_map_dimensions.emit($WFC2DGenerator.rect)
 	$sample.queue_free()
 	$negative_sample.queue_free()
 	for x in range(crash_pos.x,crash_pos.x+crash_area.x):
 		for y in range(crash_pos.y, crash_pos.y+crash_area.y):
 			$target.erase_cell(1,Vector2i(x,y))
-	
+	for x in range($WFC2DGenerator.rect.position.x - 1, $WFC2DGenerator.rect.end.x + 1):
+		$target.set_cell(0,Vector2i(x,$WFC2DGenerator.rect.position.y - 1),0,Vector2i(2,1))
+		$target.set_cell(0,Vector2i(x,$WFC2DGenerator.rect.end.y + 1),0,Vector2i(2,1))
+	for y in range($WFC2DGenerator.rect.position.y - 1, $WFC2DGenerator.rect.end.y + 1):
+		$target.set_cell(0,Vector2i($WFC2DGenerator.rect.position.x - 1,y),0,Vector2i(2,1))
+		$target.set_cell(0,Vector2i($WFC2DGenerator.rect.end.x + 1,y),0,Vector2i(2,1))
+
