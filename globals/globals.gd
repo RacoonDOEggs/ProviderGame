@@ -5,6 +5,8 @@ signal herbs_picked(amount:int)
 signal wood_picked(amount:int)
 signal resistor_picked(amount:int)
 
+signal cashout
+
 signal remove_item(item_id:int, status:Array)
 signal item_placed(item_id:int, status:bool)
 

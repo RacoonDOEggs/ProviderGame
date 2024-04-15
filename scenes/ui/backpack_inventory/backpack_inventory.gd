@@ -10,6 +10,17 @@ class Item:
 		self.name = _name
 		self.max_stack = _max_stack
 
+
+class List_Item:
+	var collected:int
+	var goal:int
+	var label:Label
+
+	func _init(_goal:int, _label:Label):
+		self.collected = 0
+		self.goal = _goal
+		self.label = _label
+
 #Dictionnaire des noms des items avec leur ID.
 var items = [
 	Item.new(0, "berry", 8),
@@ -26,12 +37,20 @@ var textures:Array = [
 					]
 
 #Liste des items présents dans l'inventaire du joueur
-# Inventaire pleine. (Pour tests)
+# Inventaire plein (Pour tests)
 #var inventory = [2,2,2,2 ,2,2,2,2, 2,2,2,2, 2,2,2,2 ,2,2,2,2 ,2,2,2,2 ,2,2,2,2 ,2,2,2,2, 2,2,2,2, 2,2,2,2 ,2,2,2,2 ,2,2,2,2 ,2,2,2,2 ,2,2,2,2, 2,2,2,2, 2,2,2,2]
 
-##Liste des items présents dans l'inventaire du joueur
+#Inventaire partiellement plein (Pour tests)
+#var inventory = [0,0,0,0,0,1,1,1,1,2,2,2]
+
 #Inventaire vide
 var inventory = []
+
+#Liste des ressources à collecter pour la jounée
+var list_items = []
+@onready var resource_list_labels = [$ResourceList/HBoxContainer/Label,
+										$ResourceList/HBoxContainer2/Label,
+										$ResourceList/HBoxContainer3/Label]
 
 #Initialisation.
 func _ready():
@@ -40,7 +59,9 @@ func _ready():
 	Globals.wood_picked.connect(on_wood_picked)
 	Globals.resistor_picked.connect(on_resistor_picked)
 	Globals.remove_item.connect(remove_from_inventory)
+	Globals.cashout.connect(cashout)
 	update_inventory()
+	generate_new_list()
 
 func on_berry_picked(amount:int):
 	Globals.item_placed.emit(0, add_to_inventory(0,amount))
@@ -122,7 +143,7 @@ func remove_from_inventory(item_id:int, status:Array):
 		var inventory_slot = $Slots.get_child(i, false)
 		if inventory_slot.object_id == item_id and !removed:
 			inventory_slot.texture = inventory_slot.texture if inventory_slot.object_value > 1 else null
-			inventory_slot.object_id = -1
+			inventory_slot.object_id = -1 if inventory_slot.object_value > 1 else item_id
 			inventory_slot.object_value = inventory_slot.object_value - 1 if inventory_slot.object_value > 0 else inventory_slot.object_value
 			update_stack_label(inventory_slot)
 			inventory.erase(item_id)
@@ -136,3 +157,44 @@ func remove_from_inventory(item_id:int, status:Array):
 func update_stack_label(inventory_slot:Node):
 	var label = inventory_slot.get_child(1,false)
 	label.text = str(inventory_slot.object_value) if inventory_slot.object_value > 1 else "" 
+
+#Formattage de la string pour le texte de la liste de ressources à collecter.
+func format_list_label_text(collected:int, goal:int) -> String:
+	var s:String = ""
+	if collected < 10:
+		s += " " + str(collected)
+	else:
+		s += str(collected)
+	s += " / " 
+	if goal < 10:
+		s += " " + str(goal)
+	else:
+		s += str(goal)
+	return s
+
+#Génère une nouvelle liste de ressources à collecter
+func generate_new_list():
+	var rng = RandomNumberGenerator.new()
+	list_items = []
+	for i in 3:
+		list_items.append(List_Item.new(rng.randi() % 50, resource_list_labels[i]))
+		list_items[i].label.text = format_list_label_text(list_items[i].collected, list_items[i].goal)
+
+#Donnes les ressources ramassées à l'hôtesse de l'air et complète la liste
+func cashout():
+	for item_id in 3:	
+		var i:int = 0
+		while i < $Slots.get_child_count(false) - 1 and list_items[item_id].collected < list_items[item_id].goal:
+			var inventory_slot = $Slots.get_child(i, false)
+			if inventory_slot.object_id == item_id:
+				inventory_slot.texture = inventory_slot.texture if inventory_slot.object_value > 1 else null
+				inventory_slot.object_id = item_id if inventory_slot.object_value > 1 else -1
+				inventory_slot.object_value = inventory_slot.object_value - 1 if inventory_slot.object_value > 0 else inventory_slot.object_value
+				update_stack_label(inventory_slot)
+				inventory.erase(item_id)
+				list_items[item_id].collected += 1
+				i = 0
+			else:
+				i += 1
+		list_items[item_id].label.text = format_list_label_text(list_items[item_id].collected, list_items[item_id].goal)
+	update_inventory()

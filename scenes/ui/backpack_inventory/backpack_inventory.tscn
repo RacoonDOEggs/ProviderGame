@@ -1,4 +1,4 @@
-[gd_scene load_steps=139 format=3 uid="uid://bfrb5to87sfao"]
+[gd_scene load_steps=142 format=3 uid="uid://bfrb5to87sfao"]
 
 [ext_resource type="Texture2D" uid="uid://bfjjpdtkkc5ei" path="res://graphics/Backpack/Green/BackPack/1 - idle/0.png" id="1_8u48x"]
 [ext_resource type="Script" path="res://scenes/ui/backpack_inventory/backpack_inventory.gd" id="1_ufdiv"]
@@ -128,6 +128,9 @@
 [ext_resource type="Texture2D" uid="uid://dtwhklnulrne" path="res://graphics/Backpack/Green/Categories/3 - Equipment/Disappear/6.png" id="125_ofwr7"]
 [ext_resource type="Texture2D" uid="uid://by6qjnh02gyum" path="res://graphics/Backpack/Green/Categories/3 - Equipment/Disappear/7.png" id="126_sg2ak"]
 [ext_resource type="Texture2D" uid="uid://clhg13c6sorrd" path="res://graphics/Backpack/Green/Categories/3 - Equipment/Disappear/8.png" id="127_v6vss"]
+[ext_resource type="Texture2D" uid="uid://lyu44x4rf3i2" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Sprites/items/10.png" id="129_ruek5"]
+[ext_resource type="Texture2D" uid="uid://dftmgiv5k6foa" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Sprites/items/7.png" id="130_e7sq3"]
+[ext_resource type="Texture2D" uid="uid://bvf4oruyvuill" path="res://graphics/Backpack/Green/Categories/1 - Inventory/Sprites/items/9.png" id="131_nicb4"]
 
 [sub_resource type="Animation" id="Animation_ie2lw"]
 length = 0.001
@@ -199,6 +202,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [false, true, true]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ResourceList:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
 
 [sub_resource type="Animation" id="Animation_ep76v"]
 resource_name = "inventory_disappear"
@@ -234,6 +249,18 @@ tracks/2/path = NodePath("Slots:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.06, 0.08),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ResourceList:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.06, 0.08),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
@@ -279,6 +306,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ResourceList:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.02),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_1u05b"]
 resource_name = "manual_disappear"
@@ -314,6 +353,18 @@ tracks/2/path = NodePath("Slots:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.36),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ResourceList:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.3, 0.36),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
@@ -396,7 +447,7 @@ texture_filter = 1
 offset_right = 784.0
 offset_bottom = 688.0
 scale = Vector2(1.7, 1.7)
-texture = ExtResource("78_bfmfp")
+texture = ExtResource("121_jx655")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -469,5 +520,52 @@ layout_mode = 2
 
 [node name="PlaceHolder" type="Control" parent="Slots"]
 layout_mode = 2
+
+[node name="ResourceList" type="VBoxContainer" parent="."]
+visible = false
+anchors_preset = -1
+anchor_left = 0.52
+anchor_top = 0.474
+anchor_right = 0.52
+anchor_bottom = 0.474
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ResourceList"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ResourceList/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("129_ruek5")
+
+[node name="Label" type="Label" parent="ResourceList/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "00 / 00"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ResourceList"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ResourceList/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("130_e7sq3")
+
+[node name="Label" type="Label" parent="ResourceList/HBoxContainer2"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "00 / 00"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="ResourceList"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ResourceList/HBoxContainer3"]
+layout_mode = 2
+texture = ExtResource("131_nicb4")
+
+[node name="Label" type="Label" parent="ResourceList/HBoxContainer3"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "00 / 00"
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
