@@ -39,7 +39,9 @@ collision_mask = 3
 [node name="PopUpFlightAttendant" parent="." instance=ExtResource("8_1lfho")]
 
 [node name="OldPlane" parent="." instance=ExtResource("9_p2hrf")]
+visible = false
 position = Vector2(-666, 831)
+collision_layer = 8
 
 [connection signal="player_pos_signal" from="." to="MapGenerator" method="_on_test_level_player_pos_signal"]
 [connection signal="plane_door_clicked" from="Plane_door" to="RedHoodPlaceholder" method="_on_plane_door_plane_door_clicked"]
