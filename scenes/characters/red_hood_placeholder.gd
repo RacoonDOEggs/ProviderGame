@@ -3,7 +3,6 @@ extends CharacterBody2D
 @export var speed:int = 500 # Vitesse maximale du joueur
 
 func _ready():
-	Globals.player_speed = speed
 	Globals.set_map_dimensions.connect(on_set_map_dimensions)
 
 # Fonction qui régis le mouvement et la vitesse du joueur.
