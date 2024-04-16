@@ -1,3 +1,8 @@
+#AUTEUR : Marc-Olivier Beaulieu
+#PROJET : Provider
+#NOM DU FICHIER : backpack_inventory.gd
+#DESCRIPTION : Logique de la gestion d'items dans l'inventaire du joueur.
+
 extends CanvasLayer
 
 class Item:
