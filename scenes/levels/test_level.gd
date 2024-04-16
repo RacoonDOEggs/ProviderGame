@@ -4,6 +4,7 @@ signal player_pos_signal(player_pos)
 
 func _ready():
 	Globals.inventory_full.connect(on_inventory_full)
+	Globals.start_game.connect(on_start_game)
 
 func _process(_delta):
 	# On enregistre la position du joueur pour que tous les scènes y aillent accès.
@@ -18,3 +19,7 @@ func on_inventory_full():
 	$Player_in_game_UI.visible = true
 	await get_tree().create_timer(2.0).timeout
 	$Player_in_game_UI.visible = false
+
+#Si on appuie sur le bouton JOUER, la génération se lance.
+func on_start_game():
+	$MapGenerator._on_start()

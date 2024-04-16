@@ -1,0 +1,117 @@
+[gd_scene load_steps=4 format=3 uid="uid://oliixecscbjb"]
+
+[ext_resource type="Script" path="res://scenes/ui/main_menu/main_menu.gd" id="1_hevv3"]
+[ext_resource type="Texture2D" uid="uid://2yi61e2a65oi" path="res://graphics/main_menu/animated sample 2.png" id="1_ixpf5"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_hgdku"]
+
+[node name="Main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hevv3")
+
+[node name="BackgroundTextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.823529)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -387.0
+offset_top = -9.0
+offset_right = -387.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.46, 1.46)
+texture = ExtResource("1_ixpf5")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="MenuContainer" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.0
+offset_top = -168.0
+offset_right = -4.00006
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.2, 2.2)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuContainer"]
+layout_mode = 2
+
+[node name="MenuMargin" type="MarginContainer" parent="MenuContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="MenuButtons" type="VBoxContainer" parent="MenuContainer/VBoxContainer/MenuMargin"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Jouer
+"
+
+[node name="CreditsButton" type="Button" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons"]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(128, 40)
+layout_mode = 2
+text = "Crédits"
+text_overrun_behavior = 1
+
+[node name="ExitButton" type="Button" parent="MenuContainer/VBoxContainer/MenuMargin/MenuButtons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 40)
+layout_mode = 2
+text = "Quitter"
+
+[node name="Title_frame" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -340.0
+offset_top = 36.0
+offset_right = -45.0
+offset_bottom = 103.0
+grow_horizontal = 2
+scale = Vector2(2.47, 2.47)
+
+[node name="Sprite2D" type="Sprite2D" parent="Title_frame"]
+modulate = Color(0.172549, 0.172549, 0.172549, 0.639216)
+position = Vector2(301.619, 71)
+scale = Vector2(308.619, 72)
+texture = SubResource("CanvasTexture_hgdku")
+
+[node name="Title" type="Label" parent="Title_frame"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "The provider"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="MenuContainer/VBoxContainer/MenuMargin/MenuButtons/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/MenuMargin/MenuButtons/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/MenuMargin/MenuButtons/ExitButton" to="." method="_on_exit_button_pressed"]

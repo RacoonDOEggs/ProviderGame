@@ -4,14 +4,11 @@ signal berry_picked(amount:int)
 signal herbs_picked(amount:int)
 signal wood_picked(amount:int)
 signal resistor_picked(amount:int)
-
 signal cashout
-
+signal start_game()
 signal remove_item(item_id:int, status:Array)
 signal item_placed(item_id:int, status:bool)
-
 signal inventory_full()
-
 signal set_map_dimensions(dimensions:Rect2i)
 
 var resistors_acquired:bool = false:
@@ -26,13 +23,11 @@ var player_direction: String = "":
 	set(value):
 		player_direction = value
 
-
 var laser_timer_check: bool = false:
 	get:
 		return laser_timer_check
 	set(value):
 		laser_timer_check = value
-
 
 var player_pos: Vector2 = Vector2.ZERO:
 	get:

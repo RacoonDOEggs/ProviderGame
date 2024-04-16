@@ -20,7 +20,6 @@ credits_packed_scene = ExtResource("3_5dhvp")
 [node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="."]
 process_mode = 3
 autoplay = true
-bus = &"Music"
 
 [node name="BackgroundTextureRect" type="TextureRect" parent="."]
 layout_mode = 1
