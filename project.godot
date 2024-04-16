@@ -18,6 +18,10 @@ config/icon="res://icon.svg"
 [autoload]
 
 Globals="*res://globals/globals.gd"
+SceneLoader="*res://addons/maaacks_game_template/base/scripts/SceneLoader.gd"
+RuntimeLogger="*res://addons/maaacks_game_template/extras/scripts/RuntimeLogger.gd"
+ProjectLevelLoader="*res://addons/maaacks_game_template/extras/scenes/Autoloads/ProjectLevelLoader.tscn"
+ProjectMusicController="*res://addons/maaacks_game_template/extras/scenes/Autoloads/ProjectMusicController.tscn"
 
 [display]
 
@@ -29,7 +33,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/wfc/plugin.cfg")
+enabled=PackedStringArray("res://addons/maaacks_game_template/plugin.cfg", "res://addons/wfc/plugin.cfg")
 
 [input]
 

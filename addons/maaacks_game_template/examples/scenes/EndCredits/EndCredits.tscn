@@ -12,7 +12,6 @@ scroll_active = true
 [node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="." index="0"]
 process_mode = 3
 autoplay = true
-bus = &"Music"
 
 [node name="ScrollContainer" parent="." index="1"]
 scroll_vertical = 0

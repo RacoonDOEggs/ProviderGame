@@ -12,8 +12,7 @@ var rng = RandomNumberGenerator.new()
 var old_plane = preload("res://scenes/objects/old_plane.tscn").instantiate()
 var crash_pos:Vector2i
 
-#Démarrage de la génération
-func _ready():
+func _on_start():
 	Globals.player_speed = 0 # Le joueur ne peut pas se déplacer.
 	$Waiting_screen.show()
 	self.add_child(old_plane)
@@ -22,7 +21,6 @@ func _ready():
 	$sample.hide()
 	$negative_sample.hide()
 	$target.show()
-	
 	$WFC2DGenerator.start()
 
 #Choisis l'emplacement du vieux crash et réserve son emplacement

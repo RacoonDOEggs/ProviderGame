@@ -10,6 +10,9 @@ signal herbs_picked(amount:int)
 signal wood_picked(amount:int)
 signal resistor_picked(amount:int)
 
+# Signal indiquant que la partie a commencé.
+signal start_game()
+
 #Signal pour remettre les items ramassés à l'hôtesse de l'air
 signal cashout
 
@@ -38,12 +41,6 @@ var player_direction: String = "":
 		return player_direction
 	set(value):
 		player_direction = value
-
-#var laser_timer_check: bool = false:
-#	get:
-#		return laser_timer_check
-#	set(value):
-#		laser_timer_check = value
 
 #Indique la position du joueur
 var player_pos: Vector2 = Vector2.ZERO:
