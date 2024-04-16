@@ -1,3 +1,7 @@
+//AUTEUR : Marc-Olivier Beaulieu
+//PROJET : Provider
+//NOM DU FICHIER : resistor_receptacle.gdshader
+//DESCRIPTION : Ramplace les couleurs des résistances en fonction de leur valeur.
 shader_type canvas_item;
 
 uniform vec4 oldColor1 : source_color = vec4(0.0, 1.0, 0.0, 1.0);

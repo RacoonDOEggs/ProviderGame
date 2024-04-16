@@ -1,3 +1,7 @@
+#AUTEUR : Marc-Olivier Beaulieu
+#PROJET : Provider
+#NOM DU FICHIER : drag_and_drop.gd
+#DESCRIPTION : Modèle générique pour du drag and drop.
 extends TextureRect
 class_name DragAndDrop
 
