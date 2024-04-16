@@ -50,7 +50,7 @@ func _ready():
 
 func _on_button_pressed(button_index):
 	var button = buttons[button_index]
-	#print("Button", button.name, "pressed")
+	#print(button.name, "pressed")
 	_toggle(button)
 
 func check_gates_placement() -> bool:
@@ -75,6 +75,7 @@ func check_gates_placement() -> bool:
 		return true
 	else:
 		return false
+
 	#if andGate.object_id == andShadow && notGate.object_id == notShadow && notGate.object_id == notShadow2 && norGate.object_id == norShadow && xnorGate.object_id == xnorShadow && orGate.object_id == orShadow && xorGate.object_id == xorShadow :
 		#logical_win.emit()
 		#return true
@@ -82,33 +83,24 @@ func check_gates_placement() -> bool:
 		#return false
 
 func light_up_end_light():
-		var all_buttons_pressed = is_button_pressed["buttonX"] && is_button_pressed["buttonY"] && is_button_pressed["buttonZ"]
+		var all_buttons_pressed = {
+			is_button_pressed["buttonX"] : true,
+			is_button_pressed["buttonY"] : true,
+			is_button_pressed["buttonZ"] : true 
+		}
 		if check_gates_placement() && all_buttons_pressed: 
-			$PanelWindow/closedLight.texture = load("res://graphics/objects/logic/openLight.png")
-			
+			$PanelWindow/closedLight.texture = preload("res://graphics/objects/logic/openLight.png")
 		else:
-			$PanelWindow/closedLight.texture = load("res://graphics/objects/logic/closedLight.png")
-		
+			$PanelWindow/closedLight.texture = preload("res://graphics/objects/logic/closedLight.png")
+
+
 
 #func _process(_delta):
 	#pass
-#
-#func _on_ButtonX_pressed():
-	#print ('ButtonX is clicked')
-	##connect doors and strings 
-	#
-#func _on_ButtonY_pressed():
-	#print('ButtonY is clicked')
-	##connect rest
-	#
-#func _on_ButtonZ_pressed():
-	#print('ButtonZ is clicked')
-	##connect rest
-#
+
 
 func _on_logic_box_object_logic_puzzle_clicked():
 	visible = true
-
 
 func _on_close_button_pressed():
 	visible = false
