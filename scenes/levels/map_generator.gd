@@ -1,8 +1,12 @@
+#AUTEUR : Marc-Olivier Beaulieu
+#PROJET : Provider
+#NOM DU FICHIER : map_generator.gd
+#DESCRIPTION : Intérragit avec le plugin de Wave Function Collapse pour générer le monde et place le vieux crash d'avion à un endroit aléatoire.
 extends Node2D
 
+#Dimensions du monde et de la zone du vieux crash
 @export var generation_size:Vector2i = Vector2i(200,200)
 @export var crash_area:Vector2i = Vector2i(10,10)
-@export var crash_amount:int = 4
 
 var rng = RandomNumberGenerator.new()
 var old_plane = preload("res://scenes/objects/old_plane.tscn").instantiate()
@@ -19,6 +23,7 @@ func _on_start():
 	$target.show()
 	$WFC2DGenerator.start()
 
+#Choisis l'emplacement du vieux crash et réserve son emplacement
 func generate_plane_crashes():
 	rng.randomize()
 	var crash_coords:Vector2i
@@ -33,6 +38,7 @@ func generate_plane_crashes():
 			$target.set_cell(0,Vector2i(x,y),0,Vector2i.ZERO)
 	return crash_coords
 
+#Place le vieux crash et supprime les échantillons de la génération
 func _on_wfc_2d_generator_done():
 	Globals.set_map_dimensions.emit($WFC2DGenerator.rect)
 	$sample.queue_free()

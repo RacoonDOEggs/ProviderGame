@@ -1,3 +1,8 @@
+#AUTEUR : Marc-Olivier Beaulieu
+#PROJET : Provider
+#NOM DU FICHIER : backpack_inventory.gd
+#DESCRIPTION : Logique de la gestion d'items dans l'inventaire du joueur.
+
 extends CanvasLayer
 
 class Item:
@@ -85,10 +90,11 @@ func update_inventory():
 			inventory_slot.object_id = -1
 			inventory_slot.object_value = -1
 			update_stack_label(inventory_slot)
-		
-	inventory.sort()
-	for i in inventory.size():
-		place_in_inventory(inventory[i])
+	var inv_copy = inventory
+	inventory = []
+	inv_copy.sort()
+	for i in inv_copy.size():
+		place_in_inventory(inv_copy[i])
 
 #Apparition de l'inventaire et du manuel en fonction des actions du joueur
 func _unhandled_key_input(event):
@@ -143,7 +149,7 @@ func remove_from_inventory(item_id:int, status:Array):
 		var inventory_slot = $Slots.get_child(i, false)
 		if inventory_slot.object_id == item_id and !removed:
 			inventory_slot.texture = inventory_slot.texture if inventory_slot.object_value > 1 else null
-			inventory_slot.object_id = -1 if inventory_slot.object_value > 1 else item_id
+			inventory_slot.object_id = item_id if inventory_slot.object_value > 1 else -1
 			inventory_slot.object_value = inventory_slot.object_value - 1 if inventory_slot.object_value > 0 else inventory_slot.object_value
 			update_stack_label(inventory_slot)
 			inventory.erase(item_id)
@@ -177,13 +183,15 @@ func generate_new_list():
 	var rng = RandomNumberGenerator.new()
 	list_items = []
 	for i in 3:
-		list_items.append(List_Item.new(rng.randi() % 50, resource_list_labels[i]))
+		list_items.append(List_Item.new(rng.randi() % 25, resource_list_labels[i]))
 		list_items[i].label.text = format_list_label_text(list_items[i].collected, list_items[i].goal)
 
 #Donnes les ressources ramassées à l'hôtesse de l'air et complète la liste
 func cashout():
+	print("cashout")
 	for item_id in 3:	
 		var i:int = 0
+		print(list_items[item_id].collected,list_items[item_id].goal)
 		while i < $Slots.get_child_count(false) - 1 and list_items[item_id].collected < list_items[item_id].goal:
 			var inventory_slot = $Slots.get_child(i, false)
 			if inventory_slot.object_id == item_id:
