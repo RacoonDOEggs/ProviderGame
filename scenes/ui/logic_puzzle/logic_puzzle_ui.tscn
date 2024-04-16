@@ -307,8 +307,8 @@ texture = ExtResource("6_exfbq")
 
 [node name="closeButton" type="TextureButton" parent="PanelWindow"]
 layout_mode = 0
-offset_left = 1151.88
-offset_right = 1215.88
+offset_left = 1133.56
+offset_right = 1197.56
 offset_bottom = 64.0
 texture_normal = ExtResource("9_5ackg")
 stretch_mode = 0
@@ -478,11 +478,7 @@ position = Vector2(599, 37)
 scale = Vector2(1.904, 2.06071)
 texture = ExtResource("29_1utlf")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 1327.0
-offset_top = 60.0
-offset_right = 1675.0
-offset_bottom = 115.0
-text = "(Cette fonction ne doit pas être simplifiée)"
-
+[connection signal="pressed" from="PanelWindow/buttonX" to="." method="_on_button_x_pressed"]
+[connection signal="pressed" from="PanelWindow/buttonY" to="." method="_on_button_y_pressed"]
+[connection signal="pressed" from="PanelWindow/buttonZ" to="." method="_on_button_z_pressed"]
 [connection signal="pressed" from="PanelWindow/closeButton" to="." method="_on_close_button_pressed"]

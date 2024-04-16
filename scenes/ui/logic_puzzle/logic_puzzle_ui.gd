@@ -17,20 +17,17 @@ signal logical_win
 @onready var orShadow = $PanelWindow/EmptyGateOr
 @onready var xorShadow = $PanelWindow/EmptyGateXOr
 
-var buttons = [] 
+@onready var buttons = [$PanelWindow/buttonX,
+		$PanelWindow/buttonY,
+		$PanelWindow/buttonZ] 
+
 var is_button_pressed = {
 	#tous les boutons sont à off
 	"buttonX": false, 
 	"buttonY": false,
 	"buttonZ": false
 }
-func _input(event):
-	if event is InputEventMouseButton and event.is_pressed():
-		for button_index in range(buttons.size()):
-			var button = buttons[button_index]
-			if button.get_global_rect().has_point(event.position):
-				_on_button_pressed(button_index)
-				light_up_end_light()
+
 
 func _toggle(button):
 	if button != null:
@@ -40,63 +37,30 @@ func _toggle(button):
 		else:
 			button.texture_normal = preload("res://graphics/objects/logic/off.png")
 			is_button_pressed[button.name] = false
-			
-
-func _ready():
-	buttons = [
-		$PanelWindow/buttonX,
-		$PanelWindow/buttonY,
-		$PanelWindow/buttonZ]
+		
 
 func _on_button_pressed(button_index):
 	var button = buttons[button_index]
 	#print(button.name, "pressed")
 	_toggle(button)
+	light_up_end_light()
+	
 
 func check_gates_placement() -> bool:
-	var andGatePos = andGate.global_position
-	var notGatePos = notGate.global_position
-	var norGatePos = norGate.global_position
-	var xnorGatePos = xnorGate.global_position
-	var orGatePos = orGate.global_position
-	var xorGatePos = xorGate.global_position
 
-	var andShadowRect = andShadow.get_global_rect()
-	var notShadowRect = notShadow.get_global_rect()
-	var notShadow2Rect = notShadow2.get_global_rect()
-	var norShadowRect = norShadow.get_global_rect()
-	var xnorShadowRect = xnorShadow.get_global_rect()
-	var orShadowRect = orShadow.get_global_rect()
-	var xorShadowRect = xorShadow.get_global_rect()
-
-
-	if andShadowRect.has_point(andGatePos) && notShadowRect.has_point(notGatePos) && notShadow2Rect.has_point(notGatePos) && norShadowRect.has_point(norGatePos) && xnorShadowRect.has_point(xnorGatePos) && orShadowRect.has_point(orGatePos) && xorShadowRect.has_point(xorGatePos):
+	if andGate.object_id == andShadow.object_id && notGate.object_id == notShadow.object_id && notGate.object_id == notShadow2.object_id && norGate.object_id == norShadow.object_id && xnorGate.object_id == xnorShadow.object_id && orGate.object_id == orShadow.object_id && xorGate.object_id == xorShadow.object_id :
 		logical_win.emit()
+		print("placement true")
 		return true
 	else:
+		print("placement false")
 		return false
 
-	#if andGate.object_id == andShadow && notGate.object_id == notShadow && notGate.object_id == notShadow2 && norGate.object_id == norShadow && xnorGate.object_id == xnorShadow && orGate.object_id == orShadow && xorGate.object_id == xorShadow :
-		#logical_win.emit()
-		#return true
-	#else:
-		#return false
-
 func light_up_end_light():
-		var all_buttons_pressed = {
-			is_button_pressed["buttonX"] : true,
-			is_button_pressed["buttonY"] : true,
-			is_button_pressed["buttonZ"] : true 
-		}
-		if check_gates_placement() && all_buttons_pressed: 
-			$PanelWindow/closedLight.texture = preload("res://graphics/objects/logic/openLight.png")
-		else:
-			$PanelWindow/closedLight.texture = preload("res://graphics/objects/logic/closedLight.png")
-
-
-
-#func _process(_delta):
-	#pass
+	if check_gates_placement() and is_button_pressed["buttonX"] and is_button_pressed["buttonY"] and is_button_pressed["buttonZ"]: 
+		$PanelWindow/closedLight.texture = preload("res://graphics/objects/logic/openLight.png")
+	else:
+		$PanelWindow/closedLight.texture = preload("res://graphics/objects/logic/closedLight.png")
 
 
 func _on_logic_box_object_logic_puzzle_clicked():
@@ -104,3 +68,12 @@ func _on_logic_box_object_logic_puzzle_clicked():
 
 func _on_close_button_pressed():
 	visible = false
+
+func _on_button_z_pressed():
+	_on_button_pressed(2)
+
+func _on_button_y_pressed():
+	_on_button_pressed(1)
+
+func _on_button_x_pressed():
+	_on_button_pressed(0)
