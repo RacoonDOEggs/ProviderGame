@@ -61,15 +61,16 @@ func check_gates_placement() -> bool:
 	var orGatePos = orGate.global_position
 	var xorGatePos = xorGate.global_position
 
-	var andShadowPos = andShadow.global_position
-	var notShadowPos = notShadow.global_position
-	var notShadow2Pos = notShadow2.global_position
-	var norShadowPos = norShadow.global_position
-	var xnorShadowPos = xnorShadow.global_position
-	var orShadowPos = orShadow.global_position
-	var xorShadowPos = xorShadow.global_position
+	var andShadowRect = andShadow.get_global_rect()
+	var notShadowRect = notShadow.get_global_rect()
+	var notShadow2Rect = notShadow2.get_global_rect()
+	var norShadowRect = norShadow.get_global_rect()
+	var xnorShadowRect = xnorShadow.get_global_rect()
+	var orShadowRect = orShadow.get_global_rect()
+	var xorShadowRect = xorShadow.get_global_rect()
 
-	if andGatePos == andShadowPos && notGatePos == notShadowPos && notGatePos == notShadow2Pos && norGatePos == norShadowPos && xnorGatePos == xnorShadowPos && orGatePos == orShadowPos && xorGatePos == xorShadowPos:
+
+	if andShadowRect.has_point(andGatePos) && notShadowRect.has_point(notGatePos) && notShadow2Rect.has_point(notGatePos) && norShadowRect.has_point(norGatePos) && xnorShadowRect.has_point(xnorGatePos) && orShadowRect.has_point(orGatePos) && xorShadowRect.has_point(xorGatePos):
 		logical_win.emit()
 		return true
 	else:
@@ -81,11 +82,12 @@ func check_gates_placement() -> bool:
 		#return false
 
 func light_up_end_light():
-	if !check_gates_placement() && is_button_pressed == false :
-			$PanelWindow/closedLight.texture = load("res://graphics/objects/logic/closedLight.png")
+		var all_buttons_pressed = is_button_pressed["buttonX"] && is_button_pressed["buttonY"] && is_button_pressed["buttonZ"]
+		if check_gates_placement() && all_buttons_pressed: 
+			$PanelWindow/closedLight.texture = load("res://graphics/objects/logic/openLight.png")
 			
-	else:
-		$PanelWindow/closedLight.texture = load("res://graphics/objects/logic/openLight.png")
+		else:
+			$PanelWindow/closedLight.texture = load("res://graphics/objects/logic/closedLight.png")
 		
 
 #func _process(_delta):
