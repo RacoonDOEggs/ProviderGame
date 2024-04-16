@@ -1,3 +1,7 @@
+#AUTEUR : Marc-Olivier Beaulieu et Xavier Bilodeau
+#PROJET : Provider
+#NOM DU FICHIER : test_level.gd
+#DESCRIPTION : Logique du niveau
 extends Node2D
 
 signal player_pos_signal(player_pos)

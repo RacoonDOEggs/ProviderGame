@@ -1,3 +1,7 @@
+#AUTEUR : Marc-Olivier Beaulieu
+#PROJET : Provider
+#NOM DU FICHIER : resistor_receptacle.gd
+#DESCRIPTION : Version de drag_and_drop.gd propre aux résistances.
 extends DragAndDrop
 
 #0 (x1) Black = #000000
