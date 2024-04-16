@@ -50,10 +50,8 @@ func check_gates_placement() -> bool:
 
 	if andGate.object_id == andShadow.object_id && notGate.object_id == notShadow.object_id && notGate.object_id == notShadow2.object_id && norGate.object_id == norShadow.object_id && xnorGate.object_id == xnorShadow.object_id && orGate.object_id == orShadow.object_id && xorGate.object_id == xorShadow.object_id :
 		logical_win.emit()
-		print("placement true")
 		return true
 	else:
-		print("placement false")
 		return false
 
 func light_up_end_light():
@@ -77,3 +75,4 @@ func _on_button_y_pressed():
 
 func _on_button_x_pressed():
 	_on_button_pressed(0)
+
