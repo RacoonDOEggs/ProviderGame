@@ -1,3 +1,7 @@
+#AUTEUR : Marc-Olivier Beaulieu
+#PROJET : Provider
+#NOM DU FICHIER : electrical_box_ui.gd
+#DESCRIPTION : Logique derrière le casse-tête de résistances
 extends CanvasLayer
 
 signal electrical_win # Signal indiquant que le casse-tête électrique est complété.

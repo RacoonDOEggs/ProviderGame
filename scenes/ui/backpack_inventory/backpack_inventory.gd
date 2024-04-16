@@ -149,7 +149,7 @@ func remove_from_inventory(item_id:int, status:Array):
 		var inventory_slot = $Slots.get_child(i, false)
 		if inventory_slot.object_id == item_id and !removed:
 			inventory_slot.texture = inventory_slot.texture if inventory_slot.object_value > 1 else null
-			inventory_slot.object_id = -1 if inventory_slot.object_value > 1 else item_id
+			inventory_slot.object_id = item_id if inventory_slot.object_value > 1 else -1
 			inventory_slot.object_value = inventory_slot.object_value - 1 if inventory_slot.object_value > 0 else inventory_slot.object_value
 			update_stack_label(inventory_slot)
 			inventory.erase(item_id)
