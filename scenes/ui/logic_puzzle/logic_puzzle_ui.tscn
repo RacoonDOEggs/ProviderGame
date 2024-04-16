@@ -16,12 +16,12 @@
 [ext_resource type="PackedScene" uid="uid://de78v6my3130r" path="res://scenes/objects/gates/nor_gate.tscn" id="20_b6r2t"]
 [ext_resource type="Texture2D" uid="uid://chsu34ua4m7oh" path="res://graphics/objects/logic/xor3.png" id="21_2ubiq"]
 [ext_resource type="PackedScene" uid="uid://bfx4a6hlhfsiv" path="res://scenes/objects/gates/or_gate.tscn" id="21_h0110"]
+[ext_resource type="Texture2D" uid="uid://c0d2p877ow26t" path="res://graphics/objects/logic/equation2 (1).png" id="22_xei6b"]
 [ext_resource type="PackedScene" uid="uid://brv84hypgmntx" path="res://scenes/objects/gates/nand_gate_2.tscn" id="23_d1mcb"]
 [ext_resource type="Texture2D" uid="uid://bvi1k7t0j4sb0" path="res://graphics/objects/logic/or2.png" id="23_nlvoq"]
 [ext_resource type="PackedScene" uid="uid://crqjslcolsdjk" path="res://scenes/objects/gates/x_nor_gate.tscn" id="23_yaakh"]
 [ext_resource type="Texture2D" uid="uid://bdlikqh72s230" path="res://graphics/objects/logic/nand2.png" id="24_hymyv"]
 [ext_resource type="PackedScene" uid="uid://co2m3g3e37a8l" path="res://scenes/objects/gates/and_gate.tscn" id="24_pnh5l"]
-[ext_resource type="Texture2D" uid="uid://bgl08hesnedjg" path="res://graphics/objects/logic/equation2.png" id="29_1utlf"]
 
 [node name="logic_circuit_ui" type="CanvasLayer"]
 script = ExtResource("1_jmtvp")
@@ -476,7 +476,7 @@ offset_bottom = 466.0
 [node name="equation" type="Sprite2D" parent="PanelWindow"]
 position = Vector2(599, 37)
 scale = Vector2(1.904, 2.06071)
-texture = ExtResource("29_1utlf")
+texture = ExtResource("22_xei6b")
 
 [connection signal="pressed" from="PanelWindow/buttonX" to="." method="_on_button_x_pressed"]
 [connection signal="pressed" from="PanelWindow/buttonY" to="." method="_on_button_y_pressed"]
