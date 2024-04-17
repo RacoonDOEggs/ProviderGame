@@ -13,7 +13,6 @@ var old_plane = preload("res://scenes/objects/old_plane.tscn").instantiate()
 var crash_pos:Vector2i
 
 func _on_start():
-	Globals.player_speed = 0 # Le joueur ne peut pas se déplacer.
 	$Waiting_screen.show()
 	self.add_child(old_plane)
 	crash_pos = generate_plane_crashes()
