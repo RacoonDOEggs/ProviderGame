@@ -51,13 +51,12 @@ bbcode_enabled = true
 text = "[center]
 [font_size=70] Provider[/font_size]
 
-[font_size=60]Auteurs
-[font_size=30]Rime Elbaroudi, Marc-Oliver Beaulieu et Xavier Bilodeau  
-
 [font_size=30]Projet d'intégration en sciences informatiques et mathématiques
 [font_size=30]Groupe 02231 
 [font_size=30]Cégep de Sherbrooke
 
+[font_size=60]Auteurs
+[font_size=30]Rime Elbaroudi, Marc-Oliver Beaulieu et Xavier Bilodeau  
 
 [font_size=50]Casse-tête électrique[/font_size]
 [font_size=30]Marc-Oliver Beaulieu
@@ -66,7 +65,10 @@ text = "[center]
 [font_size=30]Rime Elbaroudi
 
 [font_size=50]Casse-tête optique[/font_size]
-[font_size=30]Xavier Bilodeau"
+[font_size=30]Xavier Bilodeau
+
+[font_size=50]Génération aléatoire[/font_size]
+[font_size=30]Alexey Bondarenko(source) et Marc-Olivier Beaulieu"
 fit_content = true
 scroll_active = false
 
