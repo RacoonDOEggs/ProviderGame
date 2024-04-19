@@ -71,6 +71,7 @@ var game_won: bool = false:
 		game_won = value
 
 #Indique si la partie est terminée
+signal game_end
 var end_game: bool = false:
 	get:
 		return end_game
