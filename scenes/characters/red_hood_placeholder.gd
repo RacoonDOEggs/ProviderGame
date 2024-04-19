@@ -6,6 +6,7 @@ extends CharacterBody2D
 
 func _ready():
 	Globals.set_map_dimensions.connect(on_set_map_dimensions)
+	Globals.day_end.connect(on_day_end)
 
 # Fonction qui régis le mouvement et la vitesse du joueur.
 func _process(_delta):
@@ -20,3 +21,7 @@ func on_set_map_dimensions(dimensions:Rect2i):
 	$Camera2D.limit_top = dimensions.position.y * 96
 	$Camera2D.limit_right = dimensions.end.x * 96
 	$Camera2D.limit_bottom = dimensions.end.y * 96
+
+func on_day_end():
+	await get_tree().create_timer(1).timeout
+	position = Vector2i(15,654)

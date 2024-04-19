@@ -4,6 +4,10 @@
 #DESCRIPTION : Variables qui sont en mémoire dans toutes les scènes.
 extends Node
 
+#Signaux pour indiquer le début et la fin de la journée dans le jeu
+signal day_end
+signal day_start
+
 #Signaux pour ajouter des items dans l'inventaire du joueur
 signal berry_picked(amount:int)
 signal herbs_picked(amount:int)
@@ -27,6 +31,9 @@ signal inventory_full()
 
 #Signal pour communiquer les dimensions de la carte
 signal set_map_dimensions(dimensions:Rect2i)
+
+#Indique si le quota de la journée est atteint
+var quota_complete:bool = false
 
 #Indique si le vieux crash a été trouvé
 var resistors_acquired:bool = false:

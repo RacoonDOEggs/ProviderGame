@@ -65,6 +65,7 @@ func _ready():
 	Globals.resistor_picked.connect(on_resistor_picked)
 	Globals.remove_item.connect(remove_from_inventory)
 	Globals.cashout.connect(cashout)
+	Globals.day_end.connect(generate_new_list)
 	update_inventory()
 	generate_new_list()
 
@@ -185,13 +186,13 @@ func generate_new_list():
 	for i in 3:
 		list_items.append(List_Item.new(rng.randi() % 25, resource_list_labels[i]))
 		list_items[i].label.text = format_list_label_text(list_items[i].collected, list_items[i].goal)
+	await get_tree().create_timer(0.5).timeout
+	Globals.quota_complete = false
 
 #Donnes les ressources ramassées à l'hôtesse de l'air et complète la liste
 func cashout():
-	print("cashout")
 	for item_id in 3:	
 		var i:int = 0
-		print(list_items[item_id].collected,list_items[item_id].goal)
 		while i < $Slots.get_child_count(false) - 1 and list_items[item_id].collected < list_items[item_id].goal:
 			var inventory_slot = $Slots.get_child(i, false)
 			if inventory_slot.object_id == item_id:
@@ -205,4 +206,6 @@ func cashout():
 			else:
 				i += 1
 		list_items[item_id].label.text = format_list_label_text(list_items[item_id].collected, list_items[item_id].goal)
+	if list_items[0].collected == list_items[0].goal and list_items[1].collected == list_items[1].goal and list_items[2].collected == list_items[2].goal:
+		Globals.quota_complete = true
 	update_inventory()

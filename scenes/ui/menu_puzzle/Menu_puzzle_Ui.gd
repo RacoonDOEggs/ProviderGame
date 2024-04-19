@@ -11,6 +11,8 @@ var electrical_puzzle_win_check = false # Variable indiquant que le joueur a com
 var logical_puzzle_win_check = false # Variable indiquant que le joueur a complété le casse-tête logique.
 var optical_puzzle_win_check = false # Variable indiquant que le joueur a complété le casse-tête optique.
 
+func _ready():
+	Globals.day_end.connect(_on_x_button_pressed)
 
 # Signal reçu lorsque le bouton option est pesé.
 func _on_texture_button_pressed():

@@ -51,4 +51,5 @@ func _on_wfc_2d_generator_done():
 	for y in range($WFC2DGenerator.rect.position.y - 1, $WFC2DGenerator.rect.end.y + 1):
 		$target.set_cell(0,Vector2i($WFC2DGenerator.rect.position.x - 1,y),0,Vector2i(2,1))
 		$target.set_cell(0,Vector2i($WFC2DGenerator.rect.end.x + 1,y),0,Vector2i(2,1))
+	Globals.day_start.emit()
 

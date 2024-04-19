@@ -29,6 +29,12 @@ signal electrical_win # Signal indiquant que le casse-tête électrique est comp
 @onready var in_voltage_label:Label = $PanelWindow/HBoxContainer/MarginContainer/InVoltage
 @onready var mid_voltge_label:Label = $PanelWindow/HBoxContainer/VBoxContainer1/MarginContainer2/MidVoltage
 
+func _ready():
+	Globals.day_end.connect(on_day_end)
+
+func on_day_end():
+	visible = false
+
 #On affiche l'interface lorsque le signal est reçu.
 func _on_electrical_box_object_electrical_box_clicked():
 	visible = true

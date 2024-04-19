@@ -2,6 +2,12 @@ extends CanvasLayer
 
 signal optical_win # Signal indiquant que le casse-tête optique est complété.
 
+func _ready():
+	Globals.day_end.connect(on_day_end)
+
+func on_day_end():
+	visible = false
+
 # Le signal reçu que le joueur a complété le casse-tête optique.
 func _on_laser_win():
 	$Win_message.visible = true # On affiche le message disant que le joueur a gagné le casse-tête.

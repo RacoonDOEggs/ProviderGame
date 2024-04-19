@@ -28,6 +28,11 @@ var is_button_pressed = {
 	"buttonZ": false
 }
 
+func _ready():
+	Globals.day_end.connect(on_day_end)
+
+func on_day_end():
+	visible = false
 
 func _toggle(button):
 	if button != null:
