@@ -6,6 +6,7 @@ var day_counter:int = 1
 
 func _ready():
 	visible = false
+	$ColorRect.visible = false
 	$Label2.visible = false
 	$Label3.visible = false
 	Globals.day_start.connect(on_day_start)

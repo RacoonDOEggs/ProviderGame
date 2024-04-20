@@ -120,6 +120,7 @@ text = "00:00"
 label_settings = SubResource("LabelSettings_85662")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -128,6 +129,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0)
 
 [node name="Label2" type="Label" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0)
 anchors_preset = 8
 anchor_left = 0.5
@@ -144,6 +146,7 @@ text = "Jour 1"
 label_settings = SubResource("LabelSettings_4uveq")
 
 [node name="Label3" type="Label" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0)
 anchors_preset = 8
 anchor_left = 0.5

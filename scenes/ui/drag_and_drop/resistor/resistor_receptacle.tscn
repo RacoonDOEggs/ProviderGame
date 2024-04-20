@@ -1,23 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://c5winj3uqwry4"]
+[gd_scene load_steps=10 format=3 uid="uid://c5winj3uqwry4"]
 
 [ext_resource type="PackedScene" uid="uid://c8ubeawbakhbr" path="res://scenes/ui/drag_and_drop/drag_and_drop.tscn" id="1_6o0jw"]
 [ext_resource type="Shader" path="res://scenes/ui/drag_and_drop/resistor/resistor_receptacle.gdshader" id="2_2ds4j"]
 [ext_resource type="Script" path="res://scenes/ui/drag_and_drop/resistor/resistor_receptacle.gd" id="2_b52a0"]
-[ext_resource type="Shader" path="res://scenes/ui/electricity_puzzle/resistor_receptacle.gdshader" id="2_dng0c"]
 [ext_resource type="Texture2D" uid="uid://c6brtnuu7av3a" path="res://graphics/objects/electrical/burnt_resistor (1).png" id="3_4og2l"]
 [ext_resource type="Texture2D" uid="uid://cxmr5e18ovhv2" path="res://graphics/objects/electrical/resistor (1).png" id="4_4ug5a"]
 [ext_resource type="Texture2D" uid="uid://bbgp3he5shpei" path="res://graphics/ui/Pixel UI pack 3/grey_arrow_up.png" id="5_fb2ph"]
 [ext_resource type="Texture2D" uid="uid://xl5trk4tvidu" path="res://graphics/ui/Pixel UI pack 3/grey_arrow_down.png" id="6_qmpo7"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_43u7x"]
-resource_local_to_scene = true
-shader = ExtResource("2_dng0c")
-shader_parameter/oldColor1 = Color(0, 1, 0, 1)
-shader_parameter/oldColor2 = Color(1, 0, 0, 1)
-shader_parameter/oldColor3 = Color(0, 0, 0, 1)
-shader_parameter/newColor1 = Color(0, 0, 0, 1)
-shader_parameter/newColor2 = Color(0, 0, 0, 1)
-shader_parameter/newColor3 = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_cwfgj"]
 outline_size = 5
@@ -33,17 +22,14 @@ shader_parameter/newColor2 = null
 shader_parameter/newColor3 = null
 
 [node name="ResistorReceptacle" instance=ExtResource("1_6o0jw")]
-material = SubResource("ShaderMaterial_43u7x")
 custom_minimum_size = Vector2(150, 75)
 texture = ExtResource("3_4og2l")
 script = ExtResource("2_b52a0")
-color1 = null
-color2 = null
-color3 = null
+color1 = 0
+color2 = 0
+color3 = 0
 custom_size = Vector2(150, 75)
 group_id = "resistor"
-object_value = null
-object_id = null
 
 [node name="Panel" parent="." index="0"]
 layout_mode = 1

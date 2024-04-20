@@ -1,28 +1,23 @@
+//AUTEUR : Marc-Olivier Beaulieu
+//PROJET : Provider
+//NOM DU FICHIER : crashed_plane.gdshader
+//DESCRIPTION : Ramplace les couleurs des fenêtres de l'avion en fonction de la vie restante.
 shader_type canvas_item;
 
 uniform vec4 oldColor1 : source_color = vec4(0.0, 1.0, 0.0, 1.0);
-uniform vec4 oldColor2 : source_color = vec4(1.0, 0.0, 0.0, 1.0);
-uniform vec4 oldColor3 : source_color = vec4(0.0, 0.0, 0.0, 1.0);
 
 uniform vec4 newColor1 : source_color;
-uniform vec4 newColor2 : source_color;
-uniform vec4 newColor3 : source_color;
+uniform vec4 newColor2 : source_color = vec4(0.19, 0.18, 0.21, 1.0);
+uniform float health = 3;
 
 void fragment() {
 	// Called for every pixel the material is visible on.
 	vec4 inputColor = texture(TEXTURE, UV);
-	
-	if (inputColor == oldColor1){
+	if (inputColor == oldColor1 && UV.x < (health + 1.0)/5.0){
 		COLOR = newColor1;
 	}
-	else if (inputColor == oldColor2){
+	else if (inputColor == oldColor1){
 		COLOR = newColor2;
-	}
-	else if (inputColor == oldColor3){
-		COLOR = newColor3;
-	}
-	else{
-		COLOR = inputColor;
 	}
 }
 

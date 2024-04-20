@@ -184,7 +184,7 @@ func generate_new_list():
 	var rng = RandomNumberGenerator.new()
 	list_items = []
 	for i in 3:
-		list_items.append(List_Item.new(rng.randi() % 25, resource_list_labels[i]))
+		list_items.append(List_Item.new((rng.randi() % 24) + 1, resource_list_labels[i]))
 		list_items[i].label.text = format_list_label_text(list_items[i].collected, list_items[i].goal)
 	await get_tree().create_timer(0.5).timeout
 	Globals.quota_complete = false
