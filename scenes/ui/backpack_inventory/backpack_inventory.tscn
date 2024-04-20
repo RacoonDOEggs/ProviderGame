@@ -1,4 +1,4 @@
-[gd_scene load_steps=142 format=3 uid="uid://bfrb5to87sfao"]
+[gd_scene load_steps=145 format=3 uid="uid://bfrb5to87sfao"]
 
 [ext_resource type="Texture2D" uid="uid://bfjjpdtkkc5ei" path="res://graphics/Backpack/Green/BackPack/1 - idle/0.png" id="1_8u48x"]
 [ext_resource type="Script" path="res://scenes/ui/backpack_inventory/backpack_inventory.gd" id="1_ufdiv"]
@@ -432,6 +432,18 @@ _data = {
 "top_pouch_close": SubResource("Animation_wb7eh")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_whl2b"]
+font_size = 18
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_v47in"]
+font_size = 18
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fqqgb"]
+font_size = 18
+font_color = Color(0, 0, 0, 1)
+
 [node name="BackpackInventory" type="CanvasLayer"]
 script = ExtResource("1_ufdiv")
 
@@ -455,7 +467,6 @@ libraries = {
 }
 
 [node name="Slots" type="GridContainer" parent="."]
-visible = false
 anchors_preset = -1
 anchor_left = 0.353
 anchor_top = 0.6
@@ -522,7 +533,6 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="ResourceList" type="VBoxContainer" parent="."]
-visible = false
 anchors_preset = -1
 anchor_left = 0.52
 anchor_top = 0.474
@@ -530,12 +540,13 @@ anchor_right = 0.52
 anchor_bottom = 0.474
 offset_right = 40.0
 offset_bottom = 40.0
-theme_override_constants/separation = 3
+theme_override_constants/separation = -2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ResourceList"]
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="ResourceList/HBoxContainer"]
+custom_minimum_size = Vector2(26, 18)
 layout_mode = 2
 texture = ExtResource("129_ruek5")
 
@@ -543,11 +554,13 @@ texture = ExtResource("129_ruek5")
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "00 / 00"
+label_settings = SubResource("LabelSettings_whl2b")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="ResourceList"]
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="ResourceList/HBoxContainer2"]
+custom_minimum_size = Vector2(26, 18)
 layout_mode = 2
 texture = ExtResource("130_e7sq3")
 
@@ -555,11 +568,13 @@ texture = ExtResource("130_e7sq3")
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "00 / 00"
+label_settings = SubResource("LabelSettings_v47in")
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="ResourceList"]
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="ResourceList/HBoxContainer3"]
+custom_minimum_size = Vector2(28, 18)
 layout_mode = 2
 texture = ExtResource("131_nicb4")
 
@@ -567,5 +582,6 @@ texture = ExtResource("131_nicb4")
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "00 / 00"
+label_settings = SubResource("LabelSettings_fqqgb")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
