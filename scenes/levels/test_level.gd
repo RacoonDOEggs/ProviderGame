@@ -20,8 +20,6 @@ func _process(_delta):
 	var player_pos = $RedHoodPlaceholder.position
 	Globals.player_pos = player_pos
 	
-	if Globals.game_won:
-		print("game won!")
 
 # Si l'inventaire est plein, on affiche un message pendant 2 sec.
 func on_inventory_full():

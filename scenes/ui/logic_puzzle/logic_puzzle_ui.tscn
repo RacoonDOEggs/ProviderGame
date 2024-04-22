@@ -488,18 +488,17 @@ texture = ExtResource("22_xei6b")
 
 [node name="Win_message" type="Control" parent="PanelWindow"]
 visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+offset_left = 200.0
+offset_top = 200.0
 
 [node name="MG1_greenBack" type="MarginContainer" parent="PanelWindow/Win_message"]
 modulate = Color(0.108406, 0.536531, 0.193795, 1)
 layout_mode = 0
-offset_left = 541.0
-offset_top = 319.0
-offset_right = 1432.0
-offset_bottom = 473.0
+offset_left = -10.0
+offset_top = -8.125
+offset_right = 881.0
+offset_bottom = 145.875
 metadata/_edit_lock_ = true
 
 [node name="TextureRect" type="TextureRect" parent="PanelWindow/Win_message/MG1_greenBack"]
@@ -508,10 +507,8 @@ texture = SubResource("CanvasTexture_h0iax")
 
 [node name="MG2_Titre" type="MarginContainer" parent="PanelWindow/Win_message"]
 layout_mode = 2
-offset_left = 550.0
-offset_top = 328.0
-offset_right = 1422.0
-offset_bottom = 465.0
+offset_right = 872.0
+offset_bottom = 137.0
 metadata/_edit_lock_ = true
 
 [node name="TextureRect" type="TextureRect" parent="PanelWindow/Win_message/MG2_Titre"]

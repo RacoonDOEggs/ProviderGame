@@ -53,9 +53,7 @@ func _on_button_pressed(button_index):
 	
 
 func check_gates_placement() -> bool:
-
 	if andGate.object_id == andShadow.object_id && notGate.object_id == notShadow.object_id && notGate.object_id == notShadow2.object_id && norGate.object_id == norShadow.object_id && xnorGate.object_id == xnorShadow.object_id && orGate.object_id == orShadow.object_id && xorGate.object_id == xorShadow.object_id :
-		logical_win.emit()
 		return true
 	else:
 		return false
@@ -63,7 +61,7 @@ func check_gates_placement() -> bool:
 func light_up_end_light():
 	if check_gates_placement() and is_button_pressed["buttonX"] and is_button_pressed["buttonY"] and is_button_pressed["buttonZ"]: 
 		$PanelWindow/closedLight.texture = preload("res://graphics/objects/logic/openLight.png")
-		$Win_message.visible = true # On affiche le message disant que le joueur a gagné le casse-tête.
+		$PanelWindow/Win_message.visible = true # On affiche le message disant que le joueur a gagné le casse-tête.
 		logical_win.emit() #on envoie un signal pour indiquer que le puzzle est complété
 		#lorsque le casse tete est complété, les portes logiques ne peuvent plus bouger
 		andGate.is_dragable = false
@@ -91,4 +89,3 @@ func _on_button_y_pressed():
 
 func _on_button_x_pressed():
 	_on_button_pressed(0)
-
