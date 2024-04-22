@@ -8,6 +8,7 @@ signal logical_win
 @onready var xnorGate = $PanelWindow/XNorGate
 @onready var orGate = $PanelWindow/OrGate
 @onready var xorGate = $PanelWindow/XOrGate
+@onready var nandGate = $PanelWindow/NandGate2
 
 @onready var andShadow = $PanelWindow/EmptyGateAnd
 @onready var notShadow = $PanelWindow/EmptyGateNot
@@ -62,6 +63,16 @@ func check_gates_placement() -> bool:
 func light_up_end_light():
 	if check_gates_placement() and is_button_pressed["buttonX"] and is_button_pressed["buttonY"] and is_button_pressed["buttonZ"]: 
 		$PanelWindow/closedLight.texture = preload("res://graphics/objects/logic/openLight.png")
+		$Win_message.visible = true # On affiche le message disant que le joueur a gagné le casse-tête.
+		logical_win.emit() #on envoie un signal pour indiquer que le puzzle est complété
+		#lorsque le casse tete est complété, les portes logiques ne peuvent plus bouger
+		andGate.is_dragable = false
+		notGate.is_dragable = false
+		nandGate.is_dragable = false
+		xnorGate.is_dragable = false
+		xorGate.is_dragable = false
+		norGate.is_dragable = false
+		orGate.is_dragable = false
 	else:
 		$PanelWindow/closedLight.texture = preload("res://graphics/objects/logic/closedLight.png")
 

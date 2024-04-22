@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cqu5woxnudbp2"]
+[gd_scene load_steps=26 format=3 uid="uid://cqu5woxnudbp2"]
 
 [ext_resource type="Script" path="res://scenes/ui/logic_puzzle/logic_puzzle_ui.gd" id="1_jmtvp"]
 [ext_resource type="Texture2D" uid="uid://ddqvmmqoggsju" path="res://graphics/objects/logic/xButton.png" id="1_wbctl"]
@@ -22,6 +22,14 @@
 [ext_resource type="PackedScene" uid="uid://crqjslcolsdjk" path="res://scenes/objects/gates/x_nor_gate.tscn" id="23_yaakh"]
 [ext_resource type="Texture2D" uid="uid://bdlikqh72s230" path="res://graphics/objects/logic/nand2.png" id="24_hymyv"]
 [ext_resource type="PackedScene" uid="uid://co2m3g3e37a8l" path="res://scenes/objects/gates/and_gate.tscn" id="24_pnh5l"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_h0iax"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_lgcrp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_56fui"]
+font_size = 100
+font_color = Color(0.109804, 0.537255, 0.192157, 1)
 
 [node name="logic_circuit_ui" type="CanvasLayer"]
 script = ExtResource("1_jmtvp")
@@ -474,9 +482,48 @@ offset_right = 697.0
 offset_bottom = 466.0
 
 [node name="equation" type="Sprite2D" parent="PanelWindow"]
-position = Vector2(599, 37)
+position = Vector2(599, 619.5)
 scale = Vector2(1.904, 2.06071)
 texture = ExtResource("22_xei6b")
+
+[node name="Win_message" type="Control" parent="PanelWindow"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MG1_greenBack" type="MarginContainer" parent="PanelWindow/Win_message"]
+modulate = Color(0.108406, 0.536531, 0.193795, 1)
+layout_mode = 0
+offset_left = 541.0
+offset_top = 319.0
+offset_right = 1432.0
+offset_bottom = 473.0
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="PanelWindow/Win_message/MG1_greenBack"]
+layout_mode = 2
+texture = SubResource("CanvasTexture_h0iax")
+
+[node name="MG2_Titre" type="MarginContainer" parent="PanelWindow/Win_message"]
+layout_mode = 2
+offset_left = 550.0
+offset_top = 328.0
+offset_right = 1422.0
+offset_bottom = 465.0
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="PanelWindow/Win_message/MG2_Titre"]
+modulate = Color(0.788235, 0.788235, 0.788235, 1)
+layout_mode = 2
+texture = SubResource("CanvasTexture_lgcrp")
+
+[node name="Label" type="Label" parent="PanelWindow/Win_message/MG2_Titre"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Connexion établie"
+label_settings = SubResource("LabelSettings_56fui")
 
 [connection signal="pressed" from="PanelWindow/buttonX" to="." method="_on_button_x_pressed"]
 [connection signal="pressed" from="PanelWindow/buttonY" to="." method="_on_button_y_pressed"]
