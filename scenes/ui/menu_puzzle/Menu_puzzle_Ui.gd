@@ -4,10 +4,6 @@ signal open_electrical_puzzle # Signal indiquant que le bouton du menu du casse-
 signal open_logical_puzzle # Signal indiquant que le bouton du menu du casse-tête électrique est pesé.
 signal open_optical_puzzle # Signal indiquant que le bouton du menu du casse-tête électrique est pesé.
 
-var can_open_electrical_puzzle = false # Variable indiquant qu'on peut accéder au casse-tête électrique. (Condition: Les résistances(objet dans la carte) ont été rammassé).
-var can_open_logical_puzzle = false # Variable indiquant qu'on peut accéder au casse-tête logique. (Condition: Le casse-tête électrique est complété).
-var can_open_optical_puzzle = false # Variable indiquant qu'on peut accéder au casse-tête optique. (Condition: Les 2 casse-têtes précédents sont complétés).
-
 func _ready():
 	Globals.day_end.connect(_on_x_button_pressed)
 
@@ -36,11 +32,11 @@ func _on_logic_circuit_ui_logical_win():
 	if !$Electrical_button/Electrical_but.disabled and !$Logical_button/Logical_but.disabled: # Si le casse-tête électrique et logique ont été complété, on a active le bouton optique..
 		$Optical_button/Optical_but.disabled = false # On active le bouton optique.
 
-# Signal reçu lorsqu'on a complété le casse-tête optique.
-func _on_optical_puzzle_ui_optical_win():
-	print("optical won")
-
 # Lorsqu'on ferme le menu des casse-têtes, le joueur peut bouger.
 func _on_x_button_pressed():
 	visible = false
 	Globals.player_speed = 500
+
+# Si le joueur pèse sur le gros bouton rouge, on ferme le menu des casse-têtes.
+func _on_option_panel_for_menu_puzzle_red_but_pressed():
+	$".".visible = false

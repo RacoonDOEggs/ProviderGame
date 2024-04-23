@@ -5,7 +5,7 @@ var last_value: float = 0
 
 signal end_progress
 
-func _process(delta):
+func _process(_delta):
 	# La valeur de progression du chargement.
 	%TextureProgressBar.value = generator_progress_bar.get_progress()
 	

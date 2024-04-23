@@ -1,17 +1,20 @@
 #Source pour l'implémentation du laser et des mirroirs : https://www.youtube.com/watch?v=Mgk5eAvzo8k&t=629s
 extends StaticBody2D
 
-# Signal indiquant que le casse-tête est réussi.
-signal win()
+signal optical_win()
 
 var max_bounces = 10 # Valeur maximale du rebond du laser sur les mirroirs.
 @onready var ray = $Ray # Variable du rayon pour accès facile.
 @onready var line = $body/Line2D # Variable de la ligne pour accès facile.
 var has_waited_3sec = false # Variable qui indique si le joueur a attendu 3 secondes.
-#var has_won = false # Variable qui indique si le joueur a gagné.
+var has_won = false # Variable indiquant si le casse-tête est complété.
 
 # Méthode appelée à chaque image par seconde.
 func _process(_delta):
+	
+	if has_won:
+		optical_win.emit()
+	
 	line.clear_points() # On supprime tous les points de la scène pouvant exister pour ne pas avoir d'erreurs.
 	
 	# Si le joueur relâche ESPACE.
@@ -53,20 +56,21 @@ func _process(_delta):
 			# On ajoute le point de collision à la ligne.
 			line.add_point(line.to_local(pt))
 			
-			# Si le rayon n'a pas de collision avec les mirroirs.
+			# Si le rayon n'a pas de collision avec les mirroirs et a iune collision avec la 
 			if not coll.is_in_group("Mirrors"):
-				# Condition générale aux deux conditions: Collision avec la zone gagnante, si le compteur est arrêté.
-				if  coll.name == "AreaWin" and $Timer.is_stopped():
-					# Condition 1: Vérifie si le joueur n'a pas attendu 3 secondes.
+				
+				# Condition générale aux deux conditions: Pas gagné le casse-tête + Collision avec la zone gagnante + si le compteur est arrêté.
+				if !has_won and coll.name == "AreaWin" and $Timer.is_stopped():
+				#Condition 1: Vérifie si le joueur n'a pas attendu 3 secondes.
 					if !has_waited_3sec:
 						$Timer.start(3) # On démarre le compteur de 3 secondes.
 					# Condition 2: Si le joueur a attendu 3 secondes.
 					else: if has_waited_3sec:
-						#has_won = true # Le joueur gagne le casse-tête.
-						win.emit()
+						has_won = true
+						Globals.puzzles_done.emit()
 				
 				# Si le rayon a une collision avec un autre objet que les mirroirs.
-				if coll.is_in_group("NoCollision") and prev == null:
+				if coll.is_in_group("no_collision_group") and prev == null:
 					line.clear_points()
 				
 				break # On sort de la boucle, car pas de collision avec les mirroirs, donc pas de réflexion.

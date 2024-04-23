@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bt3cmx1rs64cl"]
+[gd_scene load_steps=16 format=3 uid="uid://bt3cmx1rs64cl"]
 
 [ext_resource type="Script" path="res://scenes/ui/menu_puzzle/Menu_puzzle_Ui.gd" id="1_28faj"]
 [ext_resource type="Texture2D" uid="uid://onvrpn0e8anf" path="res://graphics/Backpack/Green/Categories/6 - Settings/ClipBoard/Appear/3.png" id="2_xflsv"]
@@ -19,9 +19,6 @@ font_size = 47
 font_color = Color(0, 0, 0, 1)
 outline_color = Color(0.964706, 0.952941, 0.972549, 1)
 shadow_size = 7
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_wp8ke"]
-specular_texture = ExtResource("6_g5p4v")
 
 [sub_resource type="LabelSettings" id="LabelSettings_mtuh6"]
 line_spacing = -5.0
@@ -148,7 +145,6 @@ layout_mode = 2
 disabled = true
 texture_normal = ExtResource("6_g5p4v")
 texture_pressed = ExtResource("7_14b7i")
-texture_hover = SubResource("CanvasTexture_wp8ke")
 texture_disabled = ExtResource("8_mwa11")
 metadata/_edit_lock_ = true
 
@@ -201,6 +197,6 @@ visible = false
 [connection signal="pressed" from="Optical_button/Optical_but" to="." method="_on_optical_but_pressed"]
 [connection signal="pressed" from="Options_but" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="XButton" to="." method="_on_x_button_pressed"]
+[connection signal="red_but_pressed" from="Option_panel_for_menu_puzzle" to="." method="_on_option_panel_for_menu_puzzle_red_but_pressed"]
 [connection signal="electrical_win" from="ElectricalBoxUI" to="." method="_on_electrical_box_ui_electrical_win"]
 [connection signal="logical_win" from="logic_circuit_ui" to="." method="_on_logic_circuit_ui_logical_win"]
-[connection signal="optical_win" from="Optical_puzzle_ui" to="." method="_on_optical_puzzle_ui_optical_win"]

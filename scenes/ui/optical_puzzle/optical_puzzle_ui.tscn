@@ -40,13 +40,13 @@ offset_bottom = 531.0
 scale = Vector2(2, 2)
 
 [node name="Laser" parent="PanelWindow/MGForPuzzle" instance=ExtResource("6_oj6t1")]
-position = Vector2(227, 101)
+position = Vector2(210, 137.5)
 
 [node name="Fibre_collider" type="Node2D" parent="PanelWindow/MGForPuzzle"]
 position = Vector2(2.5, 5)
 metadata/_edit_lock_ = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="PanelWindow/MGForPuzzle/Fibre_collider" groups=["NoCollision"]]
+[node name="StaticBody2D" type="StaticBody2D" parent="PanelWindow/MGForPuzzle/Fibre_collider" groups=["no_collision_group"]]
 position = Vector2(-38, -35.5)
 collision_layer = 32
 collision_mask = 16
@@ -82,15 +82,15 @@ region_rect = Rect2(51.6132, -0.203077, 29.366, 21.2016)
 position = Vector2(159, -19)
 polygon = PackedVector2Array(880, 117.5, 1010, 120, 1068, 127, 1075, 260, 861.5, 264, 864.5, 251, 883, 251, 1044, 239, 1046, 155, 871.5, 123)
 
-[node name="AreaWin" type="Area2D" parent="PanelWindow/MGForPuzzle/Fibre_collider"]
+[node name="AreaWin" type="Area2D" parent="PanelWindow/MGForPuzzle/Fibre_collider" groups=["area_win_group"]]
 unique_name_in_owner = true
-position = Vector2(775, 141)
+position = Vector2(753.5, 144)
 collision_layer = 32
 collision_mask = 16
 metadata/_edit_group_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PanelWindow/MGForPuzzle/Fibre_collider/AreaWin"]
-polygon = PackedVector2Array(-28, -47, -7, -35, 2.5, -28.5, 5.5, -7.5, 5, 23.5, 12.5, 37.5, 10.5, 49.5, 1.5, 57, -28, 62, -46, 70, 44, 60, 42, -29)
+polygon = PackedVector2Array(-25.5, -51.5, -11, -39, 31.5, -29, 32.5, 45.5, 1.5, 54.5, -23, 65.5, 44, 60, 44, -39.5)
 
 [node name="Mirrors" type="Node2D" parent="PanelWindow/MGForPuzzle"]
 position = Vector2(667.5, 381)
@@ -226,5 +226,5 @@ size_flags_horizontal = 4
 text = "Connexion établie"
 label_settings = SubResource("LabelSettings_sumua")
 
-[connection signal="win" from="PanelWindow/MGForPuzzle/Laser" to="." method="_on_laser_win"]
+[connection signal="optical_win" from="PanelWindow/MGForPuzzle/Laser" to="." method="_on_laser_optical_win"]
 [connection signal="pressed" from="PanelWindow/MGForPuzzle/XButton" to="." method="_on_texture_button_pressed"]

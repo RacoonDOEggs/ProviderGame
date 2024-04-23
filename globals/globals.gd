@@ -32,8 +32,17 @@ signal inventory_full()
 #Signal pour communiquer les dimensions de la carte
 signal set_map_dimensions(dimensions:Rect2i)
 
-#Indique si la partie est terminée
-signal game_end
+#Indique si la partie est perdue.
+signal game_lost
+
+#Indique si la partie est gagnée.
+signal game_won
+
+# Indique si les casse-têtes sont complétés
+signal puzzles_done
+
+# Indique qu'il faut recharger le projet.
+signal reload_project
 
 #Indique si le quota de la journée est atteint
 var quota_complete:bool = false
