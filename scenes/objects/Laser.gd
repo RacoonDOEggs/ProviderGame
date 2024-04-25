@@ -12,8 +12,8 @@ var has_won = false # Variable indiquant si le casse-tête est complété.
 # Méthode appelée à chaque image par seconde.
 func _process(_delta):
 	
-	if has_won:
-		optical_win.emit()
+	#if has_won:
+		#optical_win.emit()
 	
 	line.clear_points() # On supprime tous les points de la scène pouvant exister pour ne pas avoir d'erreurs.
 	
@@ -56,7 +56,7 @@ func _process(_delta):
 			# On ajoute le point de collision à la ligne.
 			line.add_point(line.to_local(pt))
 			
-			# Si le rayon n'a pas de collision avec les mirroirs et a iune collision avec la 
+			# Si le rayon n'a pas de collision avec les mirroirs.
 			if not coll.is_in_group("Mirrors"):
 				
 				# Condition générale aux deux conditions: Pas gagné le casse-tête + Collision avec la zone gagnante + si le compteur est arrêté.
@@ -68,6 +68,7 @@ func _process(_delta):
 					else: if has_waited_3sec:
 						has_won = true
 						Globals.puzzles_done.emit()
+						optical_win.emit()
 				
 				# Si le rayon a une collision avec un autre objet que les mirroirs.
 				if coll.is_in_group("no_collision_group") and prev == null:

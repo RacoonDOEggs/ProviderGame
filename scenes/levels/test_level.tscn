@@ -50,7 +50,7 @@ visible = false
 
 [node name="DayTimer" parent="." instance=ExtResource("11_sfgjt")]
 layer = 5
-day_time = 10
+day_time = 500
 
 [node name="Game_won_screen" parent="." instance=ExtResource("12_1kl55")]
 visible = false
