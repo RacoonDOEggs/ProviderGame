@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://cihqhq37jshyd"]
+
+[ext_resource type="PackedScene" uid="uid://c8ubeawbakhbr" path="res://scenes/ui/drag_and_drop/drag_and_drop.tscn" id="1_v17xm"]
+[ext_resource type="Texture2D" uid="uid://bmu411fgvajon" path="res://graphics/objects/logic/nand.png" id="2_fiak6"]
+[ext_resource type="Script" path="res://scenes/objects/gates/nandGate.gd" id="3_gffbq"]
+
+[node name="NandGate" instance=ExtResource("1_v17xm")]
+custom_minimum_size = Vector2(80, 80)
+texture = ExtResource("2_fiak6")
+script = ExtResource("3_gffbq")
+gate_specific_property = 0
+custom_size = Vector2(80, 80)
+group_id = "gates"
+object_id = 2

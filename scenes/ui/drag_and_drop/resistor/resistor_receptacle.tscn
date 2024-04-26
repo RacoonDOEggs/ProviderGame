@@ -1,0 +1,167 @@
+[gd_scene load_steps=10 format=3 uid="uid://c5winj3uqwry4"]
+
+[ext_resource type="PackedScene" uid="uid://c8ubeawbakhbr" path="res://scenes/ui/drag_and_drop/drag_and_drop.tscn" id="1_6o0jw"]
+[ext_resource type="Shader" path="res://scenes/ui/drag_and_drop/resistor/resistor_receptacle.gdshader" id="2_2ds4j"]
+[ext_resource type="Script" path="res://scenes/ui/drag_and_drop/resistor/resistor_receptacle.gd" id="2_b52a0"]
+[ext_resource type="Texture2D" uid="uid://c6brtnuu7av3a" path="res://graphics/objects/electrical/burnt_resistor (1).png" id="3_4og2l"]
+[ext_resource type="Texture2D" uid="uid://cxmr5e18ovhv2" path="res://graphics/objects/electrical/resistor (1).png" id="4_4ug5a"]
+[ext_resource type="Texture2D" uid="uid://bbgp3he5shpei" path="res://graphics/ui/Pixel UI pack 3/grey_arrow_up.png" id="5_fb2ph"]
+[ext_resource type="Texture2D" uid="uid://xl5trk4tvidu" path="res://graphics/ui/Pixel UI pack 3/grey_arrow_down.png" id="6_qmpo7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cwfgj"]
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xongq"]
+shader = ExtResource("2_2ds4j")
+shader_parameter/oldColor1 = Color(0, 1, 0, 1)
+shader_parameter/oldColor2 = Color(1, 0, 0, 1)
+shader_parameter/oldColor3 = Color(0, 0, 0, 1)
+shader_parameter/newColor1 = null
+shader_parameter/newColor2 = null
+shader_parameter/newColor3 = null
+
+[node name="ResistorReceptacle" instance=ExtResource("1_6o0jw")]
+custom_minimum_size = Vector2(150, 75)
+texture = ExtResource("3_4og2l")
+script = ExtResource("2_b52a0")
+color1 = 0
+color2 = 0
+color3 = 0
+custom_size = Vector2(150, 75)
+group_id = "resistor"
+
+[node name="Panel" parent="." index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="." index="1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_cwfgj")
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="." index="2"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -40.0
+offset_right = -2.0
+offset_bottom = 31.0
+grow_horizontal = 0
+
+[node name="EditButton" type="Button" parent="MarginContainer" index="0"]
+visible = false
+layout_mode = 2
+text = "Modifier"
+
+[node name="Window" type="Window" parent="." index="3"]
+handle_input_locally = false
+initial_position = 1
+size = Vector2i(303, 200)
+visible = false
+wrap_controls = true
+unresizable = true
+always_on_top = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Window" index="0"]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -86.0
+offset_right = 100.0
+offset_bottom = 86.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Window/VBoxContainer" index="0"]
+texture_filter = 1
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Window/VBoxContainer/MarginContainer" index="0"]
+texture_filter = 1
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Up1" type="TextureButton" parent="Window/VBoxContainer/MarginContainer/HBoxContainer" index="0"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("5_fb2ph")
+stretch_mode = 0
+
+[node name="Up2" type="TextureButton" parent="Window/VBoxContainer/MarginContainer/HBoxContainer" index="1"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("5_fb2ph")
+stretch_mode = 0
+
+[node name="Up3" type="TextureButton" parent="Window/VBoxContainer/MarginContainer/HBoxContainer" index="2"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("5_fb2ph")
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="Window/VBoxContainer" index="1"]
+material = SubResource("ShaderMaterial_xongq")
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+texture = ExtResource("4_4ug5a")
+expand_mode = 1
+flip_v = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="Window/VBoxContainer" index="2"]
+texture_filter = 1
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Window/VBoxContainer/MarginContainer2" index="0"]
+texture_filter = 1
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Down1" type="TextureButton" parent="Window/VBoxContainer/MarginContainer2/HBoxContainer2" index="0"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("6_qmpo7")
+stretch_mode = 0
+
+[node name="Down2" type="TextureButton" parent="Window/VBoxContainer/MarginContainer2/HBoxContainer2" index="1"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("6_qmpo7")
+stretch_mode = 0
+
+[node name="Down3" type="TextureButton" parent="Window/VBoxContainer/MarginContainer2/HBoxContainer2" index="2"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("6_qmpo7")
+stretch_mode = 0
+
+[connection signal="pressed" from="MarginContainer/EditButton" to="." method="_on_edit_button_pressed"]
+[connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
+[connection signal="pressed" from="Window/VBoxContainer/MarginContainer/HBoxContainer/Up1" to="." method="_on_up_1_pressed"]
+[connection signal="pressed" from="Window/VBoxContainer/MarginContainer/HBoxContainer/Up2" to="." method="_on_up_2_pressed"]
+[connection signal="pressed" from="Window/VBoxContainer/MarginContainer/HBoxContainer/Up3" to="." method="_on_up_3_pressed"]
+[connection signal="pressed" from="Window/VBoxContainer/MarginContainer2/HBoxContainer2/Down1" to="." method="_on_down_1_pressed"]
+[connection signal="pressed" from="Window/VBoxContainer/MarginContainer2/HBoxContainer2/Down2" to="." method="_on_down_2_pressed"]
+[connection signal="pressed" from="Window/VBoxContainer/MarginContainer2/HBoxContainer2/Down3" to="." method="_on_down_3_pressed"]

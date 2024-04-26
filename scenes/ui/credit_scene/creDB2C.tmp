@@ -1,0 +1,75 @@
+[gd_scene load_steps=3 format=3 uid="uid://dywrbcjq8al7t"]
+
+[ext_resource type="Script" path="res://scenes/ui/credit_scene/credits.gd" id="1_enov5"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_x1jgy"]
+
+[node name="credits" type="CanvasLayer"]
+script = ExtResource("1_enov5")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+modulate = Color(0.25098, 0.25098, 0.25098, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_x1jgy")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+scroll_vertical = 100
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Control" type="Control" parent="Control/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 1050)
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1280, 0)
+layout_mode = 2
+size_flags_vertical = 5
+bbcode_enabled = true
+text = "[center]
+[font_size=70] Provider[/font_size]
+
+[font_size=60]Auteurs
+[font_size=30]Rime Elbaroudi, Marc-Oliver Beaulieu et Xavier Bilodeau  
+
+[font_size=30]Projet d'intégration en sciences informatiques et mathématiques
+[font_size=30]Groupe 02231 
+[font_size=30]Cégep de Sherbrooke
+
+
+[font_size=50]Casse-tête électrique[/font_size]
+[font_size=30]Marc-Oliver Beaulieu
+
+[font_size=50]Casse-tête logique[/font_size]
+[font_size=30]Rime Elbaroudi
+
+[font_size=50]Casse-tête optique[/font_size]
+[font_size=30]Xavier Bilodeau"
+fit_content = true
+scroll_active = false
+
+[node name="Control2" type="Control" parent="Control/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2

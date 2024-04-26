@@ -1,6 +1,7 @@
 extends Area2D
 
-signal plane_door_clicked # Signal indiquant que la porte a été cliqué.
+signal plane_door_clicked # Signal indiquant que la porte de l'avion est pesée.
+
 var mouse_inside:bool = false # Variable indiquant que la souris survole la porte.
 
 #Mise en évidence de la porte lorsqu'elle est survolée.
@@ -13,7 +14,12 @@ func _on_mouse_exited():
 	$WhitePolygon.visible = false
 	mouse_inside = false
 
-#On émet un signal pour afficher l'interface lorsque la boîte optique est cliquée
+#On émet un signal pour afficher le menu des casse-têtes lorsque la porte est cliquée
 func _input(event):
 	if event.is_action_pressed("clicked") and mouse_inside:
-		plane_door_clicked.emit()
+		plane_door_clicked.emit() # On émet un signal vers Menu_puzzle_Ui.
+
+# Message reçu lorsque la porte est cliquée. On affiche le menu des casse-têtes.
+func _on_plane_door_clicked():
+	$Menu_puzzle_Ui.visible = true 
+	Globals.player_speed = 0

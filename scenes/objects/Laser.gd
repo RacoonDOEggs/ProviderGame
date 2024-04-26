@@ -1,50 +1,52 @@
 #Source pour l'implémentation du laser et des mirroirs : https://www.youtube.com/watch?v=Mgk5eAvzo8k&t=629s
 extends StaticBody2D
 
-signal win()
+signal optical_win()
 
-var max_bounces = 10 # Valeur maximale de rebond du laser sur les mirroirs.
+var max_bounces = 10 # Valeur maximale du rebond du laser sur les mirroirs.
 @onready var ray = $Ray # Variable du rayon pour accès facile.
 @onready var line = $body/Line2D # Variable de la ligne pour accès facile.
-var has_timeout = false # Variable qui indique si le temps est écoulé.
-var has_won = false # Variable qui indique si le joueur a gagné.
+var has_waited_3sec = false # Variable qui indique si le joueur a attendu 3 secondes.
+var has_won = false # Variable indiquant si le casse-tête est complété.
 
 # Méthode appelée à chaque image par seconde.
 func _process(_delta):
-	line.clear_points() # On supprime tous les points de la scène pouvant exister pour ne pas avoir de bug.
 	
-	if has_won: # Si la variable has_won est vraie, on envoie un signal pour dire que le casse-tête est complété.
-		win.emit()
+	#if has_won:
+		#optical_win.emit()
 	
-	# Si le joueur relâche la touche du laser, cela veut dire qu'il n'a pas tenu la touche pendant 3 secondes sur la zone gagnante donc on attend que le temps s'écoule pour indiquer que le temps ne s'est pas écoulé.
-	if Input.is_action_just_released("interact"):
-		await $Timer.timeout # On attends que le temps s'écoule.
-		has_timeout = false # On indique que le temps ne s'est pas écoulé, car le joueur n'a pas tenu la touche pendant 3 secondes sur la zone gagnante.
+	line.clear_points() # On supprime tous les points de la scène pouvant exister pour ne pas avoir d'erreurs.
 	
-	# Si on pèse sur ESPACE ou F, le rayon s'actionne.
-	if Input.is_action_pressed("interact"):
+	# Si le joueur relâche ESPACE.
+	if Input.is_action_just_released("laser"):
+		await $Timer.timeout # On attends que le compteur s'écoule.
+		has_waited_3sec = false # On indique que le joueur n'a pas attendu 3 secondes.
+	
+	
+	# Si on pèse sur ESPACE, le rayon s'actionne.
+	if Input.is_action_pressed("laser"):
 		
 		line.add_point(Vector2.ZERO) #Le premier point est créé au début de la ligne, donc au début du laser.
 		
-		# Je défini la position initiale du rayon en le plaçant à la position initiale de la ligne.
+		# Je définis la position initiale du rayon en le plaçant à la position initiale de la ligne.
 		ray.global_position = line.global_position
-		# La direction du rayon s'oriente en fonction de la position de la souris. La longueur du rayon souhaitée étant 2000.
-		ray.target_position = get_local_mouse_position().normalized() * 2000
+		# La direction du rayon s'oriente en fonction de la position de la souris.
+		ray.target_position = get_local_mouse_position().normalized() * 2000 # 2000 est la longueur du rayon souhaitée
 		# Met à jour les informations du rayon immédiatement, sans attendre la prochaine image par seconde.
 		ray.force_raycast_update() 
 		
-
 		var prev = null # Ancien objet de collision.
 		var bounces = 0  # On initialise le nombre de réflexion à 0.
 		
 		# C'est la boucle qui s'occupe des réflexions du laser sur les mirroirs.
 		while true:
-			#  Si le rayon n'a pas de collision, on le fait apparaître quand même, on le fait apparaître seulement dans les bonnes portions d'angle.
+			#  Si le rayon n'a pas de collision, on le fait apparaître quand même.
 			if not ray.is_colliding():
-				var pts = ray.global_position + ray.target_position # On place un point étant à l'endroit où le rayon se trouve additioné à l'endroit où il pointe pour avoir la bonne direction de la ligne en fonction de la position de la souris.
+				# On place un point en fonction de la direction du rayon.
+				var pts = ray.global_position + ray.target_position 
 				line.add_point(line.to_local(pts))
 			
-				break # on sort de la boucle, car pas de collisions.
+				break # on sort de la boucle, car pas de collision.
 			
 			# Ici, on est certain qu'il y a une collision.
 			
@@ -54,46 +56,48 @@ func _process(_delta):
 			# On ajoute le point de collision à la ligne.
 			line.add_point(line.to_local(pt))
 			
-			# Si le rayon n'a pas de collision avec les mirroirs, c'est à dire qu'il a une collision avec la zone gagnante ou les autres objets de collision n'étant pas des mirroirs.
+			# Si le rayon n'a pas de collision avec les mirroirs.
 			if not coll.is_in_group("Mirrors"):
-				# Si le joueur a une collision n'étant pas un mirroir: comme la zone gagnante ou les objets de collisions autour des fibres brisées.
-				# Condition générale aux deux conditions: Vérifie si le joueur n'a pas gagné, si le laser a une collision avec la zone gagnante, si le compteur est arrêté.				
-				if !has_won and coll.name == "AreaWin" and $Timer.is_stopped():
-					# Condition 1: Vérifie si le temps ne s'est pas écoulé.
-					if !has_timeout:
-						$Timer.start(3) # On démarre le compteur de 3 secondes.
-						
-					# Condition 2: Si le compteur de 3 secondes s'est écoulé.
-					else: if has_timeout:
-						has_won = true # La variable indiquant que le joueur a gagné est vrai.
 				
-				if coll.is_in_group("NoCollision") and prev == null:
+				# Condition générale aux deux conditions: Pas gagné le casse-tête + Collision avec la zone gagnante + si le compteur est arrêté.
+				if !has_won and coll.name == "AreaWin" and $Timer.is_stopped():
+				#Condition 1: Vérifie si le joueur n'a pas attendu 3 secondes.
+					if !has_waited_3sec:
+						$Timer.start(3) # On démarre le compteur de 3 secondes.
+					# Condition 2: Si le joueur a attendu 3 secondes.
+					else: if has_waited_3sec:
+						has_won = true
+						Globals.puzzles_done.emit()
+						optical_win.emit()
+				
+				# Si le rayon a une collision avec un autre objet que les mirroirs.
+				if coll.is_in_group("no_collision_group") and prev == null:
 					line.clear_points()
 				
 				break # On sort de la boucle, car pas de collision avec les mirroirs, donc pas de réflexion.
 			
+			
 			# Ici, on est certain que le rayon a une collision avec un mirroir.
 			var normal = ray.get_collision_normal() # Normale perpendiculaire au mirroir.
 			
-			# Si la normale est zéro, on gère l'exception.
+			# Si la normale est égale à zéro, on quitte la boucle pour éviter des problèmes..
 			if normal == Vector2.ZERO:
-				break # On sort de la boucle, car on ne veut pas de réflexion.
+				break 
 			
-			# Le rayon entre dans le mirroir et s'arrête, donc il faut lui dire qu'il ne peut plus intéragir avec lui directement après que la collision est effectuée./ 
-			# S'il y a déjà eu une collision, on fait en sorte que l'ancien mirroir puisse pouvoir intéragir à nouveau avec le rayon.
+			# S'il y a déjà eu une collision, on active les signaux de collision du mirroir.
 			if prev != null:
-				ray.clear_exceptions() # On enlève les exceptions pour que le rayon puisse indiquer les collisions.
+				ray.clear_exceptions() # On active les signaux de collision du mirroir.
 				# Met à jour les informations du rayon immédiatement, sans attendre la prochaine image par seconde.
 				ray.force_raycast_update() 
 			
 			# On définit l'objet de collision actuel comme l'ancien.
 			prev = coll
 			
-			# On désactive la collision du rayon avec le mirroir.
-			ray.add_exception(prev) # On ajoute des exceptions pour que le rayon ne puisse pas indiquer les collisions.
+			
+			ray.add_exception(prev) # On désactive les signaux de collision du mirroir.
 			#On met à jour le rayon lorsqu'il fait une réflexion sur un objet de collision.
 			ray.global_position = pt # Le nouveau rayon commence à l'endroit où l'ancien fini.
-			ray.target_position = ray.target_position.bounce(normal) # La nouvelle direction du rayon est l'ancienne qui rebondit(dans le même angle) par rapport à la normale.
+			ray.target_position = ray.target_position.bounce(normal) # On effectue la réflexion.
 			# Met à jour les informations du rayon immédiatement, sans attendre la prochaine image par seconde.
 			ray.force_raycast_update() 
 			
@@ -104,12 +108,11 @@ func _process(_delta):
 				break #Quitte la boucle de réflexion si la valeur maximale de rebond est atteinte.
 		
 		# Ici, on est à l'extérieur de la boucle de réflexion.
-		# On met à jour l'ancien objet de collision lorsqu'on sort de la boucle pour qu'il puisse intéragir avec le rayon.
 		if prev != null:
-				ray.clear_exceptions()
+				ray.clear_exceptions() # On active les signaux de collision du mirroir.
 				# Met à jour les informations du rayon immédiatement, sans attendre la prochaine image par seconde.
 				ray.force_raycast_update() 
 
-# Signal à la fin du sablier.
+# Signal à la fin du compteur.
 func _on_timer_timeout():
-	has_timeout = true # Le temps s'est bien écoulé.
+	has_waited_3sec = true # Le temps 3 secondes s'est bien écoulé.

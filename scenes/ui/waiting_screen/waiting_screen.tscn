@@ -1,0 +1,81 @@
+[gd_scene load_steps=7 format=3 uid="uid://cm10a2s5l2m1o"]
+
+[ext_resource type="Texture2D" uid="uid://xnojcqiwk1vn" path="res://graphics/waiting_screen/ciel-bleu.jpg" id="1_2hytb"]
+[ext_resource type="Script" path="res://scenes/ui/waiting_screen/waiting_screen.gd" id="2_r55n5"]
+
+[sub_resource type="Animation" id="Animation_2jrrd"]
+resource_name = "Waiting_screen_disapear"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n0tgf"]
+_data = {
+"Waiting_screen_disapear": SubResource("Animation_2jrrd")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_vnmhd"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_dgeyw"]
+font_size = 30
+
+[node name="Waiting_screen" type="CanvasLayer"]
+script = ExtResource("2_r55n5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_n0tgf")
+}
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 0
+offset_left = -27.0
+offset_top = -30.0
+offset_right = 5673.0
+offset_bottom = 3170.0
+scale = Vector2(0.355, 0.355)
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("1_2hytb")
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control"]
+layout_mode = 0
+offset_left = 884.0
+offset_top = 574.0
+offset_right = 1091.0
+offset_bottom = 616.0
+metadata/_edit_group_ = true
+
+[node name="charg" type="Label" parent="Control/MarginContainer2"]
+layout_mode = 2
+text = "Chargement"
+label_settings = SubResource("LabelSettings_vnmhd")
+
+[node name="Point" type="Label" parent="Control/MarginContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+text = "..."
+label_settings = SubResource("LabelSettings_dgeyw")
+visible_characters_behavior = 3
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

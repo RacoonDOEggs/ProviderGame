@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://drhqjq8hl0aay"]
+[gd_scene load_steps=3 format=3 uid="uid://drhqjq8hl0aay"]
 
 [ext_resource type="Script" path="res://scenes/objects/plane_door.gd" id="1_xaiwi"]
+[ext_resource type="PackedScene" uid="uid://bt3cmx1rs64cl" path="res://scenes/ui/menu_puzzle/Menu_puzzle_Ui.tscn" id="2_6116f"]
 
 [node name="Plane_door" type="Area2D"]
 script = ExtResource("1_xaiwi")
@@ -13,5 +14,12 @@ visible = false
 color = Color(1, 1, 1, 0.494118)
 polygon = PackedVector2Array(235, 41, 295, 62, 255, 156, 239, 204, 217, 287, 155, 256, 163, 205, 187, 148)
 
+[node name="Menu_puzzle_Ui" parent="." instance=ExtResource("2_6116f")]
+visible = false
+
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="plane_door_clicked" from="." to="." method="_on_plane_door_clicked"]
+[connection signal="open_electrical_puzzle" from="Menu_puzzle_Ui" to="." method="_on_menu_puzzle_ui_open_electrical_puzzle"]
+[connection signal="open_logical_puzzle" from="Menu_puzzle_Ui" to="." method="_on_menu_puzzle_ui_open_logical_puzzle"]
+[connection signal="open_optical_puzzle" from="Menu_puzzle_Ui" to="." method="_on_menu_puzzle_ui_open_optical_puzzle"]
