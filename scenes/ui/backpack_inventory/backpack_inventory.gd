@@ -31,7 +31,7 @@ var items = [
 	Item.new(0, "berry", 8),
 	Item.new(1,"herb", 8),
 	Item.new(2,"wood", 4),
-	Item.new(3, "resistor", 1)]
+	Item.new(3, "resistor", 0)]
 
 #Liste des textures d'items en ordre d'ID
 var textures:Array = [
@@ -84,6 +84,7 @@ func on_resistor_picked(amount:int):
 
 #Enlève tous les tiems du sac à dos et les remet selon ce qui est présent dans inventory.
 func update_inventory():
+	print("Inventory", inventory)
 	for i in $Slots.get_child_count(false) - 1:
 		var inventory_slot = $Slots.get_child(i, false)
 		if inventory_slot.object_id != -1:
@@ -95,6 +96,7 @@ func update_inventory():
 	inventory = []
 	inv_copy.sort()
 	for i in inv_copy.size():
+		print("Adding: ", inv_copy[i])
 		place_in_inventory(inv_copy[i])
 
 #Apparition de l'inventaire et du manuel en fonction des actions du joueur
