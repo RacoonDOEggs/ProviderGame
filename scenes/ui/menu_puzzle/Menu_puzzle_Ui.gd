@@ -1,8 +1,8 @@
+#AUTEUR :  Xavier Bilodeau
+#PROJET : Provider
+#NOM DU FICHIER : Menu_puzzle_Ui.gd
+#DESCRIPTION : Menu des casse-têtes.
 extends CanvasLayer
-
-signal open_electrical_puzzle # Signal indiquant que le bouton du menu du casse-tête électrique est pesé.
-signal open_logical_puzzle # Signal indiquant que le bouton du menu du casse-tête électrique est pesé.
-signal open_optical_puzzle # Signal indiquant que le bouton du menu du casse-tête électrique est pesé.
 
 func _ready():
 	Globals.day_end.connect(_on_x_button_pressed)

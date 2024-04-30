@@ -1,3 +1,7 @@
+#AUTEUR : Xavier Bilodeau et Marc-Olivier Beaulieu
+#PROJET : Provider
+#NOM DU FICHIER : progress_bar_wait_screen.gd
+#DESCRIPTION : La barre de progression du chargement de la carte.
 extends CanvasLayer
 
 @export var generator_progress_bar: WFC2DGenerator

@@ -1,3 +1,7 @@
+#AUTEUR :  Xavier Bilodeau
+#PROJET : Provider
+#NOM DU FICHIER : plane_door.gd
+#DESCRIPTION : Porte de l'avion ouvrant le menu des casse-têtes lorsqu'on clique sur celle-ci.
 extends Area2D
 
 signal plane_door_clicked # Signal indiquant que la porte de l'avion est pesée.

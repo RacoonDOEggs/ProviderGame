@@ -1,3 +1,7 @@
+#AUTEUR :  Xavier Bilodeau
+#PROJET : Provider
+#NOM DU FICHIER : option_panel_for_menu_puzzle.gd
+#DESCRIPTION : Menu secondaire du menu des casse-têtes, il sert à appuyer sur un bouton pour réparer l'avion.
 extends CanvasLayer
 
 signal red_but_pressed
@@ -18,6 +22,7 @@ func _on_red_but_pressed():
 	Globals.game_won.emit()
 	visible = false
 	red_but_pressed.emit()
+	
 
 # Si tous les casse-têtes sont complétés, on ouvre le bouton rouge pour finir le jeu.
 func _on_puzzles_done():

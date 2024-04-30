@@ -1,3 +1,7 @@
+#AUTEUR :  Xavier Bilodeau
+#PROJET : Provider
+#NOM DU FICHIER : main_menu.gd
+#DESCRIPTION : Menu principal du jeu.
 extends CanvasLayer
 
 signal credit_opened()

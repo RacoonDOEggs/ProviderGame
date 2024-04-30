@@ -1,8 +1,13 @@
+#AUTEUR :  Xavier Bilodeau
+#PROJET : Provider
+#NOM DU FICHIER : optical_puzzle_ui.gd
+#DESCRIPTION : Scène du casse-tête optique (le laser).
 extends CanvasLayer
 
 func _ready():
 	Globals.day_end.connect(on_day_end)
 
+# On le cache lorsqu'un jour est terminé.
 func on_day_end():
 	visible = false
 

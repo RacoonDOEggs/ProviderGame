@@ -1,3 +1,7 @@
+#AUTEUR : Xavier Bilodeau
+#PROJET : Provider
+#NOM DU FICHIER : waiting_screen.gd
+#DESCRIPTION : Écran de chargement de la carte.
 extends CanvasLayer
 
 func _ready():
