@@ -56,7 +56,6 @@ func specific_preview(preview_texture:TextureRect) -> TextureRect:
 
 #Validation spécifique à cette version de l'objet drag and drop
 func _can_drop_data(_at_position, data):
-	
 	return data["origin_group_id"] == group_id and data["origin_texture"] != texture and is_dragable
 
 #Transfert des données spécifiques à cette version de l'objet drag and drop
