@@ -110,7 +110,6 @@ scale = Vector2(6.275, 6.275)
 
 [node name="Exit_but" type="TextureButton" parent="Exit_menu_puzzle"]
 layout_mode = 2
-disabled = true
 texture_normal = ExtResource("2_nxvjm")
 texture_pressed = ExtResource("2_0lm0d")
 texture_disabled = ExtResource("2_0lm0d")
