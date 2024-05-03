@@ -1,12 +1,7 @@
-#AUTEUR :  Rime Elbaroudi 
-#PROJET : Provider
-#NOM DU FICHIER : logic_puzzle_ui.gd
-#DESCRIPTION : Scène du casse-tête logique 
 extends CanvasLayer
 
 signal logical_win
 
-#Variables pour les objets dans le circuit 
 @onready var andGate = $PanelWindow/AndGate
 @onready var notGate = $PanelWindow/NotGate
 @onready var norGate = $PanelWindow/NorGate
@@ -27,7 +22,6 @@ signal logical_win
 		$PanelWindow/buttonY,
 		$PanelWindow/buttonZ] 
 
-#cette varible sert à s'assurer que les 3 boutons sont fermés
 var is_button_pressed = {
 	#tous les boutons sont à off
 	"buttonX": false, 
@@ -38,14 +32,11 @@ var is_button_pressed = {
 func _ready():
 	Globals.day_end.connect(on_day_end)
 
-#Lorsque le jour se termine dans le jeu, le cass_tête n'est plus visible
 func on_day_end():
 	visible = false
 
-#Cette fonction permet de changer la texture des boutons lorsqu'on appuie dessus
 func _toggle(button):
 	if button != null:
-		#Lorsque le bouton n'a pas encore cliqué, sa texture est à « off »
 		if button.texture_normal != null and button.texture_normal.get_path() == preload("res://graphics/objects/logic/off.png").get_path():
 			button.texture_normal = preload("res://graphics/objects/logic/on.png")
 			is_button_pressed[button.name] = true
@@ -54,27 +45,20 @@ func _toggle(button):
 			is_button_pressed[button.name] = false
 		
 
-#Fonction pour indiquer si les butons sont cliqués
 func _on_button_pressed(button_index):
 	var button = buttons[button_index]
+	#print(button.name, "pressed")
 	_toggle(button)
 	light_up_end_light()
 	
 
-#Cette fonction sert à s'assurer l'emplacement des portes dans le circuit
 func check_gates_placement() -> bool:
-<<<<<<< HEAD
-	#En s'assurant que le object id de la porte est égale à celle de son emplacement (ombre) correspondant, on peut s'assurer de leur emplacement
-=======
->>>>>>> 8521f3cf19c90645ea417b3e061f3647d4a53931
 	if andGate.object_id == andShadow.object_id && notGate.object_id == notShadow.object_id && notGate.object_id == notShadow2.object_id && norGate.object_id == norShadow.object_id && xnorGate.object_id == xnorShadow.object_id && orGate.object_id == orShadow.object_id && xorGate.object_id == xorShadow.object_id :
 		return true
 	else:
 		return false
 
-#Cette fonction allume une lumière losrque le casse tête est réussi
 func light_up_end_light():
-	#Lorsque les portes sont toutes au bon endroit et que les 3 boutons sont à « on », la lumière s'allume
 	if check_gates_placement() and is_button_pressed["buttonX"] and is_button_pressed["buttonY"] and is_button_pressed["buttonZ"]: 
 		$PanelWindow/closedLight.texture = preload("res://graphics/objects/logic/openLight.png")
 		$PanelWindow/Win_message.visible = true # On affiche le message disant que le joueur a gagné le casse-tête.

@@ -1,3 +1,7 @@
+#AUTEUR : Xavier Bilodeau
+#PROJET : Provider
+#NOM DU FICHIER : game_lost_screen.gd
+#DESCRIPTION : Message indiquant que le joueur a perdu le jeu.
 extends CanvasLayer
 
 # On affiche les crédits lorsqu'on appuie sur le bouton Retourner au menu.
