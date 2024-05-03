@@ -1,13 +1,8 @@
-#AUTEUR :  Rime Elbraoudi et Marc-Olivier Beaulieu
-#PROJET : Provider
-#NOM DU FICHIER : empty_gate.gd (toutes les empty_gates ont le même code)
-#DESCRIPTION : logique pour les portes et les ombres (drag and drop)
 extends DragAndDrop
 
 signal check_light
 var is_dragable: bool = true
 
-#Cette fonction sert à rendre les nodes possible pour des objets drag d'être déposé dessus
 func _drop_data(_at_position, data):
 	if data["origin_node"] != self: #Évite un problème où l'objet disparait si il est déposé sur lui même
 		check_light.emit()

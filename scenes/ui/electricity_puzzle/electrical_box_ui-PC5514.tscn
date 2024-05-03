@@ -1,0 +1,395 @@
+[gd_scene load_steps=20 format=3 uid="uid://b6yyl83ohmqyo"]
+
+[ext_resource type="Script" path="res://scenes/ui/electricity_puzzle/electrical_box_ui.gd" id="1_kcxba"]
+[ext_resource type="Texture2D" uid="uid://be1bq76lfb6k0" path="res://graphics/ui/x_button.png" id="2_qrnio"]
+[ext_resource type="Texture2D" uid="uid://bl07cunlr8ovj" path="res://graphics/objects/electrical/Screenshpcb_plane_hatch.png" id="2_xuimt"]
+[ext_resource type="PackedScene" uid="uid://c5winj3uqwry4" path="res://scenes/ui/drag_and_drop/resistor/resistor_receptacle.tscn" id="4_hc58u"]
+[ext_resource type="Shader" path="res://scenes/ui/drag_and_drop/resistor/resistor_receptacle.gdshader" id="5_m0s3n"]
+[ext_resource type="Texture2D" uid="uid://cxmr5e18ovhv2" path="res://graphics/objects/electrical/resistor (1).png" id="5_pq8tp"]
+[ext_resource type="Texture2D" uid="uid://b73knxgr2k1i1" path="res://graphics/objects/electrical/circuit_breaker_off.png" id="7_jugpa"]
+[ext_resource type="Texture2D" uid="uid://b2bj5gganuenp" path="res://graphics/objects/electrical/circuit_breaker_on.png" id="8_a6prv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uvcbb"]
+resource_local_to_scene = true
+shader = ExtResource("5_m0s3n")
+shader_parameter/oldColor1 = Color(0, 1, 0, 1)
+shader_parameter/oldColor2 = Color(1, 0, 0, 1)
+shader_parameter/oldColor3 = Color(0, 0, 0, 1)
+shader_parameter/newColor1 = Color(0, 0, 0, 1)
+shader_parameter/newColor2 = Color(0, 0, 0, 1)
+shader_parameter/newColor3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xmle2"]
+resource_local_to_scene = true
+shader = ExtResource("5_m0s3n")
+shader_parameter/oldColor1 = Color(0, 1, 0, 1)
+shader_parameter/oldColor2 = Color(1, 0, 0, 1)
+shader_parameter/oldColor3 = Color(0, 0, 0, 1)
+shader_parameter/newColor1 = Color(0, 0, 0, 1)
+shader_parameter/newColor2 = Color(0, 0, 0, 1)
+shader_parameter/newColor3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s1hpu"]
+resource_local_to_scene = true
+shader = ExtResource("5_m0s3n")
+shader_parameter/oldColor1 = Color(0, 1, 0, 1)
+shader_parameter/oldColor2 = Color(1, 0, 0, 1)
+shader_parameter/oldColor3 = Color(0, 0, 0, 1)
+shader_parameter/newColor1 = Color(0, 0, 0, 1)
+shader_parameter/newColor2 = Color(0, 0, 0, 1)
+shader_parameter/newColor3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2daon"]
+resource_local_to_scene = true
+shader = ExtResource("5_m0s3n")
+shader_parameter/oldColor1 = Color(0, 1, 0, 1)
+shader_parameter/oldColor2 = Color(1, 0, 0, 1)
+shader_parameter/oldColor3 = Color(0, 0, 0, 1)
+shader_parameter/newColor1 = Color(0, 0, 0, 1)
+shader_parameter/newColor2 = Color(0, 0, 0, 1)
+shader_parameter/newColor3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2p1fi"]
+resource_local_to_scene = true
+shader = ExtResource("5_m0s3n")
+shader_parameter/oldColor1 = Color(0, 1, 0, 1)
+shader_parameter/oldColor2 = Color(1, 0, 0, 1)
+shader_parameter/oldColor3 = Color(0, 0, 0, 1)
+shader_parameter/newColor1 = Color(0, 0, 0, 1)
+shader_parameter/newColor2 = Color(0, 0, 0, 1)
+shader_parameter/newColor3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vwnfb"]
+resource_local_to_scene = true
+shader = ExtResource("5_m0s3n")
+shader_parameter/oldColor1 = Color(0, 1, 0, 1)
+shader_parameter/oldColor2 = Color(1, 0, 0, 1)
+shader_parameter/oldColor3 = Color(0, 0, 0, 1)
+shader_parameter/newColor1 = Color(0, 0, 0, 1)
+shader_parameter/newColor2 = Color(0, 0, 0, 1)
+shader_parameter/newColor3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3si04"]
+resource_local_to_scene = true
+shader = ExtResource("5_m0s3n")
+shader_parameter/oldColor1 = Color(0, 1, 0, 1)
+shader_parameter/oldColor2 = Color(1, 0, 0, 1)
+shader_parameter/oldColor3 = Color(0, 0, 0, 1)
+shader_parameter/newColor1 = Color(0, 0, 0, 1)
+shader_parameter/newColor2 = Color(0, 0, 0, 1)
+shader_parameter/newColor3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i6wnk"]
+resource_local_to_scene = true
+shader = ExtResource("5_m0s3n")
+shader_parameter/oldColor1 = Color(0, 1, 0, 1)
+shader_parameter/oldColor2 = Color(1, 0, 0, 1)
+shader_parameter/oldColor3 = Color(0, 0, 0, 1)
+shader_parameter/newColor1 = Color(0, 0, 0, 1)
+shader_parameter/newColor2 = Color(0, 0, 0, 1)
+shader_parameter/newColor3 = Color(0, 0, 0, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_plbx7"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_nbk15"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_asfmm"]
+font_size = 100
+font_color = Color(0.109804, 0.537255, 0.192157, 1)
+
+[node name="ElectricalBoxUI" type="CanvasLayer"]
+script = ExtResource("1_kcxba")
+input_voltage = 66
+
+[node name="PanelWindow" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelWindow"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -536.0
+offset_right = -318.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 2)
+texture = ExtResource("2_xuimt")
+
+[node name="TextureButton" type="TextureButton" parent="PanelWindow/TextureRect"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+texture_normal = ExtResource("2_qrnio")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelWindow"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -306.0
+offset_top = -500.0
+offset_right = 306.0
+offset_bottom = -425.0
+grow_horizontal = 2
+theme_override_constants/separation = 110
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelWindow/HBoxContainer2"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 13
+
+[node name="ResistorReceptacle2" parent="PanelWindow/HBoxContainer2/MarginContainer" instance=ExtResource("4_hc58u")]
+visible = false
+material = SubResource("ShaderMaterial_uvcbb")
+layout_mode = 2
+texture = ExtResource("5_pq8tp")
+object_id = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelWindow/HBoxContainer2"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 13
+
+[node name="ResistorReceptacle4" parent="PanelWindow/HBoxContainer2/MarginContainer2" instance=ExtResource("4_hc58u")]
+visible = false
+material = SubResource("ShaderMaterial_xmle2")
+layout_mode = 2
+texture = ExtResource("5_pq8tp")
+object_id = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="PanelWindow/HBoxContainer2"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 13
+
+[node name="ResistorReceptacle5" parent="PanelWindow/HBoxContainer2/MarginContainer3" instance=ExtResource("4_hc58u")]
+visible = false
+material = SubResource("ShaderMaterial_s1hpu")
+layout_mode = 2
+texture = ExtResource("5_pq8tp")
+object_id = 1
+
+[node name="TextureButton" type="TextureButton" parent="PanelWindow/HBoxContainer2"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("7_jugpa")
+texture_pressed = ExtResource("8_a6prv")
+texture_disabled = ExtResource("8_a6prv")
+stretch_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelWindow"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -574.415
+offset_top = -162.37
+offset_right = 869.585
+offset_bottom = 212.63
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 45
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelWindow/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 31
+
+[node name="InVoltage" type="Label" parent="PanelWindow/HBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "InVoltage"
+
+[node name="VBoxContainer1" type="VBoxContainer" parent="PanelWindow/HBoxContainer"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+theme_override_constants/separation = 63
+
+[node name="Filler" type="Control" parent="PanelWindow/HBoxContainer/VBoxContainer1"]
+layout_mode = 2
+
+[node name="Filler2" type="Control" parent="PanelWindow/HBoxContainer/VBoxContainer1"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelWindow/HBoxContainer/VBoxContainer1"]
+layout_mode = 2
+theme_override_constants/margin_left = -60
+theme_override_constants/margin_right = 110
+
+[node name="ResistorReceptacle4" parent="PanelWindow/HBoxContainer/VBoxContainer1/MarginContainer" instance=ExtResource("4_hc58u")]
+material = SubResource("ShaderMaterial_2daon")
+layout_mode = 2
+texture = ExtResource("5_pq8tp")
+color1 = 4
+color2 = 4
+color3 = 3
+object_id = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelWindow/HBoxContainer/VBoxContainer1"]
+layout_mode = 2
+theme_override_constants/margin_left = -60
+
+[node name="MidVoltage" type="Label" parent="PanelWindow/HBoxContainer/VBoxContainer1/MarginContainer2"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "-"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelWindow/HBoxContainer"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+theme_override_constants/separation = 56
+
+[node name="ResistorReceptacle5" parent="PanelWindow/HBoxContainer/VBoxContainer2" instance=ExtResource("4_hc58u")]
+material = SubResource("ShaderMaterial_2p1fi")
+layout_mode = 2
+
+[node name="ResistorReceptacle6" parent="PanelWindow/HBoxContainer/VBoxContainer2" instance=ExtResource("4_hc58u")]
+material = SubResource("ShaderMaterial_vwnfb")
+layout_mode = 2
+
+[node name="ResistorReceptacle3" parent="PanelWindow/HBoxContainer/VBoxContainer2" instance=ExtResource("4_hc58u")]
+material = SubResource("ShaderMaterial_3si04")
+layout_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="PanelWindow/HBoxContainer"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+theme_override_constants/separation = 67
+
+[node name="Filler3" type="Control" parent="PanelWindow/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="Filler4" type="Control" parent="PanelWindow/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelWindow/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_constants/margin_left = 95
+
+[node name="ResistorReceptacle2" parent="PanelWindow/HBoxContainer/VBoxContainer3/MarginContainer" instance=ExtResource("4_hc58u")]
+material = SubResource("ShaderMaterial_i6wnk")
+layout_mode = 2
+texture = ExtResource("5_pq8tp")
+color1 = 5
+color2 = 4
+color3 = 3
+object_id = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelWindow/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_constants/separation = 127
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelWindow/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 110
+theme_override_constants/margin_top = 8
+
+[node name="AmpTop" type="Label" parent="PanelWindow/HBoxContainer/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "-"
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelWindow/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 110
+theme_override_constants/margin_top = 0
+
+[node name="AmpMid" type="Label" parent="PanelWindow/HBoxContainer/VBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "-"
+
+[node name="MarginContainer3" type="MarginContainer" parent="PanelWindow/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 110
+theme_override_constants/margin_top = -5
+
+[node name="AmpBot" type="Label" parent="PanelWindow/HBoxContainer/VBoxContainer/MarginContainer3"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "-"
+
+[node name="ColorRect" type="ColorRect" parent="PanelWindow"]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 700.0
+offset_top = 500.0
+offset_right = 740.0
+offset_bottom = 540.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Win_message" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MG1_greenBack" type="MarginContainer" parent="Win_message"]
+modulate = Color(0.108406, 0.536531, 0.193795, 1)
+layout_mode = 0
+offset_left = 541.0
+offset_top = 319.0
+offset_right = 1432.0
+offset_bottom = 473.0
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Win_message/MG1_greenBack"]
+layout_mode = 2
+texture = SubResource("CanvasTexture_plbx7")
+
+[node name="MG2_Titre" type="MarginContainer" parent="Win_message"]
+layout_mode = 2
+offset_left = 550.0
+offset_top = 328.0
+offset_right = 1422.0
+offset_bottom = 465.0
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Win_message/MG2_Titre"]
+modulate = Color(0.788235, 0.788235, 0.788235, 1)
+layout_mode = 2
+texture = SubResource("CanvasTexture_nbk15")
+
+[node name="Label" type="Label" parent="Win_message/MG2_Titre"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Connexion établie"
+label_settings = SubResource("LabelSettings_asfmm")
+
+[connection signal="pressed" from="PanelWindow/TextureRect/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="PanelWindow/HBoxContainer2/TextureButton" to="." method="_on_validate_button_pressed"]
