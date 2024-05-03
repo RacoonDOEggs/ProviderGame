@@ -489,7 +489,10 @@ texture = ExtResource("22_xei6b")
 [node name="Win_message" type="Control" parent="PanelWindow"]
 visible = false
 layout_mode = 1
+<<<<<<< HEAD
 anchors_preset = 0
+=======
+>>>>>>> 8521f3cf19c90645ea417b3e061f3647d4a53931
 offset_left = 200.0
 offset_top = 200.0
 

@@ -1,3 +1,8 @@
+#AUTEUR :  Xavier Bilodeau et Marc-Oliver Beaulieu
+#PROJET : Provider
+#NOM DU FICHIER : target.gd
+#DESCRIPTION : S'occupe du ramassage d'items dans la carte.
+
 # Source pour le remplacement de tuile dans le jeu:https://www.youtube.com/watch?v=4ezSpnuvZfE
 extends TileMap
 

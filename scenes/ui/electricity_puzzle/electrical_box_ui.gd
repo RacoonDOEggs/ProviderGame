@@ -56,7 +56,6 @@ func _on_electrical_box_object_electrical_box_clicked():
 				ResistorReceptacle5.visible = true
 		item_is_removed[0] = false
 		
-		
 	update_circuit_measurements()
 
 #On cache l'interface lorsque le X est appuyé.

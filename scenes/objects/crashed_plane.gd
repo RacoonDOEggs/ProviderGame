@@ -12,5 +12,5 @@ func on_day_end():
 			$Plane.material.set_shader_parameter("health", health)
 		else:
 			$Plane.material.set_shader_parameter("health", health)
-			Globals.game_end.emit()
-			Globals.end_game = true
+			Globals.game_lost.emit()
+			

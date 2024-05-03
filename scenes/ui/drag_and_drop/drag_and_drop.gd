@@ -25,6 +25,7 @@ func _ready():
 func specific_ready():
 	pass
 
+#Fonction appelée lors du ramassage avec la souris.
 func _get_drag_data(_at_position):
 	
 	#liste des données à passer à la zone de réception qui recevra l'objet déplacé
@@ -57,7 +58,7 @@ func specific_drag_data(data):
 func specific_preview(preview_texture: TextureRect) -> TextureRect:
 	return preview_texture
 
-#Vérification que la zone de réception fait parti du groupe de provenance de l'item
+#Vérification que la zone de réception fait partie du groupe de provenance de l'item
 func _can_drop_data(_at_position, data):
 	return data["origin_group_id"] == group_id
 

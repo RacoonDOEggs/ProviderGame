@@ -1,3 +1,7 @@
+#AUTEUR : Xavier Bilodeau et Marc-Olivier Beaulieu
+#PROJET : Provider
+#NOM DU FICHIER : progress_bar_wait_screen.gd
+#DESCRIPTION : La barre de progression du chargement de la carte.
 extends CanvasLayer
 
 @export var generator_progress_bar: WFC2DGenerator
@@ -5,7 +9,7 @@ var last_value: float = 0
 
 signal end_progress
 
-func _process(delta):
+func _process(_delta):
 	# La valeur de progression du chargement.
 	%TextureProgressBar.value = generator_progress_bar.get_progress()
 	

@@ -1,3 +1,7 @@
+#AUTEUR :  Xavier Bilodeau
+#PROJET : Provider
+#NOM DU FICHIER : credits.gd
+#DESCRIPTION : Scène des crédits du jeu (auteurs).
 extends CanvasLayer
 
 var status: bool = true # Variable indiquant si on doit arrêter le défilement.
