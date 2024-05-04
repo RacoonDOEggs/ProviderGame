@@ -101,10 +101,9 @@ _data = {
 
 [node name="DayTimer" type="CanvasLayer"]
 script = ExtResource("1_hgkyj")
-day_time = 180
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 300.0
+wait_time = 10.0
 one_shot = true
 script = ExtResource("1_uncad")
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://drhqjq8hl0aay"]
+[gd_scene load_steps=3 format=3 uid="uid://dokkt0xlr66vy"]
 
 [ext_resource type="Script" path="res://scenes/objects/plane_door.gd" id="1_xaiwi"]
 [ext_resource type="PackedScene" uid="uid://bt3cmx1rs64cl" path="res://scenes/ui/menu_puzzle/Menu_puzzle_Ui.tscn" id="2_6116f"]

@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@export var day_time:int = 60
+@export var day_time:int = 10
 
 var day_counter:int = 1
 

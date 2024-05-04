@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cjrrcxgx4ic1c"]
+[gd_scene load_steps=5 format=3 uid="uid://dsxu55uc5m21t"]
 
 [ext_resource type="Texture2D" uid="uid://dyd52uk73ycqi" path="res://graphics/characters/red_hood_placeholder/red hood itch free Copy-Sheet.png" id="1_r3mws"]
 [ext_resource type="Script" path="res://scenes/characters/character_script.gd" id="1_wysdl"]
