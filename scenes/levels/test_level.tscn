@@ -33,6 +33,7 @@ position = Vector2(364, -114)
 position = Vector2(-116, 672)
 
 [node name="OldPlane" parent="." instance=ExtResource("9_p2hrf")]
+visible = false
 z_index = 4
 position = Vector2(-666, 831)
 collision_layer = 8
