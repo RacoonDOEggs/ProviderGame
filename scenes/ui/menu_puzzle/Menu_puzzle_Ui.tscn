@@ -190,6 +190,7 @@ visible = false
 visible = false
 
 [node name="Optical_puzzle_ui" parent="." instance=ExtResource("12_ia5xb")]
+visible = false
 
 [connection signal="pressed" from="Electrical_button/Electrical_but" to="." method="_on_electrical_but_pressed"]
 [connection signal="pressed" from="Logical_button/Logical_but" to="." method="_on_logical_but_pressed"]
