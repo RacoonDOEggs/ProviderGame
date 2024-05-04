@@ -6,6 +6,7 @@ extends StaticBody2D
 
 signal optical_win()
 
+var in_area = false
 var max_bounces = 10 # Valeur maximale du rebond du laser sur les mirroirs.
 @onready var ray = $Ray # Variable du rayon pour accès facile.
 @onready var line = $body/Line2D # Variable de la ligne pour accès facile.
@@ -46,33 +47,39 @@ func _process(_delta):
 				break # on sort de la boucle, car pas de collision.
 			
 			# Ici, on est certain qu'il y a une collision.
-			
 			var coll = ray.get_collider() # Objet de collision.
 			var pt = ray.get_collision_point() # Point de collision.
 			
 			# On ajoute le point de collision à la ligne.
 			line.add_point(line.to_local(pt))
 			
+			
+			
 			# Si le rayon n'a pas de collision avec les mirroirs.
 			if not coll.is_in_group("Mirrors"):
+				
+				# On vérifie le cas où le rayon ne serait pas dans la zone gagnante.
+				if coll.name != "AreaWin":
+					has_waited_3sec = false
 				
 				# Si le joueur n'a pas gagné ET que la collision est avec la zone gagnante ET que le compteur est arrêté.
 				if !has_won and coll.name == "AreaWin" and $Timer.is_stopped():
 					
 					#Condition 1: Vérifie si le joueur n'a pas attendu 3 secondes.
-					if !has_waited_3sec:
+					if !has_waited_3sec :
+						print("timer has started")
 						$Timer.start(3) # On démarre le compteur de 3 secondes.
 					
-					# Condition 2: Si le joueur a attendu 3 secondes.
+					#Condition 2: Si le joueur a attendu 3 secondes.
 					else: if has_waited_3sec:
 						has_won = true # Variable indiquant que le joueur a gagné.
 						Globals.puzzles_done.emit() #Signals indiquant que le casse-tête est complété.
 						optical_win.emit()
-				
-				
+					
 				# Si le rayon a une collision avec un autre objet que les mirroirs.
-				if coll.is_in_group("no_collision_group") and prev == null:
+				elif coll.is_in_group("no_collision_group") and prev == null:
 					line.clear_points() # Supprime tous les points.
+					
 				
 				
 				break # On sort de la boucle, car pas de collision avec les mirroirs, donc pas de réflexion.
@@ -93,7 +100,6 @@ func _process(_delta):
 			
 			# On définit l'objet de collision actuel comme l'ancien.
 			prev = coll
-			
 			
 			ray.add_exception(prev) # On désactive les signaux de collision du mirroir.
 			#On met à jour le rayon lorsqu'il fait une réflexion sur un objet de collision.
@@ -116,4 +122,5 @@ func _process(_delta):
 
 # Signal à la fin du compteur.
 func _on_timer_timeout():
+	
 	has_waited_3sec = true # Le temps 3 secondes s'est bien écoulé.
