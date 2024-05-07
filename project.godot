@@ -13,7 +13,7 @@ config_version=5
 config/name="Provider"
 run/main_scene="res://scenes/levels/test_level.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
-config/icon="res://icon.svg"
+config/icon="res://graphics/waiting_screen/plane_pixel.png"
 
 [autoload]
 
