@@ -63,10 +63,7 @@ func _on_button_pressed(button_index):
 
 #Cette fonction sert à s'assurer l'emplacement des portes dans le circuit
 func check_gates_placement() -> bool:
-<<<<<<< HEAD
 	#En s'assurant que le object id de la porte est égale à celle de son emplacement (ombre) correspondant, on peut s'assurer de leur emplacement
-=======
->>>>>>> 8521f3cf19c90645ea417b3e061f3647d4a53931
 	if andGate.object_id == andShadow.object_id && notGate.object_id == notShadow.object_id && notGate.object_id == notShadow2.object_id && norGate.object_id == norShadow.object_id && xnorGate.object_id == xnorShadow.object_id && orGate.object_id == orShadow.object_id && xorGate.object_id == xorShadow.object_id :
 		return true
 	else:

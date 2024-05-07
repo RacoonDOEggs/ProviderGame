@@ -64,6 +64,7 @@ scale = Vector2(8.315, 8.315)
 
 [node name="Red_but" type="TextureButton" parent="Big_red_button"]
 layout_mode = 2
+disabled = true
 texture_normal = ExtResource("2_nxvjm")
 texture_pressed = ExtResource("2_0lm0d")
 texture_disabled = ExtResource("2_0lm0d")

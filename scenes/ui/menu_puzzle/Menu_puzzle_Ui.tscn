@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://h83vcvkf1bd3" path="res://graphics/objects/menuPuzzle/red-button.png" id="8_mwa11"]
 [ext_resource type="Texture2D" uid="uid://be1bq76lfb6k0" path="res://graphics/ui/x_button.png" id="9_mlvk5"]
 [ext_resource type="PackedScene" uid="uid://vnhd31bl71pg" path="res://scenes/ui/menu_puzzle/option_panel_for_menu_puzzle.tscn" id="10_hy4u5"]
-[ext_resource type="PackedScene" uid="uid://cqu5woxnudbp2" path="res://scenes/ui/logic_puzzle/logic_puzzle_ui.tscn" id="11_k5ypk"]
+[ext_resource type="PackedScene" uid="uid://cqu5woxnudbp2" path="res://scenes/ui/logic_puzzle/logic_puzzle_ui-PC5514.tscn" id="11_k5ypk"]
 [ext_resource type="PackedScene" uid="uid://dx6wvrlhjdisk" path="res://scenes/ui/optical_puzzle/optical_puzzle_ui.tscn" id="12_ia5xb"]
 [ext_resource type="PackedScene" uid="uid://b6yyl83ohmqyo" path="res://scenes/ui/electricity_puzzle/electrical_box_ui.tscn" id="13_suser"]
 
