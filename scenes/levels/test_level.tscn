@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dx0q3u4solkhf"]
+[gd_scene load_steps=14 format=3 uid="uid://dx0q3u4solkhf"]
 
 [ext_resource type="Script" path="res://scenes/levels/test_level.gd" id="1_4iduf"]
 [ext_resource type="PackedScene" uid="uid://cnakc56i2kfyk" path="res://scenes/objects/crashed_plane.tscn" id="1_ha8na"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://h61ree3s1hwc" path="res://scenes/levels/day_timer.tscn" id="11_sfgjt"]
 [ext_resource type="PackedScene" uid="uid://dewtrbhafb6wh" path="res://scenes/ui/win_and_lose_screens/game_won_screen.tscn" id="12_1kl55"]
 [ext_resource type="PackedScene" uid="uid://pi2aergyh0gt" path="res://scenes/ui/win_and_lose_screens/game_lost_screen.tscn" id="13_0cg6r"]
+[ext_resource type="PackedScene" uid="uid://bqwfuhbo54fow" path="res://scenes/ui/backpack_inventory/player_in_game_ui.tscn" id="13_r7p7r"]
 
 [node name="TestLevel" type="Node2D"]
 y_sort_enabled = true
@@ -51,6 +52,9 @@ day_time = 300
 visible = false
 
 [node name="Game_lost_screen" parent="." instance=ExtResource("13_0cg6r")]
+visible = false
+
+[node name="PlayerInGameUI" parent="." instance=ExtResource("13_r7p7r")]
 visible = false
 
 [connection signal="player_pos_signal" from="." to="MapGenerator" method="_on_test_level_player_pos_signal"]
