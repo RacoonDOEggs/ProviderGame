@@ -27,9 +27,9 @@ func _process(_delta):
 
 # Si l'inventaire est plein, on affiche un message pendant 2 sec.
 func on_inventory_full():
-	$Player_in_game_UI.visible = true
-	await get_tree().create_timer(2.0).timeout
-	$Player_in_game_UI.visible = false
+	$PlayerInGameUI.visible = true
+	await get_tree().create_timer(0.7).timeout
+	$PlayerInGameUI.visible = false
 
 #Si on appuie sur le bouton JOUER, la génération se lance.
 func on_start_game():
