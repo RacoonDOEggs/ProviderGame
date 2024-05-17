@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://h61ree3s1hwc" path="res://scenes/levels/day_timer.tscn" id="11_sfgjt"]
 [ext_resource type="PackedScene" uid="uid://dewtrbhafb6wh" path="res://scenes/ui/win_and_lose_screens/game_won_screen.tscn" id="12_1kl55"]
 [ext_resource type="PackedScene" uid="uid://pi2aergyh0gt" path="res://scenes/ui/win_and_lose_screens/game_lost_screen.tscn" id="13_0cg6r"]
-[ext_resource type="PackedScene" uid="uid://bqwfuhbo54fow" path="res://scenes/ui/backpack_inventory/player_in_game_ui.tscn" id="13_r7p7r"]
+[ext_resource type="PackedScene" uid="uid://dcgkoqkt18v5m" path="res://scenes/ui/backpack_inventory/player_in_game_ui.tscn" id="13_r7p7r"]
 
 [node name="TestLevel" type="Node2D"]
 y_sort_enabled = true
